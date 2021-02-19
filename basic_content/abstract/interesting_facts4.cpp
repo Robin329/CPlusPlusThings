@@ -24,7 +24,7 @@ class Derived: public Base
     int y; 
     public: 
     Derived(int i, int j):Base(i) { y = j; } 
-    void fun() { cout << "x = " << x << ", y = " << y; } 
+    void fun() { cout << "x = " << x << ", y = " << y; }
 }; 
 
 int main(void) 

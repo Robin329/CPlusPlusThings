@@ -19,7 +19,7 @@ class Base  {
 class Derived: public Base {
     public:
         Derived()   { cout << "Constructor: Derived" << endl; }
-        ~Derived()   { cout << "Destructor : Derived" << endl; }
+        virtual ~Derived()   { cout << "Destructor : Derived" << endl; }
 };
 
 int main()  {

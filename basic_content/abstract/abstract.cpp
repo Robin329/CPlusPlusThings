@@ -8,6 +8,7 @@
  */
 
 #include<iostream>
+#include <dbg.h>
 using namespace std;
 
 class A {
@@ -18,7 +19,7 @@ public:
 };
 class B:public A{
 public:
-    void f(){ cout<<"B:f()"<<endl;}
+    void f(){ cout<<"B:f()"<<endl;dbg("hello world!");}
 };
 int main(){
     B b;

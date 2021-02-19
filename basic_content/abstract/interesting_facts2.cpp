@@ -24,9 +24,15 @@ public:
 class Derived: public Base 
 { 
 public: 
-    void show() { cout << "In Derived \n"; } 
+    void show() { cout << "In Derived \n" << 1+2;
+    }
     Derived(){}
-}; 
+};
+
+void show() {
+    cout << "robin.jiang" << endl;
+}
+
 int main(void) 
 { 
     //Base b;  //error! 不能创建抽象类的对象
