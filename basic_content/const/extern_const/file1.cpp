@@ -1,1 +1,1 @@
-int ext;
+int ext = 2;

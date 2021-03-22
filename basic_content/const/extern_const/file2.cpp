@@ -1,4 +1,5 @@
 #include<iostream>
+#include "file1.cpp"
 /**
  * by 光城
  * compile: g++ -o file file2.cpp file1.cpp

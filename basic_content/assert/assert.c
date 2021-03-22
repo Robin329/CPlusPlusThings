@@ -1,5 +1,5 @@
 #include <stdio.h> 
-#include <assert.h> 
+#include <assert.h>
 
 int main() 
 { 
@@ -10,7 +10,7 @@ int main()
     x = 9; 
 
     // Programmer assumes x to be 7 in rest of the code 
-    assert(x==7); 
+    assert(x==9);
 
     /* Rest of the code */
 
