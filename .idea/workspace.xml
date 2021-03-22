@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="CPlusPlusThings" targetName="pure_virtual" />
+      <config projectName="CPlusPlusThings" targetName="opencv" />
+      <config projectName="CPlusPlusThings" targetName="simple_thread" />
+      <config projectName="CPlusPlusThings" targetName="assert" />
+      <config projectName="CPlusPlusThings" targetName="decltype" />
+      <config projectName="CPlusPlusThings" targetName="const_file2" />
+      <config projectName="CPlusPlusThings" targetName="main" />
+      <config projectName="CPlusPlusThings" targetName="thread_param" />
+      <config projectName="CPlusPlusThings" targetName="const_function" />
+      <config projectName="CPlusPlusThings" targetName="genA" />
+      <config projectName="CPlusPlusThings" targetName="test" />
+      <config projectName="CPlusPlusThings" targetName="derived_full" />
+      <config projectName="CPlusPlusThings" targetName="learn" />
+      <config projectName="CPlusPlusThings" targetName="abstract" />
+      <config projectName="CPlusPlusThings" targetName="c++_examp" />
+      <config projectName="CPlusPlusThings" targetName="classic_practice" />
+      <config projectName="CPlusPlusThings" targetName="c_examp" />
+      <config projectName="CPlusPlusThings" targetName="ignore_assert" />
+      <config projectName="CPlusPlusThings" targetName="interesting_facts2" />
+      <config projectName="CPlusPlusThings" targetName="interesting_facts1" />
+      <config projectName="CPlusPlusThings" targetName="file2" />
+      <config projectName="CPlusPlusThings" targetName="condition1" />
+      <config projectName="CPlusPlusThings" targetName="interesting_facts5" />
+      <config projectName="CPlusPlusThings" targetName="interesting_facts4" />
+      <config projectName="CPlusPlusThings" targetName="const_num" />
+      <config projectName="CPlusPlusThings" targetName="condition3" />
+      <config projectName="CPlusPlusThings" targetName="static" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c880975-40f1-4c3c-ad87-1d7e09812d21" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1oSeDGgNdq0m5vi5m876mT9hSuS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/basic_content/const/funciton_const/condition2" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.virinhe">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="abstract" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="abstract" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="abstract">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="assert" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="assert" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="assert">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="c++_examp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="c++_examp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="c++_examp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="c_examp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="c_examp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="c_examp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="classic_practice" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="classic_practice" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="classic_practice">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="condition1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="condition1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="condition1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="condition3" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="condition3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="condition3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="const_file2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="const_file2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="const_file2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="const_function" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="const_function" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="const_function">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="const_num" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="const_num" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="const_num">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="decltype" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="decltype" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="decltype">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="derived_full" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="derived_full" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="derived_full">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="file2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="file2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="file2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="genA" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="genA" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="genA">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ignore_assert" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="ignore_assert" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="ignore_assert">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="interesting_facts1" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="interesting_facts1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="interesting_facts1">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="interesting_facts2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="interesting_facts2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="interesting_facts2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="interesting_facts4" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="interesting_facts4" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="interesting_facts4">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="interesting_facts5" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="interesting_facts5" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="interesting_facts5">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="learn" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="learn" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="learn">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="main">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="opencv" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="opencv" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="opencv">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pure_virtual" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="pure_virtual" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="pure_virtual">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="simple_thread" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="simple_thread" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="simple_thread">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="static" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="static">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="thread_param" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="thread_param" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="thread_param">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="virinhe" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="virinhe" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="virinhe">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.abstract" />
+      <item itemvalue="CMake Application.assert" />
+      <item itemvalue="CMake Application.c++_examp" />
+      <item itemvalue="CMake Application.c_examp" />
+      <item itemvalue="CMake Application.classic_practice" />
+      <item itemvalue="CMake Application.condition1" />
+      <item itemvalue="CMake Application.condition3" />
+      <item itemvalue="CMake Application.const_file2" />
+      <item itemvalue="CMake Application.const_function" />
+      <item itemvalue="CMake Application.const_num" />
+      <item itemvalue="CMake Application.decltype" />
+      <item itemvalue="CMake Application.derived_full" />
+      <item itemvalue="CMake Application.file2" />
+      <item itemvalue="CMake Application.genA" />
+      <item itemvalue="CMake Application.ignore_assert" />
+      <item itemvalue="CMake Application.interesting_facts1" />
+      <item itemvalue="CMake Application.interesting_facts2" />
+      <item itemvalue="CMake Application.interesting_facts4" />
+      <item itemvalue="CMake Application.interesting_facts5" />
+      <item itemvalue="CMake Application.learn" />
+      <item itemvalue="CMake Application.main" />
+      <item itemvalue="CMake Application.opencv" />
+      <item itemvalue="CMake Application.pure_virtual" />
+      <item itemvalue="CMake Application.simple_thread" />
+      <item itemvalue="CMake Application.static" />
+      <item itemvalue="CMake Application.test" />
+      <item itemvalue="CMake Application.thread_param" />
+      <item itemvalue="CMake Application.virinhe" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c880975-40f1-4c3c-ad87-1d7e09812d21" name="Default Changelist" comment="" />
+      <created>1613284298109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613284298109</updated>
+      <workItem from="1613284300224" duration="6650000" />
+      <workItem from="1614180548223" duration="3623000" />
+      <workItem from="1614414757557" duration="5119000" />
+      <workItem from="1614500494742" duration="8683000" />
+      <workItem from="1615382019680" duration="2051000" />
+      <workItem from="1615477331053" duration="1827000" />
+      <workItem from="1615481490091" duration="1267000" />
+      <workItem from="1615482889932" duration="8630000" />
+      <workItem from="1615996384813" duration="2437000" />
+      <workItem from="1615998866003" duration="4251000" />
+      <workItem from="1616430342293" duration="434000" />
+    </task>
+    <task id="LOCAL-00001" summary="update cmake file.">
+      <created>1613748349275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613748349275</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update cmake file.">
+      <created>1616430448194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616430448194</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update cmake file." />
+    <option name="LAST_COMMIT_MESSAGE" value="update cmake file." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/abstract/abstract.cpp</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/abstract/derived_full.cpp</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/abstract/derived_full.cpp</url>
+          <line>37</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/abstract/derived_full.cpp</url>
+          <line>50</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/abstract/derived_full.cpp</url>
+          <line>60</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/assert/assert.c</url>
+          <line>12</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/c_poly/c++_examp.cpp</url>
+          <line>36</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/c_poly/c_examp.c</url>
+          <line>49</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/c_poly/c_examp.c</url>
+          <line>50</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/c_poly/c_examp.c</url>
+          <line>52</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/const/class_const/c++11_example/main.cpp</url>
+          <line>27</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/const/class_const/c++11_example/main.cpp</url>
+          <line>25</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/const/class_const/c++11_example/main.cpp</url>
+          <line>24</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/const/funciton_const/condition2/condition1.cpp</url>
+          <line>6</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/const/funciton_const/condition2/condition3.cpp</url>
+          <line>13</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/decltype/decltype.cpp</url>
+          <line>24</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/decltype/decltype.cpp</url>
+          <line>27</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/enum/classic_practice.cpp</url>
+          <line>222</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/basic_content/enum/classic_practice.cpp</url>
+          <line>223</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/design_pattern/singleton/static_local_singleton.cpp</url>
+          <line>8</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/english/basic_content/sizeof/static.cpp</url>
+          <line>29</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="sizeof(s)" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

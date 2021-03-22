@@ -12,12 +12,12 @@ using namespace std;
 
 class A
 {
-    virtual void fun() {}
+    virtual void fun() {cout << "fun" << endl;}
 };
 
 class B
 {
-    virtual void fun2() {}
+    virtual void fun2() { cout << "fun2" << endl;}
 };
 class C : virtual public  A, virtual public B
 {

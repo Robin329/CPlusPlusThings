@@ -1,0 +1,1362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CPlusPlusThings"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="static">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="static/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="genA">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="genA/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opencv">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/opencv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 opencv"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="opencv/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/opencv" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 opencv/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="decltype">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/decltype" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 decltype"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="decltype/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/decltype" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 decltype/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition3">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/condition3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 condition3"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition3/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/condition3" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 condition3/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_thread">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/simple_thread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 simple_thread"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="simple_thread/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/simple_thread" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 simple_thread/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="classic_practice">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/classic_practice" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 classic_practice"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="classic_practice/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/classic_practice" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 classic_practice/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_file2">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_file2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_file2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_file2/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_file2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_file2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file2">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/file2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 file2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="file2/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/file2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 file2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_num">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_num" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_num"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_num/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_num" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_num/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ignore_assert">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/ignore_assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 ignore_assert"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ignore_assert/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/ignore_assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 ignore_assert/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_function">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_function" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_function"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="const_function/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/const_function" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 const_function/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c_examp">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/c_examp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_examp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c_examp/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/c_examp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 c_examp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assert">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 assert"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assert/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/assert" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 assert/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="thread_param">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_param" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_param"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="thread_param/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_param" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_param/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts2">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts2/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="virinhe">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/virinhe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 virinhe"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="virinhe/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/virinhe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 virinhe/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts5">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts5"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts5/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts5" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts5/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="learn">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/learn" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="learn/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/learn" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pure_virtual">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/pure_virtual" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 pure_virtual"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pure_virtual/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/pure_virtual" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 pure_virtual/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts1">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts1"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts1/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts1/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts4">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts4"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="interesting_facts4/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/interesting_facts4" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 interesting_facts4/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="derived_full">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/derived_full" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 derived_full"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="derived_full/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/derived_full" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 derived_full/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition1">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/condition1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 condition1"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="condition1/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/condition1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 condition1/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="abstract">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/abstract" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 abstract"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="abstract/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/abstract" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 abstract/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c++_examp">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/c++_examp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 c++_examp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="c++_examp/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/c++_examp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 c++_examp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/abstract.cpp">
+			<Option target="abstract"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/derived_full.cpp">
+			<Option target="derived_full"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/interesting_facts1.cpp">
+			<Option target="interesting_facts1"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/interesting_facts2.cpp">
+			<Option target="interesting_facts2"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/interesting_facts4.cpp">
+			<Option target="interesting_facts4"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/interesting_facts5.cpp">
+			<Option target="interesting_facts5"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/pure_virtual.cpp">
+			<Option target="pure_virtual"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/abstract/test.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/assert/assert.c">
+			<Option target="assert"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/assert/ignore_assert.c">
+			<Option target="ignore_assert"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/bit/learn.cpp">
+			<Option target="learn"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/c_poly/c++_examp.cpp">
+			<Option target="c++_examp"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/c_poly/c_examp.c">
+			<Option target="c_examp"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/class_const/overload_example/main.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/const_function.cpp">
+			<Option target="const_function"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/const_num.cpp">
+			<Option target="const_num"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/extern_const/const_file2.cpp">
+			<Option target="const_file2"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/extern_const/file2.cpp">
+			<Option target="file2"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/funciton_const/condition2/condition1.cpp">
+			<Option target="condition1"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/funciton_const/condition2/condition3.cpp">
+			<Option target="condition3"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/decltype/decltype.cpp">
+			<Option target="decltype"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/enum/classic_practice.cpp">
+			<Option target="classic_practice"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/english/basic_content/sizeof/genA.cpp">
+			<Option target="genA"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/english/basic_content/sizeof/static.cpp">
+			<Option target="static"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/english/basic_content/sizeof/virinhe.cpp">
+			<Option target="virinhe"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp">
+			<Option target="opencv"/>
+			<Option target="simple_thread"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/simple_thread.cpp">
+			<Option target="simple_thread"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread_param.cpp">
+			<Option target="thread_param"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

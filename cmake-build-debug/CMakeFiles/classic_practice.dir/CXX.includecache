@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/enum/classic_practice.cpp
+iostream
+-
+execinfo.h
+-
+dlfcn.h
+-
+cxxabi.h
+-
+string
+-
+sstream
+-
+stdio.h
+-
+execinfo.h
+-
+signal.h
+-
+stdlib.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+execinfo.h
+-
+cxxabi.h
+-
+

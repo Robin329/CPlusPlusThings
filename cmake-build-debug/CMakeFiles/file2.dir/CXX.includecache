@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/extern_const/file1.cpp
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/extern_const/file2.cpp
+iostream
+-
+file1.cpp
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/extern_const/file1.cpp
+

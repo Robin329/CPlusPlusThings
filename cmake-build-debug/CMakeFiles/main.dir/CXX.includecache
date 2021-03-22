@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/class_const/overload_example/apple.cpp
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/class_const/overload_example/main.cpp
+iostream
+-
+apple.cpp
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/basic_content/const/class_const/overload_example/apple.cpp
+
