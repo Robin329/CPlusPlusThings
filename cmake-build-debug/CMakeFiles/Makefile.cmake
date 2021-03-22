@@ -52,6 +52,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/vptr1.dir/DependInfo.cmake"
+  "CMakeFiles/morevir.dir/DependInfo.cmake"
   "CMakeFiles/static.dir/DependInfo.cmake"
   "CMakeFiles/genA.dir/DependInfo.cmake"
   "CMakeFiles/opencv.dir/DependInfo.cmake"

@@ -1,4 +1,6 @@
 /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/vptr1.dir
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/morevir.dir
 /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/static.dir
 /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/genA.dir
 /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/opencv.dir

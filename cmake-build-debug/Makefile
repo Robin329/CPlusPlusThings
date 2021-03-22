@@ -131,6 +131,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named vptr1
+
+# Build rule for target.
+vptr1: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vptr1
+.PHONY : vptr1
+
+# fast build rule for target.
+vptr1/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/build
+.PHONY : vptr1/fast
+
+#=============================================================================
+# Target rules for targets named morevir
+
+# Build rule for target.
+morevir: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 morevir
+.PHONY : morevir
+
+# fast build rule for target.
+morevir/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/morevir.dir/build.make CMakeFiles/morevir.dir/build
+.PHONY : morevir/fast
+
+#=============================================================================
 # Target rules for targets named static
 
 # Build rule for target.
@@ -1115,6 +1141,33 @@ english/basic_content/sizeof/genA.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/genA.dir/build.make CMakeFiles/genA.dir/english/basic_content/sizeof/genA.cpp.s
 .PHONY : english/basic_content/sizeof/genA.cpp.s
 
+english/basic_content/sizeof/morevir.o: english/basic_content/sizeof/morevir.cpp.o
+
+.PHONY : english/basic_content/sizeof/morevir.o
+
+# target to build an object file
+english/basic_content/sizeof/morevir.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/morevir.dir/build.make CMakeFiles/morevir.dir/english/basic_content/sizeof/morevir.cpp.o
+.PHONY : english/basic_content/sizeof/morevir.cpp.o
+
+english/basic_content/sizeof/morevir.i: english/basic_content/sizeof/morevir.cpp.i
+
+.PHONY : english/basic_content/sizeof/morevir.i
+
+# target to preprocess a source file
+english/basic_content/sizeof/morevir.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/morevir.dir/build.make CMakeFiles/morevir.dir/english/basic_content/sizeof/morevir.cpp.i
+.PHONY : english/basic_content/sizeof/morevir.cpp.i
+
+english/basic_content/sizeof/morevir.s: english/basic_content/sizeof/morevir.cpp.s
+
+.PHONY : english/basic_content/sizeof/morevir.s
+
+# target to generate assembly for a file
+english/basic_content/sizeof/morevir.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/morevir.dir/build.make CMakeFiles/morevir.dir/english/basic_content/sizeof/morevir.cpp.s
+.PHONY : english/basic_content/sizeof/morevir.cpp.s
+
 english/basic_content/sizeof/static.o: english/basic_content/sizeof/static.cpp.o
 
 .PHONY : english/basic_content/sizeof/static.o
@@ -1168,6 +1221,33 @@ english/basic_content/sizeof/virinhe.s: english/basic_content/sizeof/virinhe.cpp
 english/basic_content/sizeof/virinhe.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/virinhe.dir/build.make CMakeFiles/virinhe.dir/english/basic_content/sizeof/virinhe.cpp.s
 .PHONY : english/basic_content/sizeof/virinhe.cpp.s
+
+english/basic_content/vptr_vtable/vptr1.o: english/basic_content/vptr_vtable/vptr1.cpp.o
+
+.PHONY : english/basic_content/vptr_vtable/vptr1.o
+
+# target to build an object file
+english/basic_content/vptr_vtable/vptr1.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.o
+.PHONY : english/basic_content/vptr_vtable/vptr1.cpp.o
+
+english/basic_content/vptr_vtable/vptr1.i: english/basic_content/vptr_vtable/vptr1.cpp.i
+
+.PHONY : english/basic_content/vptr_vtable/vptr1.i
+
+# target to preprocess a source file
+english/basic_content/vptr_vtable/vptr1.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.i
+.PHONY : english/basic_content/vptr_vtable/vptr1.cpp.i
+
+english/basic_content/vptr_vtable/vptr1.s: english/basic_content/vptr_vtable/vptr1.cpp.s
+
+.PHONY : english/basic_content/vptr_vtable/vptr1.s
+
+# target to generate assembly for a file
+english/basic_content/vptr_vtable/vptr1.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.s
+.PHONY : english/basic_content/vptr_vtable/vptr1.cpp.s
 
 thread_example/opencv.o: thread_example/opencv.cpp.o
 
@@ -1282,6 +1362,7 @@ help:
 	@echo "... interesting_facts5"
 	@echo "... learn"
 	@echo "... main"
+	@echo "... morevir"
 	@echo "... opencv"
 	@echo "... pure_virtual"
 	@echo "... simple_thread"
@@ -1289,6 +1370,7 @@ help:
 	@echo "... test"
 	@echo "... thread_param"
 	@echo "... virinhe"
+	@echo "... vptr1"
 	@echo "... basic_content/abstract/abstract.o"
 	@echo "... basic_content/abstract/abstract.i"
 	@echo "... basic_content/abstract/abstract.s"
@@ -1358,12 +1440,18 @@ help:
 	@echo "... english/basic_content/sizeof/genA.o"
 	@echo "... english/basic_content/sizeof/genA.i"
 	@echo "... english/basic_content/sizeof/genA.s"
+	@echo "... english/basic_content/sizeof/morevir.o"
+	@echo "... english/basic_content/sizeof/morevir.i"
+	@echo "... english/basic_content/sizeof/morevir.s"
 	@echo "... english/basic_content/sizeof/static.o"
 	@echo "... english/basic_content/sizeof/static.i"
 	@echo "... english/basic_content/sizeof/static.s"
 	@echo "... english/basic_content/sizeof/virinhe.o"
 	@echo "... english/basic_content/sizeof/virinhe.i"
 	@echo "... english/basic_content/sizeof/virinhe.s"
+	@echo "... english/basic_content/vptr_vtable/vptr1.o"
+	@echo "... english/basic_content/vptr_vtable/vptr1.i"
+	@echo "... english/basic_content/vptr_vtable/vptr1.s"
 	@echo "... thread_example/opencv.o"
 	@echo "... thread_example/opencv.i"
 	@echo "... thread_example/opencv.s"
