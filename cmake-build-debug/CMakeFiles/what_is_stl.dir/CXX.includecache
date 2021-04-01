@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/src_analysis/stl/stl_src/what_is_stl.cpp
+string.h
+-
+vector
+-
+iostream
+-
+

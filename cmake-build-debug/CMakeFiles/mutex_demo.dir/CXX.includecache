@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_demo.cpp
+iostream
+-
+pthread.h
+-
+thread
+-
+stdlib.h
+-
+stdio.h
+-
+pthread.h
+-
+errno.h
+-
+mutex_demo.h
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_demo.h
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_demo.h
+pthread.h
+-
+unistd.h
+-
+thread
+-
+iostream
+-
+mutex
+-
+

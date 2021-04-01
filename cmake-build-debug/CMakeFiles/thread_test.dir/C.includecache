@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c
+pthread.h
+-
+stdio.h
+-
+unistd.h
+-
+assert.h
+-
+stdio.h
+-
+stdbool.h
+-
+

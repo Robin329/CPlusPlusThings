@@ -9,7 +9,7 @@ using namespace std;
 class A {
 public:
     A(int a) : _a(a), _p(nullptr) {     // 初始化列表
-
+    
     }
 
 private:

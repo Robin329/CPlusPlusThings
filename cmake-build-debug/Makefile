@@ -131,6 +131,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named thread_test
+
+# Build rule for target.
+thread_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_test
+.PHONY : thread_test
+
+# fast build rule for target.
+thread_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/build
+.PHONY : thread_test/fast
+
+#=============================================================================
+# Target rules for targets named mutex_test
+
+# Build rule for target.
+mutex_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mutex_test
+.PHONY : mutex_test
+
+# fast build rule for target.
+mutex_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/build
+.PHONY : mutex_test/fast
+
+#=============================================================================
+# Target rules for targets named what_is_stl
+
+# Build rule for target.
+what_is_stl: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 what_is_stl
+.PHONY : what_is_stl
+
+# fast build rule for target.
+what_is_stl/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/build
+.PHONY : what_is_stl/fast
+
+#=============================================================================
 # Target rules for targets named vptr1
 
 # Build rule for target.
@@ -194,45 +233,6 @@ opencv: cmake_check_build_system
 opencv/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/build
 .PHONY : opencv/fast
-
-#=============================================================================
-# Target rules for targets named decltype
-
-# Build rule for target.
-decltype: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decltype
-.PHONY : decltype
-
-# fast build rule for target.
-decltype/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/decltype.dir/build.make CMakeFiles/decltype.dir/build
-.PHONY : decltype/fast
-
-#=============================================================================
-# Target rules for targets named condition3
-
-# Build rule for target.
-condition3: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 condition3
-.PHONY : condition3
-
-# fast build rule for target.
-condition3/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/condition3.dir/build.make CMakeFiles/condition3.dir/build
-.PHONY : condition3/fast
-
-#=============================================================================
-# Target rules for targets named simple_thread
-
-# Build rule for target.
-simple_thread: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_thread
-.PHONY : simple_thread
-
-# fast build rule for target.
-simple_thread/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/build
-.PHONY : simple_thread/fast
 
 #=============================================================================
 # Target rules for targets named classic_practice
@@ -326,6 +326,19 @@ c_examp/fast:
 .PHONY : c_examp/fast
 
 #=============================================================================
+# Target rules for targets named initializer
+
+# Build rule for target.
+initializer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 initializer
+.PHONY : initializer
+
+# fast build rule for target.
+initializer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/initializer.dir/build.make CMakeFiles/initializer.dir/build
+.PHONY : initializer/fast
+
+#=============================================================================
 # Target rules for targets named assert
 
 # Build rule for target.
@@ -337,19 +350,6 @@ assert: cmake_check_build_system
 assert/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assert.dir/build.make CMakeFiles/assert.dir/build
 .PHONY : assert/fast
-
-#=============================================================================
-# Target rules for targets named thread_param
-
-# Build rule for target.
-thread_param: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_param
-.PHONY : thread_param
-
-# fast build rule for target.
-thread_param/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/build
-.PHONY : thread_param/fast
 
 #=============================================================================
 # Target rules for targets named interesting_facts2
@@ -430,6 +430,32 @@ learn/fast:
 .PHONY : learn/fast
 
 #=============================================================================
+# Target rules for targets named decltype
+
+# Build rule for target.
+decltype: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 decltype
+.PHONY : decltype
+
+# fast build rule for target.
+decltype/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/decltype.dir/build.make CMakeFiles/decltype.dir/build
+.PHONY : decltype/fast
+
+#=============================================================================
+# Target rules for targets named condition3
+
+# Build rule for target.
+condition3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 condition3
+.PHONY : condition3
+
+# fast build rule for target.
+condition3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/condition3.dir/build.make CMakeFiles/condition3.dir/build
+.PHONY : condition3/fast
+
+#=============================================================================
 # Target rules for targets named pure_virtual
 
 # Build rule for target.
@@ -493,6 +519,19 @@ condition1: cmake_check_build_system
 condition1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/condition1.dir/build.make CMakeFiles/condition1.dir/build
 .PHONY : condition1/fast
+
+#=============================================================================
+# Target rules for targets named mutex_demo
+
+# Build rule for target.
+mutex_demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mutex_demo
+.PHONY : mutex_demo
+
+# fast build rule for target.
+mutex_demo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/build
+.PHONY : mutex_demo/fast
 
 #=============================================================================
 # Target rules for targets named abstract
@@ -1114,6 +1153,33 @@ basic_content/enum/classic_practice.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/classic_practice.dir/build.make CMakeFiles/classic_practice.dir/basic_content/enum/classic_practice.cpp.s
 .PHONY : basic_content/enum/classic_practice.cpp.s
 
+codingStyleIdioms/1_classInitializers/initializer.o: codingStyleIdioms/1_classInitializers/initializer.cpp.o
+
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.o
+
+# target to build an object file
+codingStyleIdioms/1_classInitializers/initializer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/initializer.dir/build.make CMakeFiles/initializer.dir/codingStyleIdioms/1_classInitializers/initializer.cpp.o
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.cpp.o
+
+codingStyleIdioms/1_classInitializers/initializer.i: codingStyleIdioms/1_classInitializers/initializer.cpp.i
+
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.i
+
+# target to preprocess a source file
+codingStyleIdioms/1_classInitializers/initializer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/initializer.dir/build.make CMakeFiles/initializer.dir/codingStyleIdioms/1_classInitializers/initializer.cpp.i
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.cpp.i
+
+codingStyleIdioms/1_classInitializers/initializer.s: codingStyleIdioms/1_classInitializers/initializer.cpp.s
+
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.s
+
+# target to generate assembly for a file
+codingStyleIdioms/1_classInitializers/initializer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/initializer.dir/build.make CMakeFiles/initializer.dir/codingStyleIdioms/1_classInitializers/initializer.cpp.s
+.PHONY : codingStyleIdioms/1_classInitializers/initializer.cpp.s
+
 english/basic_content/sizeof/genA.o: english/basic_content/sizeof/genA.cpp.o
 
 .PHONY : english/basic_content/sizeof/genA.o
@@ -1249,6 +1315,93 @@ english/basic_content/vptr_vtable/vptr1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.s
 .PHONY : english/basic_content/vptr_vtable/vptr1.cpp.s
 
+src_analysis/stl/stl_src/what_is_stl.o: src_analysis/stl/stl_src/what_is_stl.cpp.o
+
+.PHONY : src_analysis/stl/stl_src/what_is_stl.o
+
+# target to build an object file
+src_analysis/stl/stl_src/what_is_stl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.o
+
+src_analysis/stl/stl_src/what_is_stl.i: src_analysis/stl/stl_src/what_is_stl.cpp.i
+
+.PHONY : src_analysis/stl/stl_src/what_is_stl.i
+
+# target to preprocess a source file
+src_analysis/stl/stl_src/what_is_stl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.i
+
+src_analysis/stl/stl_src/what_is_stl.s: src_analysis/stl/stl_src/what_is_stl.cpp.s
+
+.PHONY : src_analysis/stl/stl_src/what_is_stl.s
+
+# target to generate assembly for a file
+src_analysis/stl/stl_src/what_is_stl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.s
+
+thread_example/lock/mutex_demo.o: thread_example/lock/mutex_demo.c.o
+
+.PHONY : thread_example/lock/mutex_demo.o
+
+# target to build an object file
+thread_example/lock/mutex_demo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.o
+.PHONY : thread_example/lock/mutex_demo.c.o
+
+thread_example/lock/mutex_demo.i: thread_example/lock/mutex_demo.c.i
+
+.PHONY : thread_example/lock/mutex_demo.i
+
+# target to preprocess a source file
+thread_example/lock/mutex_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.i
+.PHONY : thread_example/lock/mutex_demo.c.i
+
+thread_example/lock/mutex_demo.s: thread_example/lock/mutex_demo.c.s
+
+.PHONY : thread_example/lock/mutex_demo.s
+
+# target to generate assembly for a file
+thread_example/lock/mutex_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.s
+.PHONY : thread_example/lock/mutex_demo.c.s
+
+thread_example/lock/thread_test.o: thread_example/lock/thread_test.c.o
+
+.PHONY : thread_example/lock/thread_test.o
+
+# target to build an object file
+thread_example/lock/thread_test.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o
+.PHONY : thread_example/lock/thread_test.c.o
+
+thread_example/lock/thread_test.i: thread_example/lock/thread_test.c.i
+
+.PHONY : thread_example/lock/thread_test.i
+
+# target to preprocess a source file
+thread_example/lock/thread_test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i
+.PHONY : thread_example/lock/thread_test.c.i
+
+thread_example/lock/thread_test.s: thread_example/lock/thread_test.c.s
+
+.PHONY : thread_example/lock/thread_test.s
+
+# target to generate assembly for a file
+thread_example/lock/thread_test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s
+.PHONY : thread_example/lock/thread_test.c.s
+
 thread_example/opencv.o: thread_example/opencv.cpp.o
 
 .PHONY : thread_example/opencv.o
@@ -1256,7 +1409,6 @@ thread_example/opencv.o: thread_example/opencv.cpp.o
 # target to build an object file
 thread_example/opencv.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o
 .PHONY : thread_example/opencv.cpp.o
 
 thread_example/opencv.i: thread_example/opencv.cpp.i
@@ -1266,7 +1418,6 @@ thread_example/opencv.i: thread_example/opencv.cpp.i
 # target to preprocess a source file
 thread_example/opencv.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.i
 .PHONY : thread_example/opencv.cpp.i
 
 thread_example/opencv.s: thread_example/opencv.cpp.s
@@ -1276,62 +1427,7 @@ thread_example/opencv.s: thread_example/opencv.cpp.s
 # target to generate assembly for a file
 thread_example/opencv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.s
 .PHONY : thread_example/opencv.cpp.s
-
-thread_example/simple_thread.o: thread_example/simple_thread.cpp.o
-
-.PHONY : thread_example/simple_thread.o
-
-# target to build an object file
-thread_example/simple_thread.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o
-.PHONY : thread_example/simple_thread.cpp.o
-
-thread_example/simple_thread.i: thread_example/simple_thread.cpp.i
-
-.PHONY : thread_example/simple_thread.i
-
-# target to preprocess a source file
-thread_example/simple_thread.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.i
-.PHONY : thread_example/simple_thread.cpp.i
-
-thread_example/simple_thread.s: thread_example/simple_thread.cpp.s
-
-.PHONY : thread_example/simple_thread.s
-
-# target to generate assembly for a file
-thread_example/simple_thread.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.s
-.PHONY : thread_example/simple_thread.cpp.s
-
-thread_example/thread_param.o: thread_example/thread_param.cpp.o
-
-.PHONY : thread_example/thread_param.o
-
-# target to build an object file
-thread_example/thread_param.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o
-.PHONY : thread_example/thread_param.cpp.o
-
-thread_example/thread_param.i: thread_example/thread_param.cpp.i
-
-.PHONY : thread_example/thread_param.i
-
-# target to preprocess a source file
-thread_example/thread_param.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.i
-.PHONY : thread_example/thread_param.cpp.i
-
-thread_example/thread_param.s: thread_example/thread_param.cpp.s
-
-.PHONY : thread_example/thread_param.s
-
-# target to generate assembly for a file
-thread_example/thread_param.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.s
-.PHONY : thread_example/thread_param.cpp.s
 
 # Help Target
 help:
@@ -1356,6 +1452,7 @@ help:
 	@echo "... file2"
 	@echo "... genA"
 	@echo "... ignore_assert"
+	@echo "... initializer"
 	@echo "... interesting_facts1"
 	@echo "... interesting_facts2"
 	@echo "... interesting_facts4"
@@ -1363,14 +1460,16 @@ help:
 	@echo "... learn"
 	@echo "... main"
 	@echo "... morevir"
+	@echo "... mutex_demo"
+	@echo "... mutex_test"
 	@echo "... opencv"
 	@echo "... pure_virtual"
-	@echo "... simple_thread"
 	@echo "... static"
 	@echo "... test"
-	@echo "... thread_param"
+	@echo "... thread_test"
 	@echo "... virinhe"
 	@echo "... vptr1"
+	@echo "... what_is_stl"
 	@echo "... basic_content/abstract/abstract.o"
 	@echo "... basic_content/abstract/abstract.i"
 	@echo "... basic_content/abstract/abstract.s"
@@ -1437,6 +1536,9 @@ help:
 	@echo "... basic_content/enum/classic_practice.o"
 	@echo "... basic_content/enum/classic_practice.i"
 	@echo "... basic_content/enum/classic_practice.s"
+	@echo "... codingStyleIdioms/1_classInitializers/initializer.o"
+	@echo "... codingStyleIdioms/1_classInitializers/initializer.i"
+	@echo "... codingStyleIdioms/1_classInitializers/initializer.s"
 	@echo "... english/basic_content/sizeof/genA.o"
 	@echo "... english/basic_content/sizeof/genA.i"
 	@echo "... english/basic_content/sizeof/genA.s"
@@ -1452,15 +1554,18 @@ help:
 	@echo "... english/basic_content/vptr_vtable/vptr1.o"
 	@echo "... english/basic_content/vptr_vtable/vptr1.i"
 	@echo "... english/basic_content/vptr_vtable/vptr1.s"
+	@echo "... src_analysis/stl/stl_src/what_is_stl.o"
+	@echo "... src_analysis/stl/stl_src/what_is_stl.i"
+	@echo "... src_analysis/stl/stl_src/what_is_stl.s"
+	@echo "... thread_example/lock/mutex_demo.o"
+	@echo "... thread_example/lock/mutex_demo.i"
+	@echo "... thread_example/lock/mutex_demo.s"
+	@echo "... thread_example/lock/thread_test.o"
+	@echo "... thread_example/lock/thread_test.i"
+	@echo "... thread_example/lock/thread_test.s"
 	@echo "... thread_example/opencv.o"
 	@echo "... thread_example/opencv.i"
 	@echo "... thread_example/opencv.s"
-	@echo "... thread_example/simple_thread.o"
-	@echo "... thread_example/simple_thread.i"
-	@echo "... thread_example/simple_thread.s"
-	@echo "... thread_example/thread_param.o"
-	@echo "... thread_example/thread_param.i"
-	@echo "... thread_example/thread_param.s"
 .PHONY : help
 
 
