@@ -131,6 +131,7 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+<<<<<<< HEAD
 # Target rules for targets named 1_Inverted_bits
 
 # Build rule for target.
@@ -183,6 +184,8 @@ stl_map/fast:
 .PHONY : 1.1_invertd_Integer/fast
 
 #=============================================================================
+=======
+>>>>>>> d3948b1... add thread test .c file.
 # Target rules for targets named thread_test
 
 # Build rule for target.
@@ -402,19 +405,6 @@ assert: cmake_check_build_system
 assert/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/assert.dir/build.make CMakeFiles/assert.dir/build
 .PHONY : assert/fast
-
-#=============================================================================
-# Target rules for targets named thread_param
-
-# Build rule for target.
-thread_param: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_param
-.PHONY : thread_param
-
-# fast build rule for target.
-thread_param/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/build
-.PHONY : thread_param/fast
 
 #=============================================================================
 # Target rules for targets named interesting_facts2
@@ -1393,6 +1383,7 @@ english/basic_content/vptr_vtable/vptr1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.s
 .PHONY : english/basic_content/vptr_vtable/vptr1.cpp.s
 
+<<<<<<< HEAD
 leetcode/1.1_invertd_Integer.o: leetcode/1.1_invertd_Integer.cpp.o
 
 .PHONY : leetcode/1.1_invertd_Integer.o
@@ -1586,28 +1577,46 @@ thread_example/lock/mutex_try_lock.cpp.s:
 .PHONY : thread_example/lock/mutex_try_lock.cpp.s
 
 thread_example/opencv.o: thread_example/opencv.cpp.o
+=======
+src_analysis/stl/stl_src/what_is_stl.o: src_analysis/stl/stl_src/what_is_stl.cpp.o
+>>>>>>> d3948b1... add thread test .c file.
 
-.PHONY : thread_example/opencv.o
+.PHONY : src_analysis/stl/stl_src/what_is_stl.o
 
 # target to build an object file
+<<<<<<< HEAD
 thread_example/opencv.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.o
 .PHONY : thread_example/opencv.cpp.o
+=======
+src_analysis/stl/stl_src/what_is_stl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.o
+>>>>>>> d3948b1... add thread test .c file.
 
-thread_example/opencv.i: thread_example/opencv.cpp.i
+src_analysis/stl/stl_src/what_is_stl.i: src_analysis/stl/stl_src/what_is_stl.cpp.i
 
-.PHONY : thread_example/opencv.i
+.PHONY : src_analysis/stl/stl_src/what_is_stl.i
 
 # target to preprocess a source file
+<<<<<<< HEAD
 thread_example/opencv.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.i
 .PHONY : thread_example/opencv.cpp.i
+=======
+src_analysis/stl/stl_src/what_is_stl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.i
+>>>>>>> d3948b1... add thread test .c file.
 
-thread_example/opencv.s: thread_example/opencv.cpp.s
+src_analysis/stl/stl_src/what_is_stl.s: src_analysis/stl/stl_src/what_is_stl.cpp.s
 
-.PHONY : thread_example/opencv.s
+.PHONY : src_analysis/stl/stl_src/what_is_stl.s
 
 # target to generate assembly for a file
+<<<<<<< HEAD
 thread_example/opencv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.s
 .PHONY : thread_example/opencv.cpp.s
@@ -1668,6 +1677,96 @@ thread_example/thread/thread_test.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.s
 .PHONY : thread_example/thread/thread_test.c.s
+=======
+src_analysis/stl/stl_src/what_is_stl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
+.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.s
+
+thread_example/lock/mutex_demo.o: thread_example/lock/mutex_demo.c.o
+
+.PHONY : thread_example/lock/mutex_demo.o
+
+# target to build an object file
+thread_example/lock/mutex_demo.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.o
+.PHONY : thread_example/lock/mutex_demo.c.o
+
+thread_example/lock/mutex_demo.i: thread_example/lock/mutex_demo.c.i
+
+.PHONY : thread_example/lock/mutex_demo.i
+
+# target to preprocess a source file
+thread_example/lock/mutex_demo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.i
+.PHONY : thread_example/lock/mutex_demo.c.i
+
+thread_example/lock/mutex_demo.s: thread_example/lock/mutex_demo.c.s
+
+.PHONY : thread_example/lock/mutex_demo.s
+
+# target to generate assembly for a file
+thread_example/lock/mutex_demo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.s
+.PHONY : thread_example/lock/mutex_demo.c.s
+
+thread_example/lock/thread_test.o: thread_example/lock/thread_test.c.o
+
+.PHONY : thread_example/lock/thread_test.o
+
+# target to build an object file
+thread_example/lock/thread_test.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o
+.PHONY : thread_example/lock/thread_test.c.o
+
+thread_example/lock/thread_test.i: thread_example/lock/thread_test.c.i
+
+.PHONY : thread_example/lock/thread_test.i
+
+# target to preprocess a source file
+thread_example/lock/thread_test.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i
+.PHONY : thread_example/lock/thread_test.c.i
+
+thread_example/lock/thread_test.s: thread_example/lock/thread_test.c.s
+
+.PHONY : thread_example/lock/thread_test.s
+
+# target to generate assembly for a file
+thread_example/lock/thread_test.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s
+.PHONY : thread_example/lock/thread_test.c.s
+
+thread_example/opencv.o: thread_example/opencv.cpp.o
+
+.PHONY : thread_example/opencv.o
+
+# target to build an object file
+thread_example/opencv.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.o
+.PHONY : thread_example/opencv.cpp.o
+
+thread_example/opencv.i: thread_example/opencv.cpp.i
+
+.PHONY : thread_example/opencv.i
+
+# target to preprocess a source file
+thread_example/opencv.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.i
+.PHONY : thread_example/opencv.cpp.i
+
+thread_example/opencv.s: thread_example/opencv.cpp.s
+
+.PHONY : thread_example/opencv.s
+
+# target to generate assembly for a file
+thread_example/opencv.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.s
+.PHONY : thread_example/opencv.cpp.s
+>>>>>>> d3948b1... add thread test .c file.
 
 # Help Target
 help:
@@ -1702,16 +1801,24 @@ help:
 	@echo "... learn"
 	@echo "... main"
 	@echo "... morevir"
+<<<<<<< HEAD
 	@echo "... mutex_cpp"
 	@echo "... mutex_demo"
 	@echo "... mutex_test"
 	@echo "... mutex_try_lock"
+=======
+	@echo "... mutex_demo"
+	@echo "... mutex_test"
+>>>>>>> d3948b1... add thread test .c file.
 	@echo "... opencv"
 	@echo "... pure_virtual"
 	@echo "... static"
 	@echo "... stl_map"
 	@echo "... test"
+<<<<<<< HEAD
 	@echo "... thread_param"
+=======
+>>>>>>> d3948b1... add thread test .c file.
 	@echo "... thread_test"
 	@echo "... virinhe"
 	@echo "... vptr1"
@@ -1800,6 +1907,7 @@ help:
 	@echo "... english/basic_content/vptr_vtable/vptr1.o"
 	@echo "... english/basic_content/vptr_vtable/vptr1.i"
 	@echo "... english/basic_content/vptr_vtable/vptr1.s"
+<<<<<<< HEAD
 	@echo "... leetcode/1.1_invertd_Integer.o"
 	@echo "... leetcode/1.1_invertd_Integer.i"
 	@echo "... leetcode/1.1_invertd_Integer.s"
@@ -1830,6 +1938,20 @@ help:
 	@echo "... thread_example/thread/thread_test.o"
 	@echo "... thread_example/thread/thread_test.i"
 	@echo "... thread_example/thread/thread_test.s"
+=======
+	@echo "... src_analysis/stl/stl_src/what_is_stl.o"
+	@echo "... src_analysis/stl/stl_src/what_is_stl.i"
+	@echo "... src_analysis/stl/stl_src/what_is_stl.s"
+	@echo "... thread_example/lock/mutex_demo.o"
+	@echo "... thread_example/lock/mutex_demo.i"
+	@echo "... thread_example/lock/mutex_demo.s"
+	@echo "... thread_example/lock/thread_test.o"
+	@echo "... thread_example/lock/thread_test.i"
+	@echo "... thread_example/lock/thread_test.s"
+	@echo "... thread_example/opencv.o"
+	@echo "... thread_example/opencv.i"
+	@echo "... thread_example/opencv.s"
+>>>>>>> d3948b1... add thread test .c file.
 .PHONY : help
 
 

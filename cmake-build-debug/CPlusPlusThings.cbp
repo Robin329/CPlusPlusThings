@@ -159,52 +159,13 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
 			<Target title="1.1_invertd_Integer">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/1.1_invertd_Integer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 1.1_invertd_Integer"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="1.1_invertd_Integer/fast">
-				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/1.1_invertd_Integer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 1.1_invertd_Integer/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
+=======
 			<Target title="thread_test">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_test" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -219,14 +180,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 1.1_invertd_Integer"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_test"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="1.1_invertd_Integer/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/1.1_invertd_Integer" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="thread_test/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_test" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -241,14 +211,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 1.1_invertd_Integer/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_test/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="thread_test">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_test" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="mutex_test">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/mutex_test" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -263,14 +242,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_test"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 mutex_test"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="thread_test/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_test" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="mutex_test/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/mutex_test" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -285,14 +273,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_test/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 mutex_test/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="mutex_test">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/mutex_test" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="what_is_stl">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/what_is_stl" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -307,14 +304,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 mutex_test"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 what_is_stl"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="mutex_test/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/mutex_test" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="what_is_stl/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/what_is_stl" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -329,14 +335,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 mutex_test/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 what_is_stl/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="what_is_stl">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/what_is_stl" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="vptr1">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/vptr1" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -351,14 +366,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 what_is_stl"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 vptr1"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="what_is_stl/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/what_is_stl" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="vptr1/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/vptr1" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -373,14 +397,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 what_is_stl/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 vptr1/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="vptr1">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/vptr1" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="morevir">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/morevir" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -395,14 +428,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 vptr1"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 morevir"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="vptr1/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/vptr1" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="morevir/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/morevir" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -417,14 +459,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 vptr1/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 morevir/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="morevir">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/morevir" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="static">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -439,14 +490,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 morevir"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="morevir/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/morevir" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="static/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -461,14 +521,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 morevir/fast"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="static">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="genA">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -483,14 +552,23 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static"/>
+=======
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA"/>
+>>>>>>> d3948b1... add thread test .c file.
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+<<<<<<< HEAD
+			<Target title="static/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/static" prefix_auto="0" extension_auto="0"/>
+=======
 			<Target title="genA/fast">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -505,6 +583,69 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 static/fast"/>
+=======
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA/fast"/>
+>>>>>>> d3948b1... add thread test .c file.
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+<<<<<<< HEAD
+			<Target title="genA">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+=======
+			<Target title="opencv">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/opencv" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+<<<<<<< HEAD
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA"/>
+=======
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 opencv"/>
+>>>>>>> d3948b1... add thread test .c file.
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+<<<<<<< HEAD
+			<Target title="genA/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/genA" prefix_auto="0" extension_auto="0"/>
+=======
+			<Target title="opencv/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/opencv" prefix_auto="0" extension_auto="0"/>
+>>>>>>> d3948b1... add thread test .c file.
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 genA/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -549,6 +690,8 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
+=======
+>>>>>>> d3948b1... add thread test .c file.
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 opencv/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -865,6 +1008,53 @@
 			</Target>
 			<Target title="initializer">
 				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/initializer" prefix_auto="0" extension_auto="0"/>
+<<<<<<< HEAD
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 initializer"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="initializer/fast">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/initializer" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 initializer/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assert">
+				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/assert" prefix_auto="0" extension_auto="0"/>
+=======
+>>>>>>> d3948b1... add thread test .c file.
 				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -946,50 +1136,6 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 assert/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="thread_param">
-				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_param" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_param"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="thread_param/fast">
-				<Option output="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/thread_param" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/local/Cellar/opencv/4.5.1_3/include/opencv4"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 thread_param/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -1838,6 +1984,7 @@
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/english/basic_content/vptr_vtable/vptr1.cpp">
 			<Option target="vptr1"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/leetcode/1.1_invertd_Integer.cpp">
 			<Option target="1.1_invertd_Integer"/>
 		</Unit>
@@ -1847,21 +1994,27 @@
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/src_analysis/stl/stl_src/stl_map.cpp">
 			<Option target="stl_map"/>
 		</Unit>
+=======
+>>>>>>> d3948b1... add thread test .c file.
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/src_analysis/stl/stl_src/what_is_stl.cpp">
 			<Option target="what_is_stl"/>
 			<Option target="abstract"/>
 		</Unit>
+<<<<<<< HEAD
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_cpp.cpp">
 			<Option target="mutex_cpp"/>
 		</Unit>
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_cpp.h">
 			<Option target="mutex_cpp"/>
 		</Unit>
+=======
+>>>>>>> d3948b1... add thread test .c file.
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_demo.c">
 			<Option target="mutex_demo"/>
 		</Unit>
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_demo.h">
 			<Option target="mutex_demo"/>
+<<<<<<< HEAD
 		</Unit>
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/mutex_try_lock.cpp">
 			<Option target="mutex_try_lock"/>
@@ -1871,6 +2024,15 @@
 		</Unit>
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_param.cpp">
 			<Option target="thread_param"/>
+=======
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c">
+			<Option target="thread_test"/>
+			<Option target="mutex_test"/>
+		</Unit>
+		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp">
+			<Option target="opencv"/>
+>>>>>>> d3948b1... add thread test .c file.
 		</Unit>
 		<Unit filename="/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c">
 			<Option target="thread_test"/>

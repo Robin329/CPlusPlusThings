@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+<<<<<<< HEAD
   "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c" "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o"
+=======
+  "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c" "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o"
+>>>>>>> d3948b1... add thread test .c file.
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

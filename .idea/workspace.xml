@@ -14,7 +14,10 @@
       <config projectName="CPlusPlusThings" targetName="decltype" />
       <config projectName="CPlusPlusThings" targetName="const_file2" />
       <config projectName="CPlusPlusThings" targetName="main" />
+<<<<<<< HEAD
       <config projectName="CPlusPlusThings" targetName="thread_param" />
+=======
+>>>>>>> d3948b1... add thread test .c file.
       <config projectName="CPlusPlusThings" targetName="what_is_stl" />
       <config projectName="CPlusPlusThings" targetName="vptr1" />
       <config projectName="CPlusPlusThings" targetName="const_function" />
@@ -29,7 +32,10 @@
       <config projectName="CPlusPlusThings" targetName="abstract" />
       <config projectName="CPlusPlusThings" targetName="c++_examp" />
       <config projectName="CPlusPlusThings" targetName="mutex_demo" />
+<<<<<<< HEAD
       <config projectName="CPlusPlusThings" targetName="stl_map" />
+=======
+>>>>>>> d3948b1... add thread test .c file.
       <config projectName="CPlusPlusThings" targetName="classic_practice" />
       <config projectName="CPlusPlusThings" targetName="c_examp" />
       <config projectName="CPlusPlusThings" targetName="1.1_invertd_Integer" />
@@ -53,6 +59,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c880975-40f1-4c3c-ad87-1d7e09812d21" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/leetcode/1.1_invertd_Integer.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/leetcode/1_Inverted_bits.cpp" afterDir="false" />
@@ -60,11 +67,24 @@
       <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_cpp.cpp" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_cpp.h" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_try_lock.cpp" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src_analysis/stl/stl_src/what_is_stl.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_demo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_demo.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_demo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/mutex_demo.h.gch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/thread_test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/lock/thread_test.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/thread/simple_thread.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/thread_example/thread/thread_param.cpp" afterDir="false" />
+>>>>>>> d3948b1... add thread test .c file.
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assert.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assert.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c++_examp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c++_examp.dir/progress.make" afterDir="false" />
@@ -81,10 +101,45 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/genA.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/genA.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ignore_assert.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ignore_assert.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/initializer.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/initializer.dir/progress.make" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/abstract.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assert.dir/basic_content/assert/assert.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assert.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/assert.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c++_examp.dir/basic_content/c_poly/c++_examp.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c++_examp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c++_examp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_examp.dir/basic_content/c_poly/c_examp.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_examp.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/c_examp.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/classic_practice.dir/basic_content/enum/classic_practice.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/classic_practice.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/classic_practice.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition1.dir/basic_content/const/funciton_const/condition2/condition1.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition1.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition1.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition3.dir/basic_content/const/funciton_const/condition2/condition3.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition3.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/condition3.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_file2.dir/basic_content/const/extern_const/const_file2.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_file2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_file2.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_function.dir/basic_content/const/const_function.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_function.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_function.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_num.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/const_num.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/decltype.dir/basic_content/decltype/decltype.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/decltype.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/decltype.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/derived_full.dir/basic_content/abstract/derived_full.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/derived_full.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/derived_full.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/file2.dir/basic_content/const/extern_const/file2.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/file2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/file2.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/genA.dir/english/basic_content/sizeof/genA.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/genA.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/genA.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ignore_assert.dir/basic_content/assert/ignore_assert.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ignore_assert.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ignore_assert.dir/progress.make" afterDir="false" />
+>>>>>>> d3948b1... add thread test .c file.
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts1.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts1.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts2.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts4.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts4.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts5.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/interesting_facts5.dir/progress.make" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/learn.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/learn.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/morevir.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/morevir.dir/progress.make" afterDir="false" />
@@ -95,9 +150,23 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/mutex_test.dir/progress.make" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/learn.dir/basic_content/bit/learn.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/learn.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/learn.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/basic_content/const/class_const/overload_example/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/morevir.dir/english/basic_content/sizeof/morevir.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/morevir.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/morevir.dir/progress.make" afterDir="false" />
+>>>>>>> d3948b1... add thread test .c file.
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/opencv.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/opencv.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/opencv.dir/thread_example/opencv.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pure_virtual.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pure_virtual.dir/progress.make" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/simple_thread.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/simple_thread.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/static.dir/english/basic_content/sizeof/static.cpp.o" beforeDir="false" />
+>>>>>>> d3948b1... add thread test .c file.
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/static.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/static.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/test.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/CXX.includecache" afterDir="false" />
@@ -108,6 +177,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/progress.make" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_test.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_test.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_test.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/thread_test.dir/DependInfo.cmake" afterDir="false" />
@@ -129,6 +199,37 @@
       <change beforePath="$PROJECT_DIR$/thread_example/lock/thread_test" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/thread_example/lock/thread_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/thread_example/thread/thread_test.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/thread_example/thread/thread_param.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/thread_example/thread/thread_param.cpp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/virinhe.dir/english/basic_content/sizeof/virinhe.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/virinhe.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/virinhe.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/vptr1.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/vptr1.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CPlusPlusThings.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CPlusPlusThings.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/assert" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/c++_examp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/c_examp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/classic_practice" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/condition1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/condition3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/const_file2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/const_function" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/decltype" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/derived_full" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/file2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/genA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ignore_assert" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/learn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/morevir" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/virinhe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/vptr1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/codingStyleIdioms/1_classInitializers/initializer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/codingStyleIdioms/1_classInitializers/initializer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thread_example/simple_thread.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/thread_example/thread_param.cpp" beforeDir="false" />
+>>>>>>> d3948b1... add thread test .c file.
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,16 +277,27 @@
     <property name="cf.first.check.clang-format" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+<<<<<<< HEAD
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/thread_example/thread" />
+=======
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+>>>>>>> d3948b1... add thread test .c file.
       <recent name="$PROJECT_DIR$/thread_example" />
       <recent name="$PROJECT_DIR$/basic_content/const/funciton_const/condition2" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="CMake Application.1.1_invertd_Integer">
+=======
+  <component name="RunManager" selected="CMake Application.thread_test">
+>>>>>>> d3948b1... add thread test .c file.
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
@@ -316,6 +428,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="mutex_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="mutex_cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="mutex_cpp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -337,16 +450,28 @@
       </method>
     </configuration>
     <configuration name="opencv" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="opencv" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="opencv">
+=======
+    <configuration name="mutex_demo" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="mutex_demo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="mutex_demo">
+>>>>>>> d3948b1... add thread test .c file.
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="mutex_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="mutex_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="mutex_test">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+<<<<<<< HEAD
+    <configuration name="static" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="static">
+=======
+    <configuration name="opencv" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="opencv" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="opencv">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="pure_virtual" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="pure_virtual" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="pure_virtual">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="static" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="static" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="static">
+>>>>>>> d3948b1... add thread test .c file.
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -361,7 +486,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="thread_param" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="thread_param" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="thread_param">
+    <configuration name="thread_test" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CPlusPlusThings" TARGET_NAME="thread_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CPlusPlusThings" RUN_TARGET_NAME="thread_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -417,16 +542,24 @@
       <item itemvalue="CMake Application.learn" />
       <item itemvalue="CMake Application.main" />
       <item itemvalue="CMake Application.morevir" />
+<<<<<<< HEAD
       <item itemvalue="CMake Application.mutex_cpp" />
       <item itemvalue="CMake Application.mutex_demo" />
       <item itemvalue="CMake Application.mutex_test" />
       <item itemvalue="CMake Application.mutex_try_lock" />
+=======
+      <item itemvalue="CMake Application.mutex_demo" />
+      <item itemvalue="CMake Application.mutex_test" />
+>>>>>>> d3948b1... add thread test .c file.
       <item itemvalue="CMake Application.opencv" />
       <item itemvalue="CMake Application.pure_virtual" />
       <item itemvalue="CMake Application.static" />
       <item itemvalue="CMake Application.stl_map" />
       <item itemvalue="CMake Application.test" />
+<<<<<<< HEAD
       <item itemvalue="CMake Application.thread_param" />
+=======
+>>>>>>> d3948b1... add thread test .c file.
       <item itemvalue="CMake Application.thread_test" />
       <item itemvalue="CMake Application.virinhe" />
       <item itemvalue="CMake Application.vptr1" />
@@ -455,7 +588,11 @@
       <workItem from="1616902980883" duration="97000" />
       <workItem from="1616903647913" duration="4814000" />
       <workItem from="1616949422130" duration="5677000" />
+<<<<<<< HEAD
       <workItem from="1617291215688" duration="17534000" />
+=======
+      <workItem from="1617291215688" duration="4590000" />
+>>>>>>> d3948b1... add thread test .c file.
     </task>
     <task id="LOCAL-00001" summary="update cmake file.">
       <created>1613748349275</created>
@@ -591,22 +728,38 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/thread_example/thread/thread_test.c</url>
+=======
+          <url>file://$PROJECT_DIR$/thread_example/lock/thread_test.c</url>
+>>>>>>> d3948b1... add thread test .c file.
           <line>16</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/thread_example/thread/thread_test.c</url>
+=======
+          <url>file://$PROJECT_DIR$/thread_example/lock/thread_test.c</url>
+>>>>>>> d3948b1... add thread test .c file.
           <line>39</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/thread_example/thread/thread_test.c</url>
+=======
+          <url>file://$PROJECT_DIR$/thread_example/lock/thread_test.c</url>
+>>>>>>> d3948b1... add thread test .c file.
           <line>58</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+<<<<<<< HEAD
           <url>file://$PROJECT_DIR$/thread_example/thread/thread_test.c</url>
+=======
+          <url>file://$PROJECT_DIR$/thread_example/lock/thread_test.c</url>
+>>>>>>> d3948b1... add thread test .c file.
           <line>43</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>

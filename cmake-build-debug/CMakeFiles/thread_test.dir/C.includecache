@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c
+=======
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c
+>>>>>>> d3948b1... add thread test .c file.
 pthread.h
 -
 stdio.h
@@ -15,6 +19,11 @@ unistd.h
 -
 assert.h
 -
+<<<<<<< HEAD
+=======
+stdio.h
+-
+>>>>>>> d3948b1... add thread test .c file.
 stdbool.h
 -
 

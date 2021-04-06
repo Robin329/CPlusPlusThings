@@ -52,10 +52,13 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+<<<<<<< HEAD
   "CMakeFiles/1_Inverted_bits.dir/DependInfo.cmake"
   "CMakeFiles/mutex_try_lock.dir/DependInfo.cmake"
   "CMakeFiles/stl_map.dir/DependInfo.cmake"
   "CMakeFiles/1.1_invertd_Integer.dir/DependInfo.cmake"
+=======
+>>>>>>> d3948b1... add thread test .c file.
   "CMakeFiles/thread_test.dir/DependInfo.cmake"
   "CMakeFiles/mutex_test.dir/DependInfo.cmake"
   "CMakeFiles/what_is_stl.dir/DependInfo.cmake"
@@ -73,7 +76,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/c_examp.dir/DependInfo.cmake"
   "CMakeFiles/initializer.dir/DependInfo.cmake"
   "CMakeFiles/assert.dir/DependInfo.cmake"
-  "CMakeFiles/thread_param.dir/DependInfo.cmake"
   "CMakeFiles/interesting_facts2.dir/DependInfo.cmake"
   "CMakeFiles/virinhe.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
