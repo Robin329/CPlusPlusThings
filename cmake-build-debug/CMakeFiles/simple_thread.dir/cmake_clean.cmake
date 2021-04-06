@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o"
-  "CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o"
+  "CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o"
   "simple_thread"
   "simple_thread.pdb"
 )

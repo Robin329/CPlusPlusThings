@@ -131,7 +131,45 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-<<<<<<< HEAD
+# Target rules for targets named 4.dynamic_array
+
+# Build rule for target.
+4.dynamic_array: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 4.dynamic_array
+.PHONY : 4.dynamic_array
+
+# fast build rule for target.
+4.dynamic_array/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4.dynamic_array.dir/build.make CMakeFiles/4.dynamic_array.dir/build
+.PHONY : 4.dynamic_array/fast
+
+#=============================================================================
+# Target rules for targets named 5.Dictionary_insertion_and_lookup
+
+# Build rule for target.
+5.Dictionary_insertion_and_lookup: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 5.Dictionary_insertion_and_lookup
+.PHONY : 5.Dictionary_insertion_and_lookup
+
+# fast build rule for target.
+5.Dictionary_insertion_and_lookup/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5.Dictionary_insertion_and_lookup.dir/build.make CMakeFiles/5.Dictionary_insertion_and_lookup.dir/build
+.PHONY : 5.Dictionary_insertion_and_lookup/fast
+
+#=============================================================================
+# Target rules for targets named conversion_func
+
+# Build rule for target.
+conversion_func: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 conversion_func
+.PHONY : conversion_func
+
+# fast build rule for target.
+conversion_func/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conversion_func.dir/build.make CMakeFiles/conversion_func.dir/build
+.PHONY : conversion_func/fast
+
+#=============================================================================
 # Target rules for targets named 1_Inverted_bits
 
 # Build rule for target.
@@ -184,8 +222,6 @@ stl_map/fast:
 .PHONY : 1.1_invertd_Integer/fast
 
 #=============================================================================
-=======
->>>>>>> d3948b1... add thread test .c file.
 # Target rules for targets named thread_test
 
 # Build rule for target.
@@ -251,6 +287,19 @@ morevir/fast:
 .PHONY : morevir/fast
 
 #=============================================================================
+# Target rules for targets named 3.function_template
+
+# Build rule for target.
+3.function_template: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 3.function_template
+.PHONY : 3.function_template
+
+# fast build rule for target.
+3.function_template/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3.function_template.dir/build.make CMakeFiles/3.function_template.dir/build
+.PHONY : 3.function_template/fast
+
+#=============================================================================
 # Target rules for targets named static
 
 # Build rule for target.
@@ -262,6 +311,19 @@ static: cmake_check_build_system
 static/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/static.dir/build.make CMakeFiles/static.dir/build
 .PHONY : static/fast
+
+#=============================================================================
+# Target rules for targets named 2.bracket_overload
+
+# Build rule for target.
+2.bracket_overload: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2.bracket_overload
+.PHONY : 2.bracket_overload
+
+# fast build rule for target.
+2.bracket_overload/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2.bracket_overload.dir/build.make CMakeFiles/2.bracket_overload.dir/build
+.PHONY : 2.bracket_overload/fast
 
 #=============================================================================
 # Target rules for targets named genA
@@ -407,6 +469,19 @@ assert/fast:
 .PHONY : assert/fast
 
 #=============================================================================
+# Target rules for targets named thread_param
+
+# Build rule for target.
+thread_param: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 thread_param
+.PHONY : thread_param
+
+# fast build rule for target.
+thread_param/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_param.dir/build.make CMakeFiles/thread_param.dir/build
+.PHONY : thread_param/fast
+
+#=============================================================================
 # Target rules for targets named interesting_facts2
 
 # Build rule for target.
@@ -496,6 +571,19 @@ learn: cmake_check_build_system
 learn/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/learn.dir/build.make CMakeFiles/learn.dir/build
 .PHONY : learn/fast
+
+#=============================================================================
+# Target rules for targets named simple_thread
+
+# Build rule for target.
+simple_thread: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_thread
+.PHONY : simple_thread
+
+# fast build rule for target.
+simple_thread/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/build
+.PHONY : simple_thread/fast
 
 #=============================================================================
 # Target rules for targets named decltype
@@ -1383,7 +1471,6 @@ english/basic_content/vptr_vtable/vptr1.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vptr1.dir/build.make CMakeFiles/vptr1.dir/english/basic_content/vptr_vtable/vptr1.cpp.s
 .PHONY : english/basic_content/vptr_vtable/vptr1.cpp.s
 
-<<<<<<< HEAD
 leetcode/1.1_invertd_Integer.o: leetcode/1.1_invertd_Integer.cpp.o
 
 .PHONY : leetcode/1.1_invertd_Integer.o
@@ -1437,6 +1524,141 @@ leetcode/1_Inverted_bits.s: leetcode/1_Inverted_bits.cpp.s
 leetcode/1_Inverted_bits.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/1_Inverted_bits.dir/build.make CMakeFiles/1_Inverted_bits.dir/leetcode/1_Inverted_bits.cpp.s
 .PHONY : leetcode/1_Inverted_bits.cpp.s
+
+practical_exercises/key_exercises/1.conversion_func.o: practical_exercises/key_exercises/1.conversion_func.cpp.o
+
+.PHONY : practical_exercises/key_exercises/1.conversion_func.o
+
+# target to build an object file
+practical_exercises/key_exercises/1.conversion_func.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conversion_func.dir/build.make CMakeFiles/conversion_func.dir/practical_exercises/key_exercises/1.conversion_func.cpp.o
+.PHONY : practical_exercises/key_exercises/1.conversion_func.cpp.o
+
+practical_exercises/key_exercises/1.conversion_func.i: practical_exercises/key_exercises/1.conversion_func.cpp.i
+
+.PHONY : practical_exercises/key_exercises/1.conversion_func.i
+
+# target to preprocess a source file
+practical_exercises/key_exercises/1.conversion_func.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conversion_func.dir/build.make CMakeFiles/conversion_func.dir/practical_exercises/key_exercises/1.conversion_func.cpp.i
+.PHONY : practical_exercises/key_exercises/1.conversion_func.cpp.i
+
+practical_exercises/key_exercises/1.conversion_func.s: practical_exercises/key_exercises/1.conversion_func.cpp.s
+
+.PHONY : practical_exercises/key_exercises/1.conversion_func.s
+
+# target to generate assembly for a file
+practical_exercises/key_exercises/1.conversion_func.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conversion_func.dir/build.make CMakeFiles/conversion_func.dir/practical_exercises/key_exercises/1.conversion_func.cpp.s
+.PHONY : practical_exercises/key_exercises/1.conversion_func.cpp.s
+
+practical_exercises/key_exercises/2.bracket_overload.o: practical_exercises/key_exercises/2.bracket_overload.cpp.o
+
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.o
+
+# target to build an object file
+practical_exercises/key_exercises/2.bracket_overload.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2.bracket_overload.dir/build.make CMakeFiles/2.bracket_overload.dir/practical_exercises/key_exercises/2.bracket_overload.cpp.o
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.cpp.o
+
+practical_exercises/key_exercises/2.bracket_overload.i: practical_exercises/key_exercises/2.bracket_overload.cpp.i
+
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.i
+
+# target to preprocess a source file
+practical_exercises/key_exercises/2.bracket_overload.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2.bracket_overload.dir/build.make CMakeFiles/2.bracket_overload.dir/practical_exercises/key_exercises/2.bracket_overload.cpp.i
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.cpp.i
+
+practical_exercises/key_exercises/2.bracket_overload.s: practical_exercises/key_exercises/2.bracket_overload.cpp.s
+
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.s
+
+# target to generate assembly for a file
+practical_exercises/key_exercises/2.bracket_overload.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2.bracket_overload.dir/build.make CMakeFiles/2.bracket_overload.dir/practical_exercises/key_exercises/2.bracket_overload.cpp.s
+.PHONY : practical_exercises/key_exercises/2.bracket_overload.cpp.s
+
+practical_exercises/key_exercises/3.function_template.o: practical_exercises/key_exercises/3.function_template.cpp.o
+
+.PHONY : practical_exercises/key_exercises/3.function_template.o
+
+# target to build an object file
+practical_exercises/key_exercises/3.function_template.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3.function_template.dir/build.make CMakeFiles/3.function_template.dir/practical_exercises/key_exercises/3.function_template.cpp.o
+.PHONY : practical_exercises/key_exercises/3.function_template.cpp.o
+
+practical_exercises/key_exercises/3.function_template.i: practical_exercises/key_exercises/3.function_template.cpp.i
+
+.PHONY : practical_exercises/key_exercises/3.function_template.i
+
+# target to preprocess a source file
+practical_exercises/key_exercises/3.function_template.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3.function_template.dir/build.make CMakeFiles/3.function_template.dir/practical_exercises/key_exercises/3.function_template.cpp.i
+.PHONY : practical_exercises/key_exercises/3.function_template.cpp.i
+
+practical_exercises/key_exercises/3.function_template.s: practical_exercises/key_exercises/3.function_template.cpp.s
+
+.PHONY : practical_exercises/key_exercises/3.function_template.s
+
+# target to generate assembly for a file
+practical_exercises/key_exercises/3.function_template.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/3.function_template.dir/build.make CMakeFiles/3.function_template.dir/practical_exercises/key_exercises/3.function_template.cpp.s
+.PHONY : practical_exercises/key_exercises/3.function_template.cpp.s
+
+practical_exercises/key_exercises/4.dynamic_array.o: practical_exercises/key_exercises/4.dynamic_array.cpp.o
+
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.o
+
+# target to build an object file
+practical_exercises/key_exercises/4.dynamic_array.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4.dynamic_array.dir/build.make CMakeFiles/4.dynamic_array.dir/practical_exercises/key_exercises/4.dynamic_array.cpp.o
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.cpp.o
+
+practical_exercises/key_exercises/4.dynamic_array.i: practical_exercises/key_exercises/4.dynamic_array.cpp.i
+
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.i
+
+# target to preprocess a source file
+practical_exercises/key_exercises/4.dynamic_array.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4.dynamic_array.dir/build.make CMakeFiles/4.dynamic_array.dir/practical_exercises/key_exercises/4.dynamic_array.cpp.i
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.cpp.i
+
+practical_exercises/key_exercises/4.dynamic_array.s: practical_exercises/key_exercises/4.dynamic_array.cpp.s
+
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.s
+
+# target to generate assembly for a file
+practical_exercises/key_exercises/4.dynamic_array.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/4.dynamic_array.dir/build.make CMakeFiles/4.dynamic_array.dir/practical_exercises/key_exercises/4.dynamic_array.cpp.s
+.PHONY : practical_exercises/key_exercises/4.dynamic_array.cpp.s
+
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.o: practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.o
+
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.o
+
+# target to build an object file
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5.Dictionary_insertion_and_lookup.dir/build.make CMakeFiles/5.Dictionary_insertion_and_lookup.dir/practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.o
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.o
+
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.i: practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.i
+
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.i
+
+# target to preprocess a source file
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5.Dictionary_insertion_and_lookup.dir/build.make CMakeFiles/5.Dictionary_insertion_and_lookup.dir/practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.i
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.i
+
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.s: practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.s
+
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.s
+
+# target to generate assembly for a file
+practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/5.Dictionary_insertion_and_lookup.dir/build.make CMakeFiles/5.Dictionary_insertion_and_lookup.dir/practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.s
+.PHONY : practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp.s
 
 src_analysis/stl/stl_src/stl_map.o: src_analysis/stl/stl_src/stl_map.cpp.o
 
@@ -1577,49 +1799,58 @@ thread_example/lock/mutex_try_lock.cpp.s:
 .PHONY : thread_example/lock/mutex_try_lock.cpp.s
 
 thread_example/opencv.o: thread_example/opencv.cpp.o
-=======
-src_analysis/stl/stl_src/what_is_stl.o: src_analysis/stl/stl_src/what_is_stl.cpp.o
->>>>>>> d3948b1... add thread test .c file.
 
-.PHONY : src_analysis/stl/stl_src/what_is_stl.o
+.PHONY : thread_example/opencv.o
 
 # target to build an object file
-<<<<<<< HEAD
 thread_example/opencv.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.o
 .PHONY : thread_example/opencv.cpp.o
-=======
-src_analysis/stl/stl_src/what_is_stl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.o
-.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.o
->>>>>>> d3948b1... add thread test .c file.
 
-src_analysis/stl/stl_src/what_is_stl.i: src_analysis/stl/stl_src/what_is_stl.cpp.i
+thread_example/opencv.i: thread_example/opencv.cpp.i
 
-.PHONY : src_analysis/stl/stl_src/what_is_stl.i
+.PHONY : thread_example/opencv.i
 
 # target to preprocess a source file
-<<<<<<< HEAD
 thread_example/opencv.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.i
 .PHONY : thread_example/opencv.cpp.i
-=======
-src_analysis/stl/stl_src/what_is_stl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.i
-.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.i
->>>>>>> d3948b1... add thread test .c file.
 
-src_analysis/stl/stl_src/what_is_stl.s: src_analysis/stl/stl_src/what_is_stl.cpp.s
+thread_example/opencv.s: thread_example/opencv.cpp.s
 
-.PHONY : src_analysis/stl/stl_src/what_is_stl.s
+.PHONY : thread_example/opencv.s
 
 # target to generate assembly for a file
-<<<<<<< HEAD
 thread_example/opencv.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.s
 .PHONY : thread_example/opencv.cpp.s
+
+thread_example/thread/simple_thread.o: thread_example/thread/simple_thread.cpp.o
+
+.PHONY : thread_example/thread/simple_thread.o
+
+# target to build an object file
+thread_example/thread/simple_thread.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o
+.PHONY : thread_example/thread/simple_thread.cpp.o
+
+thread_example/thread/simple_thread.i: thread_example/thread/simple_thread.cpp.i
+
+.PHONY : thread_example/thread/simple_thread.i
+
+# target to preprocess a source file
+thread_example/thread/simple_thread.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.i
+.PHONY : thread_example/thread/simple_thread.cpp.i
+
+thread_example/thread/simple_thread.s: thread_example/thread/simple_thread.cpp.s
+
+.PHONY : thread_example/thread/simple_thread.s
+
+# target to generate assembly for a file
+thread_example/thread/simple_thread.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_thread.dir/build.make CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.s
+.PHONY : thread_example/thread/simple_thread.cpp.s
 
 thread_example/thread/thread_param.o: thread_example/thread/thread_param.cpp.o
 
@@ -1677,96 +1908,6 @@ thread_example/thread/thread_test.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.s
 .PHONY : thread_example/thread/thread_test.c.s
-=======
-src_analysis/stl/stl_src/what_is_stl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/what_is_stl.dir/build.make CMakeFiles/what_is_stl.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/abstract.dir/build.make CMakeFiles/abstract.dir/src_analysis/stl/stl_src/what_is_stl.cpp.s
-.PHONY : src_analysis/stl/stl_src/what_is_stl.cpp.s
-
-thread_example/lock/mutex_demo.o: thread_example/lock/mutex_demo.c.o
-
-.PHONY : thread_example/lock/mutex_demo.o
-
-# target to build an object file
-thread_example/lock/mutex_demo.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.o
-.PHONY : thread_example/lock/mutex_demo.c.o
-
-thread_example/lock/mutex_demo.i: thread_example/lock/mutex_demo.c.i
-
-.PHONY : thread_example/lock/mutex_demo.i
-
-# target to preprocess a source file
-thread_example/lock/mutex_demo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.i
-.PHONY : thread_example/lock/mutex_demo.c.i
-
-thread_example/lock/mutex_demo.s: thread_example/lock/mutex_demo.c.s
-
-.PHONY : thread_example/lock/mutex_demo.s
-
-# target to generate assembly for a file
-thread_example/lock/mutex_demo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_demo.dir/build.make CMakeFiles/mutex_demo.dir/thread_example/lock/mutex_demo.c.s
-.PHONY : thread_example/lock/mutex_demo.c.s
-
-thread_example/lock/thread_test.o: thread_example/lock/thread_test.c.o
-
-.PHONY : thread_example/lock/thread_test.o
-
-# target to build an object file
-thread_example/lock/thread_test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o
-.PHONY : thread_example/lock/thread_test.c.o
-
-thread_example/lock/thread_test.i: thread_example/lock/thread_test.c.i
-
-.PHONY : thread_example/lock/thread_test.i
-
-# target to preprocess a source file
-thread_example/lock/thread_test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i
-.PHONY : thread_example/lock/thread_test.c.i
-
-thread_example/lock/thread_test.s: thread_example/lock/thread_test.c.s
-
-.PHONY : thread_example/lock/thread_test.s
-
-# target to generate assembly for a file
-thread_example/lock/thread_test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/thread_test.dir/build.make CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mutex_test.dir/build.make CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s
-.PHONY : thread_example/lock/thread_test.c.s
-
-thread_example/opencv.o: thread_example/opencv.cpp.o
-
-.PHONY : thread_example/opencv.o
-
-# target to build an object file
-thread_example/opencv.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.o
-.PHONY : thread_example/opencv.cpp.o
-
-thread_example/opencv.i: thread_example/opencv.cpp.i
-
-.PHONY : thread_example/opencv.i
-
-# target to preprocess a source file
-thread_example/opencv.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.i
-.PHONY : thread_example/opencv.cpp.i
-
-thread_example/opencv.s: thread_example/opencv.cpp.s
-
-.PHONY : thread_example/opencv.s
-
-# target to generate assembly for a file
-thread_example/opencv.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/opencv.dir/build.make CMakeFiles/opencv.dir/thread_example/opencv.cpp.s
-.PHONY : thread_example/opencv.cpp.s
->>>>>>> d3948b1... add thread test .c file.
 
 # Help Target
 help:
@@ -1778,6 +1919,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 1.1_invertd_Integer"
 	@echo "... 1_Inverted_bits"
+	@echo "... 2.bracket_overload"
+	@echo "... 3.function_template"
+	@echo "... 4.dynamic_array"
+	@echo "... 5.Dictionary_insertion_and_lookup"
 	@echo "... abstract"
 	@echo "... assert"
 	@echo "... c++_examp"
@@ -1788,6 +1933,7 @@ help:
 	@echo "... const_file2"
 	@echo "... const_function"
 	@echo "... const_num"
+	@echo "... conversion_func"
 	@echo "... decltype"
 	@echo "... derived_full"
 	@echo "... file2"
@@ -1801,24 +1947,17 @@ help:
 	@echo "... learn"
 	@echo "... main"
 	@echo "... morevir"
-<<<<<<< HEAD
 	@echo "... mutex_cpp"
 	@echo "... mutex_demo"
 	@echo "... mutex_test"
 	@echo "... mutex_try_lock"
-=======
-	@echo "... mutex_demo"
-	@echo "... mutex_test"
->>>>>>> d3948b1... add thread test .c file.
 	@echo "... opencv"
 	@echo "... pure_virtual"
+	@echo "... simple_thread"
 	@echo "... static"
 	@echo "... stl_map"
 	@echo "... test"
-<<<<<<< HEAD
 	@echo "... thread_param"
-=======
->>>>>>> d3948b1... add thread test .c file.
 	@echo "... thread_test"
 	@echo "... virinhe"
 	@echo "... vptr1"
@@ -1907,13 +2046,27 @@ help:
 	@echo "... english/basic_content/vptr_vtable/vptr1.o"
 	@echo "... english/basic_content/vptr_vtable/vptr1.i"
 	@echo "... english/basic_content/vptr_vtable/vptr1.s"
-<<<<<<< HEAD
 	@echo "... leetcode/1.1_invertd_Integer.o"
 	@echo "... leetcode/1.1_invertd_Integer.i"
 	@echo "... leetcode/1.1_invertd_Integer.s"
 	@echo "... leetcode/1_Inverted_bits.o"
 	@echo "... leetcode/1_Inverted_bits.i"
 	@echo "... leetcode/1_Inverted_bits.s"
+	@echo "... practical_exercises/key_exercises/1.conversion_func.o"
+	@echo "... practical_exercises/key_exercises/1.conversion_func.i"
+	@echo "... practical_exercises/key_exercises/1.conversion_func.s"
+	@echo "... practical_exercises/key_exercises/2.bracket_overload.o"
+	@echo "... practical_exercises/key_exercises/2.bracket_overload.i"
+	@echo "... practical_exercises/key_exercises/2.bracket_overload.s"
+	@echo "... practical_exercises/key_exercises/3.function_template.o"
+	@echo "... practical_exercises/key_exercises/3.function_template.i"
+	@echo "... practical_exercises/key_exercises/3.function_template.s"
+	@echo "... practical_exercises/key_exercises/4.dynamic_array.o"
+	@echo "... practical_exercises/key_exercises/4.dynamic_array.i"
+	@echo "... practical_exercises/key_exercises/4.dynamic_array.s"
+	@echo "... practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.o"
+	@echo "... practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.i"
+	@echo "... practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.s"
 	@echo "... src_analysis/stl/stl_src/stl_map.o"
 	@echo "... src_analysis/stl/stl_src/stl_map.i"
 	@echo "... src_analysis/stl/stl_src/stl_map.s"
@@ -1932,26 +2085,15 @@ help:
 	@echo "... thread_example/opencv.o"
 	@echo "... thread_example/opencv.i"
 	@echo "... thread_example/opencv.s"
+	@echo "... thread_example/thread/simple_thread.o"
+	@echo "... thread_example/thread/simple_thread.i"
+	@echo "... thread_example/thread/simple_thread.s"
 	@echo "... thread_example/thread/thread_param.o"
 	@echo "... thread_example/thread/thread_param.i"
 	@echo "... thread_example/thread/thread_param.s"
 	@echo "... thread_example/thread/thread_test.o"
 	@echo "... thread_example/thread/thread_test.i"
 	@echo "... thread_example/thread/thread_test.s"
-=======
-	@echo "... src_analysis/stl/stl_src/what_is_stl.o"
-	@echo "... src_analysis/stl/stl_src/what_is_stl.i"
-	@echo "... src_analysis/stl/stl_src/what_is_stl.s"
-	@echo "... thread_example/lock/mutex_demo.o"
-	@echo "... thread_example/lock/mutex_demo.i"
-	@echo "... thread_example/lock/mutex_demo.s"
-	@echo "... thread_example/lock/thread_test.o"
-	@echo "... thread_example/lock/thread_test.i"
-	@echo "... thread_example/lock/thread_test.s"
-	@echo "... thread_example/opencv.o"
-	@echo "... thread_example/opencv.i"
-	@echo "... thread_example/opencv.s"
->>>>>>> d3948b1... add thread test .c file.
 .PHONY : help
 
 

@@ -88,16 +88,16 @@ File And Stream
 
 #### 2.2 Practical Exercises
 
-├── [Square brackets overload .cpp](./practical_exercises/key_exercises/中括号重载.cpp)
+├── [Square brackets overload .cpp](practical_exercises/key_exercises/2.bracket_overload.cpp)
 ├── [Clock++operator overloading.cpp](./practical_exercises/key_exercises/时钟++运算符重载.cpp)
 ├── [Mandatory conversion of operator overloading.cpp](./practical_exercises/key_exercises/运算符重载之强制转换.cpp)
 └── [Clock with overloaded parenthesis.cpp](./practical_exercises/key_exercises/重载圆括号的时钟.cpp)
 
-├── [Template of Function.cpp](./practical_exercises/key_exercises/函数模板.cpp)
+├── [Template of Function.cpp](practical_exercises/key_exercises/3.function_template.cpp)
 
-├── [Dynamic array.cpp](./practical_exercises/key_exercises/动态数组.cpp)
+├── [Dynamic array.cpp](practical_exercises/key_exercises/4.dynamic_array.cpp)
 
-├── [Dictionary insertion and search.cpp](./practical_exercises/key_exercises/字典插入与查找.cpp)
+├── [Dictionary insertion and search.cpp](practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
 
 ├── [Catch Exception.cpp](./practical_exercises/key_exercises/异常捕获.cpp)
 

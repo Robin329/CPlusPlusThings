@@ -77,45 +77,30 @@ include CMakeFiles/simple_thread.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/simple_thread.dir/flags.make
 
-CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o: CMakeFiles/simple_thread.dir/flags.make
-CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o: ../thread_example/simple_thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/simple_thread.cpp
+CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o: CMakeFiles/simple_thread.dir/flags.make
+CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o: ../thread_example/thread/simple_thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/simple_thread.cpp
 
-CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/simple_thread.cpp > CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.i
+CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/simple_thread.cpp > CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.i
 
-CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/simple_thread.cpp -o CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.s
-
-CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o: CMakeFiles/simple_thread.dir/flags.make
-CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o: ../thread_example/opencv.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp
-
-CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp > CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.i
-
-CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp -o CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.s
+CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/simple_thread.cpp -o CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.s
 
 # Object files for target simple_thread
 simple_thread_OBJECTS = \
-"CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o" \
-"CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o"
+"CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o"
 
 # External object files for target simple_thread
 simple_thread_EXTERNAL_OBJECTS =
 
-simple_thread: CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o
-simple_thread: CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o
+simple_thread: CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o
 simple_thread: CMakeFiles/simple_thread.dir/build.make
 simple_thread: CMakeFiles/simple_thread.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable simple_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable simple_thread"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simple_thread.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

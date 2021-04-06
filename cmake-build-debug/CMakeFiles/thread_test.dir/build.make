@@ -77,7 +77,6 @@ include CMakeFiles/thread_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/thread_test.dir/flags.make
 
-<<<<<<< HEAD
 CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o: CMakeFiles/thread_test.dir/flags.make
 CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o: ../thread_example/thread/thread_test.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o"
@@ -94,33 +93,11 @@ CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.s: cmake_force
 # Object files for target thread_test
 thread_test_OBJECTS = \
 "CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o"
-=======
-CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o: CMakeFiles/thread_test.dir/flags.make
-CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o: ../thread_example/lock/thread_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o   -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c
-
-CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c > CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.i
-
-CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c -o CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.s
-
-# Object files for target thread_test
-thread_test_OBJECTS = \
-"CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o"
->>>>>>> d3948b1... add thread test .c file.
 
 # External object files for target thread_test
 thread_test_EXTERNAL_OBJECTS =
 
-<<<<<<< HEAD
 thread_test: CMakeFiles/thread_test.dir/thread_example/thread/thread_test.c.o
-=======
-thread_test: CMakeFiles/thread_test.dir/thread_example/lock/thread_test.c.o
->>>>>>> d3948b1... add thread test .c file.
 thread_test: CMakeFiles/thread_test.dir/build.make
 thread_test: CMakeFiles/thread_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable thread_test"

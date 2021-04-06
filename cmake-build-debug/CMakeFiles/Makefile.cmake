@@ -52,19 +52,21 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-<<<<<<< HEAD
+  "CMakeFiles/4.dynamic_array.dir/DependInfo.cmake"
+  "CMakeFiles/5.Dictionary_insertion_and_lookup.dir/DependInfo.cmake"
+  "CMakeFiles/conversion_func.dir/DependInfo.cmake"
   "CMakeFiles/1_Inverted_bits.dir/DependInfo.cmake"
   "CMakeFiles/mutex_try_lock.dir/DependInfo.cmake"
   "CMakeFiles/stl_map.dir/DependInfo.cmake"
   "CMakeFiles/1.1_invertd_Integer.dir/DependInfo.cmake"
-=======
->>>>>>> d3948b1... add thread test .c file.
   "CMakeFiles/thread_test.dir/DependInfo.cmake"
   "CMakeFiles/mutex_test.dir/DependInfo.cmake"
   "CMakeFiles/what_is_stl.dir/DependInfo.cmake"
   "CMakeFiles/vptr1.dir/DependInfo.cmake"
   "CMakeFiles/morevir.dir/DependInfo.cmake"
+  "CMakeFiles/3.function_template.dir/DependInfo.cmake"
   "CMakeFiles/static.dir/DependInfo.cmake"
+  "CMakeFiles/2.bracket_overload.dir/DependInfo.cmake"
   "CMakeFiles/genA.dir/DependInfo.cmake"
   "CMakeFiles/opencv.dir/DependInfo.cmake"
   "CMakeFiles/classic_practice.dir/DependInfo.cmake"
@@ -76,6 +78,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/c_examp.dir/DependInfo.cmake"
   "CMakeFiles/initializer.dir/DependInfo.cmake"
   "CMakeFiles/assert.dir/DependInfo.cmake"
+  "CMakeFiles/thread_param.dir/DependInfo.cmake"
   "CMakeFiles/interesting_facts2.dir/DependInfo.cmake"
   "CMakeFiles/virinhe.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
@@ -83,6 +86,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/mutex_cpp.dir/DependInfo.cmake"
   "CMakeFiles/interesting_facts5.dir/DependInfo.cmake"
   "CMakeFiles/learn.dir/DependInfo.cmake"
+  "CMakeFiles/simple_thread.dir/DependInfo.cmake"
   "CMakeFiles/decltype.dir/DependInfo.cmake"
   "CMakeFiles/condition3.dir/DependInfo.cmake"
   "CMakeFiles/pure_virtual.dir/DependInfo.cmake"

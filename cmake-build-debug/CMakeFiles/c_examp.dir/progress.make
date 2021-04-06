@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-CMAKE_PROGRESS_1 = 12
-CMAKE_PROGRESS_2 = 13
-=======
-CMAKE_PROGRESS_1 = 8
-CMAKE_PROGRESS_2 = 9
->>>>>>> d3948b1... add thread test .c file.
+CMAKE_PROGRESS_1 = 20
+CMAKE_PROGRESS_2 = 21
 

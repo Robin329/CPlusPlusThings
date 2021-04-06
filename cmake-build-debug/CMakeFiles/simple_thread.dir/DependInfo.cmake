@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/opencv.cpp" "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/simple_thread.dir/thread_example/opencv.cpp.o"
-  "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/simple_thread.cpp" "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/simple_thread.dir/thread_example/simple_thread.cpp.o"
+  "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/simple_thread.cpp" "/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles/simple_thread.dir/thread_example/thread/simple_thread.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
