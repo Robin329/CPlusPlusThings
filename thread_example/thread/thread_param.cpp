@@ -31,6 +31,9 @@ void thread_func2(const char * name) {
 
 int main()
 {
+    struct timespec now;
+    clock_gettime(_CLOCK_REALTIME, &now);
+    printf("[%s:%d] NOW time is %llu\n", __FUNCTION__, __LINE__, chrono::seconds(now.tv_sec)+chrono::nanoseconds(now.tv_nsec));
     thread threadObj1(thread_func1, 5);
     cout << "<--- threadObj1 ID:[" << threadObj1.get_id() <<"] -->" <<endl;
     thread threadObj2(thread_func2, "robin.jiang");

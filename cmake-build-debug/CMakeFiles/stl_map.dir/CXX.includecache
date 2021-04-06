@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/src_analysis/stl/stl_src/stl_map.cpp
+iostream
+-
+map
+-
+

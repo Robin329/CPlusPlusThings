@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <assert.h>
-#include <stdio.h>
 #include <stdbool.h>
 
 static void *func1(void *arg);
@@ -57,6 +56,7 @@ int main(int argc, char **argv) {
     pthread_attr_setdetachstate(&thread_attr, PTHREAD_CREATE_JOINABLE);
 
     printf("[%s:%d] pthread START\n", __FUNCTION__, __LINE__);
+    
     int ret = pthread_create(&thread_id, &thread_attr, func1, NULL);
     if (ret) {
         printf("creat thread FAILED\n");

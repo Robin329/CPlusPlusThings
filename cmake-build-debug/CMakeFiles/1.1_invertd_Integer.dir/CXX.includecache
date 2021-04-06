@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/leetcode/1.1_invertd_Integer.cpp
+iostream
+-
+

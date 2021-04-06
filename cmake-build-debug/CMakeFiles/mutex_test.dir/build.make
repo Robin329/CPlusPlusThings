@@ -77,27 +77,27 @@ include CMakeFiles/mutex_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mutex_test.dir/flags.make
 
-CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o: CMakeFiles/mutex_test.dir/flags.make
-CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o: ../thread_example/lock/thread_test.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o   -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c
+CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o: CMakeFiles/mutex_test.dir/flags.make
+CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o: ../thread_example/thread/thread_test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o   -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c
 
-CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c > CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.i
+CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c > CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.i
 
-CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/lock/thread_test.c -o CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.s
+CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_test.c -o CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.s
 
 # Object files for target mutex_test
 mutex_test_OBJECTS = \
-"CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o"
+"CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o"
 
 # External object files for target mutex_test
 mutex_test_EXTERNAL_OBJECTS =
 
-mutex_test: CMakeFiles/mutex_test.dir/thread_example/lock/thread_test.c.o
+mutex_test: CMakeFiles/mutex_test.dir/thread_example/thread/thread_test.c.o
 mutex_test: CMakeFiles/mutex_test.dir/build.make
 mutex_test: CMakeFiles/mutex_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable mutex_test"

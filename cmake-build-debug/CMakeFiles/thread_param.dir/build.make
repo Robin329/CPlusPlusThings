@@ -77,27 +77,27 @@ include CMakeFiles/thread_param.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/thread_param.dir/flags.make
 
-CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o: CMakeFiles/thread_param.dir/flags.make
-CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o: ../thread_example/thread_param.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread_param.cpp
+CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o: CMakeFiles/thread_param.dir/flags.make
+CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o: ../thread_example/thread/thread_param.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o -c /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_param.cpp
 
-CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread_param.cpp > CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.i
+CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_param.cpp > CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.i
 
-CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread_param.cpp -o CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.s
+CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/thread_example/thread/thread_param.cpp -o CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.s
 
 # Object files for target thread_param
 thread_param_OBJECTS = \
-"CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o"
+"CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o"
 
 # External object files for target thread_param
 thread_param_EXTERNAL_OBJECTS =
 
-thread_param: CMakeFiles/thread_param.dir/thread_example/thread_param.cpp.o
+thread_param: CMakeFiles/thread_param.dir/thread_example/thread/thread_param.cpp.o
 thread_param: CMakeFiles/thread_param.dir/build.make
 thread_param: CMakeFiles/thread_param.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable thread_param"
