@@ -49,4 +49,5 @@ add_executable(1_Inverted_bits leetcode/1_Inverted_bits.cpp)
 add_executable(1.1_invertd_Integer leetcode/1.1_invertd_Integer.cpp)
 add_executable(mutex_test thread_example/lock/thread_test.c)
 add_executable(thread_test thread_example/lock/thread_test.c)
->>>>>>> d3948b1... add thread test .c file.
+
+add_executable(conversion_func practical_exercises/key_exercises/conversion_func.cpp)

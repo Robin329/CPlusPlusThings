@@ -5,10 +5,6 @@
 #ifndef CPLUSPLUSTHINGS_MUTEX_CPP_H
 #define CPLUSPLUSTHINGS_MUTEX_CPP_H
 
+class mutex_cpp {};
 
-class mutex_cpp {
-
-};
-
-
-#endif //CPLUSPLUSTHINGS_MUTEX_CPP_H
+#endif // CPLUSPLUSTHINGS_MUTEX_CPP_H
