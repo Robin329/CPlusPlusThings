@@ -1,5 +1,5 @@
 com.sh
-cmake-build-debug/
+cmake-build-debug/*
 *.make
 *.cmake
 

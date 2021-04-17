@@ -42,7 +42,7 @@ add_executable(initializer codingStyleIdioms/1_classInitializers/initializer.cpp
 add_executable(mutex_test thread_example/thread/thread_test.c)
 add_executable(thread_test thread_example/thread/thread_test.c)
 add_executable(thread_param thread_example/thread/thread_param.cpp)
-add_executable(stl_map src_analysis/stl/stl_src/stl_map.cpp)
+add_executable(stl_map src_analysis/stl/stl_src/Containers/stl_map.cpp)
 add_executable(mutex_cpp thread_example/lock/mutex_cpp.cpp)
 add_executable(mutex_try_lock thread_example/lock/mutex_try_lock.cpp)
 add_executable(1_Inverted_bits leetcode/1_Inverted_bits.cpp)
@@ -54,3 +54,4 @@ add_executable(2.bracket_overload practical_exercises/key_exercises/2.bracket_ov
 add_executable(3.function_template practical_exercises/key_exercises/3.function_template.cpp)
 add_executable(4.dynamic_array practical_exercises/key_exercises/4.dynamic_array.cpp)
 add_executable(5.Dictionary_insertion_and_lookup practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
+add_executable(unique_ptr src_analysis/stl/stl_src/Ptr/unique_ptr.cpp)
