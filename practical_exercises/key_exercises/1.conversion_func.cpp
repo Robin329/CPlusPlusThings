@@ -5,6 +5,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <time.h>
 
 using namespace std;
 
@@ -49,6 +50,9 @@ private:
   const std::string &m_from;
 };
 int main(int argc, char **argv) {
+  struct timespec start_ts, end_ts;
+  bool check_time = true;
+  clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &start_ts);
   fraction f(3, 5);
   cout << "f is " << f << endl;
   cout << "(double(3.0 / 5)) is " << (double(3.0 / 5)) << endl;
@@ -62,5 +66,10 @@ int main(int argc, char **argv) {
   fraction_explicit f2(3, 5);
   fraction_explicit e = f2 + f1;
   cout << "e is " << endl;
+  clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_ts);
+  int64_t cost = (end_ts.tv_sec - start_ts.tv_sec) * 1000000 +
+                       (end_ts.tv_nsec - start_ts.tv_nsec) / 1000;
+  cout << "cost:" << cost <<endl;
+  
   return 0;
 }

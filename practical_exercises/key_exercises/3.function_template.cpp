@@ -23,6 +23,6 @@ int main(int argc, char const *argv[]) {
   cout << compareMax("asda", "qweq") << endl;
 
   cout << strcmp(s1, s2) << endl;
-  system("sleep 1");
+  system("df -h");
   return 0;
 }

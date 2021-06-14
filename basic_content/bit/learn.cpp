@@ -10,11 +10,26 @@ struct stuff {
 };
 
 float f[5] = {2.0, 3.2};
+double d[3]{1.2, 3.1, 4.3};
 
 void foo(void) {
   float f1[5] = {3.0, 4.3};
-  cout << f1[0] << " "
+  char name[10];
+  cout << "f1[]" << f1[0] << " "
        << " " << f1[1] << " " << f1[3] << endl;
+  cin >> name;
+  cout << "name is :" << name << endl;
+}
+
+void func(void) {
+  string str[]{"robin", "hello", "world"};
+  char buf[32];
+  for (int i = 0; i < sizeof(str) / sizeof(string); i++) {
+    //    cout << " sizeof buf :" << sizeof(buf) << endl;
+    memset(buf, 0, sizeof(buf));
+    snprintf(buf, 32, "%-5s", &str[i]);
+    cout << "buf is :" << buf << endl;
+  }
 }
 
 int main() {
@@ -24,8 +39,9 @@ int main() {
   cout << s.field3 << endl;
   cout << sizeof(s) << endl;
 
-  cout << f[1] << " " << f[3] << endl;
+  cout << "f[]:" << f[1] << " " << f[3] << endl;
 
   foo();
+  func();
   return 0;
 }
