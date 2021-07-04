@@ -26,7 +26,7 @@ add_executable(condition1 basic_content/const/funciton_const/condition2/conditio
 
 add_executable(const_function basic_content/const/const_function.cpp)
 add_executable(const_num basic_content/const/const_num.cpp)
-add_executable(decltype basic_content/decltype/decltype.cpp)
+add_executable(decltype c++2.0/c++11/decltype.cpp)
 add_executable(learn basic_content/bit/learn.cpp)
 add_executable(classic_practice basic_content/enum/classic_practice.cpp)
 add_executable(opencv thread_example/opencv.cpp)
@@ -63,7 +63,4 @@ add_executable(7.3.4_array practical_exercises/primer_cpp_6/7.3.4_array.cpp)
 add_executable(forward learn_class/modern_C++_30/reference/forward.cpp)
 add_executable(producer_consumer design_pattern/producer_consumer/producer_consumer.cpp)
 target_link_libraries(producer_consumer -lpthread)
-add_executable(thread /usr/include/c++/9/thread)
-add_executable(CMakeLists CMakeLists.txt)
-add_executable(CMakeCache cmake-build-debug/CMakeCache.txt)
-add_executable(cmake_install cmake-build-debug/cmake_install.cmake)
+
