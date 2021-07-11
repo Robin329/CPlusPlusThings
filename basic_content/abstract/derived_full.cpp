@@ -6,8 +6,8 @@
  * @date 2019-07-20
  */
 
-#include <dbg.h>
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -50,21 +50,5 @@ public:
 int main(void) {
   Derived d;
   d.fun();
-  dbg("Derived::ll");
-  std::string message = "hello";
-  dbg(message); // [example.cpp:15 (main)] message = "hello" (std::string)
-
-  const int a = 2;
-  const int b = dbg(3 * a) + 1; // [example.cpp:18 (main)] 3 * a = 6 (int)
-
-  std::vector<int> numbers{b, 13, 42};
-  dbg(numbers); // [example.cpp:21 (main)] numbers = {7, 13, 42} (size: 3)
-                // (std::vector<int>)
-
-  dbg("this line is executed"); // [example.cpp:23 (main)] this line is executed
-
-  Derived::factorial(4);
-  cout << d.factorial(5) << endl;
-  cout << d.getX(3) << endl;
   return 0;
 }
