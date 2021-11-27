@@ -1,0 +1,6 @@
+com.sh
+cmake-build-debug/*
+*.make
+*.cmake
+*~
+

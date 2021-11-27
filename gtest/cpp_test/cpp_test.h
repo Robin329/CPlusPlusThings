@@ -1,0 +1,8 @@
+//
+// Created by renbin jiang on 2021/8/20.
+//
+
+#ifndef GOOGLETEST_DISTRIBUTION_CPP_TEST_H
+#define GOOGLETEST_DISTRIBUTION_CPP_TEST_H
+
+#endif // GOOGLETEST_DISTRIBUTION_CPP_TEST_H
