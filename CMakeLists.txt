@@ -92,6 +92,8 @@ add_executable(factorial learn_class/modern_C++_30/compilercompute/factorial.cpp
 #c++2.0/c++11
 ################################
 add_executable(decltype c++2.0/c++11/decltype.cpp)
+add_executable(lambda_demo c++2.0/c++11/lambda.cpp)
+target_link_libraries(lambda_demo gtest gtest_main pthread)
 
 
 ################################
