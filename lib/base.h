@@ -26,18 +26,36 @@ typedef struct pointCoordinate {
     int S16X;
     int S16Y;
 } point;
+static int dbgLevel = 0;
+#define DBG_LEVEL dbgLevel
+#define COOR_T_LOG(tag, var, line, column)                                               \
+    {                                                                                    \
+        if (DBG_LEVEL) {                                                                 \
+            do {                                                                         \
+                printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                     \
+                for (int i = 0; i < column; i++) {                                       \
+                    for (int j = 0; j < line; j++) {                                     \
+                        printf(" [%d][%d] = (%d, %d) ", j, i, var[j][i].x, var[j][i].y); \
+                    }                                                                    \
+                    printf("\n");                                                        \
+                }                                                                        \
+            } while (0);                                                                 \
+        }                                                                                \
+    }
 
-#define COOR_T_LOG(tag, var, line, column)                                            \
-    {                                                                                 \
-        do {                                                                          \
-            printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                      \
-            for (int i = 0; i < column; i++) {                                        \
-                for (int j = 0; j < line; j++) {                                      \
-                    printf("\t[%d][%d] = (%d, %d) ", j, i, var[j][i].x, var[j][i].y); \
-                }                                                                     \
-                printf("\n");                                                         \
-            }                                                                         \
-        } while (0);                                                                  \
+#define POINT_LOG(tag, var, line, column)                                                      \
+    {                                                                                          \
+        if (DBG_LEVEL) {                                                                       \
+            do {                                                                               \
+                printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                           \
+                for (int i = 0; i < line; i++) {                                               \
+                    for (int j = 0; j < column; j++) {                                         \
+                        printf(" [%d][%d] = (%d, %d) ", i, j, var[i][j].S16X, var[i][j].S16Y); \
+                    }                                                                          \
+                    printf("\n");                                                              \
+                }                                                                              \
+            } while (0);                                                                       \
+        }                                                                                      \
     }
 
 class Timer {

@@ -84,8 +84,15 @@ TEST(DemoTest, Bool) {
 int main() {
     RUN_ALL_TESTS();
     coor coo[5][3];
+    point point_t[2][2];
+    point point9[3][3];
     memset(&coo[0][0], 0, sizeof coo);
+    memset(point_t, 0, sizeof point_t);
+    memset(point9, 0, sizeof point9);
+    dbgLevel = 1;
     COOR_T_LOG("coo", coo, 5, 3);
+    POINT_LOG("point_t", point_t, 2, 2);
+    POINT_LOG("point9", point9, 3, 3);
 #if 0
     char *sPtr;
     const char *s = "hello";
