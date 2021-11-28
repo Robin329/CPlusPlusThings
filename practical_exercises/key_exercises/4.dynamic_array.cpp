@@ -5,11 +5,13 @@
 #include <iostream>
 #include <thread>
 
-class Timer {
+#include "base.h"
+using namespace base;
+class Timer1 {
 public:
 #define MILLION 1000000
 
-    Timer(std::string tag) {
+    Timer1(std::string tag) {
         std::cout << "Timer()" << std::endl;
 
         m_tag = tag;
@@ -21,12 +23,13 @@ public:
         clock_gettime(CLOCK_MONOTONIC, &tpStart);
     }
 
-    ~Timer() {
+    ~Timer1() {
         std::cout << "~Timer()" << std::endl;
 
         clock_gettime(CLOCK_MONOTONIC, &tpEnd);
 
-        timeCost = MILLION * (tpEnd.tv_sec - tpStart.tv_sec) + (tpEnd.tv_nsec - tpStart.tv_nsec) / 1000;
+        timeCost = MILLION * (tpEnd.tv_sec - tpStart.tv_sec) +
+                (tpEnd.tv_nsec - tpStart.tv_nsec) / 1000;
 
         std::cout << "[" << m_tag << "] cost: " << timeCost << " mS" << std::endl;
 
@@ -50,7 +53,7 @@ struct timespec tpEnd1;
 float timeCost1;
 
 bool demo(void) {
-    Timer t("");
+    Timer1 t("aaa");
     std::cout << "demo" << std::endl;
     clock_gettime(CLOCK_MONOTONIC, &tpStart1);
     for (int i; i < 1000000; i++) {
@@ -59,7 +62,8 @@ bool demo(void) {
         //        std::cout << "enter demo delay func" <<std::endl;
     }
     clock_gettime(CLOCK_MONOTONIC, &tpEnd1);
-    timeCost1 = MILLION * (tpEnd1.tv_sec - tpStart1.tv_sec) + (tpEnd1.tv_nsec - tpStart1.tv_nsec) / 1000;
+    timeCost1 = MILLION * (tpEnd1.tv_sec - tpStart1.tv_sec) +
+            (tpEnd1.tv_nsec - tpStart1.tv_nsec) / 1000;
 
     std::cout << "["
               << "] cost: " << timeCost1 << " mS" << std::endl;
@@ -79,6 +83,9 @@ TEST(DemoTest, Bool) {
 
 int main() {
     RUN_ALL_TESTS();
+    coor coo[5][3];
+    memset(&coo[0][0], 0, sizeof coo);
+    COOR_T_LOG("coo", coo, 5, 3);
 #if 0
     char *sPtr;
     const char *s = "hello";

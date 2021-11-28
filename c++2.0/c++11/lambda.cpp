@@ -75,9 +75,47 @@ int lambda3_test() {
     }
     return 0;
 }
+int sum() {
+    using namespace std;
+
+    // Assign the lambda expression that adds two numbers to an auto variable.
+    auto f1 = [](int x, int y) { return x + y; };
+
+    cout << "f1(2, 3) = " << f1(2, 3) << endl;
+
+    // Assign the same lambda expression to a function object.
+    function<int(int, int)> f2 = [](int x, int y) { return x + y; };
+
+    cout << "f2(3, 4) = " << f2(3, 4) << endl;
+    return 0;
+}
+
+//以下示例显示一个通过值捕获局部变量 i 并通过引用捕获局部变量 j 的 lambda 表达式。 由于 lambda
+//表达式通过值捕获 i，因此在程序后面部分中重新指派 i 不影响该表达式的结果。 但是，由于 lambda
+//表达式通过引用捕获 j，因此重新指派 j 会影响该表达式的结果。
+int sum1() {
+    using namespace std;
+
+    int i = 3;
+    int j = 5;
+
+    // The following lambda expression captures i by value and
+    // j by reference.
+    function<int(void)> f = [i, &j] { return i + j; };
+
+    // Change the values of i and j.
+    i = 22;
+    j = 44;
+
+    // Call f and print its result.
+    cout << f() << endl;
+    return 0;
+}
 TEST(FOREACH, FOREACH_demo) {
     EXPECT_EQ(0, for_each_test());
     float x = 2.33333;
     EXPECT_TRUE(abssort(&x, 4));
     EXPECT_EQ(0, lambda3_test());
+    EXPECT_EQ(0, sum());
+    EXPECT_EQ(0, sum1());
 }

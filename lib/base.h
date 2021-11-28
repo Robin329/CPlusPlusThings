@@ -16,6 +16,30 @@
 
 using namespace std;
 namespace base {
+
+typedef struct coor_t {
+    float x;
+    float y;
+} coor;
+
+typedef struct pointCoordinate {
+    int S16X;
+    int S16Y;
+} point;
+
+#define COOR_T_LOG(tag, var, line, column)                                          \
+    {                                                                               \
+        do {                                                                        \
+            printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                    \
+            for (int i = 0; i < column; i++) {                                      \
+                printf("\n");                                                       \
+                for (int j = 0; j < line; j++) {                                    \
+                    printf("[%d][%d] = (%d, %d) ", j, i, var[j][i].x, var[j][i].y); \
+                }                                                                   \
+            }                                                                       \
+        } while (0);                                                                \
+    }
+
 class Timer {
 public:
     class boot_clock {
