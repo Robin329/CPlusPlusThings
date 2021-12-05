@@ -32,11 +32,13 @@ void FunA() {
 void FunB() {
     printf("%s\n", "Derived B::fun()");
 }
+#define ABCD 123
 
+#define name2str(name) (#name)
 int main() {
     A a;
     B b;
-
+    printf("-----> %s\n", name2str(ABCD));
     a._f = FunA;
     b._b._f = FunB;
 

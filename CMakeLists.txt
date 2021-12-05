@@ -122,6 +122,7 @@ add_executable(conversion_func practical_exercises/key_exercises/1.conversion_fu
 add_executable(2.bracket_overload practical_exercises/key_exercises/2.bracket_overload.cpp)
 add_executable(3.function_template practical_exercises/key_exercises/3.function_template.cpp)
 add_executable(4.dynamic_array practical_exercises/key_exercises/4.dynamic_array.cpp)
+add_executable(7.load_settings practical_exercises/key_exercises/7.load_setting.cpp practical_exercises/key_exercises/382_reg.h)
 target_link_libraries(4.dynamic_array gtest gtest_main pthread)
 add_executable(5.Dictionary_insertion_and_lookup practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
 add_executable(unique_ptr src_analysis/stl/stl_src/Ptr/unique_ptr.cpp)
