@@ -6,7 +6,11 @@
 #include <string.h>
 #include <time.h>
 
+#include <fstream>
+#include <iomanip>
 #include <iostream>
+#include <regex>
+#include <vector>
 
 #include "382_reg.h"
 using namespace std;
@@ -48,14 +52,12 @@ void save_setting_c788(const char *fname) {
         memset(splitStr, 0, len + 1);
         memcpy(splitStr, ichips788Reg[i].regName, len);
         pch = strtok_r(splitStr, "_", &pSaveStr);
-        cout << "pch = " << pch << endl;
         if (strncmp(bank, pch, strlen(pch))) {
             fprintf(fp, "\n; %s%s registers\n", ichips, pch);
             memcpy(bank, pch, strlen(pch));
         }
         while (pch != NULL) {
             pch = strtok_r(NULL, "_", &pSaveStr);
-            cout << __LINE__ << "pch = " << pch << endl;
             fprintf(fp, "%s%s\t%s\t%xh", ichips, bank, pSaveStr, ichips788Reg[i].addr);
             break;
         }
@@ -69,6 +71,99 @@ void save_setting_c788(const char *fname) {
         }
     }
     fclose(fp);
+}
+
+std::vector<std::string> split(const std::string &in, const std::string &delim) {
+    std::vector<std::string> ret;
+    try {
+        std::regex re{delim};
+        return std::vector<std::string>{std::sregex_token_iterator(in.begin(), in.end(), re, -1),
+                                        std::sregex_token_iterator()};
+    } catch (const std::exception &e) {
+        std::cout << "error:" << e.what() << std::endl;
+    }
+
+    return ret;
+}
+
+void save_setting_c382_cpp(const char *fname) {
+    std::ofstream outFile;
+    char ichips[] = "C382";
+    time_t t;
+    struct tm *p;
+    time(&t);
+    p = localtime(&t); //取得当地时间
+    outFile.open(fname, ios::out | ios::trunc);
+    outFile << "; REGISTER DUMP FILE time:" << setw(2) << (1900 + p->tm_year) << ":" << setw(2)
+            << (1 + p->tm_mon) << ":" << setw(2) << p->tm_mday << "\tdate::" << p->tm_hour
+            << setw(2) << p->tm_min << ":" << setw(2) << p->tm_sec << ":" << std::endl;
+    outFile << "MCLK_FREQ\t32000000\n"
+               "PO1CLK_FREQ\t27000000\n"
+               "Sleep\t12\r\n\n";
+    std::vector<ichipsReg> lines;
+    int len = sizeof(ichips382Reg) / sizeof(ichipsReg);
+    for (int i = 0; i < len; i++) {
+        lines.push_back(ichips382Reg[i]);
+    }
+    for (int i = 0; i < len; i++) {
+        std::vector<std::string> fieldsPre = split(lines.at(i).regName, "_");
+        std::vector<std::string> fieldsPost =
+                split(lines.at((i < (len - 1)) ? (i + 1) : i).regName, "_");
+        if (i == 0) {
+            outFile << "\n;\t" << ichips << fieldsPre.at(0) << "\tregisters\n";
+        }
+        outFile << ichips << fieldsPre.at(0) << "\t" << fieldsPre.at(2) << "\t" << lines.at(i).addr
+                << "h"; // lines.at(i).addr --> read reg value
+        if (std::string(lines.at(i).regFunc).compare("") != 0) {
+            outFile << " ;; " << lines.at(i).regFunc << "\n";
+        } else {
+            outFile << "\n";
+        }
+        if (lines.at(i).isSleep != 0) {
+            outFile << "Sleep " << lines.at(i).isSleep << "\n\n";
+        }
+        if (fieldsPre.at(0) != fieldsPost.at(0)) {
+            //            cout << "fieldsPost=" << fieldsPost.at(0) << endl;
+            outFile << "\n;\t" << ichips << fieldsPost.at(0) << "\tregisters\n";
+        }
+    }
+    outFile.close();
+}
+
+void load_setting_c382_cpp(const char *fname) {
+    std::ifstream inFile;
+    char ichips[] = "C382";
+    inFile.open(fname);
+    if (!inFile.is_open()) {
+        std::cout << "open " << fname << " failed!" << std::endl;
+        return;
+    }
+    std::string line;
+    int idx_line = 0;
+    while (std::getline(inFile, line)) {
+        idx_line++;
+        if (idx_line < 5) continue;
+        if (!line.compare("\n") || !line.compare("")) continue;
+
+        if (!line.find(';')) continue;
+        if (!line.find("Sleep", 0)) {
+            cout << "need sleep " << split(line, " ").at(1) << "ms" << endl;
+            continue;
+        }
+
+        std::vector<std::string> fields = split(line, "\t");
+        //        cout << "fields0=" << fields.at(0) << " field1=" << fields.at(1) << endl;
+        string name(fields.at(0).erase(0, 4) + "_" + ichips + "_" + fields.at(1));
+        int len = sizeof(ichips382Reg) / sizeof(ichipsReg);
+        for (int i = 0; i < len; i++) {
+            if (!name.compare(ichips382Reg[i].regName)) {
+                cout << " name : " << ichips382Reg[i].regName << " addr: " << std::hex
+                     << ichips382Reg[i].addr << " value : " << ichips382Reg[i].value << endl;
+            }
+        }
+    }
+
+    inFile.close();
 }
 
 void save_setting_c382(const char *fname) {
@@ -103,12 +198,14 @@ void save_setting_c382(const char *fname) {
         pch = strtok_r(splitStr, "_", &pSaveStr);
         //        cout << "pch = " << pch << endl;
         if (strncmp(bank, pch, strlen(pch))) {
+            pch = strtok_r(NULL, "_", &pSaveStr);
             fprintf(fp, "\n;\t%s%s\tregisters\n", ichips, pch);
             memset(bank, 0, sizeof(bank));
             memcpy(bank, pch, strlen(pch));
         }
         while (pch != NULL) {
-            fprintf(fp, "%s%s\t%s\t%xh", ichips, bank, pSaveStr, ichips382Reg[i].addr);
+            fprintf(fp, "%s%s\t%s\t%xh", ichips, bank, pSaveStr,
+                    ichips382Reg[i].addr); // ichips382Reg[i].addr --> read reg value
             break;
         }
         if (strcmp(ichips382Reg[i].regFunc, "")) {
@@ -149,10 +246,8 @@ void load_setting_c788(const char *fname) {
         if (strstr(buf, "MCLK_FREQ") || strstr(buf, "PO1CLK_FREQ")) continue;
         if (strstr(buf, dlm_cmt)) continue;
         if (strspn(buf, "\t\n") == strlen(buf)) continue;
-        printf("buf 1 = %s\n", buf);
         if ((token = strtok_r(buf, dlm_enter, &ctx)) != nullptr) {
             if (!strcmp(token, "Sleep")) {
-                printf("Sleep %dms\n", atoi(ctx));
                 continue;
             }
             while (token != nullptr) {
@@ -163,7 +258,6 @@ void load_setting_c788(const char *fname) {
                     sscanf(token, "%xh", &reg_value);
                     index = 0;
                     snprintf(reg, sizeof(reg), "%s_%s_%s", bank + 4, ichips, reg_name);
-                    printf("reg --> %s %x\n", reg, reg_value);
                     memset(bank, 0, sizeof bank);
                     memset(reg_name, 0, sizeof reg_name);
 
@@ -178,8 +272,8 @@ void load_setting_c788(const char *fname) {
                 }
             }
         }
-        printf("buf 2 = %s\n", buf);
     }
+    fclose(fp);
 }
 
 void load_setting_c382(const char *fname) {
@@ -208,10 +302,8 @@ void load_setting_c382(const char *fname) {
         if (strstr(buf, "MCLK_FREQ") || strstr(buf, "PO1CLK_FREQ")) continue;
         if (strstr(buf, dlm_cmt)) continue;
         if (strspn(buf, "\t\n") == strlen(buf)) continue;
-        printf("buf 1 = %s\n", buf);
         if ((token = strtok_r(buf, dlm_enter, &ctx)) != nullptr) {
             if (!strcmp(token, "Sleep")) {
-                printf("Sleep %dms\n", atoi(ctx));
                 continue;
             }
             while (token != nullptr) {
@@ -222,10 +314,8 @@ void load_setting_c382(const char *fname) {
                     sscanf(token, "%xh", &reg_value);
                     index = 0;
                     snprintf(reg, sizeof(reg), "%s_%s_%s", bank + 4, ichips, reg_name);
-                    printf("reg --> %s %x\n", reg, reg_value);
                     memset(bank, 0, sizeof bank);
                     memset(reg_name, 0, sizeof reg_name);
-
                     break;
                 }
                 index++;
@@ -237,15 +327,16 @@ void load_setting_c382(const char *fname) {
                 }
             }
         }
-        printf("buf 2 = %s\n", buf);
     }
+    fclose(fp);
 }
 int main() {
-    const char *fname_c382 = "dump_file_c382.txt";
+    const char *fname_c382 = "dump_file_c382_cpp.txt";
     const char *fname_c788 = "dump_file_c788.txt";
-    save_setting_c382(fname_c382);
-    save_setting_c788(fname_c788);
+    load_setting_c382_cpp(fname_c382);
+    save_setting_c382_cpp(fname_c382);
+    //    save_setting_c788(fname_c788);
 
-    load_setting_c788(fname_c788);
-    load_setting_c382(fname_c382);
+    //    load_setting_c788(fname_c788);
+    //    load_setting_c382(fname_c382);
 }

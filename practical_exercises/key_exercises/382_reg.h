@@ -1532,10 +1532,10 @@ const ichipsReg ichips382Reg[] = {
         {"BN_C382_RGBNK", 0xFF0001, 0, "", 0},
         {"BN_C382_ACCMODE", 0xFF0101, 0, "", 0},
         {"BN_C382_MCT1", 0xFF0201, 0, "", 0},
-        {"BN_C382_MCT2", 0xFF0301, 0, "", 0},
+        {"BN_C382_MCT2", 0xFF0301, 0, "asdf", 0},
         {"BN_C382_DDR3CT", 0xFF0401, 0, "", 0},
-        {"BN_C382_PSQCT", 0xFF0501, 0, "", 0},
-        {"BN_C382_MEMCT", 0xFF0601, 0, "", 0},
-        {"BN_C382_RSTCT", 0xFF0701, 0, "", 0},
+        {"BN_C382_PSQCT", 0xFF0501, 0, "qwerqw", 4},
+        {"BN_C382_MEMCT", 0xFF0601, 0, "qwerqwer", 0},
+        {"BN_C382_RSTCT", 0xFF0701, 0, "asdfasf", 0},
 };
 #endif

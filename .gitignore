@@ -3,4 +3,7 @@ cmake-build-debug/*
 *.make
 *.cmake
 *~
-
+**/.DS_Store
+*.DS_Store
+**/*.dSYM/*
+practical_exercises/.*
