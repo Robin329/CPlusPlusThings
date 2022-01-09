@@ -132,7 +132,7 @@ https://light-city.club/sc/
 
 ├── [字典插入与查找.cpp](practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
 
-├── [异常捕获.cpp](practical_exercises/key_exercises/Exception_catch.cpp)
+├── [异常捕获.cpp](practical_exercises/key_exercises/12.Exception_catch.cpp)
 
 ├── [类模板之栈.cpp](./practical_exercises/key_exercises/类模板之栈.cpp)
 

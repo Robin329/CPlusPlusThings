@@ -12,7 +12,7 @@
 #include <regex>
 #include <vector>
 
-#include "382_reg.h"
+#include "7.382_reg.h"
 using namespace std;
 const ichipsReg ichips788Reg[] = {
         {"B0_C788_CLKCTRL", 0x000801, 0, "", 0},    {"B0_C788_CMOSOUTSETUP", 0x000901, 0, "", 0},

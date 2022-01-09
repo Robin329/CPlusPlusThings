@@ -5,6 +5,7 @@ using namespace std;
 class Time {
 private:
     int hh, mm, ss;
+
 public:
     Time(int h = 0, int m = 0, int s = 0) : hh(h), mm(m), ss(s) {}
 
@@ -14,9 +15,7 @@ public:
         ss = s;
     }
 
-    void ShowTime() {
-        cout << hh << ":" << mm << ":" << ss << endl;
-    }
+    void ShowTime() { cout << hh << ":" << mm << ":" << ss << endl; }
 };
 
 int main() {

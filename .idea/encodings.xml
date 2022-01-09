@@ -5,16 +5,19 @@
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day10/文件例题/重要!!!课堂练习.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day2/掷骰子.cpp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day4/const用法/常对象与常引用.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/10.Clock++_operator_overloading.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/12.Exception_catch.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/13.Inheritance_encapsulation.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/13.Inheritance_encapsulation.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/14.Input_and_output_operator_overloading.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/14.Input_and_output_operator_overloading.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/15.Input_and_output_overload.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/16.Output_format.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/17.readwrite_files.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/18.Stack_of_class_templates.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Array of class template specialization.cpp" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Casting of operator overloading.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Clock++ operator overloading.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Inheritance_encapsulation.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Input and output operator overloading.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Input and output overload.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Output format.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/Stack of class templates.cpp" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/readwrite_files.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/8.Array_of_class_template_specialization.cpp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/9.Casting_of_operator_overloading.cpp" charset="GBK" />
     <file url="mock:///readme.md" charset="UTF-8" />
   </component>
 </project>

@@ -1,10 +1,10 @@
-#include<iostream>
-#include<cstring>
+#include <cstring>
+#include <iostream>
 
 using namespace std;
 #define MAXSIZE 5
 
-template<class T>
+template <class T>
 class Array {
 public:
     Array() {
@@ -17,12 +17,11 @@ public:
 
     void Sort();
 
-
 private:
     T array[MAXSIZE];
 };
 
-template<class T>
+template <class T>
 T &Array<T>::operator[](int i) {
     if (i < 0 || i > MAXSIZE - 1) {
         cout << "T &Array<T>::operator[]" << endl;
@@ -31,14 +30,13 @@ T &Array<T>::operator[](int i) {
     return array[i];
 }
 
-template<class T>
+template <class T>
 void Array<T>::Sort() {
     int p, j;
     for (int i = 0; i < MAXSIZE - 1; i++) {
         p = i;
         for (j = i + 1; j < MAXSIZE; j++) {
-            if (array[p] < array[j])
-                p = j;
+            if (array[p] < array[j]) p = j;
         }
         T t;
         t = array[i];
@@ -47,14 +45,13 @@ void Array<T>::Sort() {
     }
 }
 
-template<>
+template <>
 void Array<char *>::Sort() {
     int p, j;
     for (int i = 0; i < MAXSIZE - 1; i++) {
         p = i;
         for (j = i + 1; j < MAXSIZE; j++) {
-            if (strcmp(array[p], array[j]) < 0)
-                p = j;
+            if (strcmp(array[p], array[j]) < 0) p = j;
         }
         char *t = array[i];
         array[i] = array[p];
@@ -71,8 +68,7 @@ int main(int argc, char const *argv[]) {
     a1[3] = 3;
     a1[4] = 9;
     a1.Sort();
-    for (int i = 0; i < 5; i++)
-        cout << a1[i] << "\t";
+    for (int i = 0; i < 5; i++) cout << a1[i] << "\t";
     cout << endl;
     b1[0] = "x1";
     b1[1] = "ya";
@@ -80,8 +76,7 @@ int main(int argc, char const *argv[]) {
     b1[3] = "be";
     b1[4] = "bc";
     b1.Sort();
-    for (int i = 0; i < 5; i++)
-        cout << b1[i] << "\t";
+    for (int i = 0; i < 5; i++) cout << b1[i] << "\t";
     cout << endl;
     system("pause");
     return 0;

@@ -24,9 +24,13 @@ private:
 class Manager : public Employee {
 public:
     //直接调用构造方法传递，基类构造方法有参数，派生类必须通过构造方法，在初始化列表中传递参数
-    Manager(const char *name, const char *id, int week) : Employee(name, id) { WeeklySalary = week * 1000; }
+    Manager(const char *name, const char *id, int week) : Employee(name, id) {
+        WeeklySalary = week * 1000;
+    }
 
-    void display() { cout << "经理：" << getName() << "\t" << getId() << "\t" << WeeklySalary << endl; }
+    void display() {
+        cout << "经理：" << getName() << "\t" << getId() << "\t" << WeeklySalary << endl;
+    }
 
 private:
     int WeeklySalary;
@@ -38,7 +42,9 @@ public:
         workerMoney = baseMoney + x * 0.05 * profit;
     }
 
-    void display() { cout << "销售员：" << getName() << "\t" << getId() << "\t" << workerMoney << endl; }
+    void display() {
+        cout << "销售员：" << getName() << "\t" << getId() << "\t" << workerMoney << endl;
+    }
 
 private:
     float baseMoney = 800.0;
@@ -47,9 +53,13 @@ private:
 
 class HourWorker : public Employee {
 public:
-    HourWorker(const char *name, const char *id, int h) : Employee(name, id) { TotalMoney = h * hourMoney; }
+    HourWorker(const char *name, const char *id, int h) : Employee(name, id) {
+        TotalMoney = h * hourMoney;
+    }
 
-    void display() { cout << "小时工：" << getName() << "\t" << getId() << "\t" << TotalMoney << endl; }
+    void display() {
+        cout << "小时工：" << getName() << "\t" << getId() << "\t" << TotalMoney << endl;
+    }
 
 private:
     float hourMoney = 100.0;
