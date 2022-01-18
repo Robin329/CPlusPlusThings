@@ -174,8 +174,8 @@ void printMatrix(vector<vector<int>> &matrix) {
 }
 
 int main() {
-    // int a[] = { -1, 0, 1, 2, -1, 1, -4 };
-    int a[] = {-1, 1, 1, 1, -1, -1, 0, 0, 0};
+    int a[] = {-1, 0, 1, 2, -1, 1, -4, 4};
+    //    int a[] = {-1, 1, 1, 1, -1, -1, 0, 0, 0};
     vector<int> n(a, a + sizeof(a) / sizeof(int));
     vector<vector<int>> result = threeSum(n);
     printMatrix(result);

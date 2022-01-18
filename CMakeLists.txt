@@ -101,7 +101,9 @@ target_link_libraries(lambda_demo gtest gtest_main pthread)
 ################################
 add_executable(1_Inverted_bits leetcode/1_Inverted_bits.cpp)
 add_executable(1.1_invertd_Integer leetcode/1.1_invertd_Integer.cpp)
-
+add_executable(3Sum leetcode/algorithms/cpp/3Sum/3Sum.cpp)
+add_executable(3SumClosest leetcode/algorithms/cpp/3SumClosest/3SumClosest.cpp)
+add_executable(addBinary leetcode/algorithms/cpp/addBinary/addBinary.cpp)
 
 ################################
 #thread_example
