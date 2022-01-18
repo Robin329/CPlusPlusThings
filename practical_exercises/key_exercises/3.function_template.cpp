@@ -20,8 +20,8 @@ char *compareMax<char *>(char *s1, char *s2) {
 }
 
 int main(int argc, char const *argv[]) {
-    char *s1 = "b";
-    char *s2 = "b";
+    const char *s1 = "b";
+    const char *s2 = "b";
     cout << compareMax(1, 1) << endl;
     cout << compareMax(123, 12341234) << endl;
     cout << compareMax("asda", "qweq") << endl;

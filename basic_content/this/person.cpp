@@ -30,7 +30,7 @@ private:
 };
 
 int main() {
-    Person p("zhangsan", 20, Person::BOY);
+    Person p((char *)("zhangsan"), 20, Person::BOY);
     cout << p.get_age() << endl;
     //    Person p1("lisi", 1, Person::GIRL);
     //    Person p2 = p1.add_age(2);

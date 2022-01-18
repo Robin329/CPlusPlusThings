@@ -70,11 +70,11 @@ int main(int argc, char const *argv[]) {
     a1.Sort();
     for (int i = 0; i < 5; i++) cout << a1[i] << "\t";
     cout << endl;
-    b1[0] = "x1";
-    b1[1] = "ya";
-    b1[2] = "ad";
-    b1[3] = "be";
-    b1[4] = "bc";
+    b1[0] = (char *)"x1";
+    b1[1] = (char *)"ya";
+    b1[2] = (char *)"ad";
+    b1[3] = (char *)"be";
+    b1[4] = (char *)"bc";
     b1.Sort();
     for (int i = 0; i < 5; i++) cout << b1[i] << "\t";
     cout << endl;

@@ -6,12 +6,14 @@
 
 typedef char type_test[42];
 
-type_test &f() {}
+type_test &f(char a = 0) {
+    char tt[42] = {a};
+    return tt;
+}
 
 int main() {
-
-    // In the following lines f won't even be truly called but we can still access to the size of its return type.
-    // Thanks to the "fake evaluation" of the sizeof operator.
+    // In the following lines f won't even be truly called but we can still access to the size of
+    // its return type. Thanks to the "fake evaluation" of the sizeof operator.
     char arrayTest[sizeof(f())];
     std::cout << sizeof(f()) << std::endl; // Output 42.
 }

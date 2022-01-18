@@ -3,7 +3,7 @@ using namespace std;
 //函数异常可以抛出去由主函数来处理
 void fun(int x) {
     try {
-        if (x == 0) throw "异常";
+        if (x == 0) throw "abnormal";
     } catch (...) {
         cout << "in fun" << endl;
         throw 1;

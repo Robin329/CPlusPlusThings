@@ -25,7 +25,7 @@
 
 using namespace std;
 
-#define INT_MAX 2147483647
+//#define INT_MAX 2147483647
 // solution:  http://en.wikipedia.org/wiki/3SUM
 // the idea as blow:
 //  1) sort the array.

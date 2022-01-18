@@ -18,7 +18,8 @@ public:
     }
 
     void display() {
-        cout << Name << "\t" << Id << "\t" << Math << "\t" << Chinese << "\t" << English << "\t" << Sum << endl;
+        cout << Name << "\t" << Id << "\t" << Math << "\t" << Chinese << "\t" << English << "\t"
+             << Sum << endl;
     }
 
 private:
@@ -35,26 +36,31 @@ int main(int argc, char const *argv[]) {
     char Name[20], Id[20];
     int Math, Chinese, English;
     fstream ioFile;
-    ioFile.open("d:/per.dat", ios::out | ios::app);
-    cout << "---------建立学生档案信息----------\n";
+    ioFile.open("/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/practical_exercises/"
+                "\"\n"
+                "                \"key_exercises/per.dat",
+                ios::out | ios::app);
+    cout << "---------Create student profile information----------\n";
     do {
-        cout << "请输入姓名：";
+        cout << "Please enter your name:";
         cin >> Name;
-        cout << "请输入身份证号：";
+        cout << "Please enter identification number:";
         cin >> Id;
-        cout << "请输入数学成绩：";
+        cout << "Please enter your Math score:";
         cin >> Math;
-        cout << "请输入汉语成绩：";
+        cout << "Please enter your Chinese score:";
         cin >> Chinese;
-        cout << "请输入英语成绩：";
+        cout << "Please enter your English score:";
         cin >> English;
         Person per(Name, Id, Math, Chinese, English);
         ioFile.write((char *)&per, sizeof(per));
-        cout << "您是否继续建档？(Y/y)  ";
+        cout << "Do you want to continue to file？(Y/y)  ";
         cin >> ch;
     } while (ch == 'y' || ch == 'Y');
     ioFile.close();
-    ioFile.open("d://per.dat", ios::in);
+    ioFile.open("/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThings/practical_exercises/"
+                "key_exercises/per.dat",
+                ios::in);
     Person p;
     ioFile.read((char *)&p, sizeof(p));
     vector<Person> v;
@@ -64,7 +70,7 @@ int main(int argc, char const *argv[]) {
         ioFile.read((char *)&p, sizeof(p));
     }
     ioFile.close();
-    cout << "---------输出档案信息-----------" << endl;
+    cout << "---------output file information-----------" << endl;
     for (vt = v.begin(); vt != v.end(); vt++) {
         (*vt).display();
     }

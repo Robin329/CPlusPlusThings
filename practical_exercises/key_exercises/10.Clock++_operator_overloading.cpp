@@ -29,7 +29,7 @@ Clock::Clock(int h, int m, int s) {
         Minute = m;
         Second = s;
     } else
-        cout << "输入的时间格式错误!" << endl;
+        cout << "The time format entered is incorrect!" << endl;
 }
 
 /*
@@ -70,16 +70,16 @@ Clock Clock::operator++(int) {
  */
 int main() {
     Clock myClock(23, 59, 59);
-    cout << "初始化显示时间为:\t\t";
+    cout << "The initial display time is:\t\t";
     myClock.ShowTime();
 
-    cout << "执行myClock++后的时间为:\t";
+    cout << "The time after executing myClock++ is:\t";
 
     //先执行ShowTime()，输出myClock=23:59:59，
     //再执行myClock++，此时myClock=00:00:00
     (myClock++).ShowTime();
 
-    cout << "执行++myClock后的时间为:\t";
+    cout << "The time after executing ++myClock is:\t";
 
     //先执行++myClock，此时myClock=00:00:01
     //再执行ShowTime()，输出myClock=00:00:01

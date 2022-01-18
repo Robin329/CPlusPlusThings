@@ -29,7 +29,7 @@ void func(void) {
     for (int i = 0; i < sizeof(str) / sizeof(string); i++) {
         //    cout << " sizeof buf :" << sizeof(buf) << endl;
         memset(buf, 0, sizeof(buf));
-        snprintf(buf, 32, "%-5s", &str[i]);
+        snprintf(buf, 32, "%-5s", str[i].c_str());
         cout << "buf is :" << buf << endl;
     }
 }

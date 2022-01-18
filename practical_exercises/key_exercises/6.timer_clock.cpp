@@ -3,12 +3,14 @@
 //
 
 #include <unistd.h>
-#include "base.h"
+
 #include <chrono>
 #include <iostream>
+
+#include "base.h"
 // A std::chrono clock based on CLOCK_BOOTTIME.
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 using namespace base;
 
@@ -25,10 +27,9 @@ int main(int argc, char *argv[]) {
         vec.erase(vec.begin() + 1);
     }
 
-
     auto duration = t.duration();
     std::cout << "c++ duration = " << duration.count() << std::endl;
-    printf("duration = %d ms\n", duration.count());
+    printf("duration = %d ms\n", (int)duration.count());
 
     return 0;
 }

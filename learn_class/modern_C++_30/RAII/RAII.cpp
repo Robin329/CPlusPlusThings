@@ -34,6 +34,8 @@ public:
         if (!tria) {
             tria = new triangle();
             return tria;
+        } else {
+            return tria;
         }
     }
 
@@ -43,7 +45,6 @@ private:
 triangle *triangle::tria = nullptr;
 class rectangle : public shape {
 public:
-
     rectangle() { cout << "rectangle" << endl; }
 
     void print() {
@@ -51,18 +52,20 @@ public:
         triangle *tri = triangle::getinstance();
         tri->print();
         cout << "I am rectangle" << endl;
-        cout << "++++++++++++++" << endl;}
+        cout << "++++++++++++++" << endl;
+    }
 
-    static rectangle * getinstance() {
+    static rectangle *getinstance() {
         if (!m_rect) {
             m_rect = new rectangle();
+            return m_rect;
+        } else {
             return m_rect;
         }
     }
 
-
 private:
-    static rectangle * m_rect;
+    static rectangle *m_rect;
 };
 
 // 利用多态 上转 如果返回值为shape,会存在对象切片问题。

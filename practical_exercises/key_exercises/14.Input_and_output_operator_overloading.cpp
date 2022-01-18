@@ -39,9 +39,9 @@ Sales &operator>>(istream &is, Sales &s) {
 }
 
 int main() {
-    Sales s1("¶Å¿µ", "214198012111711", 40); // L1
-    cout << s1;                              // L2
-    cout << endl;                            // L3
-    cin >> s1;                               // L4
-    cout << s1;                              // L5
+    Sales s1("dukang", "214198012111711", 40); // L1
+    cout << s1;                                // L2
+    cout << endl;                              // L3
+    cin >> s1;                                 // L4
+    cout << s1;                                // L5
 }

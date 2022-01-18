@@ -31,8 +31,8 @@ int main(int argc, char **argv) {
     inflatable choice;
     choice = duck;
 
-    cout << "choice.name: " << setw(8) << choice.name << "\nchoice.volume:" << setw(8) << choice.volume
-         << "\nchoice.price:" << setw(8) << choice.price << endl;
+    cout << "choice.name: " << setw(8) << choice.name << "\nchoice.volume:" << setw(8)
+         << choice.volume << "\nchoice.price:" << setw(8) << choice.price << endl;
 
     cout << "1.-------------------" << endl;
     cout << "Right align:\n";
@@ -57,8 +57,8 @@ int main(int argc, char **argv) {
     cout << "prize.id_val.id is:" << prize.id_val.id_char << endl;
     cout << "prize.id_val.id is:" << prize.id_val.id_num << endl;
     cout << "4.-------------------" << endl;
-    char msg1[] = "robin";
-    char *msg2 = "robin";
+    const char msg1[] = "robin";
+    const char *msg2 = "robin";
     cout << sizeof(msg1) << endl;
     for (int i = 0; i < sizeof(msg1); i++) {
         cout << "msg1 + i:" << msg1 + i << endl;

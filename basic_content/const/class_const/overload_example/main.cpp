@@ -6,9 +6,11 @@ const int Apple::apple_number = 10;
 Apple::Apple(int i) {}
 int Apple::add(int num) {
     take(num);
+    return 0;
 }
 int Apple::add(int num) const {
     take(num);
+    return 0;
 }
 void Apple::take(int num) const {
     cout << "take func " << num << endl;

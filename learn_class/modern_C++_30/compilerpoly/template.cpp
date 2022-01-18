@@ -8,14 +8,14 @@
 using namespace std;
 
 // 函数模板
-template<typename T>
+template <typename T>
 bool isEqual(T t1, T t2) {
     cout << "函数模板" << endl;
     return t1 == t2;
 }
 
 // 函数模板全特化
-template<>
+template <>
 bool isEqual(const char *t1, const char *t2) {
     cout << "函数模板全特化" << endl;
     return strcmp(t1, t2);
@@ -29,7 +29,7 @@ bool isEqual(const char *t1, const char *t2) {
 //}
 
 // 改为重载   下面是重载!!! 而不是偏特化!
-template<typename T>
+template <typename T>
 bool isEqual(T a, double b) {
     cout << "函数重载" << endl;
     return a == b;
@@ -38,7 +38,7 @@ bool isEqual(T a, double b) {
 /// =============================================================
 
 // 类模板
-template<class T>
+template <class T>
 class comp {
 public:
     bool isEqual(T t1, T t2) {
@@ -48,7 +48,7 @@ public:
 };
 
 // 类模板全特化
-template<>
+template <>
 class comp<const char *> {
 public:
     bool isEqual(const char *t1, const char *t2) {
@@ -58,7 +58,7 @@ public:
 };
 
 // 类模板偏特化
-template<typename T>
+template <typename T>
 class comp<T *> {
 public:
     bool isEqual(T *t1, T *t2) {
@@ -76,6 +76,6 @@ int main() {
     c.isEqual(10, 11);
     comp<const char *> cc;
     cc.isEqual("he", "lo");
-    comp<char *> p;
+    comp<const char *> p;
     p.isEqual("he", "ll");
 }

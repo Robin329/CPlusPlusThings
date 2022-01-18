@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
     //  1. 输出所有 Pair 元素
     //=========================
     // 迭代器遍历 map
-    for (it; it != mymap.end(); it++) {
+    for (; it != mymap.end(); it++) {
         // map的迭代器，可以用 first 访问std::pair的第一个成员(Type1)，second
         // 访问第二个成员 (Type2)
         cout << it->first << ":" << it->second << endl;

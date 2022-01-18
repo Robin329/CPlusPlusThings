@@ -86,7 +86,7 @@ add_executable(vector_l learn_class/modern_C++_30/container1/vector_l.cpp)
 #add_executable(cpulpuls11_singleton learn_class/modern_C++_30/memorymodel_atomic/cpulpuls11_singleton.cpp)
 add_executable(function learn_class/modern_C++_30/functionLambda/function.cpp)
 
-add_executable(factorial learn_class/modern_C++_30/compilercompute/factorial.cpp)
+add_executable(factorial1 learn_class/modern_C++_30/compilercompute/factorial.cpp)
 
 ################################
 #c++2.0/c++11
@@ -151,6 +151,7 @@ add_executable(18.stack_of_class_templates practical_exercises/key_exercises/18.
 include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
 add_subdirectory(learn_class/modern_C++_30)
+add_subdirectory(C-Plus-Plus)
 
 find_package(Threads REQUIRED)
 target_link_libraries(thread_test

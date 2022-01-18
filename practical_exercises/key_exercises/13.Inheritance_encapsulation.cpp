@@ -29,7 +29,7 @@ public:
     }
 
     void display() {
-        cout << "经理：" << getName() << "\t" << getId() << "\t" << WeeklySalary << endl;
+        cout << "manager:" << getName() << "\t" << getId() << "\t" << WeeklySalary << endl;
     }
 
 private:
@@ -43,7 +43,7 @@ public:
     }
 
     void display() {
-        cout << "销售员：" << getName() << "\t" << getId() << "\t" << workerMoney << endl;
+        cout << "Seller:" << getName() << "\t" << getId() << "\t" << workerMoney << endl;
     }
 
 private:
@@ -58,7 +58,7 @@ public:
     }
 
     void display() {
-        cout << "小时工：" << getName() << "\t" << getId() << "\t" << TotalMoney << endl;
+        cout << "hourly worker:" << getName() << "\t" << getId() << "\t" << TotalMoney << endl;
     }
 
 private:
@@ -67,23 +67,23 @@ private:
 };
 
 int main(int argc, char const *argv[]) {
-    cout << "请输入工作周：";
+    cout << "Please enter work week:";
     int week;
     cin >> week;
-    Manager m("小王", "11111111", week);
+    Manager m("xiaowang", "11111111", week);
     m.display();
-    cout << "请输入销售利润：";
+    cout << "Please enter sales profit:";
     int profit;
     cin >> profit;
-    cout << "请输入销售件数：";
+    cout << "Please input sale numbers:";
     int x;
     cin >> x;
-    SaleWorker s("小李", "222222", profit, x);
+    SaleWorker s("xiaoli", "222222", profit, x);
     s.display();
-    cout << "请输入工作小时：";
+    cout << "Please input hours:";
     int hour;
     cin >> hour;
-    HourWorker h("小何", "333333", hour);
+    HourWorker h("xiaohe", "333333", hour);
     h.display();
     system("pause");
     return 0;
