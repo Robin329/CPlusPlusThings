@@ -151,6 +151,7 @@ add_subdirectory(lib/json-develop)
 add_subdirectory(learn_class/modern_C++_30)
 add_subdirectory(C-Plus-Plus)
 add_subdirectory(design-patterns-cpp)
+add_subdirectory(lib/json-develop/test)
 
 find_package(Threads REQUIRED)
 target_link_libraries(thread_test

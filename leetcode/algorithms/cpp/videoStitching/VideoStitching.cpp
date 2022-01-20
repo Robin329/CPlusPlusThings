@@ -62,8 +62,9 @@ class Solution {
 public:
     int videoStitching(vector<vector<int>> &clips, int T) {
         // sort the clips
-        std::sort(clips.begin(), clips.end(),
-                  [](vector<int> &x, vector<int> &y) { return x[0] < y[0] || (x[0] == y[0] && x[1] < y[1]); });
+        std::sort(clips.begin(), clips.end(), [](vector<int> &x, vector<int> &y) {
+            return x[0] < y[0] || (x[0] == y[0] && x[1] < y[1]);
+        });
 
         // print(clips);
 

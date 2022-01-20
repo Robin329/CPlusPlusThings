@@ -78,7 +78,8 @@ public:
         if (p == NULL && q == NULL) return true;
         if (p == NULL || q == NULL) return false;
 
-        return (p->val == q->val) && isSymmetric(p->left, q->right) && isSymmetric(p->right, q->left);
+        return (p->val == q->val) && isSymmetric(p->left, q->right) &&
+                isSymmetric(p->right, q->left);
     }
 
     bool isSymmetric2(TreeNode *p, TreeNode *q) {

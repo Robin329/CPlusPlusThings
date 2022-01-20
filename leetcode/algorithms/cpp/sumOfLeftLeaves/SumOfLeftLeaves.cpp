@@ -49,7 +49,8 @@ public:
         if (root->left && root->left->left == NULL && root->left->right == NULL) {
             result = root->left->val;
         }
-        result += sumOfLeftLeaves_recursion_v2(root->left) + sumOfLeftLeaves_recursion_v2(root->right);
+        result += sumOfLeftLeaves_recursion_v2(root->left) +
+                sumOfLeftLeaves_recursion_v2(root->right);
         return result;
     }
 
