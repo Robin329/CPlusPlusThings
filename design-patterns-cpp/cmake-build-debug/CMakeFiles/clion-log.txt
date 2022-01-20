@@ -1,0 +1,63 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/local/bin/gmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" /Users/renbinjiang/workspace/project/c_c++/design-patterns-cpp
+-- The C compiler identification is AppleClang 13.0.0.13000029
+-- The CXX compiler identification is AppleClang 13.0.0.13000029
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Pattern `abstract-factory':
+--   abstract-factory/AbstractFactory.cpp is going to be built
+-- Pattern `adapter':
+--   adapter/ClassAdapter.cpp is going to be built
+--   adapter/ObjectAdapter.cpp is going to be built
+-- Pattern `bridge':
+--   bridge/Bridge.cpp is going to be built
+-- Pattern `builder':
+--   builder/Builder.cpp is going to be built
+-- Pattern `chain-of-responsibility':
+--   chain-of-responsibility/ChainOfResponsibility.cpp is going to be built
+-- Pattern `command':
+--   command/Command.cpp is going to be built
+-- Pattern `composite':
+--   composite/Composite.cpp is going to be built
+-- Pattern `decorator':
+--   decorator/Decorator.cpp is going to be built
+-- Pattern `facade':
+--   facade/Facade.cpp is going to be built
+-- Pattern `factory-method':
+--   factory-method/FactoryMethod.cpp is going to be built
+-- Pattern `flyweight':
+--   flyweight/Flyweight.cpp is going to be built
+-- Pattern `interpreter':
+--   interpreter/Interpreter.cpp is going to be built
+-- Pattern `iterator':
+--   iterator/Iterator.cpp is going to be built
+-- Pattern `mediator':
+--   mediator/Mediator.cpp is going to be built
+-- Pattern `memento':
+--   memento/Memento.cpp is going to be built
+-- Pattern `observer':
+--   observer/Observer.cpp is going to be built
+-- Pattern `prototype':
+--   prototype/Prototype.cpp is going to be built
+-- Pattern `proxy':
+--   proxy/Proxy.cpp is going to be built
+-- Pattern `singleton':
+--   singleton/Singleton.cpp is going to be built
+-- Pattern `state':
+--   state/State.cpp is going to be built
+-- Pattern `strategy':
+--   strategy/Strategy.cpp is going to be built
+-- Pattern `template-method':
+--   template-method/TemplateMethod.cpp is going to be built
+-- Pattern `visitor':
+--   visitor/Visitor.cpp is going to be built
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/renbinjiang/workspace/project/c_c++/design-patterns-cpp/cmake-build-debug

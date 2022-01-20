@@ -7,15 +7,33 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <sys/syscall.h>
+#include <unistd.h>
 
 #include <chrono>
 #include <iostream>
+#include <set>
 #include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
 using namespace std;
 namespace base {
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+#define getpid() syscall(SYS_thread_selfid)
 
 typedef struct coor_t {
     float x;

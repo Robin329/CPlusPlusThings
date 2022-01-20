@@ -1,0 +1,32 @@
+cmake_minimum_required(VERSION 3.14)
+project(Threading_In_CPlusPlus)
+
+set(CMAKE_CXX_STANDARD 17)
+
+
+add_executable(alias.cpp alias.cpp)
+add_executable(auto.cpp auto.cpp)
+add_executable(decltype.cpp decltype.cpp)
+add_executable(default_delete.cpp default_delete.cpp)
+add_executable(explicit.cpp explicit.cpp)
+add_executable(final.cpp final.cpp)
+add_executable(c++11_initializer.cpp initializer.cpp)
+add_executable(lambda.cpp lambda.cpp)
+add_executable(noexcept.cpp noexcept.cpp)
+add_executable(nullptr.cpp nullptr.cpp)
+add_executable(override.cpp override.cpp)
+add_executable(rvalue.cpp rvalue.cpp)
+add_executable(template_template.cpp template_template.cpp)
+add_executable(tuple.cpp tuple.cpp)
+add_executable(type_alias.cpp type_alias.cpp)
+add_executable(uniform_initialization.cpp uniform_initialization.cpp)
+
+target_link_libraries(lambda.cpp gtest gtest_main pthread)
+# variadic
+add_executable(variadic variadic/variadic.cpp)
+add_executable(variadic1 variadic/variadic1.cpp)
+add_executable(variadic2 variadic/variadic2.cpp)
+add_executable(variadic3 variadic/variadic3_4.cpp)
+add_executable(variadic5 variadic/variadic5.cpp)
+add_executable(variadic6 variadic/variadic6.cpp)
+add_executable(variadic7 variadic/variadic7.cpp)

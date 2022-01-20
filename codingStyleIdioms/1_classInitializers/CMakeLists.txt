@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.14)
+project(Threading_In_CPlusPlus)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(1.1_nesting_between_classes.cpp 1.1_nesting_between_classes.cpp)
+add_executable(1.2_Inheritance_without_default_construction.cpp 1.2_Inheritance_without_default_construction.cpp)
+add_executable(1.3_const_data_members_and_reference_data_members.cpp 1.3_const_data_members_and_reference_data_members.cpp)
+add_executable(initializer.cpp initializer.cpp)

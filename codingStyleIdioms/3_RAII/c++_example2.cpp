@@ -1,7 +1,6 @@
 //
 // Created by light on 19-12-12.
 //
-#include <bits/unique_ptr.h>
 
 #include <cstring>
 #include <fstream>
@@ -25,7 +24,7 @@ unique_ptr<vector<string>> read_lines_from_file(string &file_name) {
 }
 int main() {
     // get file name from the first argument
-    string file_name("/home/light/CLionProjects/Morden_C++/CMakeLists.txt");
+    string file_name("/Users/renbinjiang/workspace/project/c_c++/CPlusPlusThingsCMakeLists.txt");
     int count = read_lines_from_file(file_name).get()->size();
     cout << "File " << file_name << " contains " << count << " lines.";
     cout << endl;

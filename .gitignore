@@ -8,3 +8,5 @@ cmake-build-debug/*
 **/*.dSYM/*
 practical_exercises/.*
 .idea/*
+.DS_Store
+*.idea/*

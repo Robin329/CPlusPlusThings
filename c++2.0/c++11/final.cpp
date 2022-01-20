@@ -8,7 +8,7 @@ using namespace std;
 
 // final关键字用于两个地方
 // 第一个用在类，用于说明该类是继承体系下最后的一个类，不要其他类继承我，当继承时就会报错。
-class Base final {
+class Base {
 public:
     Base() {}
 
@@ -23,7 +23,7 @@ class Base1 {
 public:
     Base1() {}
 
-    virtual void func() final {}
+    virtual void func() {}
 };
 
 class Derivered1 : public Base1 {

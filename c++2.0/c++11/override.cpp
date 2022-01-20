@@ -12,8 +12,8 @@ public:
     virtual void func() {}
 };
 class Derivered : public Base {
-    virtual void func(int) override {} // error: ‘virtual void Derivered::func(int)’ marked ‘override’, but does
-                                       // not override
+    virtual void func(int) {} // error: ‘virtual void Derivered::func(int)’ marked ‘override’, but
+                              // does not override
 };
 // override用于虚函数，上面的virtual void
 // func(int)实际上不是重写父类的虚函数，而是定义一个新的虚函数，

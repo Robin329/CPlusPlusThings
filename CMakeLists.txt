@@ -36,11 +36,6 @@ add_executable(friend_class basic_content/friend/friend_class.cpp)
 add_executable(learn basic_content/bit/learn.cpp)
 add_executable(classic_practice basic_content/enum/classic_practice.cpp)
 target_link_libraries(classic_practice dl)
-add_executable(genA english/basic_content/sizeof/genA.cpp)
-add_executable(static english/basic_content/sizeof/static.cpp)
-add_executable(virinhe english/basic_content/sizeof/virinhe.cpp)
-add_executable(morevir english/basic_content/sizeof/morevir.cpp)
-add_executable(vptr1 english/basic_content/vptr_vtable/vptr1.cpp)
 add_executable(extern_c basic_content/extern/extern_c/add.c basic_content/extern/extern_c/add.cpp basic_content/extern/extern_c/add.h)
 add_executable(extern_cpp basic_content/extern/extern_c++/add.h basic_content/extern/extern_c++/add.cpp basic_content/extern/extern_c++/add.c)
 add_executable(person basic_content/this/person.cpp)
@@ -49,18 +44,22 @@ add_executable(macro basic_content/macro/sig_examp.cpp)
 ################################
 #codingStyleldIoms
 ################################
-add_executable(initializer codingStyleIdioms/1_classInitializers/initializer.cpp)
-add_executable(1.1_classInitialize codingStyleIdioms/1_classInitializers/1.1_类之间嵌套.cpp)
-add_executable(1.2_classInitialize codingStyleIdioms/1_classInitializers/1.2_无默认构造的继承.cpp)
+add_subdirectory(codingStyleIdioms/1_classInitializers)
+add_executable(2_enumclass codingStyleIdioms/2_enumclass/namespace.cpp)
+add_subdirectory(codingStyleIdioms/3_RAII)
+add_executable(4_copy-swap codingStyleIdioms/4_copy-swap/copy-swapAndADL.cpp)
+add_executable(5_no_pimpl codingStyleIdioms/5_pImpl/noPimpl.cpp)
+add_executable(5_pimpl codingStyleIdioms/5_pImpl/pimpl.cpp)
+add_executable(5_pimpl_time codingStyleIdioms/5_pImpl/pimplTime.cpp codingStyleIdioms/5_pImpl/pimplTime.h)
 ################################
 #concurrency
 ################################
-
+add_subdirectory(concurrency/Threading_In_CPlusPlus)
 
 ################################
 #design_pattern
 ################################
-add_executable(producer_consumer design_pattern/producer_consumer/producer_consumer.cpp)
+add_executable(producer_consumer design-patterns-cpp/producer_consumer/producer_consumer.cpp)
 target_link_libraries(producer_consumer -lpthread)
 
 
@@ -91,20 +90,19 @@ add_executable(factorial1 learn_class/modern_C++_30/compilercompute/factorial.cp
 ################################
 #c++2.0/c++11
 ################################
-add_executable(decltype c++2.0/c++11/decltype.cpp)
-add_executable(lambda_demo c++2.0/c++11/lambda.cpp)
-target_link_libraries(lambda_demo gtest gtest_main pthread)
+add_subdirectory(c++2.0/c++11)
+
 
 
 ################################
 #leetcode
 ################################
-add_executable(1_Inverted_bits leetcode/1_Inverted_bits.cpp)
-add_executable(1.1_invertd_Integer leetcode/1.1_invertd_Integer.cpp)
-add_executable(3Sum leetcode/algorithms/cpp/3Sum/3Sum.cpp)
-add_executable(3SumClosest leetcode/algorithms/cpp/3SumClosest/3SumClosest.cpp)
-add_executable(addBinary leetcode/algorithms/cpp/addBinary/addBinary.cpp)
-
+#add_executable(1_Inverted_bits leetcode/1_Inverted_bits.cpp)
+#add_executable(1.1_invertd_Integer leetcode/1.1_invertd_Integer.cpp)
+#add_executable(3Sum leetcode/algorithms/cpp/3Sum/3Sum.cpp)
+#add_executable(3SumClosest leetcode/algorithms/cpp/3SumClosest/3SumClosest.cpp)
+#add_executable(addBinary leetcode/algorithms/cpp/addBinary/addBinary.cpp)
+add_subdirectory(leetcode/algorithms/cpp)
 ################################
 #thread_example
 ################################
@@ -152,6 +150,7 @@ include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
 add_subdirectory(learn_class/modern_C++_30)
 add_subdirectory(C-Plus-Plus)
+add_subdirectory(design-patterns-cpp)
 
 find_package(Threads REQUIRED)
 target_link_libraries(thread_test
@@ -209,7 +208,7 @@ link_directories(${GMOCK_LINK_DIR})
 set(BASE_LIB_DIR ${BASE_INCLUDES}/lib)
 
 include_directories(${BASE_LIB_DIR})
-MESSAGE("base lib dir = ${BASE_LIB_DIR} ${BASE_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}")
+#MESSAGE("base lib dir = ${BASE_LIB_DIR} ${BASE_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}")
 #add_executable(RAII ${SOURCE_FILES})
 #######################json lib#######################
 set(JSON_INCLUDE_DIR ${BASE_INCLUDES}/lib/json/include)
@@ -235,6 +234,7 @@ set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs openc
 set(OpenCV_DIR "/usr/local/Cellar/opencv/4.5.2/include/opencv4/opencv2/")
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
+
 # linking
 #target_link_libraries(RAII ${OpenCV_LIBS})
 
