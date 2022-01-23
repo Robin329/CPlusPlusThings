@@ -72,14 +72,24 @@ bool demo(void) {
     }
     return false;
 }
-
+#if 0
 TEST(DemoTest, Bool) {
     EXPECT_EQ(false, demo());
     //    EXPECT_TRUE(demo());
     EXPECT_FALSE(demo());
 }
-
+#endif
 #if 1
+int max_robin(int b1total, int b1rem, int b2total, int b2rem) {
+    if ((b1total) > (b2total)) {
+        return ((b1rem) ? ((b1total) + 1) : (b1total));
+    } else if ((b1total) == (b2total)) {
+        return ((b1rem) ? ((b1total) + 1) : ((b2rem) ? (b2total + 1) : (b2total)));
+    } else if ((b1total) < (b2total)) {
+        return (b2rem ? b2total + 1 : b2total);
+    }
+    return 0;
+}
 
 int main() {
     int ret = RUN_ALL_TESTS();
@@ -94,6 +104,13 @@ int main() {
     //    COOR_T_LOG("coo", coo, 5, 3);
     POINT_LOG("point_t", point_t, 2, 2);
     POINT_LOG("point9", point9, 3, 3);
+    int b1t = 0;
+    int b1r = 1;
+    int b2t = 1;
+    int b2r = 0;
+    int ret1 = max_robin(b1t, b1r, b2t, b2r);
+    cout << "return:" << ret1;
+
 #if 0
     char *sPtr;
     const char *s = "hello";
