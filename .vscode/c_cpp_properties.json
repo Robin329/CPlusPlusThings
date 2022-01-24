@@ -12,8 +12,7 @@
             "compilerPath": "/usr/local/opt/llvm/bin/clang",
             "cStandard": "c17",
             "cppStandard": "c++14",
-            "intelliSenseMode": "macos-clang-x64",
-            "compileCommands": "/Volumes/AOSP/android11/external/clang/test/Index/compile_commands.json"
+            "intelliSenseMode": "macos-clang-x64"
         }
     ],
     "version": 4
