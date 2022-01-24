@@ -17,7 +17,7 @@ int main(int argc, char const *argv[]) {
         cout << p->first << "\t" << p->second << endl;
     }
     string person;
-    cout << "输入查找人员的姓名:";
+    cout << "Enter the name of the person looking for:";
     cin >> person;
     int flag = 1;
     for (p = sal.begin(); p != sal.end(); p++)
@@ -25,22 +25,22 @@ int main(int argc, char const *argv[]) {
             cout << p->second << endl;
             flag = 0;
         }
-    if (flag) cout << "没查找到对应的结果！" << endl;
+    if (flag) cout << "No matching results were found!" << endl;
 
-    cout << "输入待删除的人员的姓名:";
+    cout << "Enter the name of the person to delete:";
     cin >> person;
     map<string, double>::iterator it;
     it = sal.find(person);
     if (it != sal.end()) {
-        cout << "查找成功：" << (*it).first << ":" << (*it).second << endl;
+        cout << "Find success:" << (*it).first << ":" << (*it).second << endl;
         sal.erase(it);
-        cout << "删除成功" << endl;
+        cout << "successfully deleted!" << endl;
     }
-    cout << "删除后的结果为" << endl;
+    cout << "The result after deletion is:" << endl;
     for (p = sal.begin(); p != sal.end(); p++) {
         cout << p->first << p->second << endl;
     }
 
-    system("pause");
+    //    system("pause");
     return 0;
 }

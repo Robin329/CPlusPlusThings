@@ -38,7 +38,7 @@ if(OpenGL_FOUND)
         # find_package(FreeGLUT)
     endif(NOT GLUT_FOUND)
 else(OpenGL_FOUND)
-    message(WARNING "OPENGL not found. Will not build graphical outputs.")
+#    message(WARNING "OPENGL not found. Will not build graphical outputs.")
 endif(OpenGL_FOUND)
 
 # If necessary, use the RELATIVE flag, otherwise each source file may be listed

@@ -60,15 +60,15 @@ Function
 
 - [x] day4
 
-Thorough About Function 
+Thorough About Function
 
 - [x] day5
 
-Inheritance and Polymorphism 
+Inheritance and Polymorphism
 
 - [x] day6
 
-Vitrual Function、Abstruct 
+Vitrual Function、Abstruct
 
 - [x] day7
 
@@ -154,7 +154,7 @@ C++2.0 is an Abbreviation, meaning「modern C++」，including C++11/14/17/20.
 
 - Alias(化名)Template(template typedef)
 
-  - [alias.cpp](./c++2.0/alias.cpp) 
+  - [alias.cpp](./c++2.0/alias.cpp)
   - [template_template.cpp](./c++2.0/template_template.cpp)
 
 - [template template parameter](./c++2.0/template_template.cpp)
@@ -328,20 +328,3 @@ Output：
 
   CLion  gcc/g++
 
-### 10.Contributor
-
-
-
-| 贡献人  | 地址                          |
-| ------- | ----------------------------- |
-| 光城    | https://github.com/Light-City |
-| ChungZH | https://github.com/ChungZH    |
-| xliu79  | https://github.com/xliu79     |
-
-
-
-### 11.About The Writer
-
-个人公众号：
-
-![](./img/wechat.jpg)

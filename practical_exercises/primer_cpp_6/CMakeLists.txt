@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.14)
+project(10_day_practice)
+
+set(CMAKE_CXX_STANDARD 17)
+add_executable(4.3_string 4.3_string.cpp)
+add_executable(4.7_pointer 4.7_pointer.cpp)
+add_executable(4.10_array 4.10_array.cpp)
+add_executable(6.8.2_IO 6.8.2_IO.cpp)
+add_executable(7.3.4_array 7.3.4_array.cpp)
+add_executable(8.2.6_filefunc 8.2.6_filefunc.cpp)
+add_executable(twoswap "Chapter 8/twoswap.cpp")
+add_executable(left "Chapter 8/left.cpp")
+add_executable(7.10.2_func_pointer 7.10.2_func_pointer.cpp)

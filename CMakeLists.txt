@@ -115,6 +115,7 @@ add_executable(thread_param thread_example/thread/thread_param.cpp)
 add_executable(mutex_cond thread_example/lock/mutex_cond.cpp)
 add_executable(simple_thread thread_example/thread/simple_thread.cpp)
 
+
 ################################
 #practical_exercises
 ################################
@@ -126,12 +127,14 @@ add_executable(7.load_settings practical_exercises/key_exercises/7.load_setting.
 target_link_libraries(4.dynamic_array gtest gtest_main pthread)
 add_executable(5.Dictionary_insertion_and_lookup practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
 add_executable(unique_ptr src_analysis/stl/stl_src/Ptr/unique_ptr.cpp)
-add_executable(4.3_string practical_exercises/primer_cpp_6/4.3_string.cpp)
-add_executable(4.7_pointer practical_exercises/primer_cpp_6/4.7_pointer.cpp)
-add_executable(4.10_array practical_exercises/primer_cpp_6/4.10_array.cpp)
-add_executable(6.8.2_IO practical_exercises/primer_cpp_6/6.8.2_IO.cpp)
+
+
+################################
+#practical_exercises/primer_cpp_6
+################################
+add_subdirectory(practical_exercises/primer_cpp_6/)
+
 add_executable(template learn_class/modern_C++_30/compilerpoly/template.cpp)
-add_executable(7.3.4_array practical_exercises/primer_cpp_6/7.3.4_array.cpp)
 add_executable(what_is_stl src_analysis/stl/stl_src/what_is_stl.cpp)
 add_executable(6.timer_clock practical_exercises/key_exercises/6.timer_clock.cpp)
 add_executable(8.array_of_class_temp practical_exercises/key_exercises/8.Array_of_class_template_specialization.cpp)
@@ -152,6 +155,7 @@ add_subdirectory(learn_class/modern_C++_30)
 add_subdirectory(C-Plus-Plus)
 add_subdirectory(design-patterns-cpp)
 add_subdirectory(lib/json-develop/test)
+add_subdirectory(practical_exercises/10_day_practice)
 
 find_package(Threads REQUIRED)
 target_link_libraries(thread_test
@@ -239,16 +243,11 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # linking
 #target_link_libraries(RAII ${OpenCV_LIBS})
 
-add_executable(7.10.2_func_pointer practical_exercises/primer_cpp_6/7.10.2_func_pointer.cpp)
 add_executable(homography_2d practical_exercises/opencv/homography_2d.cpp)
 target_link_libraries(homography_2d ${OpenCV_LIBS})
 ###############################################################
 
 #ADD_DEFINITIONS(-DOPENCV_ENABLE_NONFREE)
-
-add_executable(8.2.6_filefunc practical_exercises/primer_cpp_6/8.2.6_filefunc.cpp)
-add_executable(twoswap "practical_exercises/primer_cpp_6/Chapter 8/twoswap.cpp")
-add_executable(left "practical_exercises/primer_cpp_6/Chapter 8/left.cpp")
 
 
 

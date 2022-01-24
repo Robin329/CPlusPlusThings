@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-void handler(int n) throw(int, char, double) {
+void handler(int n) noexcept(false) {
     if (n == 1) throw n;
     if (n == 2) throw 'x';
     if (n == 3) throw 1.1;

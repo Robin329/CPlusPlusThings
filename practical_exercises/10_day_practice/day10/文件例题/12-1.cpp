@@ -1,4 +1,3 @@
-//��cin�����ַ�������ʱ������ַ����к��пհ׾Ͳ����������롣��Ϊ�����հ��ַ�ʱ��cin����Ϊ�ַ��������ˡ�
 #include <iostream>
 
 using namespace std;
@@ -11,9 +10,3 @@ int main(int argc, char const *argv[]) {
     system("pause");
     return 0;
 }
-/*
-��a�������ǣ�
-this is a string!
-��������������
-����������Ӧ����������ĳ�Ա��������
-*/

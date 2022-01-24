@@ -21,7 +21,7 @@ public:
 };
 
 int main() {
-    ofstream out("D:/Employee.dat", ios::out); //定义随机输出文件
+    ofstream out("./Employee.dat", ios::out); //定义随机输出文件
     Employee e1(1, "张三", 23, 2320);
     Employee e2(2, "李四", 32, 3210);
     Employee e3(3, "王五", 34, 2220);

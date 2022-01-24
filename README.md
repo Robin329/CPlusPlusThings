@@ -354,34 +354,7 @@ map<int, int> mp{
 
 - [C++ 中如何将 string 类型转换为 int 类型？](./extension/some_problem/string_int.md)
 
-### 11.贡献者
 
 
 
-| 贡献人  | 地址                          |
-| ------- | ----------------------------- |
-| 光城    | https://github.com/Light-City |
-| ChungZH | https://github.com/ChungZH    |
-| xliu79  | https://github.com/xliu79     |
-
-
-
-### 12.赞助我
-
-如果觉得不错，赞助我吧~
-
-<table>
-  <tbody>
-    <tr>
-      <th align="center" style="height=200 width="200">
-          <img src="https://light-city.club/sc/assets/images/alipay.jpg" height="200" width="200" ><br>
-          支付宝
-      </th>
-      <th align="center" style="height=200 width="200">
-          <img src="https://light-city.club/sc/assets/images/wechat.png" height="200" width="200" ><br>
-          微信
-      </th>
-    </tr>
-  </tbody>
-</table>
 

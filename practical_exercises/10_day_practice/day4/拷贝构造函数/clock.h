@@ -10,9 +10,7 @@ public:
 private:
     int Hour, Minute, Second;
 };
-
 #endif
-
 /*
 #ifndef   标识符
        程序段1
@@ -20,5 +18,4 @@ private:
        程序段2
 #endif
 如果“标识符”未被定义过，则编译程序段1，否则编译程序段2。
-
 */
