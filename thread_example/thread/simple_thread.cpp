@@ -16,14 +16,16 @@ using namespace std;
 
 void thread_func1() {
     for (int i = 0; i < 2; i++) {
-        cout << "<--- thread1 runing " << i << " ID:[ " << getpid() << "]--->" << endl;
+        cout << "<--- thread1 runing " << i << " ID:[ "
+             << "]--->" << endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 
 void thread_func2() {
     for (int i = 0; i < 2; i++) {
-        cout << "<--- thread2 runing " << i << " ID:[ " << getpid() << "]--->" << endl;
+        cout << "<--- thread2 runing " << i << " ID:[ "
+             << "]--->" << endl;
     }
     thread threadObj3(thread_func1);
     cout << "<--- creat threadObj3 -->" << endl;
@@ -35,16 +37,19 @@ void thread_func2() {
 
 int main() {
     thread threadObj1(thread_func1);
-    cout << "<--- threadObj1 ID:[" << getpid() << "] -->" << endl;
+    cout << "<--- threadObj1 ID:["
+         << "] -->" << endl;
     threadObj1.join();
     thread threadObj2(thread_func2);
-    cout << "<--- threadObj2 ID:[" << getpid() << "] -->" << endl;
+    cout << "<--- threadObj2 ID:["
+         << "] -->" << endl;
 
     threadObj2.join();
     // 其中的.join()是用来同步线程的，
     // 该函数会一直阻塞直到thread完成。当然也可以通过detach来将线程执行和线程对象分离开
     for (int i = 0; i < 2; i++) {
-        cout << "<--- display main thread ID:[" << getpid() << "]-->" << endl;
+        cout << "<--- display main thread ID:["
+             << "]-->" << endl;
     }
     cout << "<--- exit of main thread -->" << endl;
     return 0;

@@ -2,9 +2,9 @@
 using namespace std;
 void temperature(int t) {
     if (t == 100)
-        throw "·Ðµã£¡";
+        throw "feidian!";
     else if (t == 0)
-        throw "±ùµã£¡";
+        throw "bingdian!";
     else {
         cout << "temperatore=" << t << endl;
     }
@@ -17,6 +17,6 @@ int main() {
     } catch (char const* s) {
         cout << s << endl;
     }
-    system("pause");
+    //    system("pause");
     return 0;
 }

@@ -24,4 +24,10 @@ int main() {
     obj.sety(20);
     //    obj.showx(); // cannot access
     obj.showy();
+    const char* ledmode = nullptr;
+    if (ledmode && !strcmp("0", ledmode)) {
+        cout << "ledmode is 0" << endl;
+    }
+
+    return 0;
 }

@@ -67,12 +67,12 @@ std::string Backtrace(int skip = 1) {
             char *demangled = NULL;
             int status;
             demangled = abi::__cxa_demangle(info.dli_sname, NULL, 0, &status);
-            snprintf(buf, sizeof(buf), "%-3d %x %*0p %s + %zd\n", i, 2 + sizeof(void *) * 2,
+            snprintf(buf, sizeof(buf), "%-3d %lx %p %s + %zd\n", i, 2 + sizeof(void *) * 2,
                      callstack[i], status == 0 ? demangled : info.dli_sname,
                      (char *)callstack[i] - (char *)info.dli_saddr);
             free(demangled);
         } else {
-            snprintf(buf, sizeof(buf), "%-3d %x %*0p\n", i, 2 + sizeof(void *) * 2, callstack[i]);
+            snprintf(buf, sizeof(buf), "%-3d %lx %p\n", i, 2 + sizeof(void *) * 2, callstack[i]);
         }
         trace_buf << buf;
 

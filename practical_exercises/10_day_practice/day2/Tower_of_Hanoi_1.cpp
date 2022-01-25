@@ -3,7 +3,7 @@ using namespace std;
 void move(char A, char B);
 void hanoi(int n, char A, char B, char C);
 int main(int argc, char const *argv[]) {
-    cout << "Please enter the number of plates£º";
+    cout << "Please enter the number of plates:";
     int disks;
     cin >> disks;
     hanoi(disks, 'A', 'B', 'C');

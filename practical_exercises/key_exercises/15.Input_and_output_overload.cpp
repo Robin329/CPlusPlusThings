@@ -30,12 +30,13 @@ Sales &operator<<(ostream &os, Sales &s) {
 }
 
 Sales &operator>>(istream &is, Sales &s) {
-    cout << "Enter employee's name, ID, age£º\n";
+    cout << "Enter employee's name, ID, age\n";
     is >> s.name >> s.id >> s.age;
+    return s;
 }
 
 int main(int argc, char const *argv[]) {
-    Sales s("zhangsan", "15611", 26);
+    Sales s((char *)"zhangsan", (char *)"15611", 26);
     cout << s;
     cin >> s;
     cout << s;

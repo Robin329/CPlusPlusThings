@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    string name[] = {"张三", "李四", "王麻子"};
+    string name[] = {"ZhangSan", "Lisi", "WangMaZi"};
     double salary[] = {1200, 2000, 1450};
     map<string, double> sal;
     map<string, double>::iterator p;

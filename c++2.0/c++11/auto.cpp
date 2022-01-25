@@ -14,11 +14,11 @@ using namespace std;
 // iterator  stl_iterator.h里面的源码 使用auto
 template <typename _Iterator>
 #if __cplusplus < 201103L
-inline typename reverse_iterator<_Iterator>::difference_type operator-(const reverse_iterator<_Iterator> &__x,
-                                                                       const reverse_iterator<_Iterator> &__y)
+inline typename reverse_iterator<_Iterator>::difference_type operator-(
+        const reverse_iterator<_Iterator> &__x, const reverse_iterator<_Iterator> &__y)
 #else
-inline auto operator-(const reverse_iterator<_Iterator> &__x, const reverse_iterator<_Iterator> &__y)
-        -> decltype(__x.base() - __y.base())
+inline auto operator-(const reverse_iterator<_Iterator> &__x,
+                      const reverse_iterator<_Iterator> &__y) -> decltype(__x.base() - __y.base())
 #endif
 {
     return __y.base() - __x.base();
@@ -31,7 +31,10 @@ class C {
 public:
     explicit C(const string &s) : mystr(s) {}
 
-    friend ostream &operator<<(ostream out, const C &c) { out << c.mystr << endl; }
+    friend ostream &operator<<(ostream &out, const C &c) {
+        out << c.mystr << endl;
+        return out;
+    }
 
 private:
     string mystr;

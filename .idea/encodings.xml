@@ -37,6 +37,8 @@
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day6/虚函数/virtual_function_feature.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/STL/map_se.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/函数模板/get_max_value.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/函数模板/get_max_value.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/函数模板/important.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/函数模板/important.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/函数模板/template_specialization.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day8/类模板/Simulation_stack.cpp" charset="GBK" />
@@ -45,5 +47,6 @@
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day9/异常例子/7.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day9/异常例子/8.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/practical_exercises/10_day_practice/day9/异常例子/9.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/practical_exercises/key_exercises/14.Input_and_output_operator_overloading.cpp" charset="GBK" />
   </component>
 </project>

@@ -6,6 +6,7 @@
 #include <pthread.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <sys/syscall.h>
 #include <unistd.h>
 
 static void *func1(void *arg);
@@ -40,7 +41,8 @@ void *func2(void *arg) {
     //   while(true) {
     //       sleep(1);
     //       printf("[%s:%d] pid %u tid %u (0x%x)\n", __FUNCTION__, __LINE__, (unsigned int)pid,
-    //                (unsigned int)tid, (unsigned int)tid); /* tid是unsigned long int,这里只是方便转换 */
+    //                (unsigned int)tid, (unsigned int)tid); /* tid是unsigned long
+    //                int,这里只是方便转换 */
     //   }
     return NULL;
 }
@@ -62,8 +64,9 @@ int main(int argc, char **argv) {
         assert(0);
     }
     pthread_attr_destroy(&thread_attr);
-    printf("[%s:%d] pid %u tid %u (0x%x)\n", __FUNCTION__, __LINE__, (unsigned int)pid, (unsigned int)tid,
-           (unsigned int)tid); /* tid是unsigned long int,这里只是方便转换 */
+    //    printf("[%s:%d] pid %u tid %d (0x%x)\n", __FUNCTION__, __LINE__, (unsigned int)pid,
+    //           syscall(SYS_thread_selfid),
+    //           syscall(SYS_thread_selfid)); /* tid是unsigned long int,这里只是方便转换 */
     printf("[%s:%d] pthread END\n", __FUNCTION__, __LINE__);
     return 0;
 }

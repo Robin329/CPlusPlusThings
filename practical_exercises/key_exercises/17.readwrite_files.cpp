@@ -54,7 +54,7 @@ int main(int argc, char const *argv[]) {
         cin >> English;
         Person per(Name, Id, Math, Chinese, English);
         ioFile.write((char *)&per, sizeof(per));
-        cout << "Do you want to continue to file£¿(Y/y)  ";
+        cout << "Do you want to continue to file?(Y/y)  ";
         cin >> ch;
     } while (ch == 'y' || ch == 'Y');
     ioFile.close();

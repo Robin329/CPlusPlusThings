@@ -11,7 +11,7 @@ public:
     }
 
 private:
-    int &age_;
+    int age_;
     const std::string name_;
 };
 

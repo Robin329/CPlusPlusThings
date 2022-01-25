@@ -12,9 +12,10 @@ int main() {
     double a = 2, b = 3.4;
     float c = 5.1, d = 3.2;
     //在模板调用时进行参数类型的强制转换
-    cout << "2, 3.2    max value is：" << Max(double(2), 3.2) << endl;
-    cout << "a, c    max value is：" << Max(float(a), c) << endl;
+    cout << "2, 3.2    max value is:" << Max(double(2), 3.2) << endl;
+    cout << "a, c    max value is:" << Max(float(a), c) << endl;
     //显示指定函数模板实例化的参数类型
-    cout << "'a', 3    max value is：" << Max<int>('a', 3) << endl;
-    system("pause");
+    cout << "'a', 3    max value is:" << Max<int>('a', 3) << endl;
+    //    system("pause");
+    return 0;
 }

@@ -7,10 +7,10 @@
 using namespace std;
 
 int main() {
-    int i;
-    int j(); // 0
-    int *p;
-    int *q(); // nullptr
+    //    int i;
+    //    int j(); // 0
+    //    int *p;
+    //    int *q(); // nullptr
 
     //    int x1{5.0};    //  error:narrowing conversion
     // 编译器调用initializer_list私有构造之前,编译器准备好array(array头)与len,传递给该构造,并没有内含这个array,

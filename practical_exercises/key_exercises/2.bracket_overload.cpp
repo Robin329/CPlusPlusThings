@@ -6,6 +6,7 @@ struct Person { //职工基本信息的结构
     char *name;
 };
 class SalaryManaege {
+private:
     Person *employ; //存放职工信息的数组
     int max;        //数组下标上界
     int n;          //数组中的实际职工人数
@@ -28,21 +29,36 @@ public:
         p->salary = 0;
         return p->salary;
     }
+    friend std::ostream &operator<<(std::ostream &os, const SalaryManaege &s) {
+        for (int i = 0; i < s.n; i++) {
+            os << "Name: " << s.employ[i].name << endl;
+            os << "salary: " << s.employ[i].salary << endl;
+        }
+
+        return os;
+    }
 
     void display() {
+        cout << "n:" << n << endl;
         for (int i = 0; i < n; i++) cout << employ[i].name << "   " << employ[i].salary << endl;
     }
     ~SalaryManaege() { delete employ; }
 };
 int main() {
     SalaryManaege s(3);
-    s["张三"] = 2188.88;
-    s["里斯"] = 1230.07;
-    s["王无"] = 3200.97;
-    cout << "张三\t" << s["张三"] << endl;
-    cout << "里斯\t" << s["里斯"] << endl;
-    cout << "王无\t" << s["王无"] << endl;
+    s[(char *)"zhangsan"] = 2188.88;
+    s[(char *)"lisi"] = 1230.07;
+    s[(char *)"wangwu"] = 3200.97;
+    cout << s << endl;
+    //    cout << "里斯\t" << s[(char *)"里斯"] << endl;
+    //    cout << "王无\t" << s[(char *)"王无"] << endl;
 
     cout << "-------下为display的输出--------\n\n";
+    int i = 0, a = 1;
+    a = i++ + a;
+    cout << "a:" << a << endl;
+
     s.display();
+
+    return 0;
 }
