@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(Morden_C++)
 
 set(CMAKE_CXX_STANDARD 17)
+
 aux_source_directory(. DIR_MODERN_C++_30_SRCS)
 #MESSAGE("Cur Dir => ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_SOURCE_DIR}")
 #add_executable(heap RAII/heap.cpp)

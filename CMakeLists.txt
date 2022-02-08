@@ -200,7 +200,6 @@ set(BASE_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR})
 # googletest
 set(GTEST_INCLUDE_DIR ${BASE_INCLUDES}/gtest/googletest/include)
 set(GMOCK_INCLUDE_DIR ${BASE_INCLUDES}/gtest/googlemock/include)
-set(BASE_LIB_DIR)
 
 # 去哪里找头文件 相当于gcc/clang 中的-I(i的大写字母)参数
 include_directories(${GTEST_INCLUDE_DIR})
@@ -296,9 +295,9 @@ foreach(CHAPTER ${CHAPTERS})
     foreach(DEMO ${${CHAPTER}})
         foreach(SUB1 ${${DEMO}})
             foreach(SUB2 ${${SUB1}})
-                message("DEMO -->${DEMO}")
-                message("SUB2 -->${SUB2}")
-                message("SUB1 -->${SUB1}")
+#                message("DEMO -->${DEMO}")
+#                message("SUB2 -->${SUB2}")
+#                message("SUB1 -->${SUB1}")
                 file(GLOB SOURCE
                         "${CHAPTER}/${DEMO}/*.h"
                         "${CHAPTER}/${DEMO}/*.cpp"

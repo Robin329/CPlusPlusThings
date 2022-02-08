@@ -8,9 +8,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/syscall.h>
+#include <sys/time.h>
 #include <unistd.h>
 
 #include <chrono>
+#include <ctime>
 #include <iostream>
 #include <set>
 #include <sstream>
@@ -101,6 +103,76 @@ public:
 private:
     boot_clock::time_point start_;
 };
+
+class TimerLog {
+public:
+    TimerLog(const std::string tag) { // 对象构造时候保存开始时间
+        m_begin_ = std::chrono::high_resolution_clock::now();
+        m_tag_ = tag;
+    }
+
+    void Reset() { m_begin_ = std::chrono::high_resolution_clock::now(); }
+
+    long long Elapsed() {
+        return static_cast<long long>(duration_cast<std::chrono::milliseconds>(
+                                              std::chrono::high_resolution_clock::now() - m_begin_)
+                                              .count());
+    }
+
+    ~TimerLog() { // 对象析构时候计算当前时间与对象构造时候的时间差就是对象存活的时间
+        auto time = duration_cast<std::chrono::milliseconds>(
+                            std::chrono::high_resolution_clock::now() - m_begin_)
+                            .count();
+        std::cout << "time cost:{ " << m_tag_ << " } " << static_cast<double>(time) << " ms"
+                  << std::endl;
+    }
+    static std::chrono::time_point<std::chrono::high_resolution_clock> Now() {
+        return std::chrono::high_resolution_clock::now();
+    }
+
+    static long long DiffUs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
+                            std::chrono::time_point<std::chrono::high_resolution_clock> after) {
+        return static_cast<long long>(
+                duration_cast<std::chrono::microseconds>(after - before).count());
+    }
+
+    static long long DiffMs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
+                            std::chrono::time_point<std::chrono::high_resolution_clock> after) {
+        return static_cast<long long>(
+                duration_cast<std::chrono::milliseconds>(after - before).count());
+    }
+
+    static long long GetCurrentMs() {
+        struct timeval time;
+        gettimeofday(&time, NULL);
+        return static_cast<long long>(time.tv_sec * 1000) +
+                static_cast<long long>(time.tv_usec / 1000);
+    }
+
+    static void ShowCurTime() {
+        time_t now = time(0);
+        char *dt = ctime(&now);
+        std::cout << "cur time is " << dt << endl;
+        std::cout << "cur ms is " << GetCurrentMs() << endl;
+    }
+
+    static struct timeval GetCurrentTimeofDay() {
+        struct timeval time;
+        gettimeofday(&time, NULL);
+        return time;
+    }
+
+private:
+    std::chrono::time_point<std::chrono::high_resolution_clock> m_begin_;
+    std::string m_tag_;
+};
+
+#define CAL_TIME(x) TimerLog t(x)
+#define CAL_TIME_BEGIN(x) auto begin_##x = TimerLog::Now();
+
+#define CAL_TIME_END(x)                                                                        \
+    std::cout << "time cost:{ " << #x << " } " << TimerLog::DiffMs(begin_##x, TimerLog::Now()) \
+              << "ms" << endl;
 
 std::vector<std::string> Split(const std::string &s, const std::string &delimiters);
 
