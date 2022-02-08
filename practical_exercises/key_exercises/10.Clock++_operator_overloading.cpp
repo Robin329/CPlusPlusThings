@@ -84,5 +84,17 @@ int main() {
     //先执行++myClock，此时myClock=00:00:01
     //再执行ShowTime()，输出myClock=00:00:01
     (++myClock).ShowTime();
-    system("pause");
+    //    system("pause");
+    char buf[1024] __attribute__((__uninitialized__));
+    size_t size = snprintf(buf, sizeof(buf), "<%d>%s: %.*s\n", 5, "TAG", 128,
+                           "Hello, world! .... .... ... .. ");
+    if (size > sizeof(buf)) {
+        size = snprintf(buf, sizeof(buf), "<%d>%s: %zu-byte message too long for printk\n", 5,
+                        "tag", size);
+    }
+    cout << "size = " << size << " buf = " << buf << endl;
+
+    const char *env = "LOGNAME";
+    const char *tags = getenv(env);
+    cout << "[" << env << "]:" << tags << endl;
 }

@@ -11,6 +11,7 @@ add_executable(RAII RAII/RAII.cpp)
 #add_executable(auto_scope smart_ptr/auto_scope.cpp)
 #add_executable(unique_ptr smart_ptr/unique_ptr.cpp)
 #add_executable(unique_ptr_U smart_ptr/unique_ptr_U.cpp)
+add_executable(share_count_ptr smart_ptr/share_count_ptr.cpp)
 
 add_executable(reference reference/reference.cpp)
 
