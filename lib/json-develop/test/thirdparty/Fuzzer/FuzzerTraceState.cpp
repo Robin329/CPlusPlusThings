@@ -49,9 +49,11 @@ public:
 
     void TraceMemcmpCallback(size_t CmpSize, const uint8_t *Data1, const uint8_t *Data2);
 
-    void TraceSwitchCallback(uintptr_t PC, size_t ValSizeInBits, uint64_t Val, size_t NumCases, uint64_t *Cases);
+    void TraceSwitchCallback(uintptr_t PC, size_t ValSizeInBits, uint64_t Val, size_t NumCases,
+                             uint64_t *Cases);
     int TryToAddDesiredData(uint64_t PresentData, uint64_t DesiredData, size_t DataSize);
-    int TryToAddDesiredData(const uint8_t *PresentData, const uint8_t *DesiredData, size_t DataSize);
+    int TryToAddDesiredData(const uint8_t *PresentData, const uint8_t *DesiredData,
+                            size_t DataSize);
 
     void StartTraceRecording() {
         if (!Options.UseMemcmp) return;
@@ -73,7 +75,8 @@ public:
                 if ((AutoDictAdds & (AutoDictAdds - 1)) == 0) {
                     typedef std::pair<size_t, Word> CU;
                     std::vector<CU> CountedUnits;
-                    for (auto &I : AutoDictUnitCounts) CountedUnits.push_back(std::make_pair(I.second, I.first));
+                    for (auto &I : AutoDictUnitCounts)
+                        CountedUnits.push_back(std::make_pair(I.second, I.first));
                     std::sort(CountedUnits.begin(), CountedUnits.end(),
                               [](const CU &a, const CU &b) { return a.first > b.first; });
                     Printf("AutoDict:\n");
@@ -164,7 +167,8 @@ int TraceState::TryToAddDesiredData(uint64_t PresentData, uint64_t DesiredData, 
     return Res;
 }
 
-int TraceState::TryToAddDesiredData(const uint8_t *PresentData, const uint8_t *DesiredData, size_t DataSize) {
+int TraceState::TryToAddDesiredData(const uint8_t *PresentData, const uint8_t *DesiredData,
+                                    size_t DataSize) {
     if (NumMutations >= kMaxMutations || !WantToHandleOneMoreMutation()) return 0;
     ScopedDoingMyOwnMemmem scoped_doing_my_own_memmem;
     const uint8_t *UnitData;
@@ -196,14 +200,15 @@ void TraceState::TraceMemcmpCallback(size_t CmpSize, const uint8_t *Data1, const
     }
 }
 
-void TraceState::TraceSwitchCallback(uintptr_t PC, size_t ValSizeInBits, uint64_t Val, size_t NumCases,
-                                     uint64_t *Cases) {
+void TraceState::TraceSwitchCallback(uintptr_t PC, size_t ValSizeInBits, uint64_t Val,
+                                     size_t NumCases, uint64_t *Cases) {
     if (F->InFuzzingThread()) return;
     size_t ValSize = ValSizeInBits / 8;
     bool TryShort = IsTwoByteData(Val);
     for (size_t i = 0; i < NumCases; i++) TryShort &= IsTwoByteData(Cases[i]);
 
-    if (Options.Verbosity >= 3) Printf("TraceSwitch: %p %zd # %zd; TryShort %d\n", PC, Val, NumCases, TryShort);
+    if (Options.Verbosity >= 3)
+        Printf("TraceSwitch: %p %zd # %zd; TryShort %d\n", PC, Val, NumCases, TryShort);
 
     for (size_t i = 0; i < NumCases; i++) {
         TryToAddDesiredData(Val, Cases[i], ValSize);
@@ -248,15 +253,18 @@ extern "C" {
 #endif
 
 #if LLVM_FUZZER_DEFINES_SANITIZER_WEAK_HOOOKS
-void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1, const void *s2, size_t n, int result) {
+void __sanitizer_weak_hook_memcmp(void *caller_pc, const void *s1, const void *s2, size_t n,
+                                  int result) {
     fuzzer::TPC.AddValueForMemcmp(caller_pc, s1, s2, n);
     if (!RecordingMemcmp) return;
     if (result == 0) return; // No reason to mutate.
     if (n <= 1) return;      // Not interesting.
-    TS->TraceMemcmpCallback(n, reinterpret_cast<const uint8_t *>(s1), reinterpret_cast<const uint8_t *>(s2));
+    TS->TraceMemcmpCallback(n, reinterpret_cast<const uint8_t *>(s1),
+                            reinterpret_cast<const uint8_t *>(s2));
 }
 
-void __sanitizer_weak_hook_strncmp(void *caller_pc, const char *s1, const char *s2, size_t n, int result) {
+void __sanitizer_weak_hook_strncmp(void *caller_pc, const char *s1, const char *s2, size_t n,
+                                   int result) {
     fuzzer::TPC.AddValueForStrcmp(caller_pc, s1, s2, n);
     if (!RecordingMemcmp) return;
     if (result == 0) return; // No reason to mutate.
@@ -265,7 +273,8 @@ void __sanitizer_weak_hook_strncmp(void *caller_pc, const char *s1, const char *
     n = std::min(n, Len1);
     n = std::min(n, Len2);
     if (n <= 1) return; // Not interesting.
-    TS->TraceMemcmpCallback(n, reinterpret_cast<const uint8_t *>(s1), reinterpret_cast<const uint8_t *>(s2));
+    TS->TraceMemcmpCallback(n, reinterpret_cast<const uint8_t *>(s1),
+                            reinterpret_cast<const uint8_t *>(s2));
 }
 
 void __sanitizer_weak_hook_strcmp(void *caller_pc, const char *s1, const char *s2, int result) {
@@ -276,10 +285,12 @@ void __sanitizer_weak_hook_strcmp(void *caller_pc, const char *s1, const char *s
     size_t Len2 = strlen(s2);
     size_t N = std::min(Len1, Len2);
     if (N <= 1) return; // Not interesting.
-    TS->TraceMemcmpCallback(N, reinterpret_cast<const uint8_t *>(s1), reinterpret_cast<const uint8_t *>(s2));
+    TS->TraceMemcmpCallback(N, reinterpret_cast<const uint8_t *>(s1),
+                            reinterpret_cast<const uint8_t *>(s2));
 }
 
-void __sanitizer_weak_hook_strncasecmp(void *called_pc, const char *s1, const char *s2, size_t n, int result) {
+void __sanitizer_weak_hook_strncasecmp(void *called_pc, const char *s1, const char *s2, size_t n,
+                                       int result) {
     return __sanitizer_weak_hook_strncmp(called_pc, s1, s2, n, result);
 }
 void __sanitizer_weak_hook_strcasecmp(void *called_pc, const char *s1, const char *s2, int result) {
@@ -288,11 +299,12 @@ void __sanitizer_weak_hook_strcasecmp(void *called_pc, const char *s1, const cha
 void __sanitizer_weak_hook_strstr(void *called_pc, const char *s1, const char *s2, char *result) {
     TS->AddInterestingWord(reinterpret_cast<const uint8_t *>(s2), strlen(s2));
 }
-void __sanitizer_weak_hook_strcasestr(void *called_pc, const char *s1, const char *s2, char *result) {
+void __sanitizer_weak_hook_strcasestr(void *called_pc, const char *s1, const char *s2,
+                                      char *result) {
     TS->AddInterestingWord(reinterpret_cast<const uint8_t *>(s2), strlen(s2));
 }
-void __sanitizer_weak_hook_memmem(void *called_pc, const void *s1, size_t len1, const void *s2, size_t len2,
-                                  void *result) {
+void __sanitizer_weak_hook_memmem(void *called_pc, const void *s1, size_t len1, const void *s2,
+                                  size_t len2, void *result) {
     if (fuzzer::DoingMyOwnMemmem) return;
     TS->AddInterestingWord(reinterpret_cast<const uint8_t *>(s2), len2);
 }

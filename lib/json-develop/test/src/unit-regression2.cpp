@@ -43,7 +43,8 @@ using ordered_json = nlohmann::ordered_json;
 #include <type_traits>
 #include <utility>
 
-#if (defined(__cplusplus) && __cplusplus >= 201703L) || (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
+#if (defined(__cplusplus) && __cplusplus >= 201703L) || \
+        (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
 #define JSON_HAS_CPP_17
 #endif
 
@@ -63,7 +64,8 @@ DOCTEST_CLANG_SUPPRESS_WARNING("-Wexit-time-destructors")
 // for #1021
 /////////////////////////////////////////////////////////////////////
 
-using float_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t, float>;
+using float_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t,
+                                        std::uint64_t, float>;
 
 /////////////////////////////////////////////////////////////////////
 // for #1647
@@ -71,7 +73,8 @@ using float_json = nlohmann::basic_json<std::map, std::vector, std::string, bool
 namespace {
 struct NonDefaultFromJsonStruct {};
 
-inline bool operator==(NonDefaultFromJsonStruct const& /*unused*/, NonDefaultFromJsonStruct const& /*unused*/) {
+inline bool operator==(NonDefaultFromJsonStruct const& /*unused*/,
+                       NonDefaultFromJsonStruct const& /*unused*/) {
     return true;
 }
 
@@ -79,10 +82,11 @@ enum class for_1647 { one, two };
 
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays):
 // this is a false positive
-NLOHMANN_JSON_SERIALIZE_ENUM(for_1647, {
-                                               {for_1647::one, "one"},
-                                               {for_1647::two, "two"},
-                                       })
+NLOHMANN_JSON_SERIALIZE_ENUM(for_1647,
+                             {
+                                     {for_1647::one, "one"},
+                                     {for_1647::two, "two"},
+                             })
 } // namespace
 
 /////////////////////////////////////////////////////////////////////
@@ -140,7 +144,9 @@ struct NonDefaultConstructible {
 namespace nlohmann {
 template <>
 struct adl_serializer<NonDefaultConstructible> {
-    static NonDefaultConstructible from_json(json const& j) { return NonDefaultConstructible(j.get<int>()); }
+    static NonDefaultConstructible from_json(json const& j) {
+        return NonDefaultConstructible(j.get<int>());
+    }
 };
 } // namespace nlohmann
 
@@ -152,7 +158,8 @@ class sax_no_exception : public nlohmann::detail::json_sax_dom_parser<json> {
 public:
     explicit sax_no_exception(json& j) : nlohmann::detail::json_sax_dom_parser<json>(j, false) {}
 
-    static bool parse_error(std::size_t /*position*/, const std::string& /*last_token*/, const json::exception& ex) {
+    static bool parse_error(std::size_t /*position*/, const std::string& /*last_token*/,
+                            const json::exception& ex) {
         error_string = new std::string(ex.what()); // NOLINT(cppcoreguidelines-owning-memory)
         return false;
     }
@@ -255,12 +262,15 @@ TEST_CASE("regression tests 2") {
 
         using it_type = decltype(p1.begin());
 
-        std::set_difference(p1.begin(), p1.end(), p2.begin(), p2.end(), std::inserter(diffs, diffs.end()),
+        std::set_difference(p1.begin(), p1.end(), p2.begin(), p2.end(),
+                            std::inserter(diffs, diffs.end()),
                             [&](const it_type& e1, const it_type& e2) -> bool {
-                                using comper_pair = std::pair<std::string,
-                                                              decltype(e1.value())>; // Trying to avoid unneeded copy
+                                using comper_pair =
+                                        std::pair<std::string,
+                                                  decltype(e1.value())>; // Trying to avoid unneeded
+                                                                         // copy
                                 return comper_pair(e1.key(), e1.value()) <
-                                       comper_pair(e2.key(), e2.value()); // Using pair comper
+                                        comper_pair(e2.key(), e2.value()); // Using pair comper
                             });
 
         CHECK(diffs.size() == 1); // Note the change here, was 2
@@ -323,12 +333,14 @@ TEST_CASE("regression tests 2") {
         SECTION("test case in issue #1445") {
             nlohmann::json dump_test;
             const std::array<int, 108> data = {
-                    {109, 108, 103, 125, -122, -53, 115, 18,  3,    0,    102, 19,   1,   15,  -110, 13,   -3,  -1,
-                     -81, 32,  2,   0,   0,    0,   0,   0,   0,    0,    8,   0,    0,   0,   0,    0,    0,   0,
-                     0,   0,   0,   0,   -80,  2,   0,   0,   96,   -118, 46,  -116, 46,  109, -84,  -87,  108, 14,
-                     109, -24, -83, 13,  -18,  -51, -83, -52, -115, 14,   6,   32,   0,   0,   0,    0,    0,   0,
-                     0,   0,   0,   0,   0,    64,  3,   0,   0,    0,    35,  -74,  -73, 55,  57,   -128, 0,   0,
-                     0,   0,   0,   0,   0,    0,   0,   0,   0,    0,    33,  0,    0,   0,   -96,  -54,  -28, -26}};
+                    {109,  108, 103, 125,  -122, -53,  115,  18,  3,   0,   102, 19, 1,   15,
+                     -110, 13,  -3,  -1,   -81,  32,   2,    0,   0,   0,   0,   0,  0,   0,
+                     8,    0,   0,   0,    0,    0,    0,    0,   0,   0,   0,   0,  -80, 2,
+                     0,    0,   96,  -118, 46,   -116, 46,   109, -84, -87, 108, 14, 109, -24,
+                     -83,  13,  -18, -51,  -83,  -52,  -115, 14,  6,   32,  0,   0,  0,   0,
+                     0,    0,   0,   0,    0,    0,    0,    64,  3,   0,   0,   0,  35,  -74,
+                     -73,  55,  57,  -128, 0,    0,    0,    0,   0,   0,   0,   0,  0,   0,
+                     0,    0,   33,  0,    0,    0,    -96,  -54, -28, -26}};
             std::string s;
             for (int i : data) {
                 s += static_cast<char>(i);
@@ -395,14 +407,22 @@ TEST_CASE("regression tests 2") {
 
     SECTION("issue #1805 - A pair<T1, T2> is json constructible only if T1 and T2 "
             "are json constructible") {
-        static_assert(!std::is_constructible<json, std::pair<std::string, NotSerializableData>>::value, "");
-        static_assert(!std::is_constructible<json, std::pair<NotSerializableData, std::string>>::value, "");
+        static_assert(!std::is_constructible<json,
+                                             std::pair<std::string, NotSerializableData>>::value,
+                      "");
+        static_assert(!std::is_constructible<json,
+                                             std::pair<NotSerializableData, std::string>>::value,
+                      "");
         static_assert(std::is_constructible<json, std::pair<int, std::string>>::value, "");
     }
     SECTION("issue #1825 - A tuple<Args..> is json constructible only if all T in "
             "Args are json constructible") {
-        static_assert(!std::is_constructible<json, std::tuple<std::string, NotSerializableData>>::value, "");
-        static_assert(!std::is_constructible<json, std::tuple<NotSerializableData, std::string>>::value, "");
+        static_assert(!std::is_constructible<json,
+                                             std::tuple<std::string, NotSerializableData>>::value,
+                      "");
+        static_assert(!std::is_constructible<json,
+                                             std::tuple<NotSerializableData, std::string>>::value,
+                      "");
         static_assert(std::is_constructible<json, std::tuple<int, std::string>>::value, "");
     }
 
@@ -450,7 +470,8 @@ TEST_CASE("regression tests 2") {
         auto jsonAnimals_parsed = nlohmann::ordered_json::parse(jsonAnimals.dump());
         CHECK(jsonAnimals == jsonAnimals_parsed);
 
-        std::vector<std::pair<std::string, int64_t>> intData = {std::make_pair("aaaa", 11), std::make_pair("bbb", 222)};
+        std::vector<std::pair<std::string, int64_t>> intData = {std::make_pair("aaaa", 11),
+                                                                std::make_pair("bbb", 222)};
         nlohmann::ordered_json jsonObj;
         for (const auto& data : intData) {
             jsonObj[data.first] = data.second;
@@ -487,7 +508,8 @@ TEST_CASE("regression tests 2") {
 
             {
                 json j = 7;
-                CHECK_THROWS_AS((j.get<std::array<NonDefaultConstructible, 1>>()), json::type_error);
+                CHECK_THROWS_AS((j.get<std::array<NonDefaultConstructible, 1>>()),
+                                json::type_error);
             }
         }
 
@@ -515,7 +537,8 @@ TEST_CASE("regression tests 2") {
 
             {
                 json j = 7;
-                CHECK_THROWS_AS((j.get<std::pair<NonDefaultConstructible, int>>()), json::type_error);
+                CHECK_THROWS_AS((j.get<std::pair<NonDefaultConstructible, int>>()),
+                                json::type_error);
             }
         }
 
@@ -571,8 +594,9 @@ TEST_CASE("regression tests 2") {
         sax_no_exception sax(j);
 
         CHECK(!json::sax_parse("xyz", &sax));
-        CHECK(*sax_no_exception::error_string == "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                                 "syntax error while parsing value - invalid literal; last read: 'x'");
+        CHECK(*sax_no_exception::error_string ==
+              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+              "syntax error while parsing value - invalid literal; last read: 'x'");
         delete sax_no_exception::error_string; // NOLINT(cppcoreguidelines-owning-memory)
     }
 

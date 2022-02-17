@@ -10,6 +10,7 @@ int NumAllocatedPointers = 0;
 int *AllocatedPointers[kAllocatedPointersSize];
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
-    if (NumAllocatedPointers < kAllocatedPointersSize) AllocatedPointers[NumAllocatedPointers++] = new int;
+    if (NumAllocatedPointers < kAllocatedPointersSize)
+        AllocatedPointers[NumAllocatedPointers++] = new int;
     return 0;
 }

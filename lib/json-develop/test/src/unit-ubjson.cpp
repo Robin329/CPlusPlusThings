@@ -52,7 +52,9 @@ public:
 
     bool number_unsigned(json::number_unsigned_t /*unused*/) { return events_left-- > 0; }
 
-    bool number_float(json::number_float_t /*unused*/, const std::string& /*unused*/) { return events_left-- > 0; }
+    bool number_float(json::number_float_t /*unused*/, const std::string& /*unused*/) {
+        return events_left-- > 0;
+    }
 
     bool string(std::string& /*unused*/) { return events_left-- > 0; }
 
@@ -68,8 +70,10 @@ public:
 
     bool end_array() { return events_left-- > 0; }
 
-    bool parse_error(std::size_t /*unused*/, const std::string& /*unused*/,
-                     const json::exception& /*unused*/) // NOLINT(readability-convert-member-functions-to-static)
+    bool parse_error(
+            std::size_t /*unused*/, const std::string& /*unused*/,
+            const json::
+                    exception& /*unused*/) // NOLINT(readability-convert-member-functions-to-static)
     {
         return false;
     }
@@ -166,11 +170,14 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'L');
-                        int64_t restored =
-                                (static_cast<int64_t>(result[1]) << 070) + (static_cast<int64_t>(result[2]) << 060) +
-                                (static_cast<int64_t>(result[3]) << 050) + (static_cast<int64_t>(result[4]) << 040) +
-                                (static_cast<int64_t>(result[5]) << 030) + (static_cast<int64_t>(result[6]) << 020) +
-                                (static_cast<int64_t>(result[7]) << 010) + static_cast<int64_t>(result[8]);
+                        int64_t restored = (static_cast<int64_t>(result[1]) << 070) +
+                                (static_cast<int64_t>(result[2]) << 060) +
+                                (static_cast<int64_t>(result[3]) << 050) +
+                                (static_cast<int64_t>(result[4]) << 040) +
+                                (static_cast<int64_t>(result[5]) << 030) +
+                                (static_cast<int64_t>(result[6]) << 020) +
+                                (static_cast<int64_t>(result[7]) << 010) +
+                                static_cast<int64_t>(result[8]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -187,7 +194,8 @@ TEST_CASE("UBJSON") {
                     numbers.push_back(-10000000);
                     numbers.push_back(-100000000);
                     numbers.push_back(-1000000000);
-                    numbers.push_back(-2147483647 - 1); // https://stackoverflow.com/a/29356002/266378
+                    numbers.push_back(-2147483647 -
+                                      1); // https://stackoverflow.com/a/29356002/266378
                     for (auto i : numbers) {
                         CAPTURE(i)
 
@@ -213,8 +221,9 @@ TEST_CASE("UBJSON") {
                         // check individual bytes
                         CHECK(result[0] == 'l');
                         int32_t restored = (static_cast<int32_t>(result[1]) << 030) +
-                                           (static_cast<int32_t>(result[2]) << 020) +
-                                           (static_cast<int32_t>(result[3]) << 010) + static_cast<int32_t>(result[4]);
+                                (static_cast<int32_t>(result[2]) << 020) +
+                                (static_cast<int32_t>(result[3]) << 010) +
+                                static_cast<int32_t>(result[4]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -310,7 +319,8 @@ TEST_CASE("UBJSON") {
 
                         // create JSON value with integer number
                         json j = -1;
-                        j.get_ref<json::number_integer_t&>() = static_cast<json::number_integer_t>(i);
+                        j.get_ref<json::number_integer_t&>() =
+                                static_cast<json::number_integer_t>(i);
 
                         // check type
                         CHECK(j.is_number_integer());
@@ -341,7 +351,8 @@ TEST_CASE("UBJSON") {
 
                         // create JSON value with integer number
                         json j = -1;
-                        j.get_ref<json::number_integer_t&>() = static_cast<json::number_integer_t>(i);
+                        j.get_ref<json::number_integer_t&>() =
+                                static_cast<json::number_integer_t>(i);
 
                         // check type
                         CHECK(j.is_number_integer());
@@ -372,7 +383,8 @@ TEST_CASE("UBJSON") {
 
                         // create JSON value with integer number
                         json j = -1;
-                        j.get_ref<json::number_integer_t&>() = static_cast<json::number_integer_t>(i);
+                        j.get_ref<json::number_integer_t&>() =
+                                static_cast<json::number_integer_t>(i);
 
                         // check type
                         CHECK(j.is_number_integer());
@@ -390,8 +402,9 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'I');
-                        auto restored = static_cast<uint16_t>(static_cast<uint8_t>(result[1]) * 256 +
-                                                              static_cast<uint8_t>(result[2]));
+                        auto restored =
+                                static_cast<uint16_t>(static_cast<uint8_t>(result[1]) * 256 +
+                                                      static_cast<uint8_t>(result[2]));
                         CHECK(restored == i);
 
                         // roundtrip
@@ -406,7 +419,8 @@ TEST_CASE("UBJSON") {
 
                         // create JSON value with integer number
                         json j = -1;
-                        j.get_ref<json::number_integer_t&>() = static_cast<json::number_integer_t>(i);
+                        j.get_ref<json::number_integer_t&>() =
+                                static_cast<json::number_integer_t>(i);
 
                         // check type
                         CHECK(j.is_number_integer());
@@ -426,9 +440,10 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'l');
-                        uint32_t restored =
-                                (static_cast<uint32_t>(result[1]) << 030) + (static_cast<uint32_t>(result[2]) << 020) +
-                                (static_cast<uint32_t>(result[3]) << 010) + static_cast<uint32_t>(result[4]);
+                        uint32_t restored = (static_cast<uint32_t>(result[1]) << 030) +
+                                (static_cast<uint32_t>(result[2]) << 020) +
+                                (static_cast<uint32_t>(result[3]) << 010) +
+                                static_cast<uint32_t>(result[4]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -444,7 +459,8 @@ TEST_CASE("UBJSON") {
 
                         // create JSON value with integer number
                         json j = -1;
-                        j.get_ref<json::number_integer_t&>() = static_cast<json::number_integer_t>(i);
+                        j.get_ref<json::number_integer_t&>() =
+                                static_cast<json::number_integer_t>(i);
 
                         // check type
                         CHECK(j.is_number_integer());
@@ -468,11 +484,14 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'L');
-                        uint64_t restored =
-                                (static_cast<uint64_t>(result[1]) << 070) + (static_cast<uint64_t>(result[2]) << 060) +
-                                (static_cast<uint64_t>(result[3]) << 050) + (static_cast<uint64_t>(result[4]) << 040) +
-                                (static_cast<uint64_t>(result[5]) << 030) + (static_cast<uint64_t>(result[6]) << 020) +
-                                (static_cast<uint64_t>(result[7]) << 010) + static_cast<uint64_t>(result[8]);
+                        uint64_t restored = (static_cast<uint64_t>(result[1]) << 070) +
+                                (static_cast<uint64_t>(result[2]) << 060) +
+                                (static_cast<uint64_t>(result[3]) << 050) +
+                                (static_cast<uint64_t>(result[4]) << 040) +
+                                (static_cast<uint64_t>(result[5]) << 030) +
+                                (static_cast<uint64_t>(result[6]) << 020) +
+                                (static_cast<uint64_t>(result[7]) << 010) +
+                                static_cast<uint64_t>(result[8]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -568,8 +587,9 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'I');
-                        auto restored = static_cast<uint16_t>(static_cast<uint8_t>(result[1]) * 256 +
-                                                              static_cast<uint8_t>(result[2]));
+                        auto restored =
+                                static_cast<uint16_t>(static_cast<uint8_t>(result[1]) * 256 +
+                                                      static_cast<uint8_t>(result[2]));
                         CHECK(restored == i);
 
                         // roundtrip
@@ -603,9 +623,10 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'l');
-                        uint32_t restored =
-                                (static_cast<uint32_t>(result[1]) << 030) + (static_cast<uint32_t>(result[2]) << 020) +
-                                (static_cast<uint32_t>(result[3]) << 010) + static_cast<uint32_t>(result[4]);
+                        uint32_t restored = (static_cast<uint32_t>(result[1]) << 030) +
+                                (static_cast<uint32_t>(result[2]) << 020) +
+                                (static_cast<uint32_t>(result[3]) << 010) +
+                                static_cast<uint32_t>(result[4]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -644,11 +665,14 @@ TEST_CASE("UBJSON") {
 
                         // check individual bytes
                         CHECK(result[0] == 'L');
-                        uint64_t restored =
-                                (static_cast<uint64_t>(result[1]) << 070) + (static_cast<uint64_t>(result[2]) << 060) +
-                                (static_cast<uint64_t>(result[3]) << 050) + (static_cast<uint64_t>(result[4]) << 040) +
-                                (static_cast<uint64_t>(result[5]) << 030) + (static_cast<uint64_t>(result[6]) << 020) +
-                                (static_cast<uint64_t>(result[7]) << 010) + static_cast<uint64_t>(result[8]);
+                        uint64_t restored = (static_cast<uint64_t>(result[1]) << 070) +
+                                (static_cast<uint64_t>(result[2]) << 060) +
+                                (static_cast<uint64_t>(result[3]) << 050) +
+                                (static_cast<uint64_t>(result[4]) << 040) +
+                                (static_cast<uint64_t>(result[5]) << 030) +
+                                (static_cast<uint64_t>(result[6]) << 020) +
+                                (static_cast<uint64_t>(result[7]) << 010) +
+                                static_cast<uint64_t>(result[8]);
                         CHECK(restored == i);
 
                         // roundtrip
@@ -662,7 +686,8 @@ TEST_CASE("UBJSON") {
                 SECTION("3.1415925") {
                     double v = 3.1415925;
                     json j = v;
-                    std::vector<uint8_t> expected = {'D', 0x40, 0x09, 0x21, 0xfb, 0x3f, 0xa6, 0xde, 0xfc};
+                    std::vector<uint8_t> expected = {'D',  0x40, 0x09, 0x21, 0xfb,
+                                                     0x3f, 0xa6, 0xde, 0xfc};
                     const auto result = json::to_ubjson(j);
                     CHECK(result == expected);
 
@@ -675,24 +700,27 @@ TEST_CASE("UBJSON") {
 
             SECTION("high-precision number") {
                 SECTION("unsigned integer number") {
-                    std::vector<uint8_t> vec = {'H', 'i', 0x14, '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                                                '0', '1', '2',  '3', '4', '5', '6', '7', '8', '9', '0'};
+                    std::vector<uint8_t> vec = {'H', 'i', 0x14, '1', '2', '3', '4', '5',
+                                                '6', '7', '8',  '9', '0', '1', '2', '3',
+                                                '4', '5', '6',  '7', '8', '9', '0'};
                     const auto j = json::from_ubjson(vec);
                     CHECK(j.is_number_unsigned());
                     CHECK(j.dump() == "12345678901234567890");
                 }
 
                 SECTION("signed integer number") {
-                    std::vector<uint8_t> vec = {'H', 'i', 0x13, '-', '1', '2', '3', '4', '5', '6', '7',
-                                                '8', '9', '0',  '1', '2', '3', '4', '5', '6', '7', '8'};
+                    std::vector<uint8_t> vec = {'H', 'i', 0x13, '-', '1', '2', '3', '4',
+                                                '5', '6', '7',  '8', '9', '0', '1', '2',
+                                                '3', '4', '5',  '6', '7', '8'};
                     const auto j = json::from_ubjson(vec);
                     CHECK(j.is_number_integer());
                     CHECK(j.dump() == "-123456789012345678");
                 }
 
                 SECTION("floating-point number") {
-                    std::vector<uint8_t> vec = {'H', 'i', 0x16, '3', '.', '1', '4', '1', '5', '9', '2', '6', '5',
-                                                '3', '5', '8',  '9', '7', '9', '3', '2', '3', '8', '4', '6'};
+                    std::vector<uint8_t> vec = {'H', 'i', 0x16, '3', '.', '1', '4', '1', '5',
+                                                '9', '2', '6',  '5', '3', '5', '8', '9', '7',
+                                                '9', '3', '2',  '3', '8', '4', '6'};
                     const auto j = json::from_ubjson(vec);
                     CHECK(j.is_number_float());
                     CHECK(j.dump() == "3.141592653589793");
@@ -721,7 +749,8 @@ TEST_CASE("UBJSON") {
                                          json::parse_error);
                     std::vector<uint8_t> vec4 = {'H', 2, '1', '0'};
                     CHECK_THROWS_WITH_AS(_ = json::from_ubjson(vec4),
-                                         "[json.exception.parse_error.113] parse error at byte 2: syntax "
+                                         "[json.exception.parse_error.113] parse error at byte 2: "
+                                         "syntax "
                                          "error while parsing UBJSON size: expected length type "
                                          "specification (U, i, I, l, L) after '#'; last byte: 0x02",
                                          json::parse_error);
@@ -734,8 +763,9 @@ TEST_CASE("UBJSON") {
 
                     // number will be serialized to high-precision number
                     const auto vec = json::to_ubjson(j);
-                    std::vector<uint8_t> expected = {'H', 'i', 0x14, '1', '1', '1', '1', '1', '1', '1', '1', '1',
-                                                     '1', '1', '1',  '1', '1', '1', '1', '1', '1', '1', '1'};
+                    std::vector<uint8_t> expected = {'H', 'i', 0x14, '1', '1', '1', '1', '1',
+                                                     '1', '1', '1',  '1', '1', '1', '1', '1',
+                                                     '1', '1', '1',  '1', '1', '1', '1'};
                     CHECK(vec == expected);
 
                     // roundtrip
@@ -1140,7 +1170,8 @@ TEST_CASE("UBJSON") {
             SECTION("[1,2,3,4,5]") {
                 SECTION("size=false type=false") {
                     json j = json::parse("[1,2,3,4,5]");
-                    std::vector<uint8_t> expected = {'[', 'i', 1, 'i', 2, 'i', 3, 'i', 4, 'i', 5, ']'};
+                    std::vector<uint8_t> expected = {'[', 'i', 1, 'i', 2, 'i',
+                                                     3,   'i', 4, 'i', 5, ']'};
                     const auto result = json::to_ubjson(j);
                     CHECK(result == expected);
 
@@ -1151,7 +1182,8 @@ TEST_CASE("UBJSON") {
 
                 SECTION("size=true type=false") {
                     json j = json::parse("[1,2,3,4,5]");
-                    std::vector<uint8_t> expected = {'[', '#', 'i', 5, 'i', 1, 'i', 2, 'i', 3, 'i', 4, 'i', 5};
+                    std::vector<uint8_t> expected = {'[', '#', 'i', 5,   'i', 1,   'i',
+                                                     2,   'i', 3,   'i', 4,   'i', 5};
                     const auto result = json::to_ubjson(j, true);
                     CHECK(result == expected);
 
@@ -1285,7 +1317,8 @@ TEST_CASE("UBJSON") {
 
                 SECTION("size=true type=true") {
                     json j(65793, nullptr);
-                    std::vector<uint8_t> expected = {'[', '$', 'Z', '#', 'l', 0x00, 0x01, 0x01, 0x01};
+                    std::vector<uint8_t> expected = {'[',  '$',  'Z',  '#', 'l',
+                                                     0x00, 0x01, 0x01, 0x01};
                     const auto result = json::to_ubjson(j, true, true);
                     CHECK(result == expected);
 
@@ -1382,8 +1415,9 @@ TEST_CASE("UBJSON") {
 
                 SECTION("size=true type=false") {
                     json j = json::parse(R"({"a": {"b": {"c": {}}}})");
-                    std::vector<uint8_t> expected = {'{', '#', 'i', 1,   'i', 1,   'a', '{', '#', 'i', 1,   'i', 1,
-                                                     'b', '{', '#', 'i', 1,   'i', 1,   'c', '{', '#', 'i', 0};
+                    std::vector<uint8_t> expected = {'{', '#', 'i', 1,   'i', 1,   'a', '{', '#',
+                                                     'i', 1,   'i', 1,   'b', '{', '#', 'i', 1,
+                                                     'i', 1,   'c', '{', '#', 'i', 0};
                     const auto result = json::to_ubjson(j, true);
                     CHECK(result == expected);
 
@@ -1394,8 +1428,10 @@ TEST_CASE("UBJSON") {
 
                 SECTION("size=true type=true") {
                     json j = json::parse(R"({"a": {"b": {"c": {}}}})");
-                    std::vector<uint8_t> expected = {'{', '$', '{', '#', 'i', 1,   'i', 1, 'a', '$', '{', '#', 'i', 1,
-                                                     'i', 1,   'b', '$', '{', '#', 'i', 1, 'i', 1,   'c', '#', 'i', 0};
+                    std::vector<uint8_t> expected = {'{', '$', '{', '#', 'i', 1,   'i',
+                                                     1,   'a', '$', '{', '#', 'i', 1,
+                                                     'i', 1,   'b', '$', '{', '#', 'i',
+                                                     1,   'i', 1,   'c', '#', 'i', 0};
                     const auto result = json::to_ubjson(j, true, true);
                     CHECK(result == expected);
 
@@ -1418,9 +1454,10 @@ TEST_CASE("UBJSON") {
             SECTION("strict mode") {
                 json _;
                 CHECK_THROWS_AS(_ = json::from_ubjson(vec), json::parse_error&);
-                CHECK_THROWS_WITH(_ = json::from_ubjson(vec), "[json.exception.parse_error.110] parse error at "
-                                                              "byte 2: syntax error while parsing UBJSON value: "
-                                                              "expected end of input; last byte: 0x5A");
+                CHECK_THROWS_WITH(_ = json::from_ubjson(vec),
+                                  "[json.exception.parse_error.110] parse error at "
+                                  "byte 2: syntax error while parsing UBJSON value: "
+                                  "expected end of input; last byte: 0x5A");
             }
         }
 
@@ -1432,11 +1469,12 @@ TEST_CASE("UBJSON") {
                 CHECK_THROWS_AS(_ = json::from_ubjson(v_ubjson), json::out_of_range&);
 
                 json j;
-                nlohmann::detail::json_sax_dom_callback_parser<json> scp(j,
-                                                                         [](int /*unused*/,
-                                                                            json::parse_event_t /*unused*/,
-                                                                            const json& /*unused*/) { return true; });
-                CHECK_THROWS_AS(_ = json::sax_parse(v_ubjson, &scp, json::input_format_t::ubjson), json::out_of_range&);
+                nlohmann::detail::json_sax_dom_callback_parser<json>
+                        scp(j,
+                            [](int /*unused*/, json::parse_event_t /*unused*/,
+                               const json& /*unused*/) { return true; });
+                CHECK_THROWS_AS(_ = json::sax_parse(v_ubjson, &scp, json::input_format_t::ubjson),
+                                json::out_of_range&);
             }
 
             SECTION("object") {
@@ -1446,11 +1484,12 @@ TEST_CASE("UBJSON") {
                 CHECK_THROWS_AS(_ = json::from_ubjson(v_ubjson), json::out_of_range&);
 
                 json j;
-                nlohmann::detail::json_sax_dom_callback_parser<json> scp(j,
-                                                                         [](int /*unused*/,
-                                                                            json::parse_event_t /*unused*/,
-                                                                            const json& /*unused*/) { return true; });
-                CHECK_THROWS_AS(_ = json::sax_parse(v_ubjson, &scp, json::input_format_t::ubjson), json::out_of_range&);
+                nlohmann::detail::json_sax_dom_callback_parser<json>
+                        scp(j,
+                            [](int /*unused*/, json::parse_event_t /*unused*/,
+                               const json& /*unused*/) { return true; });
+                CHECK_THROWS_AS(_ = json::sax_parse(v_ubjson, &scp, json::input_format_t::ubjson),
+                                json::out_of_range&);
             }
         }
     }
@@ -1543,11 +1582,14 @@ TEST_CASE("UBJSON") {
                 std::vector<uint8_t> v_i = {'[', '#', 'i', 2, 'i', 0x7F, 'i', 0x7F};
                 std::vector<uint8_t> v_U = {'[', '#', 'i', 2, 'U', 0xFF, 'U', 0xFF};
                 std::vector<uint8_t> v_I = {'[', '#', 'i', 2, 'I', 0x7F, 0xFF, 'I', 0x7F, 0xFF};
-                std::vector<uint8_t> v_l = {'[', '#', 'i', 2, 'l', 0x7F, 0xFF, 0xFF, 0xFF, 'l', 0x7F, 0xFF, 0xFF, 0xFF};
-                std::vector<uint8_t> v_L = {'[',  '#',  'i', 2,    'L',  0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
-                                            0xFF, 0xFF, 'L', 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-                std::vector<uint8_t> v_D = {'[',  '#',  'i', 2,    'D',  0x40, 0x09, 0x21, 0xfb, 0x4d, 0x12,
-                                            0xd8, 0x4a, 'D', 0x40, 0x09, 0x21, 0xfb, 0x4d, 0x12, 0xd8, 0x4a};
+                std::vector<uint8_t> v_l = {'[',  '#',  'i', 2,    'l',  0x7F, 0xFF,
+                                            0xFF, 0xFF, 'l', 0x7F, 0xFF, 0xFF, 0xFF};
+                std::vector<uint8_t> v_L = {'[',  '#',  'i',  2,    'L',  0x7F, 0xFF, 0xFF,
+                                            0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 'L',  0x7F, 0xFF,
+                                            0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+                std::vector<uint8_t> v_D = {'[',  '#',  'i',  2,    'D',  0x40, 0x09, 0x21,
+                                            0xfb, 0x4d, 0x12, 0xd8, 0x4a, 'D',  0x40, 0x09,
+                                            0x21, 0xfb, 0x4d, 0x12, 0xd8, 0x4a};
                 std::vector<uint8_t> v_S = {'[', '#', 'i', 2, 'S', 'i', 1, 'a', 'S', 'i', 1, 'a'};
                 std::vector<uint8_t> v_C = {'[', '#', 'i', 2, 'C', 'a', 'C', 'a'};
 
@@ -1576,7 +1618,8 @@ TEST_CASE("UBJSON") {
                 CHECK(json::to_ubjson(json::from_ubjson(v_L), true) == v_L);
                 CHECK(json::to_ubjson(json::from_ubjson(v_D), true) == v_D);
                 CHECK(json::to_ubjson(json::from_ubjson(v_S), true) == v_S);
-                CHECK(json::to_ubjson(json::from_ubjson(v_C), true) == v_S); // char is serialized to string
+                CHECK(json::to_ubjson(json::from_ubjson(v_C), true) ==
+                      v_S); // char is serialized to string
             }
 
             SECTION("optimized version (type and length)") {
@@ -1588,11 +1631,14 @@ TEST_CASE("UBJSON") {
                 std::vector<uint8_t> v_i = {'[', '$', 'i', '#', 'i', 2, 0x7F, 0x7F};
                 std::vector<uint8_t> v_U = {'[', '$', 'U', '#', 'i', 2, 0xFF, 0xFF};
                 std::vector<uint8_t> v_I = {'[', '$', 'I', '#', 'i', 2, 0x7F, 0xFF, 0x7F, 0xFF};
-                std::vector<uint8_t> v_l = {'[', '$', 'l', '#', 'i', 2, 0x7F, 0xFF, 0xFF, 0xFF, 0x7F, 0xFF, 0xFF, 0xFF};
-                std::vector<uint8_t> v_L = {'[',  '$',  'L',  '#',  'i',  2,    0x7F, 0xFF, 0xFF, 0xFF, 0xFF,
-                                            0xFF, 0xFF, 0xFF, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-                std::vector<uint8_t> v_D = {'[',  '$',  'D',  '#',  'i',  2,    0x40, 0x09, 0x21, 0xfb, 0x4d,
-                                            0x12, 0xd8, 0x4a, 0x40, 0x09, 0x21, 0xfb, 0x4d, 0x12, 0xd8, 0x4a};
+                std::vector<uint8_t> v_l = {'[',  '$',  'l',  '#',  'i',  2,    0x7F,
+                                            0xFF, 0xFF, 0xFF, 0x7F, 0xFF, 0xFF, 0xFF};
+                std::vector<uint8_t> v_L = {'[',  '$',  'L',  '#',  'i',  2,    0x7F, 0xFF,
+                                            0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0xFF,
+                                            0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+                std::vector<uint8_t> v_D = {'[',  '$',  'D',  '#',  'i',  2,    0x40, 0x09,
+                                            0x21, 0xfb, 0x4d, 0x12, 0xd8, 0x4a, 0x40, 0x09,
+                                            0x21, 0xfb, 0x4d, 0x12, 0xd8, 0x4a};
                 std::vector<uint8_t> v_S = {'[', '$', 'S', '#', 'i', 2, 'i', 1, 'a', 'i', 1, 'a'};
                 std::vector<uint8_t> v_C = {'[', '$', 'C', '#', 'i', 2, 'a', 'a'};
 
@@ -1623,7 +1669,8 @@ TEST_CASE("UBJSON") {
                 CHECK(json::to_ubjson(json::from_ubjson(v_L), true, true) == v_L);
                 CHECK(json::to_ubjson(json::from_ubjson(v_D), true, true) == v_D);
                 CHECK(json::to_ubjson(json::from_ubjson(v_S), true, true) == v_S);
-                CHECK(json::to_ubjson(json::from_ubjson(v_C), true, true) == v_S); // char is serialized to string
+                CHECK(json::to_ubjson(json::from_ubjson(v_C), true, true) ==
+                      v_S); // char is serialized to string
             }
         }
     }
@@ -1653,7 +1700,8 @@ TEST_CASE("UBJSON") {
                 CHECK_THROWS_AS(_ = json::from_ubjson(v), json::parse_error&);
                 CHECK_THROWS_WITH(_ = json::from_ubjson(v),
                                   "[json.exception.parse_error.113] parse error at byte 2: syntax "
-                                  "error while parsing UBJSON char: byte after 'C' must be in range "
+                                  "error while parsing UBJSON char: byte after 'C' must be in "
+                                  "range "
                                   "0x00..0x7F; last byte: 0x82");
             }
         }
@@ -1820,9 +1868,10 @@ TEST_CASE("UBJSON") {
 
             std::vector<uint8_t> vT = {'{', '$', 'i', 'i', 1, 'a', 1};
             CHECK_THROWS_AS(_ = json::from_ubjson(vT), json::parse_error&);
-            CHECK_THROWS_WITH(_ = json::from_ubjson(vT), "[json.exception.parse_error.112] parse error at byte "
-                                                         "4: syntax error while parsing UBJSON size: expected "
-                                                         "'#' after type information; last byte: 0x69");
+            CHECK_THROWS_WITH(_ = json::from_ubjson(vT),
+                              "[json.exception.parse_error.112] parse error at byte "
+                              "4: syntax error while parsing UBJSON size: expected "
+                              "'#' after type information; last byte: 0x69");
             CHECK(json::from_ubjson(vT, true, false).is_discarded());
 
             std::vector<uint8_t> vS = {'{', '#', 'i', 2, 'i', 1, 'a', 'i', 1};
@@ -1885,7 +1934,8 @@ TEST_CASE("UBJSON") {
 
             SECTION("array of I") {
                 json j = {30000, -30000};
-                std::vector<uint8_t> expected = {'[', '$', 'I', '#', 'i', 2, 0x75, 0x30, 0x8a, 0xd0};
+                std::vector<uint8_t> expected = {'[', '$',  'I',  '#',  'i',
+                                                 2,   0x75, 0x30, 0x8a, 0xd0};
                 CHECK(json::to_ubjson(j, true, true) == expected);
             }
 
@@ -1898,8 +1948,9 @@ TEST_CASE("UBJSON") {
 
             SECTION("array of L") {
                 json j = {5000000000, -5000000000};
-                std::vector<uint8_t> expected = {'[',  '$',  'L',  '#',  'i',  2,    0x00, 0x00, 0x00, 0x01, 0x2A,
-                                                 0x05, 0xF2, 0x00, 0xFF, 0xFF, 0xFF, 0xFE, 0xD5, 0xFA, 0x0E, 0x00};
+                std::vector<uint8_t> expected = {'[',  '$',  'L',  '#',  'i',  2,    0x00, 0x00,
+                                                 0x00, 0x01, 0x2A, 0x05, 0xF2, 0x00, 0xFF, 0xFF,
+                                                 0xFF, 0xFE, 0xD5, 0xFA, 0x0E, 0x00};
                 CHECK(json::to_ubjson(j, true, true) == expected);
             }
         }
@@ -1923,8 +1974,10 @@ TEST_CASE("UBJSON") {
 
             SECTION("array of I") {
                 json j = {30000u, 30001u};
-                std::vector<uint8_t> expected = {'[', '$', 'I', '#', 'i', 2, 0x75, 0x30, 0x75, 0x31};
-                std::vector<uint8_t> expected_size = {'[', '#', 'i', 2, 'I', 0x75, 0x30, 'I', 0x75, 0x31};
+                std::vector<uint8_t> expected = {'[', '$',  'I',  '#',  'i',
+                                                 2,   0x75, 0x30, 0x75, 0x31};
+                std::vector<uint8_t> expected_size = {'[',  '#',  'i', 2,    'I',
+                                                      0x75, 0x30, 'I', 0x75, 0x31};
                 CHECK(json::to_ubjson(j, true, true) == expected);
                 CHECK(json::to_ubjson(j, true) == expected_size);
             }
@@ -1941,10 +1994,13 @@ TEST_CASE("UBJSON") {
 
             SECTION("array of L") {
                 json j = {5000000000u, 5000000001u};
-                std::vector<uint8_t> expected = {'[',  '$',  'L',  '#',  'i',  2,    0x00, 0x00, 0x00, 0x01, 0x2A,
-                                                 0x05, 0xF2, 0x00, 0x00, 0x00, 0x00, 0x01, 0x2A, 0x05, 0xF2, 0x01};
-                std::vector<uint8_t> expected_size = {'[',  '#',  'i', 2,    'L',  0x00, 0x00, 0x00, 0x01, 0x2A, 0x05,
-                                                      0xF2, 0x00, 'L', 0x00, 0x00, 0x00, 0x01, 0x2A, 0x05, 0xF2, 0x01};
+                std::vector<uint8_t> expected = {'[',  '$',  'L',  '#',  'i',  2,    0x00, 0x00,
+                                                 0x00, 0x01, 0x2A, 0x05, 0xF2, 0x00, 0x00, 0x00,
+                                                 0x00, 0x01, 0x2A, 0x05, 0xF2, 0x01};
+                std::vector<uint8_t> expected_size = {'[',  '#',  'i',  2,    'L',  0x00,
+                                                      0x00, 0x00, 0x01, 0x2A, 0x05, 0xF2,
+                                                      0x00, 'L',  0x00, 0x00, 0x00, 0x01,
+                                                      0x2A, 0x05, 0xF2, 0x01};
                 CHECK(json::to_ubjson(j, true, true) == expected);
                 CHECK(json::to_ubjson(j, true) == expected_size);
             }
@@ -1992,12 +2048,13 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
                   {"int32", 2147483647},
                   {"int64", 9223372036854775807},
                   {"float64", 113243.7863123}};
-        std::vector<uint8_t> v = {'{',  'i',  7,    'f',  'l',  'o',  'a', 't', '6',  '4', 'D',  0x40, 0xfb,
-                                  0xa5, 0xbc, 0x94, 0xbc, 0x34, 0xcf, 'i', 5,   'i',  'n', 't',  '1',  '6',
-                                  'I',  0x7f, 0xff, 'i',  5,    'i',  'n', 't', '3',  '2', 'l',  0x7f, 0xff,
-                                  0xff, 0xff, 'i',  5,    'i',  'n',  't', '6', '4',  'L', 0x7f, 0xff, 0xff,
-                                  0xff, 0xff, 0xff, 0xff, 0xff, 'i',  4,   'i', 'n',  't', '8',  'i',  16,
-                                  'i',  5,    'u',  'i',  'n',  't',  '8', 'U', 0xff, '}'};
+        std::vector<uint8_t> v = {'{',  'i',  7,    'f',  'l',  'o',  'a',  't',  '6',  '4',  'D',
+                                  0x40, 0xfb, 0xa5, 0xbc, 0x94, 0xbc, 0x34, 0xcf, 'i',  5,    'i',
+                                  'n',  't',  '1',  '6',  'I',  0x7f, 0xff, 'i',  5,    'i',  'n',
+                                  't',  '3',  '2',  'l',  0x7f, 0xff, 0xff, 0xff, 'i',  5,    'i',
+                                  'n',  't',  '6',  '4',  'L',  0x7f, 0xff, 0xff, 0xff, 0xff, 0xff,
+                                  0xff, 0xff, 'i',  4,    'i',  'n',  't',  '8',  'i',  16,   'i',
+                                  5,    'u',  'i',  'n',  't',  '8',  'U',  0xff, '}'};
         CHECK(json::to_ubjson(j) == v);
         CHECK(json::from_ubjson(v) == j);
     }
@@ -2028,7 +2085,8 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
 
         SECTION("Russian") {
             json j = "مرحبا";
-            std::vector<uint8_t> v = {'S', 'i', 10, 0xD9, 0x85, 0xD8, 0xB1, 0xD8, 0xAD, 0xD8, 0xA8, 0xD8, 0xA7};
+            std::vector<uint8_t> v = {'S',  'i',  10,   0xD9, 0x85, 0xD8, 0xB1,
+                                      0xD8, 0xAD, 0xD8, 0xA8, 0xD8, 0xA7};
             CHECK(json::to_ubjson(j) == v);
             CHECK(json::from_ubjson(v) == j);
         }
@@ -2048,9 +2106,10 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
         SECTION("size=true type=false") {
             // note the float has been replaced by a double
             json j = {nullptr, true, false, 4782345193, 153.132, "ham"};
-            std::vector<uint8_t> v = {'[',  '#',  'i',  6,    'Z',  'T', 'F',  'L',  0x00, 0x00, 0x00,
-                                      0x01, 0x1D, 0x0C, 0xCB, 0xE9, 'D', 0x40, 0x63, 0x24, 0x39, 0x58,
-                                      0x10, 0x62, 0x4e, 'S',  'i',  3,   'h',  'a',  'm'};
+            std::vector<uint8_t> v = {'[',  '#',  'i',  6,    'Z',  'T',  'F',  'L',
+                                      0x00, 0x00, 0x00, 0x01, 0x1D, 0x0C, 0xCB, 0xE9,
+                                      'D',  0x40, 0x63, 0x24, 0x39, 0x58, 0x10, 0x62,
+                                      0x4e, 'S',  'i',  3,    'h',  'a',  'm'};
             CHECK(json::to_ubjson(j, true) == v);
             CHECK(json::from_ubjson(v) == j);
         }
@@ -2058,9 +2117,10 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
         SECTION("size=true type=true") {
             // note the float has been replaced by a double
             json j = {nullptr, true, false, 4782345193, 153.132, "ham"};
-            std::vector<uint8_t> v = {'[',  '#',  'i',  6,    'Z',  'T', 'F',  'L',  0x00, 0x00, 0x00,
-                                      0x01, 0x1D, 0x0C, 0xCB, 0xE9, 'D', 0x40, 0x63, 0x24, 0x39, 0x58,
-                                      0x10, 0x62, 0x4e, 'S',  'i',  3,   'h',  'a',  'm'};
+            std::vector<uint8_t> v = {'[',  '#',  'i',  6,    'Z',  'T',  'F',  'L',
+                                      0x00, 0x00, 0x00, 0x01, 0x1D, 0x0C, 0xCB, 0xE9,
+                                      'D',  0x40, 0x63, 0x24, 0x39, 0x58, 0x10, 0x62,
+                                      0x4e, 'S',  'i',  3,    'h',  'a',  'm'};
             CHECK(json::to_ubjson(j, true, true) == v);
             CHECK(json::from_ubjson(v) == j);
         }
@@ -2068,43 +2128,57 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
 
     SECTION("Object Type") {
         SECTION("size=false type=false") {
-            json j = {
-                    {"post",
-                     {{"id", 1137}, {"author", "rkalla"}, {"timestamp", 1364482090592}, {"body", "I totally agree!"}}}};
-            std::vector<uint8_t> v = {'{',  'i',  4,    'p',  'o',  's',  't',  '{', 'i', 6,   'a', 'u', 't', 'h',
-                                      'o',  'r',  'S',  'i',  6,    'r',  'k',  'a', 'l', 'l', 'a', 'i', 4,   'b',
-                                      'o',  'd',  'y',  'S',  'i',  16,   'I',  ' ', 't', 'o', 't', 'a', 'l', 'l',
-                                      'y',  ' ',  'a',  'g',  'r',  'e',  'e',  '!', 'i', 2,   'i', 'd', 'I', 0x04,
-                                      0x71, 'i',  9,    't',  'i',  'm',  'e',  's', 't', 'a', 'm', 'p', 'L', 0x00,
+            json j = {{"post",
+                       {{"id", 1137},
+                        {"author", "rkalla"},
+                        {"timestamp", 1364482090592},
+                        {"body", "I totally agree!"}}}};
+            std::vector<uint8_t> v = {'{',  'i',  4,    'p',  'o',  's',  't',  '{', 'i', 6,
+                                      'a',  'u',  't',  'h',  'o',  'r',  'S',  'i', 6,   'r',
+                                      'k',  'a',  'l',  'l',  'a',  'i',  4,    'b', 'o', 'd',
+                                      'y',  'S',  'i',  16,   'I',  ' ',  't',  'o', 't', 'a',
+                                      'l',  'l',  'y',  ' ',  'a',  'g',  'r',  'e', 'e', '!',
+                                      'i',  2,    'i',  'd',  'I',  0x04, 0x71, 'i', 9,   't',
+                                      'i',  'm',  'e',  's',  't',  'a',  'm',  'p', 'L', 0x00,
                                       0x00, 0x01, 0x3D, 0xB1, 0x78, 0x66, 0x60, '}', '}'};
             CHECK(json::to_ubjson(j) == v);
             CHECK(json::from_ubjson(v) == j);
         }
 
         SECTION("size=true type=false") {
-            json j = {
-                    {"post",
-                     {{"id", 1137}, {"author", "rkalla"}, {"timestamp", 1364482090592}, {"body", "I totally agree!"}}}};
-            std::vector<uint8_t> v = {'{', '#', 'i', 1,   'i', 4,    'p',  'o',  's',  't',  '{',  '#',  'i', 4,
-                                      'i', 6,   'a', 'u', 't', 'h',  'o',  'r',  'S',  'i',  6,    'r',  'k', 'a',
-                                      'l', 'l', 'a', 'i', 4,   'b',  'o',  'd',  'y',  'S',  'i',  16,   'I', ' ',
-                                      't', 'o', 't', 'a', 'l', 'l',  'y',  ' ',  'a',  'g',  'r',  'e',  'e', '!',
-                                      'i', 2,   'i', 'd', 'I', 0x04, 0x71, 'i',  9,    't',  'i',  'm',  'e', 's',
-                                      't', 'a', 'm', 'p', 'L', 0x00, 0x00, 0x01, 0x3D, 0xB1, 0x78, 0x66, 0x60};
+            json j = {{"post",
+                       {{"id", 1137},
+                        {"author", "rkalla"},
+                        {"timestamp", 1364482090592},
+                        {"body", "I totally agree!"}}}};
+            std::vector<uint8_t> v = {'{',  '#',  'i',  1,   'i', 4,    'p',  'o',  's',  't',
+                                      '{',  '#',  'i',  4,   'i', 6,    'a',  'u',  't',  'h',
+                                      'o',  'r',  'S',  'i', 6,   'r',  'k',  'a',  'l',  'l',
+                                      'a',  'i',  4,    'b', 'o', 'd',  'y',  'S',  'i',  16,
+                                      'I',  ' ',  't',  'o', 't', 'a',  'l',  'l',  'y',  ' ',
+                                      'a',  'g',  'r',  'e', 'e', '!',  'i',  2,    'i',  'd',
+                                      'I',  0x04, 0x71, 'i', 9,   't',  'i',  'm',  'e',  's',
+                                      't',  'a',  'm',  'p', 'L', 0x00, 0x00, 0x01, 0x3D, 0xB1,
+                                      0x78, 0x66, 0x60};
             CHECK(json::to_ubjson(j, true) == v);
             CHECK(json::from_ubjson(v) == j);
         }
 
         SECTION("size=true type=true") {
-            json j = {
-                    {"post",
-                     {{"id", 1137}, {"author", "rkalla"}, {"timestamp", 1364482090592}, {"body", "I totally agree!"}}}};
-            std::vector<uint8_t> v = {'{', '$', '{', '#', 'i', 1,   'i',  4,    'p',  'o',  's',  't',  '#',  'i',
-                                      4,   'i', 6,   'a', 'u', 't', 'h',  'o',  'r',  'S',  'i',  6,    'r',  'k',
-                                      'a', 'l', 'l', 'a', 'i', 4,   'b',  'o',  'd',  'y',  'S',  'i',  16,   'I',
-                                      ' ', 't', 'o', 't', 'a', 'l', 'l',  'y',  ' ',  'a',  'g',  'r',  'e',  'e',
-                                      '!', 'i', 2,   'i', 'd', 'I', 0x04, 0x71, 'i',  9,    't',  'i',  'm',  'e',
-                                      's', 't', 'a', 'm', 'p', 'L', 0x00, 0x00, 0x01, 0x3D, 0xB1, 0x78, 0x66, 0x60};
+            json j = {{"post",
+                       {{"id", 1137},
+                        {"author", "rkalla"},
+                        {"timestamp", 1364482090592},
+                        {"body", "I totally agree!"}}}};
+            std::vector<uint8_t> v = {'{',  '$',  '{',  '#',  'i', 1,   'i',  4,    'p',  'o',
+                                      's',  't',  '#',  'i',  4,   'i', 6,    'a',  'u',  't',
+                                      'h',  'o',  'r',  'S',  'i', 6,   'r',  'k',  'a',  'l',
+                                      'l',  'a',  'i',  4,    'b', 'o', 'd',  'y',  'S',  'i',
+                                      16,   'I',  ' ',  't',  'o', 't', 'a',  'l',  'l',  'y',
+                                      ' ',  'a',  'g',  'r',  'e', 'e', '!',  'i',  2,    'i',
+                                      'd',  'I',  0x04, 0x71, 'i', 9,   't',  'i',  'm',  'e',
+                                      's',  't',  'a',  'm',  'p', 'L', 0x00, 0x00, 0x01, 0x3D,
+                                      0xB1, 0x78, 0x66, 0x60};
             CHECK(json::to_ubjson(j, true, true) == v);
             CHECK(json::from_ubjson(v) == j);
         }
@@ -2115,10 +2189,12 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("No Optimization") {
                 // note the floats have been replaced by doubles
                 json j = {29.97, 31.13, 67.0, 2.113, 23.888};
-                std::vector<uint8_t> v = {'[',  'D',  0x40, 0x3d, 0xf8, 0x51, 0xeb, 0x85, 0x1e, 0xb8, 'D',  0x40,
-                                          0x3f, 0x21, 0x47, 0xae, 0x14, 0x7a, 0xe1, 'D',  0x40, 0x50, 0xc0, 0x00,
-                                          0x00, 0x00, 0x00, 0x00, 'D',  0x40, 0x00, 0xe7, 0x6c, 0x8b, 0x43, 0x95,
-                                          0x81, 'D',  0x40, 0x37, 0xe3, 0x53, 0xf7, 0xce, 0xd9, 0x17, ']'};
+                std::vector<uint8_t> v = {'[',  'D',  0x40, 0x3d, 0xf8, 0x51, 0xeb, 0x85,
+                                          0x1e, 0xb8, 'D',  0x40, 0x3f, 0x21, 0x47, 0xae,
+                                          0x14, 0x7a, 0xe1, 'D',  0x40, 0x50, 0xc0, 0x00,
+                                          0x00, 0x00, 0x00, 0x00, 'D',  0x40, 0x00, 0xe7,
+                                          0x6c, 0x8b, 0x43, 0x95, 0x81, 'D',  0x40, 0x37,
+                                          0xe3, 0x53, 0xf7, 0xce, 0xd9, 0x17, ']'};
                 CHECK(json::to_ubjson(j) == v);
                 CHECK(json::from_ubjson(v) == j);
             }
@@ -2126,10 +2202,12 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("Optimized with count") {
                 // note the floats have been replaced by doubles
                 json j = {29.97, 31.13, 67.0, 2.113, 23.888};
-                std::vector<uint8_t> v = {'[',  '#',  'i',  5,    'D',  0x40, 0x3d, 0xf8, 0x51, 0xeb, 0x85, 0x1e, 0xb8,
-                                          'D',  0x40, 0x3f, 0x21, 0x47, 0xae, 0x14, 0x7a, 0xe1, 'D',  0x40, 0x50, 0xc0,
-                                          0x00, 0x00, 0x00, 0x00, 0x00, 'D',  0x40, 0x00, 0xe7, 0x6c, 0x8b, 0x43, 0x95,
-                                          0x81, 'D',  0x40, 0x37, 0xe3, 0x53, 0xf7, 0xce, 0xd9, 0x17};
+                std::vector<uint8_t> v = {'[',  '#',  'i',  5,    'D', 0x40, 0x3d, 0xf8, 0x51,
+                                          0xeb, 0x85, 0x1e, 0xb8, 'D', 0x40, 0x3f, 0x21, 0x47,
+                                          0xae, 0x14, 0x7a, 0xe1, 'D', 0x40, 0x50, 0xc0, 0x00,
+                                          0x00, 0x00, 0x00, 0x00, 'D', 0x40, 0x00, 0xe7, 0x6c,
+                                          0x8b, 0x43, 0x95, 0x81, 'D', 0x40, 0x37, 0xe3, 0x53,
+                                          0xf7, 0xce, 0xd9, 0x17};
                 CHECK(json::to_ubjson(j, true) == v);
                 CHECK(json::from_ubjson(v) == j);
             }
@@ -2137,10 +2215,12 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("Optimized with type & count") {
                 // note the floats have been replaced by doubles
                 json j = {29.97, 31.13, 67.0, 2.113, 23.888};
-                std::vector<uint8_t> v = {'[',  '$',  'D',  '#',  'i',  5,    0x40, 0x3d, 0xf8, 0x51, 0xeb, 0x85,
-                                          0x1e, 0xb8, 0x40, 0x3f, 0x21, 0x47, 0xae, 0x14, 0x7a, 0xe1, 0x40, 0x50,
-                                          0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00, 0xe7, 0x6c, 0x8b, 0x43,
-                                          0x95, 0x81, 0x40, 0x37, 0xe3, 0x53, 0xf7, 0xce, 0xd9, 0x17};
+                std::vector<uint8_t> v = {'[',  '$',  'D',  '#',  'i',  5,    0x40, 0x3d,
+                                          0xf8, 0x51, 0xeb, 0x85, 0x1e, 0xb8, 0x40, 0x3f,
+                                          0x21, 0x47, 0xae, 0x14, 0x7a, 0xe1, 0x40, 0x50,
+                                          0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x40, 0x00,
+                                          0xe7, 0x6c, 0x8b, 0x43, 0x95, 0x81, 0x40, 0x37,
+                                          0xe3, 0x53, 0xf7, 0xce, 0xd9, 0x17};
                 CHECK(json::to_ubjson(j, true, true) == v);
                 CHECK(json::from_ubjson(v) == j);
             }
@@ -2150,9 +2230,10 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("No Optimization") {
                 // note the floats have been replaced by doubles
                 json j = {{"lat", 29.976}, {"long", 31.131}, {"alt", 67.0}};
-                std::vector<uint8_t> v = {'{',  'i',  3,    'a',  'l',  't',  'D',  0x40, 0x50, 0xc0, 0x00, 0x00,
-                                          0x00, 0x00, 0x00, 'i',  3,    'l',  'a',  't',  'D',  0x40, 0x3d, 0xf9,
-                                          0xdb, 0x22, 0xd0, 0xe5, 0x60, 'i',  4,    'l',  'o',  'n',  'g',  'D',
+                std::vector<uint8_t> v = {'{',  'i',  3,    'a',  'l',  't',  'D',  0x40, 0x50,
+                                          0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 'i',  3,    'l',
+                                          'a',  't',  'D',  0x40, 0x3d, 0xf9, 0xdb, 0x22, 0xd0,
+                                          0xe5, 0x60, 'i',  4,    'l',  'o',  'n',  'g',  'D',
                                           0x40, 0x3f, 0x21, 0x89, 0x37, 0x4b, 0xc6, 0xa8, '}'};
                 CHECK(json::to_ubjson(j) == v);
                 CHECK(json::from_ubjson(v) == j);
@@ -2161,10 +2242,12 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("Optimized with count") {
                 // note the floats have been replaced by doubles
                 json j = {{"lat", 29.976}, {"long", 31.131}, {"alt", 67.0}};
-                std::vector<uint8_t> v = {'{',  '#',  'i',  3,    'i',  3,    'a',  'l',  't',  'D',  0x40, 0x50,
-                                          0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 'i',  3,    'l',  'a',  't',  'D',
-                                          0x40, 0x3d, 0xf9, 0xdb, 0x22, 0xd0, 0xe5, 0x60, 'i',  4,    'l',  'o',
-                                          'n',  'g',  'D',  0x40, 0x3f, 0x21, 0x89, 0x37, 0x4b, 0xc6, 0xa8};
+                std::vector<uint8_t> v = {'{',  '#',  'i',  3,    'i',  3,    'a',  'l',
+                                          't',  'D',  0x40, 0x50, 0xc0, 0x00, 0x00, 0x00,
+                                          0x00, 0x00, 'i',  3,    'l',  'a',  't',  'D',
+                                          0x40, 0x3d, 0xf9, 0xdb, 0x22, 0xd0, 0xe5, 0x60,
+                                          'i',  4,    'l',  'o',  'n',  'g',  'D',  0x40,
+                                          0x3f, 0x21, 0x89, 0x37, 0x4b, 0xc6, 0xa8};
                 CHECK(json::to_ubjson(j, true) == v);
                 CHECK(json::from_ubjson(v) == j);
             }
@@ -2172,10 +2255,12 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             SECTION("Optimized with type & count") {
                 // note the floats have been replaced by doubles
                 json j = {{"lat", 29.976}, {"long", 31.131}, {"alt", 67.0}};
-                std::vector<uint8_t> v = {'{',  '$',  'D',  '#',  'i',  3,    'i',  3,    'a',  'l', 't', 0x40,
-                                          0x50, 0xc0, 0x00, 0x00, 0x00, 0x00, 0x00, 'i',  3,    'l', 'a', 't',
-                                          0x40, 0x3d, 0xf9, 0xdb, 0x22, 0xd0, 0xe5, 0x60, 'i',  4,   'l', 'o',
-                                          'n',  'g',  0x40, 0x3f, 0x21, 0x89, 0x37, 0x4b, 0xc6, 0xa8};
+                std::vector<uint8_t> v = {'{',  '$',  'D',  '#',  'i',  3,    'i',  3,
+                                          'a',  'l',  't',  0x40, 0x50, 0xc0, 0x00, 0x00,
+                                          0x00, 0x00, 0x00, 'i',  3,    'l',  'a',  't',
+                                          0x40, 0x3d, 0xf9, 0xdb, 0x22, 0xd0, 0xe5, 0x60,
+                                          'i',  4,    'l',  'o',  'n',  'g',  0x40, 0x3f,
+                                          0x21, 0x89, 0x37, 0x4b, 0xc6, 0xa8};
                 CHECK(json::to_ubjson(j, true, true) == v);
                 CHECK(json::from_ubjson(v) == j);
             }
@@ -2188,9 +2273,11 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
             }
 
             SECTION("Object") {
-                std::vector<uint8_t> v = {'{', '$', 'Z', '#', 'i', 3,   'i', 4,   'n', 'a', 'm', 'e', 'i', 8,  'p',
-                                          'a', 's', 's', 'w', 'o', 'r', 'd', 'i', 5,   'e', 'm', 'a', 'i', 'l'};
-                CHECK(json::from_ubjson(v) == json({{"name", nullptr}, {"password", nullptr}, {"email", nullptr}}));
+                std::vector<uint8_t> v = {'{', '$', 'Z', '#', 'i', 3,   'i', 4,   'n', 'a',
+                                          'm', 'e', 'i', 8,   'p', 'a', 's', 's', 'w', 'o',
+                                          'r', 'd', 'i', 5,   'e', 'm', 'a', 'i', 'l'};
+                CHECK(json::from_ubjson(v) ==
+                      json({{"name", nullptr}, {"password", nullptr}, {"email", nullptr}}));
             }
         }
     }
@@ -2199,7 +2286,8 @@ TEST_CASE("Universal Binary JSON Specification Examples 1") {
 #if !defined(JSON_NOEXCEPTION)
 TEST_CASE("all UBJSON first bytes") {
     // these bytes will fail immediately with exception parse_error.112
-    std::set<uint8_t> supported = {'T', 'F', 'Z', 'U', 'i', 'I', 'l', 'L', 'd', 'D', 'C', 'S', '[', '{', 'N', 'H'};
+    std::set<uint8_t> supported = {'T', 'F', 'Z', 'U', 'i', 'I', 'l', 'L',
+                                   'd', 'D', 'C', 'S', '[', '{', 'N', 'H'};
 
     for (auto i = 0; i < 256; ++i) {
         const auto byte = static_cast<uint8_t>(i);

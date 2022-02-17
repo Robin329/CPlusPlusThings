@@ -49,8 +49,8 @@
 class Solution {
 public:
     // if has cycle, return false, else return true
-    bool topologicalSort(int n, vector<int> &explored, vector<int> &path, unordered_map<int, vector<int>> &graph,
-                         vector<int> &result) {
+    bool topologicalSort(int n, vector<int> &explored, vector<int> &path,
+                         unordered_map<int, vector<int>> &graph, vector<int> &result) {
         for (int i = 0; i < graph[n].size(); i++) {
             int prereq = graph[n][i];
 

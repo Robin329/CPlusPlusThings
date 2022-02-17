@@ -79,7 +79,8 @@ void TracePC::PrintNewPCs() {
     if (DoPrintNewPCs) {
         if (!PrintedPCs) PrintedPCs = new std::set<uintptr_t>;
         for (size_t i = 1; i < GetNumPCs(); i++)
-            if (PCs[i] && PrintedPCs->insert(PCs[i]).second) PrintPC("\tNEW_PC: %p %F %L\n", "\tNEW_PC: %p\n", PCs[i]);
+            if (PCs[i] && PrintedPCs->insert(PCs[i]).second)
+                PrintPC("\tNEW_PC: %p %F %L\n", "\tNEW_PC: %p\n", PCs[i]);
     }
 }
 
@@ -103,8 +104,9 @@ void TracePC::PrintCoverage() {
         std::string LineStr = DescribePC("%l", PCs[i]);
         char ModulePathRaw[4096] = ""; // What's PATH_MAX in portable C++?
         void *OffsetRaw = nullptr;
-        if (!EF->__sanitizer_get_module_and_offset_for_pc(reinterpret_cast<void *>(PCs[i]), ModulePathRaw,
-                                                          sizeof(ModulePathRaw), &OffsetRaw))
+        if (!EF->__sanitizer_get_module_and_offset_for_pc(reinterpret_cast<void *>(PCs[i]),
+                                                          ModulePathRaw, sizeof(ModulePathRaw),
+                                                          &OffsetRaw))
             continue;
         std::string Module = ModulePathRaw;
         uintptr_t FixedPC = std::stol(FixedPCStr, 0, 16);
@@ -135,8 +137,8 @@ void TracePC::PrintCoverage() {
         Printf("MODULE_WITH_COVERAGE: %s\n", ModuleName.c_str());
         // sancov does not yet fully support DSOs.
         // std::string Cmd = "sancov -print-coverage-pcs " + ModuleName;
-        std::string Cmd =
-                "objdump -d " + ModuleName + " | grep 'call.*__sanitizer_cov_trace_pc_guard' | awk -F: '{print $1}'";
+        std::string Cmd = "objdump -d " + ModuleName +
+                " | grep 'call.*__sanitizer_cov_trace_pc_guard' | awk -F: '{print $1}'";
         std::string SanCovOutput;
         if (!ExecuteCommandAndReadOutput(Cmd, &SanCovOutput)) {
             Printf("INFO: Command failed: %s\n", Cmd.c_str());
@@ -162,11 +164,13 @@ void TracePC::PrintCoverage() {
                 std::string LineStr = DescribePC("%l", PC);
                 uintptr_t Line = std::stoi(LineStr);
                 std::string FileLineStr = FileStr + ":" + LineStr;
-                if (CoveredLines.count(FileLineStr) == 0) UncoveredLines[FunctionStr + " " + FileStr].insert(Line);
+                if (CoveredLines.count(FileLineStr) == 0)
+                    UncoveredLines[FunctionStr + " " + FileStr].insert(Line);
             }
         }
         for (auto &FileLine : UncoveredLines)
-            for (int Line : FileLine.second) Printf("UNCOVERED_LINE: %s:%d\n", FileLine.first.c_str(), Line);
+            for (int Line : FileLine.second)
+                Printf("UNCOVERED_LINE: %s:%d\n", FileLine.first.c_str(), Line);
         for (auto &Func : UncoveredFunctions) Printf("UNCOVERED_FUNC: %s\n", Func.c_str());
         for (auto &File : UncoveredFiles) Printf("UNCOVERED_FILE: %s\n", File.c_str());
     }
@@ -244,7 +248,8 @@ __attribute__((visibility("default"))) void __sanitizer_cov_trace_pc_guard(uint3
     fuzzer::TPC.HandleTrace(Guard, PC);
 }
 
-__attribute__((visibility("default"))) void __sanitizer_cov_trace_pc_guard_init(uint32_t *Start, uint32_t *Stop) {
+__attribute__((visibility("default"))) void __sanitizer_cov_trace_pc_guard_init(uint32_t *Start,
+                                                                                uint32_t *Stop) {
     fuzzer::TPC.HandleInit(Start, Stop);
 }
 
@@ -253,20 +258,24 @@ __attribute__((visibility("default"))) void __sanitizer_cov_trace_pc_indir(uintp
     fuzzer::TPC.HandleCallerCallee(PC, Callee);
 }
 
-__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp8(uint64_t Arg1, uint64_t Arg2) {
+__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp8(uint64_t Arg1,
+                                                                       uint64_t Arg2) {
     fuzzer::TPC.HandleCmp(__builtin_return_address(0), Arg1, Arg2);
 }
-__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp4(uint32_t Arg1, uint32_t Arg2) {
+__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp4(uint32_t Arg1,
+                                                                       uint32_t Arg2) {
     fuzzer::TPC.HandleCmp(__builtin_return_address(0), Arg1, Arg2);
 }
-__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp2(uint16_t Arg1, uint16_t Arg2) {
+__attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp2(uint16_t Arg1,
+                                                                       uint16_t Arg2) {
     fuzzer::TPC.HandleCmp(__builtin_return_address(0), Arg1, Arg2);
 }
 __attribute__((visibility("default"))) void __sanitizer_cov_trace_cmp1(uint8_t Arg1, uint8_t Arg2) {
     fuzzer::TPC.HandleCmp(__builtin_return_address(0), Arg1, Arg2);
 }
 
-__attribute__((visibility("default"))) void __sanitizer_cov_trace_switch(uint64_t Val, uint64_t *Cases) {
+__attribute__((visibility("default"))) void __sanitizer_cov_trace_switch(uint64_t Val,
+                                                                         uint64_t *Cases) {
     // Updates the value profile based on the relative position of Val and Cases.
     // We want to handle one random case at every call (handling all is slow).
     // Since none of the arguments contain any random bits we use a thread-local
@@ -288,7 +297,8 @@ __attribute__((visibility("default"))) void __sanitizer_cov_trace_switch(uint64_
     assert(Idx < N);
     uint64_t TwoIn32 = 1ULL << 32;
     if ((Val | Vals[Idx]) < TwoIn32)
-        fuzzer::TPC.HandleCmp(PC + Idx, static_cast<uint32_t>(Val), static_cast<uint32_t>(Vals[Idx]));
+        fuzzer::TPC.HandleCmp(PC + Idx, static_cast<uint32_t>(Val),
+                              static_cast<uint32_t>(Vals[Idx]));
     else
         fuzzer::TPC.HandleCmp(PC + Idx, Val, Vals[Idx]);
 }

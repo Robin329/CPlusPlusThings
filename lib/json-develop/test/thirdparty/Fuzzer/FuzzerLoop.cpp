@@ -94,7 +94,8 @@ bool Fuzzer::RecordMaxCoverage(Fuzzer::Coverage *C) {
     }
 
     if (Options.UseCounters) {
-        uint64_t CounterDelta = EF->__sanitizer_update_counter_bitset_and_clear_counters(C->CounterBitmap.data());
+        uint64_t CounterDelta =
+                EF->__sanitizer_update_counter_bitset_and_clear_counters(C->CounterBitmap.data());
         if (CounterDelta > 0) {
             Res = true;
             C->CounterBitmapBits += CounterDelta;
@@ -281,7 +282,8 @@ void Fuzzer::AlarmCallback() {
     if (Options.Verbosity >= 2) Printf("AlarmCallback %zd\n", Seconds);
     if (Seconds >= (size_t)Options.UnitTimeoutSec) {
         Printf("ALARM: working on the last Unit for %zd seconds\n", Seconds);
-        Printf("       and the timeout value is %d (use -timeout=N to change)\n", Options.UnitTimeoutSec);
+        Printf("       and the timeout value is %d (use -timeout=N to change)\n",
+               Options.UnitTimeoutSec);
         DumpCurrentUnit("timeout-");
         Printf("==%lu== ERROR: libFuzzer: timeout after %d seconds\n", GetPid(), Seconds);
         if (EF->__sanitizer_print_stack_trace) EF->__sanitizer_print_stack_trace();
@@ -292,8 +294,8 @@ void Fuzzer::AlarmCallback() {
 }
 
 void Fuzzer::RssLimitCallback() {
-    Printf("==%lu== ERROR: libFuzzer: out-of-memory (used: %zdMb; limit: %zdMb)\n", GetPid(), GetPeakRSSMb(),
-           Options.RssLimitMb);
+    Printf("==%lu== ERROR: libFuzzer: out-of-memory (used: %zdMb; limit: %zdMb)\n", GetPid(),
+           GetPeakRSSMb(), Options.RssLimitMb);
     Printf("   To change the out-of-memory limit use -rss_limit_mb=<N>\n\n");
     if (EF->__sanitizer_print_memory_profile) EF->__sanitizer_print_memory_profile(95);
     DumpCurrentUnit("oom-");
@@ -311,7 +313,8 @@ void Fuzzer::PrintStats(const char *Where, const char *End, size_t Units) {
             Printf("runs,block_cov,bits,cc_cov,corpus,execs_per_sec,tbms,reason\n");
         }
         Printf("%zd,%zd,%zd,%zd,%zd,%zd,%s\n", TotalNumberOfRuns, MaxCoverage.BlockCoverage,
-               MaxCoverage.CounterBitmapBits, MaxCoverage.CallerCalleeCoverage, Corpus.size(), ExecPerSec, Where);
+               MaxCoverage.CounterBitmapBits, MaxCoverage.CallerCalleeCoverage, Corpus.size(),
+               ExecPerSec, Where);
     }
 
     if (!Options.Verbosity) return;
@@ -392,7 +395,8 @@ void Fuzzer::CheckExitOnSrcPosOrItem() {
 void Fuzzer::RereadOutputCorpus(size_t MaxSize) {
     if (Options.OutputCorpus.empty() || !Options.ReloadIntervalSec) return;
     std::vector<Unit> AdditionalCorpus;
-    ReadDirToVectorOfUnits(Options.OutputCorpus.c_str(), &AdditionalCorpus, &EpochOfLastReadOfOutputCorpus, MaxSize,
+    ReadDirToVectorOfUnits(Options.OutputCorpus.c_str(), &AdditionalCorpus,
+                           &EpochOfLastReadOfOutputCorpus, MaxSize,
                            /*ExitOnError*/ false);
     if (Options.Verbosity >= 2) Printf("Reload: read %zd new units.\n", AdditionalCorpus.size());
     bool Reloaded = false;
@@ -412,7 +416,8 @@ void Fuzzer::RereadOutputCorpus(size_t MaxSize) {
 void Fuzzer::ShuffleCorpus(UnitVector *V) {
     std::random_shuffle(V->begin(), V->end(), MD.GetRand());
     if (Options.PreferSmall)
-        std::stable_sort(V->begin(), V->end(), [](const Unit &A, const Unit &B) { return A.size() < B.size(); });
+        std::stable_sort(V->begin(), V->end(),
+                         [](const Unit &A, const Unit &B) { return A.size() < B.size(); });
 }
 
 void Fuzzer::ShuffleAndMinimize(UnitVector *InitialCorpus) {
@@ -427,7 +432,8 @@ void Fuzzer::ShuffleAndMinimize(UnitVector *InitialCorpus) {
         if (size_t NumFeatures = RunOne(U)) {
             CheckExitOnSrcPosOrItem();
             Corpus.AddToCorpus(U, NumFeatures);
-            if (Options.Verbosity >= 2) Printf("NEW0: %zd L %zd\n", MaxCoverage.BlockCoverage, U.size());
+            if (Options.Verbosity >= 2)
+                Printf("NEW0: %zd L %zd\n", MaxCoverage.BlockCoverage, U.size());
         }
         TryDetectingAMemoryLeak(U.data(), U.size(),
                                 /*DuringInitialCorpusExecution*/ true);
@@ -447,8 +453,9 @@ size_t Fuzzer::RunOne(const uint8_t *Data, size_t Size) {
     ExecuteCallback(Data, Size);
 
     size_t Res = 0;
-    if (size_t NumFeatures = TPC.CollectFeatures(
-                [&](size_t Feature) -> bool { return Corpus.AddFeature(Feature, Size, Options.Shrink); }))
+    if (size_t NumFeatures = TPC.CollectFeatures([&](size_t Feature) -> bool {
+            return Corpus.AddFeature(Feature, Size, Options.Shrink);
+        }))
         Res = NumFeatures;
 
     if (!TPC.UsingTracePcGuard()) {
@@ -457,7 +464,8 @@ size_t Fuzzer::RunOne(const uint8_t *Data, size_t Size) {
     }
 
     auto TimeOfUnit = duration_cast<seconds>(UnitStopTime - UnitStartTime).count();
-    if (!(TotalNumberOfRuns & (TotalNumberOfRuns - 1)) && secondsSinceProcessStartUp() >= 2) PrintStats("pulse ");
+    if (!(TotalNumberOfRuns & (TotalNumberOfRuns - 1)) && secondsSinceProcessStartUp() >= 2)
+        PrintStats("pulse ");
     if (TimeOfUnit > TimeOfLongestUnitInSeconds * 1.1 && TimeOfUnit >= Options.ReportSlowUnits) {
         TimeOfLongestUnitInSeconds = TimeOfUnit;
         Printf("Slowest unit: %zd s:\n", TimeOfLongestUnitInSeconds);
@@ -506,9 +514,11 @@ void Fuzzer::WriteToOutputCorpus(const Unit &U) {
 void Fuzzer::WriteUnitToFileWithPrefix(const Unit &U, const char *Prefix) {
     if (!Options.SaveArtifacts) return;
     std::string Path = Options.ArtifactPrefix + Prefix + Hash(U);
-    if (!Options.ExactArtifactPath.empty()) Path = Options.ExactArtifactPath; // Overrides ArtifactPrefix.
+    if (!Options.ExactArtifactPath.empty())
+        Path = Options.ExactArtifactPath; // Overrides ArtifactPrefix.
     WriteToFile(U, Path);
-    Printf("artifact_prefix='%s'; Test unit written to %s\n", Options.ArtifactPrefix.c_str(), Path.c_str());
+    Printf("artifact_prefix='%s'; Test unit written to %s\n", Options.ArtifactPrefix.c_str(),
+           Path.c_str());
     if (U.size() <= kMaxUnitSizeToPrint) Printf("Base64: %s\n", Base64(U).c_str());
 }
 
@@ -581,7 +591,8 @@ void Fuzzer::Merge(const std::vector<std::string> &Corpora) {
     assert(MaxInputLen > 0);
     UnitVector Initial, Extra;
     ReadDirToVectorOfUnits(Corpora[0].c_str(), &Initial, nullptr, MaxInputLen, true);
-    for (auto &C : ExtraCorpora) ReadDirToVectorOfUnits(C.c_str(), &Extra, nullptr, MaxInputLen, true);
+    for (auto &C : ExtraCorpora)
+        ReadDirToVectorOfUnits(C.c_str(), &Extra, nullptr, MaxInputLen, true);
 
     if (!Initial.empty()) {
         Printf("=== Minimizing the initial corpus of %zd units\n", Initial.size());
@@ -598,10 +609,12 @@ void Fuzzer::Merge(const std::vector<std::string> &Corpora) {
 
 // Tries detecting a memory leak on the particular input that we have just
 // executed before calling this function.
-void Fuzzer::TryDetectingAMemoryLeak(const uint8_t *Data, size_t Size, bool DuringInitialCorpusExecution) {
+void Fuzzer::TryDetectingAMemoryLeak(const uint8_t *Data, size_t Size,
+                                     bool DuringInitialCorpusExecution) {
     if (!HasMoreMallocsThanFrees) return; // mallocs==frees, a leak is unlikely.
     if (!Options.DetectLeaks) return;
-    if (!&(EF->__lsan_enable) || !&(EF->__lsan_disable) || !(EF->__lsan_do_recoverable_leak_check)) return; // No lsan.
+    if (!&(EF->__lsan_enable) || !&(EF->__lsan_disable) || !(EF->__lsan_do_recoverable_leak_check))
+        return; // No lsan.
     // Run the target once again, but with lsan disabled so that if there is
     // a real leak we do not report it twice.
     EF->__lsan_disable();
@@ -622,7 +635,8 @@ void Fuzzer::TryDetectingAMemoryLeak(const uint8_t *Data, size_t Size, bool Duri
     // Now perform the actual lsan pass. This is expensive and we must ensure
     // we don't call it too often.
     if (EF->__lsan_do_recoverable_leak_check()) { // Leak is found, report it.
-        if (DuringInitialCorpusExecution) Printf("\nINFO: a leak has been found in the initial corpus.\n\n");
+        if (DuringInitialCorpusExecution)
+            Printf("\nINFO: a leak has been found in the initial corpus.\n\n");
         Printf("INFO: to ignore leaks on libFuzzer side use -detect_leaks=0.\n\n");
         CurrentUnitSize = Size;
         DumpCurrentUnit("leak-");

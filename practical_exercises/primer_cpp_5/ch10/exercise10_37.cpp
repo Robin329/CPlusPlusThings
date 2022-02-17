@@ -1,19 +1,18 @@
-#include <iostream>
-#include <list>
 #include <algorithm>
-#include <vector>
+#include <iostream>
 #include <iterator>
+#include <list>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-	vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-	list<int> l;
+int main() {
+    vector<int> v = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    list<int> l;
 
-	copy(v.crbegin() + 3, v.crbegin() + 8, back_inserter(l));
+    copy(v.crbegin() + 3, v.crbegin() + 8, back_inserter(l));
 
-	for (auto i : l) std::cout << i << " ";
-	cout << endl;
-	return 0;
+    for (auto i : l) std::cout << i << " ";
+    cout << endl;
+    return 0;
 }

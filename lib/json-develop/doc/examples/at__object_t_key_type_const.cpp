@@ -5,7 +5,9 @@ using json = nlohmann::json;
 
 int main() {
     // create JSON object
-    const json object = {{"the good", "il buono"}, {"the bad", "il cattivo"}, {"the ugly", "il brutto"}};
+    const json object = {{"the good", "il buono"},
+                         {"the bad", "il cattivo"},
+                         {"the ugly", "il brutto"}};
 
     // output element with key "the ugly"
     std::cout << object.at("the ugly") << '\n';

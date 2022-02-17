@@ -32,7 +32,8 @@
 using namespace std;
 
 bool exist(vector<vector<char>> &board, string &word, int idx, int row, int col) {
-    if (row < 0 || row >= board.size() || col < 0 || col >= board[0].size() || board[row][col] != word[idx]) {
+    if (row < 0 || row >= board.size() || col < 0 || col >= board[0].size() ||
+        board[row][col] != word[idx]) {
         return false;
     }
 

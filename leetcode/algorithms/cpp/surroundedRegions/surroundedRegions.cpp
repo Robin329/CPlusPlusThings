@@ -228,7 +228,8 @@ public:
         UnionFind uf(n * m + 1);
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                if (i == 0 || i == n - 1 || j == 0 || j == m - 1) { // side case, connect to dummy node
+                if (i == 0 || i == n - 1 || j == 0 ||
+                    j == m - 1) { // side case, connect to dummy node
                     uf.connect(i * m + j, n * m);
                     continue;
                 }

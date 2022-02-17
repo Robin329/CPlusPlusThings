@@ -40,7 +40,9 @@ public:
         return maxAbsoluteSum01(nums); // 56ms
     }
 
-    int maxAbsoluteSum01(vector<int> &nums) { return std::max(maxSumArray(nums), std::abs(minSumArray(nums))); }
+    int maxAbsoluteSum01(vector<int> &nums) {
+        return std::max(maxSumArray(nums), std::abs(minSumArray(nums)));
+    }
 
     // https://en.wikipedia.org/wiki/Maximum_subarray_problem
     int maxSumArray(vector<int> &nums) {

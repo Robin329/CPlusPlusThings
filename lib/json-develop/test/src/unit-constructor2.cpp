@@ -164,13 +164,15 @@ TEST_CASE("other constructors and destructor") {
 
     SECTION("destructor") {
         SECTION("object") {
-            auto* j = new json{{"foo", 1}, {"bar", false}}; // NOLINT(cppcoreguidelines-owning-memory)
-            delete j;                                       // NOLINT(cppcoreguidelines-owning-memory)
+            auto* j =
+                    new json{{"foo", 1}, {"bar", false}}; // NOLINT(cppcoreguidelines-owning-memory)
+            delete j;                                     // NOLINT(cppcoreguidelines-owning-memory)
         }
 
         SECTION("array") {
-            auto* j = new json{"foo", 1, 1u, false, 23.42}; // NOLINT(cppcoreguidelines-owning-memory)
-            delete j;                                       // NOLINT(cppcoreguidelines-owning-memory)
+            auto* j =
+                    new json{"foo", 1, 1u, false, 23.42}; // NOLINT(cppcoreguidelines-owning-memory)
+            delete j;                                     // NOLINT(cppcoreguidelines-owning-memory)
         }
 
         SECTION("string") {

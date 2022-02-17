@@ -33,7 +33,8 @@ SOFTWARE.
 using nlohmann::json;
 
 TEST_CASE("byte_container_with_subtype") {
-    using subtype_type = nlohmann::byte_container_with_subtype<std::vector<std::uint8_t>>::subtype_type;
+    using subtype_type =
+            nlohmann::byte_container_with_subtype<std::vector<std::uint8_t>>::subtype_type;
 
     SECTION("empty container") {
         nlohmann::byte_container_with_subtype<std::vector<std::uint8_t>> container;

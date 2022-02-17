@@ -54,7 +54,8 @@ public:
         return result;
     }
 
-    int helper(vector<vector<int>> &matrix, vector<vector<int>> &path, const int row, const int col, int r, int c) {
+    int helper(vector<vector<int>> &matrix, vector<vector<int>> &path, const int row, const int col,
+               int r, int c) {
         if (path[r][c] > 0) return path[r][c];
 
         int maxPath = 0;

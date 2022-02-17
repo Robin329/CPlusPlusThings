@@ -51,7 +51,8 @@ size_t calls = 0;
 
 void check_utf8dump(bool success_expected, int byte1, int byte2, int byte3, int byte4);
 
-void check_utf8dump(bool success_expected, int byte1, int byte2 = -1, int byte3 = -1, int byte4 = -1) {
+void check_utf8dump(bool success_expected, int byte1, int byte2 = -1, int byte3 = -1,
+                    int byte4 = -1) {
     static std::string json_string;
     json_string.clear();
 
@@ -132,7 +133,8 @@ void check_utf8dump(bool success_expected, int byte1, int byte2 = -1, int byte3 
 void check_utf8string(bool success_expected, int byte1, int byte2, int byte3, int byte4);
 
 // create and check a JSON string with up to four UTF-8 bytes
-void check_utf8string(bool success_expected, int byte1, int byte2 = -1, int byte3 = -1, int byte4 = -1) {
+void check_utf8string(bool success_expected, int byte1, int byte2 = -1, int byte3 = -1,
+                      int byte4 = -1) {
     if (++calls % 100000 == 0) {
         std::cout << calls << " of 5517507 UTF-8 strings checked" << std::endl;
     }

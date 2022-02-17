@@ -106,7 +106,8 @@ TEST_CASE("convenience functions") {
                           "[json.exception.type_error.316] invalid UTF-8 byte at index 2: 0xA9");
 
         CHECK_THROWS_AS(check_escaped("\xC2"), json::type_error&);
-        CHECK_THROWS_WITH(check_escaped("\xC2"), "[json.exception.type_error.316] incomplete UTF-8 "
-                                                 "string; last byte: 0xC2");
+        CHECK_THROWS_WITH(check_escaped("\xC2"),
+                          "[json.exception.type_error.316] incomplete UTF-8 "
+                          "string; last byte: 0xC2");
     }
 }

@@ -31,8 +31,8 @@
 #include <vector>
 using namespace std;
 
-void combinationSumHelper(vector<int> &candidates, int start, int num, int target, vector<int> &solution,
-                          vector<vector<int>> &results) {
+void combinationSumHelper(vector<int> &candidates, int start, int num, int target,
+                          vector<int> &solution, vector<vector<int>> &results) {
     if (target < 0 || solution.size() > num) {
         return;
     }

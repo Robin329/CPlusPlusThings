@@ -87,7 +87,8 @@ void swap(scoped_ptr<T> &lhs, scoped_ptr<T> &rhs) noexcept {
 int main() {
     auto_ptr<shape> ptr1{create_shape(shape_type::circle)};
     auto_ptr<shape> ptr2{ptr1};
-    if (ptr1.get() == nullptr && ptr2.get()) cout << "拷贝构造：ptr1释放了所有权,ptr2获得了所有权" << endl;
+    if (ptr1.get() == nullptr && ptr2.get())
+        cout << "拷贝构造：ptr1释放了所有权,ptr2获得了所有权" << endl;
     ptr1 = ptr1;
 
     auto_ptr<shape> ptr3{create_shape(shape_type::rectangle)};

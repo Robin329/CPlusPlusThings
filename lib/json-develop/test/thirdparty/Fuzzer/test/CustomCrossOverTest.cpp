@@ -33,8 +33,9 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     return 0;
 }
 
-extern "C" size_t LLVMFuzzerCustomCrossOver(const uint8_t *Data1, size_t Size1, const uint8_t *Data2, size_t Size2,
-                                            uint8_t *Out, size_t MaxOutSize, unsigned int Seed) {
+extern "C" size_t LLVMFuzzerCustomCrossOver(const uint8_t *Data1, size_t Size1,
+                                            const uint8_t *Data2, size_t Size2, uint8_t *Out,
+                                            size_t MaxOutSize, unsigned int Seed) {
     static bool Printed;
     static size_t SeparatorLen = strlen(Separator);
 

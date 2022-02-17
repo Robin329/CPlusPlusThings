@@ -151,7 +151,7 @@ bool isScramble_dp(string s1, string s2) {
                 dp[k][i][j] = false;
                 for (int divk = 1; divk < k && dp[k][i][j] == false; divk++) {
                     dp[k][i][j] = (dp[divk][i][j] && dp[k - divk][i + divk][j + divk]) ||
-                                  (dp[divk][i][j + k - divk] && dp[k - divk][i + divk][j]);
+                            (dp[divk][i][j + k - divk] && dp[k - divk][i + divk][j]);
                 }
             }
         }

@@ -21,7 +21,8 @@ void build_code(int max_args) {
     for (int i = 3; i <= max_args; i++) {
         ss << "#define NLOHMANN_JSON_PASTE" << i << "(func, ";
         for (int j = 1; j < i - 1; j++) ss << "v" << j << ", ";
-        ss << "v" << i - 1 << ") NLOHMANN_JSON_PASTE2(func, v1) NLOHMANN_JSON_PASTE" << i - 1 << "(func, ";
+        ss << "v" << i - 1 << ") NLOHMANN_JSON_PASTE2(func, v1) NLOHMANN_JSON_PASTE" << i - 1
+           << "(func, ";
         for (int j = 2; j < i - 1; j++) ss << "v" << j << ", ";
         ss << "v" << i - 1 << ")" << endl;
     }

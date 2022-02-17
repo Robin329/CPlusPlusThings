@@ -59,7 +59,9 @@ private:
     // calculating ratio
     double ratio(double pass, double total) { return pass / total; }
     // calculating the profit
-    double profit(double pass, double total) { return ratio(pass + 1, total + 1) - ratio(pass, total); }
+    double profit(double pass, double total) {
+        return ratio(pass + 1, total + 1) - ratio(pass, total);
+    }
 
 public:
     double maxAverageRatio(vector<vector<int>> &classes, int extraStudents) {

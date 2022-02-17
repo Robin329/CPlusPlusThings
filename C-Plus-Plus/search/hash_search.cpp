@@ -18,7 +18,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#define MAX 6      ///< Determines how much data
+#define MAX     6  ///< Determines how much data
 #define HASHMAX 5  ///< Determines the length of the hash table
 
 int data[MAX] = {1, 10, 15, 5, 8, 7};  //!< test data

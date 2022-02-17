@@ -1,6 +1,7 @@
 /**
  * @file
- * @brief Evaluation of [Postfix Expression](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
+ * @brief Evaluation of [Postfix
+ * Expression](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
  * @author [Darshana Sarma](https://github.com/Darshana-Sarma)
  * @details
  * Create a stack to store operands (or values).
@@ -26,13 +27,15 @@ namespace others {
  * @brief Functions for Postfix Expression algorithm
  */
 namespace postfix_expression {
- /**
+/**
  * @brief Creates an array to be used as stack for storing values
  */
 class Stack {
  public:
-    std::array<float, 20> stack{}; ///< Array which will be used to store numbers in the input
-    int stackTop = -1;            ///< Represents the index of the last value added to array. -1 means array is empty
+    std::array<float, 20>
+        stack{};  ///< Array which will be used to store numbers in the input
+    int stackTop = -1;  ///< Represents the index of the last value added to
+                        ///< array. -1 means array is empty
 };
 
 /**
@@ -79,22 +82,22 @@ void evaluate(float a, float b, const std::string &operation, Stack *stack) {
     const char *op = operation.c_str();
     switch (*op) {
         case '+':
-            c = a + b; // Addition of numbers
+            c = a + b;  // Addition of numbers
             others::postfix_expression::push(c, stack);
             break;
 
         case '-':
-            c = a - b; // Subtraction of numbers
+            c = a - b;  // Subtraction of numbers
             others::postfix_expression::push(c, stack);
             break;
 
         case '*':
-            c = a * b; // Multiplication of numbers
+            c = a * b;  // Multiplication of numbers
             others::postfix_expression::push(c, stack);
             break;
 
         case '/':
-            c = a / b; // Division of numbers
+            c = a / b;  // Division of numbers
             others::postfix_expression::push(c, stack);
             break;
 
@@ -136,7 +139,6 @@ float postfix_evaluation(std::array<std::string, N> input) {
 }
 }  // namespace postfix_expression
 }  // namespace others
-
 
 /**
  * @brief Test function 1 with input array

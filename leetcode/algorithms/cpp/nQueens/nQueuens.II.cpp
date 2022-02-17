@@ -48,7 +48,8 @@ void solveNQueensRecursive(int n, int currentRow, vector<int> &solution, int &re
 
 bool isValid(int attemptedColumn, int attemptedRow, vector<int> &queenInColumn) {
     for (int i = 0; i < attemptedRow; i++) {
-        if (attemptedColumn == queenInColumn[i] || abs(attemptedColumn - queenInColumn[i]) == abs(attemptedRow - i)) {
+        if (attemptedColumn == queenInColumn[i] ||
+            abs(attemptedColumn - queenInColumn[i]) == abs(attemptedRow - i)) {
             return false;
         }
     }

@@ -93,7 +93,8 @@ public:
             }
         }
         HANDLE Timer;
-        if (!CreateTimerQueueTimer(&Timer, TimerQueue, AlarmHandler, NULL, Seconds * 1000, Seconds * 1000, 0)) {
+        if (!CreateTimerQueueTimer(&Timer, TimerQueue, AlarmHandler, NULL, Seconds * 1000,
+                                   Seconds * 1000, 0)) {
             Printf("libFuzzer: CreateTimerQueueTimer failed.\n");
             exit(1);
         }

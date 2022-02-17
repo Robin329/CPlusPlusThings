@@ -31,7 +31,8 @@ vector<string> restoreIpAddresses(string s) {
     return result;
 }
 
-void restoreIpAddressesHelper(string &s, int start, int partNum, string ip, vector<string> &result) {
+void restoreIpAddressesHelper(string &s, int start, int partNum, string ip,
+                              vector<string> &result) {
     int len = s.size();
     if (len - start < 4 - partNum || len - start > (4 - partNum) * 3) {
         return;

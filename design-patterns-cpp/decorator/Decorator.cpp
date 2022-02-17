@@ -15,13 +15,12 @@
  * defines an interface for objects that can have responsibilities
  * added to them dynamically
  */
-class Component
-{
+class Component {
 public:
-  virtual ~Component() {}
-  
-  virtual void operation() = 0;
-  // ...
+    virtual ~Component() {}
+
+    virtual void operation() = 0;
+    // ...
 };
 
 /*
@@ -29,16 +28,12 @@ public:
  * defines an object to which additional responsibilities
  * can be attached
  */
-class ConcreteComponent : public Component
-{
+class ConcreteComponent : public Component {
 public:
-  ~ConcreteComponent() {}
-  
-  void operation()
-  {
-    std::cout << "Concrete Component operation" << std::endl;
-  }
-  // ...
+    ~ConcreteComponent() {}
+
+    void operation() { std::cout << "Concrete Component operation" << std::endl; }
+    // ...
 };
 
 /*
@@ -46,21 +41,17 @@ public:
  * maintains a reference to a Component object and defines an interface
  * that conforms to Component's interface
  */
-class Decorator : public Component
-{
+class Decorator : public Component {
 public:
-  ~Decorator() {}
-  
-  Decorator( Component *c ) : component( c ) {}
-  
-  virtual void operation()
-  {
-    component->operation();
-  }
-  // ...
+    ~Decorator() {}
+
+    Decorator(Component *c) : component(c) {}
+
+    virtual void operation() { component->operation(); }
+    // ...
 
 private:
-  Component *component;
+    Component *component;
 };
 
 /*
@@ -68,45 +59,39 @@ private:
  * add responsibilities to the component (can extend the state
  * of the component)
  */
-class ConcreteDecoratorA : public Decorator
-{
+class ConcreteDecoratorA : public Decorator {
 public:
-  ConcreteDecoratorA( Component *c ) : Decorator( c ) {}
-  
-  void operation()
-  {
-    Decorator::operation();
-    std::cout << "Decorator A" << std::endl;
-  }
-  // ...
+    ConcreteDecoratorA(Component *c) : Decorator(c) {}
+
+    void operation() {
+        Decorator::operation();
+        std::cout << "Decorator A" << std::endl;
+    }
+    // ...
 };
 
-class ConcreteDecoratorB : public Decorator
-{
+class ConcreteDecoratorB : public Decorator {
 public:
-  ConcreteDecoratorB( Component *c ) : Decorator( c ) {}
-  
-  void operation()
-  {
-    Decorator::operation();
-    std::cout << "Decorator B" << std::endl;
-  }
-  // ...
+    ConcreteDecoratorB(Component *c) : Decorator(c) {}
+
+    void operation() {
+        Decorator::operation();
+        std::cout << "Decorator B" << std::endl;
+    }
+    // ...
 };
 
+int main() {
+    ConcreteComponent *cc = new ConcreteComponent();
+    ConcreteDecoratorB *db = new ConcreteDecoratorB(cc);
+    ConcreteDecoratorA *da = new ConcreteDecoratorA(db);
 
-int main()
-{
-  ConcreteComponent  *cc = new ConcreteComponent();
-  ConcreteDecoratorB *db = new ConcreteDecoratorB( cc );
-  ConcreteDecoratorA *da = new ConcreteDecoratorA( db );
-  
-  Component *component = da;
-  component->operation();
-  
-  delete da;
-  delete db;
-  delete cc;
-  
-  return 0;
+    Component *component = da;
+    component->operation();
+
+    delete da;
+    delete db;
+    delete cc;
+
+    return 0;
 }

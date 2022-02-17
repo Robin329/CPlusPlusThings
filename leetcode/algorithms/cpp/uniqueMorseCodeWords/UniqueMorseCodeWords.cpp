@@ -49,9 +49,10 @@
 class Solution {
 public:
     int uniqueMorseRepresentations(vector<string> &words) {
-        string MorseTable[26] = {".-",   "-...", "-.-.", "-..",  ".",   "..-.", "--.",  "....", "..",
-                                 ".---", "-.-",  ".-..", "--",   "-.",  "---",  ".--.", "--.-", ".-.",
-                                 "...",  "-",    "..-",  "...-", ".--", "-..-", "-.--", "--.."};
+        string MorseTable[26] = {".-",   "-...", "-.-.", "-..",  ".",    "..-.", "--.",
+                                 "....", "..",   ".---", "-.-",  ".-..", "--",   "-.",
+                                 "---",  ".--.", "--.-", ".-.",  "...",  "-",    "..-",
+                                 "...-", ".--",  "-..-", "-.--", "--.."};
         unordered_map<string, bool> transformations;
         for (auto word : words) {
             string morse;

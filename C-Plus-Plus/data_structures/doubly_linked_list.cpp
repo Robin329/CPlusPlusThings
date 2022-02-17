@@ -109,27 +109,27 @@ int main() {
         std::cout << "\n\nEnter you choice : ";
         std::cin >> choice;
         switch (choice) {
-        case 1:
-            std::cout << "\nEnter the element to be inserted : ";
-            std::cin >> x;
-            ob.insert(x);
-            break;
-        case 2:
-            std::cout << "\nEnter the element to be removed : ";
-            std::cin >> x;
-            ob.remove(x);
-            break;
-        case 3:
-            std::cout << "\nEnter the element to be searched : ";
-            std::cin >> x;
-            ob.search(x);
-            break;
-        case 4:
-            ob.show();
-            break;
-        case 5:
-            ob.reverseShow();
-            break;
+            case 1:
+                std::cout << "\nEnter the element to be inserted : ";
+                std::cin >> x;
+                ob.insert(x);
+                break;
+            case 2:
+                std::cout << "\nEnter the element to be removed : ";
+                std::cin >> x;
+                ob.remove(x);
+                break;
+            case 3:
+                std::cout << "\nEnter the element to be searched : ";
+                std::cin >> x;
+                ob.search(x);
+                break;
+            case 4:
+                ob.show();
+                break;
+            case 5:
+                ob.reverseShow();
+                break;
         }
     } while (choice != 0);
     return 0;

@@ -70,9 +70,11 @@ public:
                 //      then if we need to multipy 4, it is not 5*4, it is 2+3*4=2+12=24
                 //      we need be careful about multiply again, such as: 2+3*4*5
                 if (preop == '+') {
-                    helper(num, target, result, solution + '*' + n, i + 1, (val - prev) + prev * v, prev * v, preop);
+                    helper(num, target, result, solution + '*' + n, i + 1, (val - prev) + prev * v,
+                           prev * v, preop);
                 } else if (preop == '-') {
-                    helper(num, target, result, solution + '*' + n, i + 1, (val + prev) - prev * v, prev * v, preop);
+                    helper(num, target, result, solution + '*' + n, i + 1, (val + prev) - prev * v,
+                           prev * v, preop);
                 } else {
                     helper(num, target, result, solution + '*' + n, i + 1, val * v, v, '*');
                 }

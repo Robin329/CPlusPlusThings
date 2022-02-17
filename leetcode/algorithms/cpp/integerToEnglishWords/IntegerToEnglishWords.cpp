@@ -33,11 +33,13 @@
 #include <vector>
 using namespace std;
 
-static string dict1[] = {"Zero",     "One",     "Two",     "Three",     "Four",     "Five",    "Six",
-                         "Seven",    "Eight",   "Nine",    "Ten",       "Eleven",   "Twelve",  "Thirteen",
-                         "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+static string dict1[] = {"Zero",    "One",     "Two",       "Three",    "Four",
+                         "Five",    "Six",     "Seven",     "Eight",    "Nine",
+                         "Ten",     "Eleven",  "Twelve",    "Thirteen", "Fourteen",
+                         "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
 
-static string dict2[] = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+static string dict2[] = {"",      "",      "Twenty",  "Thirty", "Forty",
+                         "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 static string dict3[] = {"Hundred", "Thousand", "Million", "Billion"};
 
 // This function only converts the number which less than 1000

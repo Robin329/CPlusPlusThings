@@ -2,13 +2,8 @@
 
 class numbered {
 public:
-    numbered() {
-        mysn = unique++;
-    }
-	numbered(const numbered& n)
-	{
-		mysn = unique++;
-	}
+    numbered() { mysn = unique++; }
+    numbered(const numbered& n) { mysn = unique++; }
 
     int mysn;
     static int unique;
@@ -20,8 +15,7 @@ void f(numbered s) {
     std::cout << s.mysn << std::endl;
 }
 
-int main()
-{
+int main() {
     numbered a, b = a, c = b;
     f(a);
     f(b);

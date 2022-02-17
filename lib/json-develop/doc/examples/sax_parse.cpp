@@ -72,7 +72,8 @@ public:
         return true;
     }
 
-    bool parse_error(std::size_t position, const std::string& last_token, const json::exception& ex) override {
+    bool parse_error(std::size_t position, const std::string& last_token,
+                     const json::exception& ex) override {
         events.push_back("error: " + std::string(ex.what()));
         return false;
     }

@@ -55,7 +55,8 @@
 class Solution {
 public:
     // DFS
-    void travel(string &start, unordered_map<string, multiset<string>> &map, vector<string> &result) {
+    void travel(string &start, unordered_map<string, multiset<string>> &map,
+                vector<string> &result) {
         while (map[start].size() > 0) {
             string next = *(map[start].begin());
             map[start].erase(map[start].begin());

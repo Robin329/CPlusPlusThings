@@ -86,7 +86,8 @@ void connect1(TreeLinkNode *root) {
     v.push_back(root);
 
     while (v.size() > 0) {
-        if ((root->left && root->left->next == NULL) || (root->right && root->right->next == NULL)) {
+        if ((root->left && root->left->next == NULL) ||
+            (root->right && root->right->next == NULL)) {
             if (root->left && root->right) {
                 root->left->next = root->right;
             }

@@ -179,8 +179,8 @@ public:
             for (int current = 1; current < events.size(); current++) {
                 int prev = events[current][3];
 
-                int attend = (prev == -1) ? events[current][2] :               // not found the previous event
-                                     dp[prev][times - 1] + events[current][2]; // found previouse event
+                int attend = (prev == -1) ? events[current][2] :  // not found the previous event
+                        dp[prev][times - 1] + events[current][2]; // found previouse event
 
                 int skip = dp[current - 1][times];
 

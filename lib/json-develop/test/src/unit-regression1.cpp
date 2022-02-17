@@ -43,7 +43,8 @@ using nlohmann::json;
 #include <sstream>
 #include <test_data.hpp>
 
-#if (defined(__cplusplus) && __cplusplus >= 201703L) || (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
+#if (defined(__cplusplus) && __cplusplus >= 201703L) || \
+        (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
 #define JSON_HAS_CPP_17
 #endif
 
@@ -102,8 +103,9 @@ struct foo_serializer<T, typename std::enable_if<!std::is_same<foo, T>::value>::
 };
 } // namespace ns
 
-using foo_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t, double,
-                                      std::allocator, ns::foo_serializer, std::vector<std::uint8_t>>;
+using foo_json =
+        nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t,
+                             double, std::allocator, ns::foo_serializer, std::vector<std::uint8_t>>;
 
 /////////////////////////////////////////////////////////////////////
 // for #805
@@ -248,7 +250,8 @@ TEST_CASE("regression tests 1") {
 
     SECTION("issue #89 - nonstandard integer type") {
         // create JSON class with nonstandard integer number type
-        using custom_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, int32_t, uint32_t, float>;
+        using custom_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, int32_t,
+                                                 uint32_t, float>;
         custom_json j;
         j["int_1"] = 1;
         CHECK(j["int_1"] == 1);
@@ -259,7 +262,8 @@ TEST_CASE("regression tests 1") {
         // unsigned integer object creation - expected to wrap and still be stored
         // as an integer
         j = 4294967296U; // 2^32
-        CHECK(static_cast<int>(j.type()) == static_cast<int>(custom_json::value_t::number_unsigned));
+        CHECK(static_cast<int>(j.type()) ==
+              static_cast<int>(custom_json::value_t::number_unsigned));
         CHECK(j.get<uint32_t>() == 0); // Wrap
 
         // unsigned integer parsing - expected to overflow and be stored as a float
@@ -362,16 +366,19 @@ TEST_CASE("regression tests 1") {
         o["int"] = 1;
         CHECK_THROWS_AS(s2 = o["int"], json::type_error);
 #if JSON_DIAGNOSTICS
-        CHECK_THROWS_WITH(s2 = o["int"], "[json.exception.type_error.302] (/int) type must be "
-                                         "string, but is number");
+        CHECK_THROWS_WITH(s2 = o["int"],
+                          "[json.exception.type_error.302] (/int) type must be "
+                          "string, but is number");
 #else
-        CHECK_THROWS_WITH(s2 = o["int"], "[json.exception.type_error.302] type must be string, but is number");
+        CHECK_THROWS_WITH(s2 = o["int"],
+                          "[json.exception.type_error.302] type must be string, but is number");
 #endif
     }
 #endif
 
     SECTION("issue #146 - character following a surrogate pair is skipped") {
-        CHECK(json::parse("\"\\ud80c\\udc60abc\"").get<json::string_t>() == "\xf0\x93\x81\xa0\x61\x62\x63");
+        CHECK(json::parse("\"\\ud80c\\udc60abc\"").get<json::string_t>() ==
+              "\xf0\x93\x81\xa0\x61\x62\x63");
     }
 
     SECTION("issue #171 - Cannot index by key of type static constexpr const char*") {
@@ -454,16 +461,19 @@ TEST_CASE("regression tests 1") {
         // create JSON class with nonstandard float number type
 
         // float
-        nlohmann::basic_json<std::map, std::vector, std::string, bool, int32_t, uint32_t, float> j_float = 1.23e25f;
+        nlohmann::basic_json<std::map, std::vector, std::string, bool, int32_t, uint32_t, float>
+                j_float = 1.23e25f;
         CHECK(j_float.get<float>() == 1.23e25f);
 
         // double
-        nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, double> j_double = 1.23e35;
+        nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, double>
+                j_double = 1.23e35;
         CHECK(j_double.get<double>() == 1.23e35);
 
         // long double
-        nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t, long double> j_long_double =
-                1.23e45L;
+        nlohmann::basic_json<std::map, std::vector, std::string, bool, int64_t, uint64_t,
+                             long double>
+                j_long_double = 1.23e45L;
         CHECK(j_long_double.get<long double>() == 1.23e45L);
     }
 
@@ -491,7 +501,8 @@ TEST_CASE("regression tests 1") {
         };
 
         // change locale to mess with decimal points
-        auto orig_locale = std::locale::global(std::locale(std::locale(), new CommaDecimalSeparator));
+        auto orig_locale =
+                std::locale::global(std::locale(std::locale(), new CommaDecimalSeparator));
 
         CHECK(j1a.dump() == "2312.42");
         CHECK(j1b.dump() == "2312.42");
@@ -599,10 +610,10 @@ TEST_CASE("regression tests 1") {
     }
 
     SECTION("issue #310 - make json_benchmarks no longer working in 2.0.4") {
-        for (const auto* filename :
-             {TEST_DATA_DIRECTORY "/regression/floats.json", TEST_DATA_DIRECTORY "/regression/signed_ints.json",
-              TEST_DATA_DIRECTORY "/regression/unsigned_ints.json",
-              TEST_DATA_DIRECTORY "/regression/small_signed_ints.json"}) {
+        for (const auto* filename : {TEST_DATA_DIRECTORY "/regression/floats.json",
+                                     TEST_DATA_DIRECTORY "/regression/signed_ints.json",
+                                     TEST_DATA_DIRECTORY "/regression/unsigned_ints.json",
+                                     TEST_DATA_DIRECTORY "/regression/small_signed_ints.json"}) {
             CAPTURE(filename)
             json j;
             std::ifstream f(filename);
@@ -685,9 +696,10 @@ TEST_CASE("regression tests 1") {
         std::ifstream f("file_not_found.json");
         json _;
         CHECK_THROWS_AS(_ = json::parse(f), json::parse_error&);
-        CHECK_THROWS_WITH(_ = json::parse(f), "[json.exception.parse_error.101] parse error at line 1, "
-                                              "column 1: syntax error while parsing value - unexpected "
-                                              "end of input; expected '[', '{', or a literal");
+        CHECK_THROWS_WITH(_ = json::parse(f),
+                          "[json.exception.parse_error.101] parse error at line 1, "
+                          "column 1: syntax error while parsing value - unexpected "
+                          "end of input; expected '[', '{', or a literal");
     }
 
     SECTION("issue #367 - calling stream at EOF") {
@@ -701,9 +713,10 @@ TEST_CASE("regression tests 1") {
         // (threw basic_string::append). No, it should just throw
         // a parse error because of the EOF.
         CHECK_THROWS_AS(ss >> j, json::parse_error&);
-        CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, "
-                                   "column 1: syntax error while parsing value - unexpected "
-                                   "end of input; expected '[', '{', or a literal");
+        CHECK_THROWS_WITH(ss >> j,
+                          "[json.exception.parse_error.101] parse error at line 1, "
+                          "column 1: syntax error while parsing value - unexpected "
+                          "end of input; expected '[', '{', or a literal");
     }
 
     SECTION("issue #367 - behavior of operator>> should more closely resemble that "
@@ -712,9 +725,10 @@ TEST_CASE("regression tests 1") {
             std::stringstream ss;
             json j;
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("(whitespace)") {
@@ -722,9 +736,10 @@ TEST_CASE("regression tests 1") {
             ss << "   ";
             json j;
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("one value") {
@@ -735,9 +750,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == 111);
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("one value + whitespace") {
@@ -748,9 +764,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == 222);
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("whitespace + one value") {
@@ -761,9 +778,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == 333);
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("three values") {
@@ -778,9 +796,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == 333);
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("literals without whitespace") {
@@ -797,9 +816,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == "");
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("example from #529") {
@@ -813,9 +833,10 @@ TEST_CASE("regression tests 1") {
             CHECK(j == json({{"three", 3}}));
 
             CHECK_THROWS_AS(ss >> j, json::parse_error&);
-            CHECK_THROWS_WITH(ss >> j, "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                       "syntax error while parsing value - unexpected end of input; "
-                                       "expected '[', '{', or a literal");
+            CHECK_THROWS_WITH(ss >> j,
+                              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+                              "syntax error while parsing value - unexpected end of input; "
+                              "expected '[', '{', or a literal");
         }
 
         SECTION("second example from #529") {
@@ -933,11 +954,14 @@ TEST_CASE("regression tests 1") {
                           "while parsing MessagePack string: unexpected end of input");
 
         // more test cases for MessagePack
-        for (auto b :
-             {0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f, // fixmap
-              0x91, 0x92, 0x93, 0x94, 0x95, 0x96, 0x97, 0x98, 0x99, 0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f, // fixarray
-              0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf, // fixstr
-              0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7, 0xb8, 0xb9, 0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0xbf}) {
+        for (auto b : {0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88,
+                       0x89, 0x8a, 0x8b, 0x8c, 0x8d, 0x8e, 0x8f, // fixmap
+                       0x91, 0x92, 0x93, 0x94, 0x95, 0x96, 0x97, 0x98,
+                       0x99, 0x9a, 0x9b, 0x9c, 0x9d, 0x9e, 0x9f, // fixarray
+                       0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8,
+                       0xa9, 0xaa, 0xab, 0xac, 0xad, 0xae, 0xaf, // fixstr
+                       0xb0, 0xb1, 0xb2, 0xb3, 0xb4, 0xb5, 0xb6, 0xb7,
+                       0xb8, 0xb9, 0xba, 0xbb, 0xbc, 0xbd, 0xbe, 0xbf}) {
             std::vector<uint8_t> vec(1, static_cast<uint8_t>(b));
             CHECK_THROWS_AS(_ = json::from_msgpack(vec), json::parse_error&);
         }
@@ -945,7 +969,8 @@ TEST_CASE("regression tests 1") {
         // more test cases for CBOR
         for (auto b : {
                      0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67, 0x68, 0x69, 0x6a, 0x6b, 0x6c,
-                     0x6d, 0x6e, 0x6f, 0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, // UTF-8 string
+                     0x6d, 0x6e, 0x6f, 0x70, 0x71, 0x72, 0x73, 0x74, 0x75, 0x76, 0x77, // UTF-8
+                                                                                       // string
                      0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x87, 0x88, 0x89, 0x8a, 0x8b, 0x8c,
                      0x8d, 0x8e, 0x8f, 0x90, 0x91, 0x92, 0x93, 0x94, 0x95, 0x96, 0x97, // array
                      0xa1, 0xa2, 0xa3, 0xa4, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9, 0xaa, 0xab, 0xac,
@@ -994,16 +1019,19 @@ TEST_CASE("regression tests 1") {
 
     SECTION("issue #412 - Heap-buffer-overflow (OSS-Fuzz issue 367)") {
         // original test case
-        std::vector<uint8_t> vec{0xab, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x00,
-                                 0x00, 0x00, 0x60, 0xab, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98,
-                                 0x98, 0x00, 0x00, 0x00, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0xa0, 0x9f, 0x9f, 0x97, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
-                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60};
+        std::vector<uint8_t> vec{0xab, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98,
+                                 0x98, 0x98, 0x00, 0x00, 0x00, 0x60, 0xab, 0x98, 0x98, 0x98, 0x98,
+                                 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x98, 0x00, 0x00, 0x00, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0xa0, 0x9f,
+                                 0x9f, 0x97, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60, 0x60,
+                                 0x60, 0x60, 0x60, 0x60};
 
         json _;
         CHECK_THROWS_AS(_ = json::from_cbor(vec), json::parse_error&);
@@ -1053,10 +1081,11 @@ TEST_CASE("regression tests 1") {
 
     SECTION("issue #416 - Use-of-uninitialized-value (OSS-Fuzz issue 377)") {
         // original test case
-        std::vector<uint8_t> vec1{0x94, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96, 0x96, 0xb4,
-                                  0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0x71,
-                                  0xb4, 0xb4, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96, 0x96, 0xb4, 0xb4,
-                                  0xfa, 0x94, 0x94, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0xfa};
+        std::vector<uint8_t> vec1{0x94, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96,
+                                  0x96, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4,
+                                  0xb4, 0xb4, 0xb4, 0x71, 0xb4, 0xb4, 0xfa, 0xfa, 0xfa, 0xfa,
+                                  0xfa, 0x3a, 0x96, 0x96, 0xb4, 0xb4, 0xfa, 0x94, 0x94, 0x61,
+                                  0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0xfa};
 
         json _;
         CHECK_THROWS_AS(_ = json::from_cbor(vec1), json::parse_error&);
@@ -1066,10 +1095,11 @@ TEST_CASE("regression tests 1") {
                           "or indefinite string type (0x7F); last byte: 0xB4");
 
         // related test case: double-precision
-        std::vector<uint8_t> vec2{0x94, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96, 0x96, 0xb4,
-                                  0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0x71,
-                                  0xb4, 0xb4, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96, 0x96, 0xb4, 0xb4,
-                                  0xfa, 0x94, 0x94, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0xfb};
+        std::vector<uint8_t> vec2{0x94, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0xfa, 0x3a, 0x96,
+                                  0x96, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4, 0xb4,
+                                  0xb4, 0xb4, 0xb4, 0x71, 0xb4, 0xb4, 0xfa, 0xfa, 0xfa, 0xfa,
+                                  0xfa, 0x3a, 0x96, 0x96, 0xb4, 0xb4, 0xfa, 0x94, 0x94, 0x61,
+                                  0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0x61, 0xfb};
         CHECK_THROWS_AS(_ = json::from_cbor(vec2), json::parse_error&);
         CHECK_THROWS_WITH(_ = json::from_cbor(vec2),
                           "[json.exception.parse_error.113] parse error at byte 13: syntax error "
@@ -1117,9 +1147,11 @@ TEST_CASE("regression tests 1") {
 
             CHECK_NOTHROW(create(j_array));
             CHECK_THROWS_AS(create(j_number), json::type_error&);
-            CHECK_THROWS_WITH(create(j_number), "[json.exception.type_error.302] type must be array, but is number");
+            CHECK_THROWS_WITH(create(j_number),
+                              "[json.exception.type_error.302] type must be array, but is number");
             CHECK_THROWS_AS(create(j_null), json::type_error&);
-            CHECK_THROWS_WITH(create(j_null), "[json.exception.type_error.302] type must be array, but is null");
+            CHECK_THROWS_WITH(create(j_null),
+                              "[json.exception.type_error.302] type must be array, but is null");
         }
 
         SECTION("std::list") {
@@ -1127,9 +1159,11 @@ TEST_CASE("regression tests 1") {
 
             CHECK_NOTHROW(create(j_array));
             CHECK_THROWS_AS(create(j_number), json::type_error&);
-            CHECK_THROWS_WITH(create(j_number), "[json.exception.type_error.302] type must be array, but is number");
+            CHECK_THROWS_WITH(create(j_number),
+                              "[json.exception.type_error.302] type must be array, but is number");
             CHECK_THROWS_AS(create(j_null), json::type_error&);
-            CHECK_THROWS_WITH(create(j_null), "[json.exception.type_error.302] type must be array, but is null");
+            CHECK_THROWS_WITH(create(j_null),
+                              "[json.exception.type_error.302] type must be array, but is null");
         }
 
         SECTION("std::forward_list") {
@@ -1137,9 +1171,11 @@ TEST_CASE("regression tests 1") {
 
             CHECK_NOTHROW(create(j_array));
             CHECK_THROWS_AS(create(j_number), json::type_error&);
-            CHECK_THROWS_WITH(create(j_number), "[json.exception.type_error.302] type must be array, but is number");
+            CHECK_THROWS_WITH(create(j_number),
+                              "[json.exception.type_error.302] type must be array, but is number");
             CHECK_THROWS_AS(create(j_null), json::type_error&);
-            CHECK_THROWS_WITH(create(j_null), "[json.exception.type_error.302] type must be array, but is null");
+            CHECK_THROWS_WITH(create(j_null),
+                              "[json.exception.type_error.302] type must be array, but is null");
         }
     }
 #endif
@@ -1338,12 +1374,14 @@ TEST_CASE("regression tests 1") {
     }
 
     SECTION("issue #838 - incorrect parse error with binary data in keys") {
-        std::array<uint8_t, 28> key1 = {{103, 92,  117, 48, 48, 48,  55, 92, 114, 215, 126, 214, 95,  92,
-                                         34,  174, 40,  71, 38, 174, 40, 71, 38,  223, 134, 247, 127, 0}};
+        std::array<uint8_t, 28> key1 = {{103, 92,  117, 48,  48,  48,  55,  92, 114, 215,
+                                         126, 214, 95,  92,  34,  174, 40,  71, 38,  174,
+                                         40,  71,  38,  223, 134, 247, 127, 0}};
         std::string key1_str(reinterpret_cast<char*>(key1.data()));
         json j = key1_str;
         CHECK_THROWS_AS(j.dump(), json::type_error&);
-        CHECK_THROWS_WITH(j.dump(), "[json.exception.type_error.316] invalid UTF-8 byte at index 10: 0x7E");
+        CHECK_THROWS_WITH(j.dump(),
+                          "[json.exception.type_error.316] invalid UTF-8 byte at index 10: 0x7E");
     }
 
 #if JSON_USE_IMPLICIT_CONVERSIONS
@@ -1394,7 +1432,8 @@ TEST_CASE("regression tests 1") {
 
     SECTION("issue #962 - Timeout (OSS-Fuzz 6034)") {
         json _;
-        std::vector<uint8_t> v_ubjson = {'[', '$', 'Z', '#', 'L', 0x78, 0x28, 0x00, 0x68, 0x28, 0x69, 0x69, 0x17};
+        std::vector<uint8_t> v_ubjson = {'[',  '$',  'Z',  '#',  'L',  0x78, 0x28,
+                                         0x00, 0x68, 0x28, 0x69, 0x69, 0x17};
         CHECK_THROWS_AS(_ = json::from_ubjson(v_ubjson), json::out_of_range&);
         // CHECK_THROWS_WITH(json::from_ubjson(v_ubjson),
         //                  "[json.exception.out_of_range.408] excessive array size:
@@ -1473,7 +1512,8 @@ TEST_CASE("regression tests, exceptions dependent") {
 /////////////////////////////////////////////////////////////////////
 
 // the code below fails with Clang on Windows, so we need to exclude it there
-#if defined(__clang__) && (defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__))
+#if defined(__clang__) && \
+        (defined(WIN32) || defined(_WIN32) || defined(__WIN32) && !defined(__CYGWIN__))
 #else
 template <typename T>
 class array {};

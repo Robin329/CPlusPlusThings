@@ -28,7 +28,8 @@ Introduction](https://www.educative.io/page/5689413791121408/80001)
 namespace data_structures {
 /**
  * @namespace tree_234
- * @brief Functions for [2–3–4 tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
+ * @brief Functions for [2–3–4
+ * tree](https://en.wikipedia.org/wiki/2%E2%80%933%E2%80%934_tree)
  */
 namespace tree_234 {
 /** @brief 2-3-4 tree node class */
@@ -1256,7 +1257,6 @@ void Tree234::PrintNode(std::ofstream &ofs, Node *node, int64_t parent_index,
 }
 }  // namespace tree_234
 }  // namespace data_structures
-
 
 /** @brief simple test to insert a given array and delete some item, and print
  * the tree*/

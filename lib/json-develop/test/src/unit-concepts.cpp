@@ -52,16 +52,18 @@ TEST_CASE("concepts") {
         // X::iterator must return iterator whose value_type is T
         CHECK((std::is_same<json::iterator::value_type, json>::value));
         // X::iterator must meet the forward iterator requirements
-        CHECK((std::is_base_of<std::forward_iterator_tag,
-                               typename std::iterator_traits<json::iterator>::iterator_category>::value));
+        CHECK((std::is_base_of<
+                std::forward_iterator_tag,
+                typename std::iterator_traits<json::iterator>::iterator_category>::value));
         // X::iterator must be convertible to X::const_iterator
         CHECK((std::is_convertible<json::iterator, json::const_iterator>::value));
 
         // X::const_iterator must return iterator whose value_type is T
         CHECK((std::is_same<json::const_iterator::value_type, json>::value));
         // X::const_iterator must meet the forward iterator requirements
-        CHECK((std::is_base_of<std::forward_iterator_tag,
-                               typename std::iterator_traits<json::const_iterator>::iterator_category>::value));
+        CHECK((std::is_base_of<
+                std::forward_iterator_tag,
+                typename std::iterator_traits<json::const_iterator>::iterator_category>::value));
 
         // X::difference_type must return a signed integer
         CHECK((std::is_signed<json::difference_type>::value));
@@ -88,7 +90,9 @@ TEST_CASE("concepts") {
     }
 
     SECTION("class json") {
-        SECTION("DefaultConstructible") { CHECK(std::is_nothrow_default_constructible<json>::value); }
+        SECTION("DefaultConstructible") {
+            CHECK(std::is_nothrow_default_constructible<json>::value);
+        }
 
         SECTION("MoveConstructible") {
             CHECK(std::is_move_constructible<json>::value);

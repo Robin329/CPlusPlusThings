@@ -40,7 +40,7 @@ class scoped_thread {
 public:
     explicit scoped_thread(std::thread t_)
           : // 1
-          t(std::move(t_)) {
+            t(std::move(t_)) {
         if (!t.joinable()) // 2
             throw std::logic_error("No thread");
     }

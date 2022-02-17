@@ -37,7 +37,8 @@
 #include <vector>
 using namespace std;
 
-void getCombination(vector<int> &v, int n, int k, vector<int> &solution, vector<vector<int>> &result);
+void getCombination(vector<int> &v, int n, int k, vector<int> &solution,
+                    vector<vector<int>> &result);
 vector<vector<int>> combine(vector<int> &v, int k);
 vector<vector<int>> combine1(vector<int> &v, int k);
 vector<vector<int>> combine2(vector<int> &v, int k);
@@ -67,7 +68,8 @@ vector<vector<int>> combine1(vector<int> &v, int k) {
     return result;
 }
 
-void getCombination(vector<int> &v, int n, int k, vector<int> &solution, vector<vector<int>> &result) {
+void getCombination(vector<int> &v, int n, int k, vector<int> &solution,
+                    vector<vector<int>> &result) {
     if (k == 0) {
         // sort to meet LeetCode requirement
         vector<int> v = solution;

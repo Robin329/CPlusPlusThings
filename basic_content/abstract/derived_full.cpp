@@ -6,9 +6,9 @@
  * @date 2019-07-20
  */
 
+#include <complex>
 #include <iostream>
 #include <vector>
-#include <complex>
 
 using namespace std;
 
@@ -16,7 +16,6 @@ class Base {
     int x;
 
 public:
-    
     //    virtual void fun();
     int getX(int a) {
         cout << "getX(int a)" << endl;

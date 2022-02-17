@@ -28,7 +28,8 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     return 0;
 }
 
-extern "C" size_t LLVMFuzzerCustomMutator(uint8_t *Data, size_t Size, size_t MaxSize, unsigned int Seed) {
+extern "C" size_t LLVMFuzzerCustomMutator(uint8_t *Data, size_t Size, size_t MaxSize,
+                                          unsigned int Seed) {
     static bool Printed;
     if (!Printed) {
         std::cerr << "In LLVMFuzzerCustomMutator\n";

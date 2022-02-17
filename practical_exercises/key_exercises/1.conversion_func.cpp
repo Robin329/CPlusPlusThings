@@ -23,7 +23,9 @@ private:
 class fraction_explicit {
 public:
     explicit fraction_explicit(int num, int den = 1) : m_num(num), m_den(den) {}
-    fraction_explicit operator+(const fraction_explicit &f) { return fraction_explicit(m_num, m_den); }
+    fraction_explicit operator+(const fraction_explicit &f) {
+        return fraction_explicit(m_num, m_den);
+    }
 
 private:
     double m_num;
@@ -67,7 +69,8 @@ int main(int argc, char **argv) {
     fraction_explicit e = f2 + f1;
     cout << "e is " << endl;
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &end_ts);
-    int64_t cost = (end_ts.tv_sec - start_ts.tv_sec) * 1000000 + (end_ts.tv_nsec - start_ts.tv_nsec) / 1000;
+    int64_t cost = (end_ts.tv_sec - start_ts.tv_sec) * 1000000 +
+            (end_ts.tv_nsec - start_ts.tv_nsec) / 1000;
     cout << "cost:" << cost << endl;
 
     return 0;

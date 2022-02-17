@@ -213,7 +213,8 @@ int main() {
     v = wordBreak(s, dict);
     printVector(v);
 
-    string d5[] = {"a", "aa", "aaa", "aaaa", "aaaaa", "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"};
+    string d5[] = {"a",      "aa",      "aaa",      "aaaa",      "aaaaa",
+                   "aaaaaa", "aaaaaaa", "aaaaaaaa", "aaaaaaaaa", "aaaaaaaaaa"};
     dict.clear();
     dict.insert(d5, d5 + 10);
     s = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"

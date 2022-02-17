@@ -53,13 +53,13 @@ public:
 
     int InclusiveArea(Rectangle &r) {
         // I include it
-        if (r.topLeft.x >= topLeft.x && r.bottomRight.x <= bottomRight.x && r.topLeft.y <= topLeft.y &&
-            r.bottomRight.y >= bottomRight.y) {
+        if (r.topLeft.x >= topLeft.x && r.bottomRight.x <= bottomRight.x &&
+            r.topLeft.y <= topLeft.y && r.bottomRight.y >= bottomRight.y) {
             return this->Area();
         }
         // it includes me
-        if (r.topLeft.x <= topLeft.x && r.bottomRight.x >= bottomRight.x && r.topLeft.y >= topLeft.y &&
-            r.bottomRight.y <= bottomRight.y) {
+        if (r.topLeft.x <= topLeft.x && r.bottomRight.x >= bottomRight.x &&
+            r.topLeft.y >= topLeft.y && r.bottomRight.y <= bottomRight.y) {
             return r.Area();
         }
         // 0 - no inclusive

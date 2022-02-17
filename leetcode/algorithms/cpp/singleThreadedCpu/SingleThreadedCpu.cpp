@@ -86,7 +86,8 @@ public:
         }
 
         // Sort the tasks by enQueueTtime
-        sort(tasks.begin(), tasks.end(), [&](vector<int> &lhs, vector<int> &rhs) { return lhs[0] < rhs[0]; });
+        sort(tasks.begin(), tasks.end(),
+             [&](vector<int> &lhs, vector<int> &rhs) { return lhs[0] < rhs[0]; });
 
         // Sort function for tasks priority queue.
         auto comp = [&](vector<int> &lhs, vector<int> &rhs) {

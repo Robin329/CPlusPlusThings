@@ -53,7 +53,8 @@ int reverse(int x) {
     return y;
 }
 
-#define TEST(n, e) printf("%12d  =>  %-12d    %s!\n", n, reverse(n), e == reverse(n) ? "passed" : "failed")
+#define TEST(n, e) \
+    printf("%12d  =>  %-12d    %s!\n", n, reverse(n), e == reverse(n) ? "passed" : "failed")
 
 int main(int argc, char **argv) {
     // basic cases
@@ -76,7 +77,8 @@ int main(int argc, char **argv) {
     printf("\n");
     for (int i = 1; i < argc; i++) {
         int n = atoi(argv[i]);
-        printf("%12d  =>  %-12d    %s!\n", n, reverse(n), reverse(reverse(n)) == n ? "passed" : "failed");
+        printf("%12d  =>  %-12d    %s!\n", n, reverse(n),
+               reverse(reverse(n)) == n ? "passed" : "failed");
     }
     return 0;
 }

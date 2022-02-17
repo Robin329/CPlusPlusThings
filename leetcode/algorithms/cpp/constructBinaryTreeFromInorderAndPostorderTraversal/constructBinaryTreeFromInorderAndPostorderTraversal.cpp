@@ -26,14 +26,16 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-TreeNode *buildTree(vector<int> &inorder, int in_offset, vector<int> &postorder, int post_offset, int n);
+TreeNode *buildTree(vector<int> &inorder, int in_offset, vector<int> &postorder, int post_offset,
+                    int n);
 
 TreeNode *buildTree(vector<int> &inorder, vector<int> &postorder) {
     return buildTree(inorder, 0, postorder, 0, postorder.size());
 }
 
 // n - how many number,  offset - start from where?
-TreeNode *buildTree(vector<int> &inorder, int in_offset, vector<int> &postorder, int post_offset, int n) {
+TreeNode *buildTree(vector<int> &inorder, int in_offset, vector<int> &postorder, int post_offset,
+                    int n) {
     if (n <= 0 || postorder.size() <= 0 || inorder.size() <= 0) return NULL;
 
     TreeNode *root = new TreeNode(postorder[post_offset + n - 1]);

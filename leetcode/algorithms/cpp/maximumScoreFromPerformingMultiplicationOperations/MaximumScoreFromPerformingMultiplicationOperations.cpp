@@ -63,16 +63,19 @@ public:
         return maximumScoreDFS(nums, 0, n - 1, multipliers, 0);
     }
 
-    int maximumScoreDFS(vector<int> &nums, int left, int right, vector<int> &multipliers, int midx) {
+    int maximumScoreDFS(vector<int> &nums, int left, int right, vector<int> &multipliers,
+                        int midx) {
         if (midx >= m) return 0;
 
         int nLeft = left;             // num of left nums[] picked.
         int nRight = (n - 1) - right; // num of right nums[] picked.
         if (cache[nLeft][nRight] != -1) return cache[nLeft][nRight];
 
-        int pickLeft = maximumScoreDFS(nums, left + 1, right, multipliers, midx + 1) + multipliers[midx] * nums[left];
+        int pickLeft = maximumScoreDFS(nums, left + 1, right, multipliers, midx + 1) +
+                multipliers[midx] * nums[left];
 
-        int pickRight = maximumScoreDFS(nums, left, right - 1, multipliers, midx + 1) + multipliers[midx] * nums[right];
+        int pickRight = maximumScoreDFS(nums, left, right - 1, multipliers, midx + 1) +
+                multipliers[midx] * nums[right];
 
         cache[nLeft][nRight] = max(pickLeft, pickRight);
         return cache[nLeft][nRight];

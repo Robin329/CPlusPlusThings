@@ -68,7 +68,8 @@ static bool cmp(const vector<int> &v1, const vector<int> &v2) {
 }
 class Solution {
 public:
-    vector<int> filterRestaurants(vector<vector<int>> &restaurants, int veganFriendly, int maxPrice, int maxDistance) {
+    vector<int> filterRestaurants(vector<vector<int>> &restaurants, int veganFriendly, int maxPrice,
+                                  int maxDistance) {
         vector<vector<int>> res;
 
         for (int i = 0; i < restaurants.size(); i++) {

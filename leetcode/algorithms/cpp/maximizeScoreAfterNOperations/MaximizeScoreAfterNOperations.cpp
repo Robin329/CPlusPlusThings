@@ -91,7 +91,9 @@ public:
                     return pair_gcd[i][j];
                 }
 
-                m = max(m, step * pair_gcd[i][j] + maxScore(pair_gcd, mask | (1 << i) | (1 << j), n, step - 1));
+                m = max(m,
+                        step * pair_gcd[i][j] +
+                                maxScore(pair_gcd, mask | (1 << i) | (1 << j), n, step - 1));
             }
         }
 

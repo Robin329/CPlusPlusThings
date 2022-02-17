@@ -40,9 +40,7 @@ unsigned int gcd(unsigned int x, unsigned int y) {
  * @params integer x and y whose lcm we want to find.
  * @return lcm of x and y using the relation x * y = gcd(x, y) * lcm(x, y)
  */
-unsigned int lcm(unsigned int x, unsigned int y) {
-  return x / gcd(x, y) * y;
-}
+unsigned int lcm(unsigned int x, unsigned int y) { return x / gcd(x, y) * y; }
 
 /**
  * Function for testing the lcm() functions with some assert statements.
@@ -68,8 +66,7 @@ void tests() {
                   " gives a different result.\n",
             lcm(987654321, 987654321) == 987654321));
     std::cout << "Third assertion passes: LCM of 987654321 and 987654321 is "
-              << lcm(987654321, 987654321)
-              << std::endl;
+              << lcm(987654321, 987654321) << std::endl;
 }
 
 /**

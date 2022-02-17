@@ -50,10 +50,11 @@ private:
 int main() {
     unique_ptr<shape> ptr1{create_shape(shape_type::circle)};
     unique_ptr<shape> ptr2{ptr1}; // 由于带模板的移动构造函数引发编译器会默认生成拷贝构造
-    if (ptr1.get() != nullptr)    // bitwise copy 此时ptr1不为NULL
+    if (ptr1.get() != nullptr) // bitwise copy 此时ptr1不为NULL
         ptr2.get()->print();
 
-    unique_ptr<shape> ptr2_2{std::move(ptr1)}; // 调用的是默认的移动构造,而不是带模板的移动构造 bitwise move
+    unique_ptr<shape> ptr2_2{
+            std::move(ptr1)}; // 调用的是默认的移动构造,而不是带模板的移动构造 bitwise move
     if (ptr2_2.get() != nullptr && ptr1.get() != nullptr) // ptr1 不为空
         ptr2_2.get()->print();
 

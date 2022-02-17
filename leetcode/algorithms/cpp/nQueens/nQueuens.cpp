@@ -39,7 +39,8 @@
 using namespace std;
 
 vector<vector<string>> solveNQueens(int n);
-void solveNQueensRecursive(int n, int currentRow, vector<int> &solution, vector<vector<string>> &result);
+void solveNQueensRecursive(int n, int currentRow, vector<int> &solution,
+                           vector<vector<string>> &result);
 bool isValid(int attemptedColumn, int attemptedRow, vector<int> &queenInColumn);
 
 vector<vector<string>> solveNQueens(int n) {
@@ -54,7 +55,8 @@ vector<vector<string>> solveNQueens(int n) {
 // The following recursion is easy to understand. Nothing's tricky.
 //  1) recursively find all of possible columns row by row.
 //  2) solution[] array only stores the columns index. `solution[row] = col;`
-void solveNQueensRecursive(int n, int currentRow, vector<int> &solution, vector<vector<string>> &result) {
+void solveNQueensRecursive(int n, int currentRow, vector<int> &solution,
+                           vector<vector<string>> &result) {
     // if no more row need to do, shape the result
     if (currentRow == n) {
         vector<string> s;
@@ -85,7 +87,8 @@ void solveNQueensRecursive(int n, int currentRow, vector<int> &solution, vector<
 //  will be placed
 bool isValid(int attemptedColumn, int attemptedRow, vector<int> &queenInColumn) {
     for (int i = 0; i < attemptedRow; i++) {
-        if (attemptedColumn == queenInColumn[i] || abs(attemptedColumn - queenInColumn[i]) == abs(attemptedRow - i)) {
+        if (attemptedColumn == queenInColumn[i] ||
+            abs(attemptedColumn - queenInColumn[i]) == abs(attemptedRow - i)) {
             return false;
         }
     }

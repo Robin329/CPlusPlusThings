@@ -24,6 +24,6 @@ public:
                          // final  函数不可  override
 };
 
-//class D : public C {
+// class D : public C {
 //    //  错误：final  类不可派生
 //};

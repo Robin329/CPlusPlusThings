@@ -78,7 +78,8 @@ struct contact_book {
     name m_book_name{};
     std::vector<contact> m_contacts{};
     contact_book() = default;
-    contact_book(name n, std::vector<contact> c) : m_book_name(std::move(n)), m_contacts(std::move(c)) {}
+    contact_book(name n, std::vector<contact> c)
+          : m_book_name(std::move(n)), m_contacts(std::move(c)) {}
 };
 } // namespace udt
 
@@ -322,7 +323,9 @@ template <>
 struct adl_serializer<udt::legacy_type> {
     static void to_json(json& j, const udt::legacy_type& l) { j = std::stoi(l.number); }
 
-    static void from_json(const json& j, udt::legacy_type& l) { l.number = std::to_string(j.get<int>()); }
+    static void from_json(const json& j, udt::legacy_type& l) {
+        l.number = std::to_string(j.get<int>());
+    }
 };
 } // namespace nlohmann
 
@@ -334,11 +337,11 @@ TEST_CASE("adl_serializer specialization" * doctest::test_suite("udt")) {
             json j = optPerson;
             CHECK(j.is_null());
 
-            optPerson.reset(
-                    new udt::person{{42},
-                                    {"John Doe"},
-                                    udt::country::
-                                            russia}); // NOLINT(cppcoreguidelines-owning-memory,modernize-make-shared)
+            optPerson.reset(new udt::person{
+                    {42},
+                    {"John Doe"},
+                    udt::country::
+                            russia}); // NOLINT(cppcoreguidelines-owning-memory,modernize-make-shared)
             j = optPerson;
             CHECK_FALSE(j.is_null());
 
@@ -425,10 +428,11 @@ TEST_CASE("Non-copyable types" * doctest::test_suite("udt")) {
         json j = optPerson;
         CHECK(j.is_null());
 
-        optPerson.reset(
-                new udt::person{{42},
-                                {"John Doe"},
-                                udt::country::russia}); // NOLINT(cppcoreguidelines-owning-memory,modernize-make-unique)
+        optPerson.reset(new udt::person{
+                {42},
+                {"John Doe"},
+                udt::country::
+                        russia}); // NOLINT(cppcoreguidelines-owning-memory,modernize-make-unique)
         j = optPerson;
         CHECK_FALSE(j.is_null());
 
@@ -456,7 +460,8 @@ template <typename T, typename = void>
 struct pod_serializer {
     // use adl for non-pods, or scalar types
     template <typename BasicJsonType, typename U = T,
-              typename std::enable_if<!(std::is_pod<U>::value && std::is_class<U>::value), int>::type = 0>
+              typename std::enable_if<!(std::is_pod<U>::value && std::is_class<U>::value),
+                                      int>::type = 0>
     static void from_json(const BasicJsonType& j, U& t) {
         using nlohmann::from_json;
         from_json(j, t);
@@ -464,7 +469,8 @@ struct pod_serializer {
 
     // special behaviour for pods
     template <typename BasicJsonType, typename U = T,
-              typename std::enable_if<std::is_pod<U>::value && std::is_class<U>::value, int>::type = 0>
+              typename std::enable_if<std::is_pod<U>::value && std::is_class<U>::value, int>::type =
+                      0>
     static void from_json(const BasicJsonType& j, U& t) {
         std::uint64_t value = 0;
         // The following block is no longer relevant in this serializer, make
@@ -488,14 +494,16 @@ struct pod_serializer {
     }
 
     template <typename BasicJsonType, typename U = T,
-              typename std::enable_if<!(std::is_pod<U>::value && std::is_class<U>::value), int>::type = 0>
+              typename std::enable_if<!(std::is_pod<U>::value && std::is_class<U>::value),
+                                      int>::type = 0>
     static void to_json(BasicJsonType& j, const T& t) {
         using nlohmann::to_json;
         to_json(j, t);
     }
 
     template <typename BasicJsonType, typename U = T,
-              typename std::enable_if<std::is_pod<U>::value && std::is_class<U>::value, int>::type = 0>
+              typename std::enable_if<std::is_pod<U>::value && std::is_class<U>::value, int>::type =
+                      0>
     static void to_json(BasicJsonType& j, const T& t) noexcept {
         const auto* bytes = static_cast<const unsigned char*>(static_cast<const void*>(&t));
         std::uint64_t value = 0;
@@ -541,8 +549,8 @@ static std::ostream& operator<<(std::ostream& os, small_pod l) {
 } // namespace udt
 
 TEST_CASE("custom serializer for pods" * doctest::test_suite("udt")) {
-    using custom_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t,
-                                             double, std::allocator, pod_serializer>;
+    using custom_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t,
+                                             std::uint64_t, double, std::allocator, pod_serializer>;
 
     auto p = udt::small_pod{42, '/', 42};
     custom_json j = p;
@@ -560,8 +568,9 @@ TEST_CASE("custom serializer for pods" * doctest::test_suite("udt")) {
 template <typename T, typename>
 struct another_adl_serializer;
 
-using custom_json = nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t, double,
-                                         std::allocator, another_adl_serializer>;
+using custom_json =
+        nlohmann::basic_json<std::map, std::vector, std::string, bool, std::int64_t, std::uint64_t,
+                             double, std::allocator, another_adl_serializer>;
 
 template <typename T, typename>
 struct another_adl_serializer {

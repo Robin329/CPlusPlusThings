@@ -89,14 +89,15 @@ bool EndsWith(std::string_view s, char suffix) {
 
 bool EndsWithIgnoreCase(std::string_view s, std::string_view suffix) {
     return s.size() >= suffix.size() &&
-           strncasecmp(s.data() + (s.size() - suffix.size()), suffix.data(), suffix.size()) == 0;
+            strncasecmp(s.data() + (s.size() - suffix.size()), suffix.data(), suffix.size()) == 0;
 }
 
 bool EqualsIgnoreCase(std::string_view lhs, std::string_view rhs) {
     return lhs.size() == rhs.size() && strncasecmp(lhs.data(), rhs.data(), lhs.size()) == 0;
 }
 
-std::string StringReplace(std::string_view s, std::string_view from, std::string_view to, bool all) {
+std::string StringReplace(std::string_view s, std::string_view from, std::string_view to,
+                          bool all) {
     if (from.empty()) return std::string(s);
 
     std::string result;

@@ -44,8 +44,9 @@ int main() {
         std::vector<std::unique_ptr<B>> v; // unique_ptr 能存储于容器
         v.push_back(std::make_unique<D>());
         v.push_back(std::move(p));
-        v.emplace_back(new D); //插入的时候直接构造，就只需要构造一次即可,不需要触发拷贝构造和转移构造。
-                               // 而且调用形式更加简洁，直接根据参数初始化临时对象的成员。
+        v.emplace_back(
+                new D); //插入的时候直接构造，就只需要构造一次即可,不需要触发拷贝构造和转移构造。
+                        // 而且调用形式更加简洁，直接根据参数初始化临时对象的成员。
         for (auto &p : v) p->bar(); // 虚派发
     }                               // ~D called 3 times
 

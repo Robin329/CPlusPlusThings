@@ -116,8 +116,9 @@ public:
             //   3) sell previous and sell today. profit = previous's sell + today's
             //   sell
             // Find the max profit of these 3 options
-            dp[i].second = max(dp[i - 1].second, dp[i - 1].first + prices_pairs[i].second - fee,
-                               dp[i - 1].second + prices_pairs[i].second - prices_pairs[i].first - fee);
+            dp[i].second =
+                    max(dp[i - 1].second, dp[i - 1].first + prices_pairs[i].second - fee,
+                        dp[i - 1].second + prices_pairs[i].second - prices_pairs[i].first - fee);
         }
 
         return max(dp[dp.size() - 1].second, 0);

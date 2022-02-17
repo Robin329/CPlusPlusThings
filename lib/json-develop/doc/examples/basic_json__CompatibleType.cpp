@@ -28,11 +28,17 @@ int main() {
     json j_umap(c_umap);
 
     // create an object from std::multimap
-    std::multimap<std::string, bool> c_mmap{{"one", true}, {"two", true}, {"three", false}, {"three", true}};
+    std::multimap<std::string, bool> c_mmap{{"one", true},
+                                            {"two", true},
+                                            {"three", false},
+                                            {"three", true}};
     json j_mmap(c_mmap); // only one entry for key "three" is used
 
     // create an object from std::unordered_multimap
-    std::unordered_multimap<std::string, bool> c_ummap{{"one", true}, {"two", true}, {"three", false}, {"three", true}};
+    std::unordered_multimap<std::string, bool> c_ummap{{"one", true},
+                                                       {"two", true},
+                                                       {"three", false},
+                                                       {"three", true}};
     json j_ummap(c_ummap); // only one entry for key "three" is used
 
     // serialize the JSON objects
@@ -67,7 +73,8 @@ int main() {
     json j_list(c_list);
 
     // create an array from std::forward_list
-    std::forward_list<int64_t> c_flist{12345678909876, 23456789098765, 34567890987654, 45678909876543};
+    std::forward_list<int64_t> c_flist{12345678909876, 23456789098765, 34567890987654,
+                                       45678909876543};
     json j_flist(c_flist);
 
     // create an array from std::array

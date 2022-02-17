@@ -65,8 +65,9 @@ public:
         if (matrix[low][high] > 0) return matrix[low][high];
         int result = 0;
         for (int i = low + 1; i < high; ++i) {
-            result = max(result, nums[low] * nums[i] * nums[high] + maxCoins_DC(nums, matrix, low, i) +
-                                         maxCoins_DC(nums, matrix, i, high));
+            result = max(result,
+                         nums[low] * nums[i] * nums[high] + maxCoins_DC(nums, matrix, low, i) +
+                                 maxCoins_DC(nums, matrix, i, high));
         }
         matrix[low][high] = result;
         return result;
@@ -82,7 +83,9 @@ public:
             for (int low = 0; low < n - k; low++) {
                 int high = low + k;
                 for (int i = low + 1; i < high; ++i)
-                    dp[low][high] = max(dp[low][high], nums[low] * nums[i] * nums[high] + dp[low][i] + dp[i][high]);
+                    dp[low][high] =
+                            max(dp[low][high],
+                                nums[low] * nums[i] * nums[high] + dp[low][i] + dp[i][high]);
             }
         }
         return dp[0][n - 1];

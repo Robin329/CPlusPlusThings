@@ -1,6 +1,7 @@
 /**
  * @file
- * @brief [Trie datastructure](https://iq.opengenus.org/autocomplete-using-trie-data-structure/)
+ * @brief [Trie
+ * datastructure](https://iq.opengenus.org/autocomplete-using-trie-data-structure/)
  * with search variants
  * @details
  * This provides multiple variants of search functions
@@ -23,7 +24,8 @@
 namespace operations_on_datastructures {
 /**
  * @namespace trie_operations
- * @brief Functions for [Trie datastructure](https://iq.opengenus.org/autocomplete-using-trie-data-structure/)
+ * @brief Functions for [Trie
+ * datastructure](https://iq.opengenus.org/autocomplete-using-trie-data-structure/)
  * implementation
  */
 namespace trie_operations {

@@ -8,7 +8,8 @@ using namespace std;
 
 void print(const char *s) {
     while (*s) {
-        if (*s == '%' && *(++s) != '%') throw std::runtime_error("invalid format string: missing arguments");
+        if (*s == '%' && *(++s) != '%')
+            throw std::runtime_error("invalid format string: missing arguments");
         std::cout << *s++;
     }
 }

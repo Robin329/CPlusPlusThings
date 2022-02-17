@@ -34,7 +34,8 @@ using nlohmann::json;
 
 TEST_CASE("iterators 2") {
     SECTION("iterator comparisons") {
-        json j_values = {nullptr, true, 42, 42u, 23.23, {{"one", 1}, {"two", 2}}, {1, 2, 3, 4, 5}, "Hello, world"};
+        json j_values = {nullptr,         true,          42, 42u, 23.23, {{"one", 1}, {"two", 2}},
+                         {1, 2, 3, 4, 5}, "Hello, world"};
 
         for (json& j : j_values) {
             auto it1 = j.begin();
@@ -87,39 +88,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c < it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c < it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 < it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 < it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c < it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 < it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 < it1, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it2, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 < it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c < it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 < it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     CHECK(!(it1 < it1));
@@ -145,39 +162,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c <= it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c <= it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 <= it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 <= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c <= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 <= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 <= it1, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it2, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 <= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c <= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 <= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -204,39 +237,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c > it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c > it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 > it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 > it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c > it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 > it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 > it1, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it2, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 > it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c > it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 > it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -263,39 +312,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c >= it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c >= it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 >= it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 >= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c >= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 >= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 >= it1, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it2, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 >= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c >= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 >= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -323,14 +388,18 @@ TEST_CASE("iterators 2") {
                     // the output differs in each loop, so we cannot fix a string for the
                     // expected exception
 #else
-                    CHECK_THROWS_WITH(j.begin() == k.begin(), "[json.exception.invalid_iterator.212] cannot "
-                                                              "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.cbegin() == k.cbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                                "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.begin() < k.begin(), "[json.exception.invalid_iterator.212] cannot "
-                                                             "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.cbegin() < k.cbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                               "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.begin() == k.begin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.cbegin() == k.cbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.begin() < k.begin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.cbegin() < k.cbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
 #endif
                 }
             }
@@ -348,74 +417,86 @@ TEST_CASE("iterators 2") {
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it += 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it += 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it += 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it += 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it += 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it += 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it + 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it + 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it + 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it + 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it + 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it + 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(1 + it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(1 + it, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(1 + it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(1 + it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(1 + it, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(1 + it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it -= 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it -= 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it -= 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it -= 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it -= 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it -= 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it - 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it - 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it - it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - it, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it - it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - it, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
             }
 
@@ -501,19 +582,23 @@ TEST_CASE("iterators 2") {
                     auto it = j_object.begin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.208] cannot use "
-                                             "operator[] for object iterators");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.208] cannot use "
-                                             "operator[] for object iterators");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.208] cannot use "
+                                      "operator[] for object iterators");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.208] cannot use "
+                                      "operator[] for object iterators");
                 }
                 {
                     auto it = j_object.cbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.208] cannot use "
-                                             "operator[] for object iterators");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.208] cannot use "
-                                             "operator[] for object iterators");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.208] cannot use "
+                                      "operator[] for object iterators");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.208] cannot use "
+                                      "operator[] for object iterators");
                 }
             }
 
@@ -543,15 +628,19 @@ TEST_CASE("iterators 2") {
                     auto it = j_null.begin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
                 {
                     auto it = j_null.cbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
             }
 
@@ -560,20 +649,23 @@ TEST_CASE("iterators 2") {
                     auto it = j_value.begin();
                     CHECK(it[0] == json(42));
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
                 {
                     auto it = j_value.cbegin();
                     CHECK(it[0] == json(42));
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
             }
         }
     }
 
     SECTION("reverse iterator comparisons") {
-        json j_values = {nullptr, true, 42, 42u, 23.23, {{"one", 1}, {"two", 2}}, {1, 2, 3, 4, 5}, "Hello, world"};
+        json j_values = {nullptr,         true,          42, 42u, 23.23, {{"one", 1}, {"two", 2}},
+                         {1, 2, 3, 4, 5}, "Hello, world"};
 
         for (json& j : j_values) {
             auto it1 = j.rbegin();
@@ -626,39 +718,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c < it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c < it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 < it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 < it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c < it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 < it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 < it1, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it2, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 < it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 < it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c < it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c < it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 < it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 < it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c < it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     CHECK(!(it1 < it1));
@@ -684,39 +792,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c <= it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c <= it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 <= it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 <= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c <= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 <= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 <= it1, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it2, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 <= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 <= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c <= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c <= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 <= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 <= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c <= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -743,39 +867,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c > it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c > it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 > it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 > it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c > it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 > it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 > it1, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it2, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 > it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 > it3, "[json.exception.invalid_iterator.213] cannot "
-                                                 "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c > it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c > it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                     "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 > it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 > it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c > it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -802,39 +942,55 @@ TEST_CASE("iterators 2") {
                     CHECK_THROWS_AS(it2_c >= it3_c, json::invalid_iterator&);
                     CHECK_THROWS_AS(it1_c >= it3_c, json::invalid_iterator&);
 #if JSON_DIAGNOSTICS
-                    CHECK_THROWS_WITH(it1 >= it1, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it2, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 >= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it3, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it1_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it2_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c >= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it3_c, "[json.exception.invalid_iterator.213] (/5) cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it1,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it2,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 >= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it3,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it1_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it2_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] (/5) cannot "
+                                      "compare order of object iterators");
 #else
-                    CHECK_THROWS_WITH(it1 >= it1, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it2, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2 >= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1 >= it3, "[json.exception.invalid_iterator.213] cannot "
-                                                  "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it1_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it2_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it2_c >= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
-                    CHECK_THROWS_WITH(it1_c >= it3_c, "[json.exception.invalid_iterator.213] cannot "
-                                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it1,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it2,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2 >= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1 >= it3,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it1_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it2_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it2_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
+                    CHECK_THROWS_WITH(it1_c >= it3_c,
+                                      "[json.exception.invalid_iterator.213] cannot "
+                                      "compare order of object iterators");
 #endif
                 } else {
                     // check definition
@@ -862,14 +1018,18 @@ TEST_CASE("iterators 2") {
                     // the output differs in each loop, so we cannot fix a string for the
                     // expected exception
 #else
-                    CHECK_THROWS_WITH(j.rbegin() == k.rbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                                "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.crbegin() == k.crbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                                  "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.rbegin() < k.rbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                               "compare iterators of different containers");
-                    CHECK_THROWS_WITH(j.crbegin() < k.crbegin(), "[json.exception.invalid_iterator.212] cannot "
-                                                                 "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.rbegin() == k.rbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.crbegin() == k.crbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.rbegin() < k.rbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
+                    CHECK_THROWS_WITH(j.crbegin() < k.crbegin(),
+                                      "[json.exception.invalid_iterator.212] cannot "
+                                      "compare iterators of different containers");
 #endif
                 }
             }
@@ -887,74 +1047,86 @@ TEST_CASE("iterators 2") {
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it += 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it += 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it += 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it += 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it += 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it += 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it + 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it + 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it + 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it + 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it + 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it + 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(1 + it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(1 + it, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(1 + it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(1 + it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(1 + it, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(1 + it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it -= 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it -= 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it -= 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it -= 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it -= 1, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it -= 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it - 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it - 1, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - 1, "[json.exception.invalid_iterator.209] cannot use "
-                                              "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - 1,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it - it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - it, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it - it, json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it - it, "[json.exception.invalid_iterator.209] cannot use "
-                                               "offsets with object iterators");
+                    CHECK_THROWS_WITH(it - it,
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
             }
 
@@ -1040,19 +1212,23 @@ TEST_CASE("iterators 2") {
                     auto it = j_object.rbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.209] cannot use "
-                                             "offsets with object iterators");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.209] cannot use "
-                                             "offsets with object iterators");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
                 {
                     auto it = j_object.crbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.209] cannot use "
-                                             "offsets with object iterators");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.209] cannot use "
-                                             "offsets with object iterators");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.209] cannot use "
+                                      "offsets with object iterators");
                 }
             }
 
@@ -1082,15 +1258,19 @@ TEST_CASE("iterators 2") {
                     auto it = j_null.rbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
                 {
                     auto it = j_null.crbegin();
                     CHECK_THROWS_AS(it[0], json::invalid_iterator&);
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[0], "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[0],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
             }
 
@@ -1099,13 +1279,15 @@ TEST_CASE("iterators 2") {
                     auto it = j_value.rbegin();
                     CHECK(it[0] == json(42));
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
                 {
                     auto it = j_value.crbegin();
                     CHECK(it[0] == json(42));
                     CHECK_THROWS_AS(it[1], json::invalid_iterator&);
-                    CHECK_THROWS_WITH(it[1], "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(it[1],
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
             }
         }

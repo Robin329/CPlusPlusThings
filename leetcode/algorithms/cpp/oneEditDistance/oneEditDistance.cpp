@@ -81,6 +81,7 @@ int main(int argc, char **argv) {
         s = argv[1];
         t = argv[2];
     }
-    cout << "s = \"" << s << "\"  t = \"" << t << "\"  : " << (isOneEditDistance(s, t) ? "true" : "false") << endl;
+    cout << "s = \"" << s << "\"  t = \"" << t
+         << "\"  : " << (isOneEditDistance(s, t) ? "true" : "false") << endl;
     return 0;
 }

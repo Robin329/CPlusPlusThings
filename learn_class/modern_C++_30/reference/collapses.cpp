@@ -18,8 +18,10 @@ class Widget {
 
 public:
     void judge() {
-        static_assert(std::is_lvalue_reference<LvalueRefType>::value, "LvalueRefType & is lvalue reference");
-        static_assert(std::is_lvalue_reference<RvalueRefType>::value, "RvalueRefType & is lvalue reference");
+        static_assert(std::is_lvalue_reference<LvalueRefType>::value,
+                      "LvalueRefType & is lvalue reference");
+        static_assert(std::is_lvalue_reference<RvalueRefType>::value,
+                      "RvalueRefType & is lvalue reference");
         cout << "LvalueRefType and RvalueRefType is lvalue reference" << endl;
     }
     void f(LvalueRefType&& param) {}

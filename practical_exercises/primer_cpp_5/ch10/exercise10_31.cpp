@@ -1,19 +1,18 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
 #include <iterator>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-	vector<int> v;
-	istream_iterator<int> int_it(cin), int_eof;
+int main() {
+    vector<int> v;
+    istream_iterator<int> int_it(cin), int_eof;
 
-	unique_copy(int_it, int_eof, back_inserter(v));
-	sort(v.begin(), v.end());
+    unique_copy(int_it, int_eof, back_inserter(v));
+    sort(v.begin(), v.end());
 
-	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
-	cout << endl;
-	return 0;
+    copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
+    cout << endl;
+    return 0;
 }

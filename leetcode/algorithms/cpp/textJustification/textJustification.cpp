@@ -136,8 +136,9 @@ int main(int argc, char **argv) {
     const char *w2[] = {"What", "must", "be", "shall", "be."};
     TEST(w2, 12);
 
-    const char *w3[] = {"My", "momma",       "always", "said,", "Life", "was",  "like",   "a",     "box",
-                        "of", "chocolates.", "You",    "never", "know", "what", "you're", "gonna", "get."};
+    const char *w3[] = {"My",    "momma", "always", "said,",  "Life",        "was",
+                        "like",  "a",     "box",    "of",     "chocolates.", "You",
+                        "never", "know",  "what",   "you're", "gonna",       "get."};
     TEST(w3, 20);
 
     return 0;

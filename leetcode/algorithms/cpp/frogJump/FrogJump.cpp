@@ -70,7 +70,8 @@ public:
             int next_jump = stones[i] - stones[curr];
             if (next_jump < last_jump - 1) continue;
             if (next_jump > last_jump + 1) break;
-            if (i == stones.size() - 1 || canCross_recursion_with_cache(stones, i, next_jump, cache)) {
+            if (i == stones.size() - 1 ||
+                canCross_recursion_with_cache(stones, i, next_jump, cache)) {
                 cache[curr][last_jump] = true;
                 return true;
             }

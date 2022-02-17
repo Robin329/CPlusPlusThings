@@ -52,8 +52,8 @@ public:
             while (index < nums2.size() && nums1[i] > nums2[index]) // we skip over
                                                                     // the
                 index++;                                            // smaller elements in nums2
-            if (index == nums2.size())         // we have reached the end of nums2 so we have no more
-                finished = true;               // elements to add to the intersection
+            if (index == nums2.size()) // we have reached the end of nums2 so we have no more
+                finished = true;       // elements to add to the intersection
             else if (nums1[i] == nums2[index]) // we found a common element
             {
                 solution.push_back(nums1[i]);

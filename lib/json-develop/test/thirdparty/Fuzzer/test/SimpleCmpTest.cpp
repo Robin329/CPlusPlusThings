@@ -26,11 +26,12 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
     memcpy(&z, Data + 16, sizeof(z)); // 20
     memcpy(&a, Data + 20, sizeof(a)); // 22
 
-    if (x > 1234567890 && PrintOnce(__LINE__) && x < 1234567895 && PrintOnce(__LINE__) && a == 0x4242 &&
-        PrintOnce(__LINE__) && y >= 987654321 && PrintOnce(__LINE__) && y <= 987654325 && PrintOnce(__LINE__) &&
-        z < -10000 && PrintOnce(__LINE__) && z >= -10005 && PrintOnce(__LINE__) && z != -10003 && PrintOnce(__LINE__) &&
-        true) {
-        fprintf(stderr, "BINGO; Found the target: size %zd (%zd, %zd, %d, %d), exiting.\n", Size, x, y, z, a);
+    if (x > 1234567890 && PrintOnce(__LINE__) && x < 1234567895 && PrintOnce(__LINE__) &&
+        a == 0x4242 && PrintOnce(__LINE__) && y >= 987654321 && PrintOnce(__LINE__) &&
+        y <= 987654325 && PrintOnce(__LINE__) && z < -10000 && PrintOnce(__LINE__) && z >= -10005 &&
+        PrintOnce(__LINE__) && z != -10003 && PrintOnce(__LINE__) && true) {
+        fprintf(stderr, "BINGO; Found the target: size %zd (%zd, %zd, %d, %d), exiting.\n", Size, x,
+                y, z, a);
         exit(1);
     }
     return 0;

@@ -5,11 +5,11 @@ struct node {
     struct node* next;
 };
 class Queue {
-    node* front=nullptr;
-    node* rear=nullptr;
+    node* front = nullptr;
+    node* rear = nullptr;
 
-public:
-    Queue() = default; 
+ public:
+    Queue() = default;
     void createNode(int val) {
         auto* nn = new node;
         nn->data = val;
@@ -20,8 +20,7 @@ public:
     void enqueue(int val) {
         if (front == nullptr || rear == nullptr) {
             createNode(val);
-        }
-        else {
+        } else {
             node* nn;
             nn = new node;
             nn->data = val;

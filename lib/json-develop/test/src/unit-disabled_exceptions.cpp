@@ -44,7 +44,8 @@ class sax_no_exception : public nlohmann::detail::json_sax_dom_parser<json> {
 public:
     explicit sax_no_exception(json& j) : nlohmann::detail::json_sax_dom_parser<json>(j, false) {}
 
-    static bool parse_error(std::size_t /*position*/, const std::string& /*last_token*/, const json::exception& ex) {
+    static bool parse_error(std::size_t /*position*/, const std::string& /*last_token*/,
+                            const json::exception& ex) {
         error_string = new std::string(ex.what()); // NOLINT(cppcoreguidelines-owning-memory)
         return false;
     }
@@ -60,8 +61,9 @@ TEST_CASE("Tests with disabled exceptions") {
         sax_no_exception sax(j);
 
         CHECK(!json::sax_parse("xyz", &sax));
-        CHECK(*sax_no_exception::error_string == "[json.exception.parse_error.101] parse error at line 1, column 1: "
-                                                 "syntax error while parsing value - invalid literal; last read: 'x'");
+        CHECK(*sax_no_exception::error_string ==
+              "[json.exception.parse_error.101] parse error at line 1, column 1: "
+              "syntax error while parsing value - invalid literal; last read: 'x'");
         delete sax_no_exception::error_string; // NOLINT(cppcoreguidelines-owning-memory)
     }
 }

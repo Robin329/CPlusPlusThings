@@ -75,7 +75,8 @@ public:
         for (auto i = mp.begin(); i != mp.end(); ++i) {
             int val = i->second;
             if (!(val & (val - 1)) && (++corner > 4)) return false;
-            if ((val & (val - 1)) && !(val == 3 || val == 12 || val == 10 || val == 5 || val == 15)) return false;
+            if ((val & (val - 1)) && !(val == 3 || val == 12 || val == 10 || val == 5 || val == 15))
+                return false;
         }
         return true;
     }

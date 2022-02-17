@@ -58,7 +58,8 @@ TEST_CASE("JSON_ASSERT(x)") {
         json j;
 
         // in case assertions do not abort execution, an exception is thrown
-        CHECK_THROWS_WITH_AS(json(it, j.end()), "[json.exception.invalid_iterator.201] iterators are not compatible",
+        CHECK_THROWS_WITH_AS(json(it, j.end()),
+                             "[json.exception.invalid_iterator.201] iterators are not compatible",
                              json::invalid_iterator);
 
         // check that assertion actually happened

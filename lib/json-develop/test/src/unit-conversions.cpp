@@ -41,7 +41,8 @@ using nlohmann::json;
 #include <unordered_set>
 #include <valarray>
 
-#if (defined(__cplusplus) && __cplusplus >= 201703L) || (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
+#if (defined(__cplusplus) && __cplusplus >= 201703L) || \
+        (defined(_HAS_CXX17) && _HAS_CXX17 == 1) // fix for issue #464
 #define JSON_HAS_CPP_17
 #define JSON_HAS_CPP_14
 #elif (defined(__cplusplus) && __cplusplus >= 201402L) || (defined(_HAS_CXX14) && _HAS_CXX14 == 1)
@@ -54,8 +55,12 @@ DOCTEST_CLANG_SUPPRESS_WARNING("-Wexit-time-destructors")
 
 TEST_CASE("value conversion") {
     SECTION("get an object (explicit)") {
-        json::object_t o_reference = {{"object", json::object()}, {"array", {1, 2, 3, 4}}, {"number", 42},
-                                      {"boolean", false},         {"null", nullptr},       {"string", "Hello world"}};
+        json::object_t o_reference = {{"object", json::object()},
+                                      {"array", {1, 2, 3, 4}},
+                                      {"number", 42},
+                                      {"boolean", false},
+                                      {"null", nullptr},
+                                      {"string", "Hello world"}};
         json j(o_reference);
 
         SECTION("json::object_t") {
@@ -74,12 +79,14 @@ TEST_CASE("value conversion") {
         }
 
         SECTION("std::unordered_map<json::string_t, json>") {
-            std::unordered_map<json::string_t, json> o = j.get<std::unordered_map<json::string_t, json>>();
+            std::unordered_map<json::string_t, json> o =
+                    j.get<std::unordered_map<json::string_t, json>>();
             CHECK(json(o) == j);
         }
 
         SECTION("std::unordered_multimap<json::string_t, json>") {
-            std::unordered_multimap<json::string_t, json> o = j.get<std::unordered_multimap<json::string_t, json>>();
+            std::unordered_multimap<json::string_t, json> o =
+                    j.get<std::unordered_multimap<json::string_t, json>>();
             CHECK(json(o) == j);
         }
 
@@ -88,9 +95,12 @@ TEST_CASE("value conversion") {
             CHECK_THROWS_AS(json(json::value_t::array).get<json::object_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::string).get<json::object_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::boolean).get<json::object_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::object_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::object_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::object_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::object_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::object_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::object_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<json::object_t>(),
                               "[json.exception.type_error.302] type must be object, but is null");
@@ -111,8 +121,12 @@ TEST_CASE("value conversion") {
     }
 
     SECTION("get an object (explicit, get_to)") {
-        json::object_t o_reference = {{"object", json::object()}, {"array", {1, 2, 3, 4}}, {"number", 42},
-                                      {"boolean", false},         {"null", nullptr},       {"string", "Hello world"}};
+        json::object_t o_reference = {{"object", json::object()},
+                                      {"array", {1, 2, 3, 4}},
+                                      {"number", 42},
+                                      {"boolean", false},
+                                      {"null", nullptr},
+                                      {"string", "Hello world"}};
         json j(o_reference);
 
         SECTION("json::object_t") {
@@ -148,8 +162,12 @@ TEST_CASE("value conversion") {
 
 #if JSON_USE_IMPLICIT_CONVERSIONS
     SECTION("get an object (implicit)") {
-        json::object_t o_reference = {{"object", json::object()}, {"array", {1, 2, 3, 4}}, {"number", 42},
-                                      {"boolean", false},         {"null", nullptr},       {"string", "Hello world"}};
+        json::object_t o_reference = {{"object", json::object()},
+                                      {"array", {1, 2, 3, 4}},
+                                      {"number", 42},
+                                      {"boolean", false},
+                                      {"null", nullptr},
+                                      {"string", "Hello world"}};
         json j(o_reference);
 
         SECTION("json::object_t") {
@@ -180,7 +198,8 @@ TEST_CASE("value conversion") {
 #endif
 
     SECTION("get an array (explicit)") {
-        json::array_t a_reference{json(1), json(1u), json(2.2), json(false), json("string"), json()};
+        json::array_t a_reference{json(1),     json(1u),       json(2.2),
+                                  json(false), json("string"), json()};
         json j(a_reference);
 
         SECTION("json::array_t") {
@@ -197,7 +216,8 @@ TEST_CASE("value conversion") {
             std::forward_list<json> a = j.get<std::forward_list<json>>();
             CHECK(json(a) == j);
 
-            CHECK_THROWS_AS(json(json::value_t::null).get<std::forward_list<json>>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::null).get<std::forward_list<json>>(),
+                            json::type_error&);
             CHECK_THROWS_WITH(json(json::value_t::null).get<std::forward_list<json>>(),
                               "[json.exception.type_error.302] type must be array, but is null");
         }
@@ -223,8 +243,9 @@ TEST_CASE("value conversion") {
         SECTION("built-in arrays") {
             const char str[] =
                     "a string"; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
-            const int nbs[] =
-                    {0, 1, 2}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
+            const int nbs[] = {
+                    0, 1,
+                    2}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
 
             json j2 = nbs;
             json j3 = str;
@@ -245,9 +266,12 @@ TEST_CASE("value conversion") {
             CHECK_THROWS_AS(json(json::value_t::object).get<json::array_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::string).get<json::array_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::boolean).get<json::array_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::array_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::array_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::array_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::array_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::array_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::array_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::object).get<std::vector<int>>(),
                               "[json.exception.type_error.302] type must be array, but is object");
@@ -269,7 +293,8 @@ TEST_CASE("value conversion") {
     }
 
     SECTION("get an array (explicit, get_to)") {
-        json::array_t a_reference{json(1), json(1u), json(2.2), json(false), json("string"), json()};
+        json::array_t a_reference{json(1),     json(1u),       json(2.2),
+                                  json(false), json("string"), json()};
         json j(a_reference);
 
         SECTION("json::array_t") {
@@ -303,10 +328,12 @@ TEST_CASE("value conversion") {
         }
 
         SECTION("built-in arrays") {
-            const int nbs[] =
-                    {0, 1, 2}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
-            int nbs2[] = {0, 0,
-                          0}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
+            const int nbs[] = {
+                    0, 1,
+                    2}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
+            int nbs2[] = {
+                    0, 0,
+                    0}; // NOLINT(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
 
             json j2 = nbs;
             j2.get_to(nbs2);
@@ -322,7 +349,8 @@ TEST_CASE("value conversion") {
 
 #if JSON_USE_IMPLICIT_CONVERSIONS
     SECTION("get an array (implicit)") {
-        json::array_t a_reference{json(1), json(1u), json(2.2), json(false), json("string"), json()};
+        json::array_t a_reference{json(1),     json(1u),       json(2.2),
+                                  json(false), json("string"), json()};
         json j(a_reference);
 
         SECTION("json::array_t") {
@@ -377,9 +405,12 @@ TEST_CASE("value conversion") {
             CHECK_THROWS_AS(json(json::value_t::object).get<json::string_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::array).get<json::string_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::boolean).get<json::string_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::string_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::string_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::string_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::string_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::string_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::string_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<json::string_t>(),
                               "[json.exception.type_error.302] type must be string, but is null");
@@ -403,10 +434,14 @@ TEST_CASE("value conversion") {
             CHECK_THROWS_AS(json(json::value_t::null).get<std::string_view>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::object).get<std::string_view>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::array).get<std::string_view>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::boolean).get<std::string_view>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_integer).get<std::string_view>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<std::string_view>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_float).get<std::string_view>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::boolean).get<std::string_view>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_integer).get<std::string_view>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<std::string_view>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_float).get<std::string_view>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<std::string_view>(),
                               "[json.exception.type_error.302] type must be string, but is null");
@@ -463,8 +498,10 @@ TEST_CASE("value conversion") {
         CHECK_THROWS_AS(json(json::value_t::object).get<std::nullptr_t>(), json::type_error&);
         CHECK_THROWS_AS(json(json::value_t::array).get<std::nullptr_t>(), json::type_error&);
         CHECK_THROWS_AS(json(json::value_t::boolean).get<std::nullptr_t>(), json::type_error&);
-        CHECK_THROWS_AS(json(json::value_t::number_integer).get<std::nullptr_t>(), json::type_error&);
-        CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<std::nullptr_t>(), json::type_error&);
+        CHECK_THROWS_AS(json(json::value_t::number_integer).get<std::nullptr_t>(),
+                        json::type_error&);
+        CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<std::nullptr_t>(),
+                        json::type_error&);
         CHECK_THROWS_AS(json(json::value_t::number_float).get<std::nullptr_t>(), json::type_error&);
 
         CHECK_THROWS_WITH(json(json::value_t::string).get<std::nullptr_t>(),
@@ -532,9 +569,12 @@ TEST_CASE("value conversion") {
             CHECK_THROWS_AS(json(json::value_t::array).get<json::boolean_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::string).get<json::boolean_t>(), json::type_error&);
             CHECK_THROWS_AS(json(json::value_t::string).get<uint8_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::boolean_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::boolean_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::boolean_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_integer).get<json::boolean_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_unsigned).get<json::boolean_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::number_float).get<json::boolean_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<json::boolean_t>(),
                               "[json.exception.type_error.302] type must be boolean, but is null");
@@ -752,11 +792,16 @@ TEST_CASE("value conversion") {
         }
 
         SECTION("exception in case of a non-number type") {
-            CHECK_THROWS_AS(json(json::value_t::null).get<json::number_integer_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::object).get<json::number_integer_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::array).get<json::number_integer_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::string).get<json::number_integer_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::boolean).get<json::number_integer_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::null).get<json::number_integer_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::object).get<json::number_integer_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::array).get<json::number_integer_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::string).get<json::number_integer_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::boolean).get<json::number_integer_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<json::number_integer_t>(),
                               "[json.exception.type_error.302] type must be number, but is null");
@@ -974,11 +1019,16 @@ TEST_CASE("value conversion") {
         }
 
         SECTION("exception in case of a non-string type") {
-            CHECK_THROWS_AS(json(json::value_t::null).get<json::number_float_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::object).get<json::number_float_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::array).get<json::number_float_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::string).get<json::number_float_t>(), json::type_error&);
-            CHECK_THROWS_AS(json(json::value_t::boolean).get<json::number_float_t>(), json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::null).get<json::number_float_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::object).get<json::number_float_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::array).get<json::number_float_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::string).get<json::number_float_t>(),
+                            json::type_error&);
+            CHECK_THROWS_AS(json(json::value_t::boolean).get<json::number_float_t>(),
+                            json::type_error&);
 
             CHECK_THROWS_WITH(json(json::value_t::null).get<json::number_float_t>(),
                               "[json.exception.type_error.302] type must be number, but is null");
@@ -1054,63 +1104,83 @@ TEST_CASE("value conversion") {
             const json j_boolean_const(json::value_t::boolean);
 
             CHECK_THROWS_WITH_AS(j_null.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is null", json::type_error&);
+                                 "[json.exception.type_error.302] type must be binary, but is null",
+                                 json::type_error&);
             CHECK_THROWS_WITH_AS(j_object.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is object",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "object",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_array.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is array",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "array",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_string.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is string",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "string",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_boolean.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is boolean",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "boolean",
                                  json::type_error&);
 
             CHECK_THROWS_WITH_AS(j_null_const.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is null", json::type_error&);
+                                 "[json.exception.type_error.302] type must be binary, but is null",
+                                 json::type_error&);
             CHECK_THROWS_WITH_AS(j_object_const.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is object",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "object",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_array_const.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is array",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "array",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_string_const.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is string",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "string",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_boolean_const.get<json::binary_t>(),
-                                 "[json.exception.type_error.302] type must be binary, but is boolean",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "boolean",
                                  json::type_error&);
 
             CHECK_THROWS_WITH_AS(j_null.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is null", json::type_error&);
+                                 "[json.exception.type_error.302] type must be binary, but is null",
+                                 json::type_error&);
             CHECK_THROWS_WITH_AS(j_object.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is object",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "object",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_array.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is array",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "array",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_string.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is string",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "string",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_boolean.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is boolean",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "boolean",
                                  json::type_error&);
 
             CHECK_THROWS_WITH_AS(j_null_const.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is null", json::type_error&);
+                                 "[json.exception.type_error.302] type must be binary, but is null",
+                                 json::type_error&);
             CHECK_THROWS_WITH_AS(j_object_const.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is object",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "object",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_array_const.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is array",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "array",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_string_const.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is string",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "string",
                                  json::type_error&);
             CHECK_THROWS_WITH_AS(j_boolean_const.get_binary(),
-                                 "[json.exception.type_error.302] type must be binary, but is boolean",
+                                 "[json.exception.type_error.302] type must be binary, but is "
+                                 "boolean",
                                  json::type_error&);
         }
     }
@@ -1181,7 +1251,8 @@ TEST_CASE("value conversion") {
             SECTION("exception in case of a non-object type") {
                 CHECK_THROWS_AS((json().get<std::map<std::string, int>>()), json::type_error&);
                 CHECK_THROWS_WITH((json().get<std::map<std::string, int>>()),
-                                  "[json.exception.type_error.302] type must be object, but is null");
+                                  "[json.exception.type_error.302] type must be object, but is "
+                                  "null");
             }
         }
 
@@ -1218,8 +1289,9 @@ TEST_CASE("value conversion") {
                 SECTION("std::array is larger than JSON") {
                     std::array<int, 6> arr6 = {{1, 2, 3, 4, 5, 6}};
                     CHECK_THROWS_AS(j1.get_to(arr6), json::out_of_range&);
-                    CHECK_THROWS_WITH(j1.get_to(arr6), "[json.exception.out_of_range.401] "
-                                                       "array index 4 is out of range");
+                    CHECK_THROWS_WITH(j1.get_to(arr6),
+                                      "[json.exception.out_of_range.401] "
+                                      "array index 4 is out of range");
                 }
 
                 SECTION("std::array is smaller than JSON") {
@@ -1281,10 +1353,12 @@ TEST_CASE("value conversion") {
                 json j8 = 2;
                 CHECK_THROWS_AS((j7.get<std::map<int, int>>()), json::type_error&);
                 CHECK_THROWS_AS((j8.get<std::map<int, int>>()), json::type_error&);
-                CHECK_THROWS_WITH((j7.get<std::map<int, int>>()), "[json.exception.type_error.302] type must be array, "
-                                                                  "but is number");
-                CHECK_THROWS_WITH((j8.get<std::map<int, int>>()), "[json.exception.type_error.302] type must be array, "
-                                                                  "but is number");
+                CHECK_THROWS_WITH((j7.get<std::map<int, int>>()),
+                                  "[json.exception.type_error.302] type must be array, "
+                                  "but is number");
+                CHECK_THROWS_WITH((j8.get<std::map<int, int>>()),
+                                  "[json.exception.type_error.302] type must be array, "
+                                  "but is number");
 
                 SECTION("superfluous entries") {
                     json j9 = {{0, 1, 2}, {1, 2, 3}, {2, 3, 4}};
@@ -1328,17 +1402,23 @@ TEST_CASE("value conversion") {
                 // does type really must be an array? or it rather must not be null?
                 // that's what I thought when other test like this one broke
                 CHECK_THROWS_WITH((json().get<std::list<int>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
                 CHECK_THROWS_WITH((json().get<std::vector<int>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
                 CHECK_THROWS_WITH((json().get<std::vector<json>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
                 CHECK_THROWS_WITH((json().get<std::list<json>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
                 CHECK_THROWS_WITH((json().get<std::valarray<int>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
                 CHECK_THROWS_WITH((json().get<std::map<int, int>>()),
-                                  "[json.exception.type_error.302] type must be array, but is null");
+                                  "[json.exception.type_error.302] type must be array, but is "
+                                  "null");
             }
         }
     }
@@ -1348,11 +1428,12 @@ enum class cards { kreuz, pik, herz, karo };
 
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
 // - false positive
-NLOHMANN_JSON_SERIALIZE_ENUM(cards, {{cards::kreuz, "kreuz"},
-                                     {cards::pik, "pik"},
-                                     {cards::pik, "puk"}, // second entry for cards::puk; will not be used
-                                     {cards::herz, "herz"},
-                                     {cards::karo, "karo"}})
+NLOHMANN_JSON_SERIALIZE_ENUM(cards,
+                             {{cards::kreuz, "kreuz"},
+                              {cards::pik, "pik"},
+                              {cards::pik, "puk"}, // second entry for cards::puk; will not be used
+                              {cards::herz, "herz"},
+                              {cards::karo, "karo"}})
 
 enum TaskState {
     TS_STOPPED,
@@ -1363,12 +1444,13 @@ enum TaskState {
 
 // NOLINTNEXTLINE(cppcoreguidelines-avoid-c-arrays,hicpp-avoid-c-arrays,modernize-avoid-c-arrays)
 // - false positive
-NLOHMANN_JSON_SERIALIZE_ENUM(TaskState, {
-                                                {TS_INVALID, nullptr},
-                                                {TS_STOPPED, "stopped"},
-                                                {TS_RUNNING, "running"},
-                                                {TS_COMPLETED, "completed"},
-                                        })
+NLOHMANN_JSON_SERIALIZE_ENUM(TaskState,
+                             {
+                                     {TS_INVALID, nullptr},
+                                     {TS_STOPPED, "stopped"},
+                                     {TS_RUNNING, "running"},
+                                     {TS_COMPLETED, "completed"},
+                             })
 
 TEST_CASE("JSON to enum mapping") {
     SECTION("enum class") {

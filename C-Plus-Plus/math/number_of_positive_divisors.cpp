@@ -5,13 +5,13 @@
  * This algorithm uses the prime factorization approach.
  * Any positive integer can be written as a product of its prime factors.
  * <br/>Let \f$N = p_1^{e_1} \times p_2^{e_2} \times\cdots\times p_k^{e_k}\f$
- * where \f$p_1,\, p_2,\, \dots,\, p_k\f$ are distinct prime factors of \f$N\f$ and
- * \f$e_1,\, e_2,\, \dots,\, e_k\f$ are respective positive integer exponents.
- * <br/>Each positive divisor of \f$N\f$ is in the form
+ * where \f$p_1,\, p_2,\, \dots,\, p_k\f$ are distinct prime factors of \f$N\f$
+ *and \f$e_1,\, e_2,\, \dots,\, e_k\f$ are respective positive integer
+ *exponents. <br/>Each positive divisor of \f$N\f$ is in the form
  * \f$p_1^{g_1}\times p_2^{g_2}\times\cdots\times p_k^{g_k}\f$
  * where \f$0\le g_i\le e_i\f$ are integers for all \f$1\le i\le k\f$.
- * <br/>Finally, there are \f$(e_1+1) \times (e_2+1)\times\cdots\times (e_k+1)\f$
- * positive divisors of \f$N\f$ since we can choose every \f$g_i\f$
+ * <br/>Finally, there are \f$(e_1+1) \times (e_2+1)\times\cdots\times
+ *(e_k+1)\f$ positive divisors of \f$N\f$ since we can choose every \f$g_i\f$
  * independently.
  *
  * Example:
@@ -20,7 +20,7 @@
  * <br/>list of positive divisors of 36 = 1, 2, 3, 4, 6, 9, 12, 18, 36.
  *
  * Similarly, for N = -36 the number of positive divisors remain same.
-**/
+ **/
 
 #include <cassert>
 #include <iostream>
@@ -32,7 +32,7 @@
  */
 int number_of_positive_divisors(int n) {
     if (n < 0) {
-        n = -n; // take the absolute value of n
+        n = -n;  // take the absolute value of n
     }
 
     int number_of_divisors = 1;
@@ -71,8 +71,8 @@ void tests() {
     assert(number_of_positive_divisors(36) == 9);
     assert(number_of_positive_divisors(-36) == 9);
     assert(number_of_positive_divisors(1) == 1);
-    assert(number_of_positive_divisors(2011) == 2); // 2011 is a prime
-    assert(number_of_positive_divisors(756) == 24); // 756 = 2^2 * 3^3 * 7
+    assert(number_of_positive_divisors(2011) == 2);  // 2011 is a prime
+    assert(number_of_positive_divisors(756) == 24);  // 756 = 2^2 * 3^3 * 7
 }
 
 /**

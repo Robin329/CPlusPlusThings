@@ -66,7 +66,8 @@ void WriteToFile(const Unit &U, const std::string &Path) {
     fclose(Out);
 }
 
-void ReadDirToVectorOfUnits(const char *Path, std::vector<Unit> *V, long *Epoch, size_t MaxSize, bool ExitOnError) {
+void ReadDirToVectorOfUnits(const char *Path, std::vector<Unit> *V, long *Epoch, size_t MaxSize,
+                            bool ExitOnError) {
     long E = Epoch ? *Epoch : 0;
     std::vector<std::string> Files;
     ListFilesInDirRecursive(Path, Epoch, &Files, /*TopDir*/ true);
@@ -92,7 +93,8 @@ void DupAndCloseStderr() {
         FILE *NewOutputFile = OpenFile(OutputFd, "w");
         if (NewOutputFile) {
             OutputFile = NewOutputFile;
-            if (EF->__sanitizer_set_report_fd) EF->__sanitizer_set_report_fd(reinterpret_cast<void *>(OutputFd));
+            if (EF->__sanitizer_set_report_fd)
+                EF->__sanitizer_set_report_fd(reinterpret_cast<void *>(OutputFd));
             CloseFile(2);
         }
     }

@@ -21,5 +21,6 @@ int main() {
     bool v_boolean = j.value("nonexisting", false);
 
     // output values
-    std::cout << std::boolalpha << v_integer << " " << v_floating << " " << v_string << " " << v_boolean << "\n";
+    std::cout << std::boolalpha << v_integer << " " << v_floating << " " << v_string << " "
+              << v_boolean << "\n";
 }

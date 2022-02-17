@@ -32,7 +32,8 @@ public:
     auto lazy_launch() {
         return [*this, count = get_count()]() mutable {
             ostringstream oss;
-            oss << "Done work " << data_ << " (No. " << count << ") in thread " << this_thread::get_id() << '\n';
+            oss << "Done work " << data_ << " (No. " << count << ") in thread "
+                << this_thread::get_id() << '\n';
             msg_ = oss.str();
             calculate();
         };

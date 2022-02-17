@@ -103,7 +103,8 @@ public:
             // which one we need to merge?
             // We need compare the rest of array.
             if (nums1[pos1] == nums2[pos2]) {
-                result.push_back(compareTwoArray(nums1, pos1 + 1, nums2, pos2 + 1) ? nums1[pos1++] : nums2[pos2++]);
+                result.push_back(compareTwoArray(nums1, pos1 + 1, nums2, pos2 + 1) ? nums1[pos1++]
+                                                                                   : nums2[pos2++]);
             } else {
                 result.push_back(nums1[pos1] > nums2[pos2] ? nums1[pos1++] : nums2[pos2++]);
             }

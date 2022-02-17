@@ -62,8 +62,12 @@ TEST_CASE("element access 1") {
                 CHECK_THROWS_AS(j.at(8), json::out_of_range&);
                 CHECK_THROWS_AS(j_const.at(8), json::out_of_range&);
 
-                CHECK_THROWS_WITH(j.at(8), "[json.exception.out_of_range.401] array index 8 is out of range");
-                CHECK_THROWS_WITH(j_const.at(8), "[json.exception.out_of_range.401] array index 8 is out of range");
+                CHECK_THROWS_WITH(j.at(8),
+                                  "[json.exception.out_of_range.401] array index 8 is out of "
+                                  "range");
+                CHECK_THROWS_WITH(j_const.at(8),
+                                  "[json.exception.out_of_range.401] array index 8 is out of "
+                                  "range");
             }
 
             SECTION("access on non-array type") {
@@ -73,7 +77,8 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with null");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with null");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
                                       "[json.exception.type_error.304] cannot use at() with null");
                 }
@@ -84,9 +89,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with boolean");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "boolean");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with boolean");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "boolean");
                 }
 
                 SECTION("string") {
@@ -95,9 +103,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with string");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "string");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with string");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "string");
                 }
 
                 SECTION("object") {
@@ -106,9 +117,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with object");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "object");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with object");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "object");
                 }
 
                 SECTION("number (integer)") {
@@ -117,9 +131,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with number");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with number");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                 }
 
                 SECTION("number (unsigned)") {
@@ -128,9 +145,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with number");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with number");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                 }
 
                 SECTION("number (floating-point)") {
@@ -139,9 +159,12 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j_nonarray.at(0), json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const.at(0), json::type_error&);
 
-                    CHECK_THROWS_WITH(j_nonarray.at(0), "[json.exception.type_error.304] cannot use at() with number");
+                    CHECK_THROWS_WITH(j_nonarray.at(0),
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                     CHECK_THROWS_WITH(j_nonarray_const.at(0),
-                                      "[json.exception.type_error.304] cannot use at() with number");
+                                      "[json.exception.type_error.304] cannot use at() with "
+                                      "number");
                 }
             }
         }
@@ -181,8 +204,9 @@ TEST_CASE("element access 1") {
                         const json j_nonarray_const(j_nonarray);
                         CHECK_NOTHROW(j_nonarray[0]);
                         CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                        CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                               "operator[] with a numeric argument with null");
+                        CHECK_THROWS_WITH(j_nonarray_const[0],
+                                          "[json.exception.type_error.305] cannot use "
+                                          "operator[] with a numeric argument with null");
                     }
 
                     SECTION("implicit transformation to properly filled array") {
@@ -197,10 +221,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with boolean");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with boolean");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with boolean");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with boolean");
                 }
 
                 SECTION("string") {
@@ -208,10 +234,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with string");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with string");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with string");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with string");
                 }
 
                 SECTION("object") {
@@ -219,10 +247,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with object");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with object");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with object");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with object");
                 }
 
                 SECTION("number (integer)") {
@@ -230,10 +260,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with number");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
                 }
 
                 SECTION("number (unsigned)") {
@@ -241,10 +273,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with number");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
                 }
 
                 SECTION("number (floating-point)") {
@@ -252,10 +286,12 @@ TEST_CASE("element access 1") {
                     const json j_nonarray_const(j_nonarray);
                     CHECK_THROWS_AS(j_nonarray[0], json::type_error&);
                     CHECK_THROWS_AS(j_nonarray_const[0], json::type_error&);
-                    CHECK_THROWS_WITH(j_nonarray[0], "[json.exception.type_error.305] cannot use "
-                                                     "operator[] with a numeric argument with number");
-                    CHECK_THROWS_WITH(j_nonarray_const[0], "[json.exception.type_error.305] cannot use "
-                                                           "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
+                    CHECK_THROWS_WITH(j_nonarray_const[0],
+                                      "[json.exception.type_error.305] cannot use "
+                                      "operator[] with a numeric argument with number");
                 }
             }
         }
@@ -263,78 +299,111 @@ TEST_CASE("element access 1") {
         SECTION("remove specified element") {
             SECTION("remove element by index") {
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(0);
-                    CHECK(jarray == json({1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                    CHECK(jarray ==
+                          json({1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(1);
-                    CHECK(jarray == json({1, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                    CHECK(jarray ==
+                          json({1, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(2);
-                    CHECK(jarray == json({1, 1u, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                    CHECK(jarray ==
+                          json({1, 1u, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(3);
-                    CHECK(jarray == json({1, 1u, true, "string", 42.23, json::object(), {1, 2, 3}}));
+                    CHECK(jarray ==
+                          json({1, 1u, true, "string", 42.23, json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(4);
                     CHECK(jarray == json({1, 1u, true, nullptr, 42.23, json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(5);
-                    CHECK(jarray == json({1, 1u, true, nullptr, "string", json::object(), {1, 2, 3}}));
+                    CHECK(jarray ==
+                          json({1, 1u, true, nullptr, "string", json::object(), {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(6);
                     CHECK(jarray == json({1, 1u, true, nullptr, "string", 42.23, {1, 2, 3}}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     jarray.erase(7);
                     CHECK(jarray == json({1, 1u, true, nullptr, "string", 42.23, json::object()}));
                 }
                 {
-                    json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                    json jarray = {1,        1u,    true,           nullptr,
+                                   "string", 42.23, json::object(), {1, 2, 3}};
                     CHECK_THROWS_AS(jarray.erase(8), json::out_of_range&);
-                    CHECK_THROWS_WITH(jarray.erase(8), "[json.exception.out_of_range.401] array index 8 "
-                                                       "is out of range");
+                    CHECK_THROWS_WITH(jarray.erase(8),
+                                      "[json.exception.out_of_range.401] array index 8 "
+                                      "is out of range");
                 }
             }
 
             SECTION("remove element by iterator") {
                 SECTION("erase(begin())") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::iterator it2 = jarray.erase(jarray.begin());
-                        CHECK(jarray == json({1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1u,
+                                    true,
+                                    nullptr,
+                                    "string",
+                                    42.23,
+                                    json::object(),
+                                    {1, 2, 3}}));
                         CHECK(*it2 == json(1u));
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::const_iterator it2 = jarray.erase(jarray.cbegin());
-                        CHECK(jarray == json({1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1u,
+                                    true,
+                                    nullptr,
+                                    "string",
+                                    42.23,
+                                    json::object(),
+                                    {1, 2, 3}}));
                         CHECK(*it2 == json(1u));
                     }
                 }
 
                 SECTION("erase(begin(), end())") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::iterator it2 = jarray.erase(jarray.begin(), jarray.end());
                         CHECK(jarray == json::array());
                         CHECK(it2 == jarray.end());
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::const_iterator it2 = jarray.erase(jarray.cbegin(), jarray.cend());
                         CHECK(jarray == json::array());
                         CHECK(it2 == jarray.cend());
@@ -343,46 +412,71 @@ TEST_CASE("element access 1") {
 
                 SECTION("erase(begin(), begin())") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::iterator it2 = jarray.erase(jarray.begin(), jarray.begin());
-                        CHECK(jarray == json({1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1,
+                                    1u,
+                                    true,
+                                    nullptr,
+                                    "string",
+                                    42.23,
+                                    json::object(),
+                                    {1, 2, 3}}));
                         CHECK(*it2 == json(1));
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::const_iterator it2 = jarray.erase(jarray.cbegin(), jarray.cbegin());
-                        CHECK(jarray == json({1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1,
+                                    1u,
+                                    true,
+                                    nullptr,
+                                    "string",
+                                    42.23,
+                                    json::object(),
+                                    {1, 2, 3}}));
                         CHECK(*it2 == json(1));
                     }
                 }
 
                 SECTION("erase at offset") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::iterator it = jarray.begin() + 4;
                         json::iterator it2 = jarray.erase(it);
-                        CHECK(jarray == json({1, 1u, true, nullptr, 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1, 1u, true, nullptr, 42.23, json::object(), {1, 2, 3}}));
                         CHECK(*it2 == json(42.23));
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::const_iterator it = jarray.cbegin() + 4;
                         json::const_iterator it2 = jarray.erase(it);
-                        CHECK(jarray == json({1, 1u, true, nullptr, 42.23, json::object(), {1, 2, 3}}));
+                        CHECK(jarray ==
+                              json({1, 1u, true, nullptr, 42.23, json::object(), {1, 2, 3}}));
                         CHECK(*it2 == json(42.23));
                     }
                 }
 
                 SECTION("erase subrange") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json::iterator it2 = jarray.erase(jarray.begin() + 3, jarray.begin() + 6);
                         CHECK(jarray == json({1, 1u, true, json::object(), {1, 2, 3}}));
                         CHECK(*it2 == json::object());
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
-                        json::const_iterator it2 = jarray.erase(jarray.cbegin() + 3, jarray.cbegin() + 6);
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
+                        json::const_iterator it2 =
+                                jarray.erase(jarray.cbegin() + 3, jarray.cbegin() + 6);
                         CHECK(jarray == json({1, 1u, true, json::object(), {1, 2, 3}}));
                         CHECK(*it2 == json::object());
                     }
@@ -390,12 +484,16 @@ TEST_CASE("element access 1") {
 
                 SECTION("different arrays") {
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json jarray2 = {"foo", "bar"};
                         CHECK_THROWS_AS(jarray.erase(jarray2.begin()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray.begin(), jarray2.end()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray2.begin(), jarray.end()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray2.begin(), jarray2.end()), json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray.begin(), jarray2.end()),
+                                        json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray2.begin(), jarray.end()),
+                                        json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray2.begin(), jarray2.end()),
+                                        json::invalid_iterator&);
 
                         CHECK_THROWS_WITH(jarray.erase(jarray2.begin()),
                                           "[json.exception.invalid_iterator.202] iterator "
@@ -411,12 +509,16 @@ TEST_CASE("element access 1") {
                                           "do not fit current value");
                     }
                     {
-                        json jarray = {1, 1u, true, nullptr, "string", 42.23, json::object(), {1, 2, 3}};
+                        json jarray = {1,        1u,    true,           nullptr,
+                                       "string", 42.23, json::object(), {1, 2, 3}};
                         json jarray2 = {"foo", "bar"};
                         CHECK_THROWS_AS(jarray.erase(jarray2.cbegin()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray.cbegin(), jarray2.cend()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray2.cbegin(), jarray.cend()), json::invalid_iterator&);
-                        CHECK_THROWS_AS(jarray.erase(jarray2.cbegin(), jarray2.cend()), json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray.cbegin(), jarray2.cend()),
+                                        json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray2.cbegin(), jarray.cend()),
+                                        json::invalid_iterator&);
+                        CHECK_THROWS_AS(jarray.erase(jarray2.cbegin(), jarray2.cend()),
+                                        json::invalid_iterator&);
 
                         CHECK_THROWS_WITH(jarray.erase(jarray2.cbegin()),
                                           "[json.exception.invalid_iterator.202] iterator "
@@ -439,49 +541,56 @@ TEST_CASE("element access 1") {
                     json j_nonobject(json::value_t::null);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with null");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "null");
                 }
 
                 SECTION("boolean") {
                     json j_nonobject(json::value_t::boolean);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
-                    CHECK_THROWS_WITH(j_nonobject.erase(0), "[json.exception.type_error.307] cannot use "
-                                                            "erase() with boolean");
+                    CHECK_THROWS_WITH(j_nonobject.erase(0),
+                                      "[json.exception.type_error.307] cannot use "
+                                      "erase() with boolean");
                 }
 
                 SECTION("string") {
                     json j_nonobject(json::value_t::string);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with string");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "string");
                 }
 
                 SECTION("object") {
                     json j_nonobject(json::value_t::object);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with object");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "object");
                 }
 
                 SECTION("number (integer)") {
                     json j_nonobject(json::value_t::number_integer);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with number");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "number");
                 }
 
                 SECTION("number (unsigned)") {
                     json j_nonobject(json::value_t::number_unsigned);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with number");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "number");
                 }
 
                 SECTION("number (floating-point)") {
                     json j_nonobject(json::value_t::number_float);
                     CHECK_THROWS_AS(j_nonobject.erase(0), json::type_error&);
                     CHECK_THROWS_WITH(j_nonobject.erase(0),
-                                      "[json.exception.type_error.307] cannot use erase() with number");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "number");
                 }
             }
         }
@@ -494,15 +603,19 @@ TEST_CASE("element access 1") {
                     json j;
                     CHECK_THROWS_AS(j.front(), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.back(), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.front(), "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(j.back(), "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(j.front(),
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(j.back(),
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
                 {
                     const json j{};
                     CHECK_THROWS_AS(j.front(), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.back(), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.front(), "[json.exception.invalid_iterator.214] cannot get value");
-                    CHECK_THROWS_WITH(j.back(), "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(j.front(),
+                                      "[json.exception.invalid_iterator.214] cannot get value");
+                    CHECK_THROWS_WITH(j.back(),
+                                      "[json.exception.invalid_iterator.214] cannot get value");
                 }
             }
 
@@ -578,13 +691,15 @@ TEST_CASE("element access 1") {
                     json j;
                     CHECK_THROWS_AS(j.erase(j.begin()), json::type_error&);
                     CHECK_THROWS_WITH(j.erase(j.begin()),
-                                      "[json.exception.type_error.307] cannot use erase() with null");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "null");
                 }
                 {
                     json j;
                     CHECK_THROWS_AS(j.erase(j.cbegin()), json::type_error&);
                     CHECK_THROWS_WITH(j.erase(j.begin()),
-                                      "[json.exception.type_error.307] cannot use erase() with null");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "null");
                 }
             }
 
@@ -684,12 +799,16 @@ TEST_CASE("element access 1") {
                 {
                     json j = "foo";
                     CHECK_THROWS_AS(j.erase(j.end()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.end()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.end()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
                 {
                     json j = "bar";
                     CHECK_THROWS_AS(j.erase(j.cend()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.cend()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.cend()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
             }
 
@@ -697,12 +816,16 @@ TEST_CASE("element access 1") {
                 {
                     json j = false;
                     CHECK_THROWS_AS(j.erase(j.end()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.end()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.end()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
                 {
                     json j = true;
                     CHECK_THROWS_AS(j.erase(j.cend()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.cend()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.cend()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
             }
 
@@ -710,12 +833,16 @@ TEST_CASE("element access 1") {
                 {
                     json j = 17;
                     CHECK_THROWS_AS(j.erase(j.end()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.end()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.end()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
                 {
                     json j = 17;
                     CHECK_THROWS_AS(j.erase(j.cend()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.cend()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.cend()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
             }
 
@@ -723,12 +850,16 @@ TEST_CASE("element access 1") {
                 {
                     json j = 17u;
                     CHECK_THROWS_AS(j.erase(j.end()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.end()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.end()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
                 {
                     json j = 17u;
                     CHECK_THROWS_AS(j.erase(j.cend()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.cend()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.cend()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
             }
 
@@ -736,12 +867,16 @@ TEST_CASE("element access 1") {
                 {
                     json j = 23.42;
                     CHECK_THROWS_AS(j.erase(j.end()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.end()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.end()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
                 {
                     json j = 23.42;
                     CHECK_THROWS_AS(j.erase(j.cend()), json::invalid_iterator&);
-                    CHECK_THROWS_WITH(j.erase(j.cend()), "[json.exception.invalid_iterator.205] iterator out of range");
+                    CHECK_THROWS_WITH(j.erase(j.cend()),
+                                      "[json.exception.invalid_iterator.205] iterator out of "
+                                      "range");
                 }
             }
         }
@@ -752,13 +887,15 @@ TEST_CASE("element access 1") {
                     json j;
                     CHECK_THROWS_AS(j.erase(j.begin(), j.end()), json::type_error&);
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.end()),
-                                      "[json.exception.type_error.307] cannot use erase() with null");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "null");
                 }
                 {
                     json j;
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cend()), json::type_error&);
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cend()),
-                                      "[json.exception.type_error.307] cannot use erase() with null");
+                                      "[json.exception.type_error.307] cannot use erase() with "
+                                      "null");
                 }
             }
 
@@ -860,18 +997,22 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j.erase(j.end(), j.end()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.begin(), j.begin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.end(), j.end()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.begin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
                 {
                     json j = "bar";
                     CHECK_THROWS_AS(j.erase(j.cend(), j.cend()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cbegin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.cend(), j.cend()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cbegin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
             }
 
@@ -881,18 +1022,22 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j.erase(j.end(), j.end()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.begin(), j.begin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.end(), j.end()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.begin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
                 {
                     json j = true;
                     CHECK_THROWS_AS(j.erase(j.cend(), j.cend()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cbegin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.cend(), j.cend()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cbegin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
             }
 
@@ -902,18 +1047,22 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j.erase(j.end(), j.end()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.begin(), j.begin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.end(), j.end()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.begin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
                 {
                     json j = 17;
                     CHECK_THROWS_AS(j.erase(j.cend(), j.cend()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cbegin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.cend(), j.cend()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cbegin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
             }
 
@@ -923,18 +1072,22 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j.erase(j.end(), j.end()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.begin(), j.begin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.end(), j.end()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.begin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
                 {
                     json j = 17u;
                     CHECK_THROWS_AS(j.erase(j.cend(), j.cend()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cbegin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.cend(), j.cend()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cbegin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
             }
 
@@ -944,18 +1097,22 @@ TEST_CASE("element access 1") {
                     CHECK_THROWS_AS(j.erase(j.end(), j.end()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.begin(), j.begin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.end(), j.end()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.begin(), j.begin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
                 {
                     json j = 23.42;
                     CHECK_THROWS_AS(j.erase(j.cend(), j.cend()), json::invalid_iterator&);
                     CHECK_THROWS_AS(j.erase(j.cbegin(), j.cbegin()), json::invalid_iterator&);
                     CHECK_THROWS_WITH(j.erase(j.cend(), j.cend()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                     CHECK_THROWS_WITH(j.erase(j.cbegin(), j.cbegin()),
-                                      "[json.exception.invalid_iterator.204] iterators out of range");
+                                      "[json.exception.invalid_iterator.204] iterators out of "
+                                      "range");
                 }
             }
         }

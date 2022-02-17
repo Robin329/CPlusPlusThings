@@ -160,7 +160,8 @@ void Fuzzer::CrashResistantMergeInternalStep(const std::string &CFPath) {
     M.ParseOrExit(IF, false);
     IF.close();
     if (!M.LastFailure.empty())
-        Printf("MERGE-INNER: '%s' caused a failure at the previous merge step\n", M.LastFailure.c_str());
+        Printf("MERGE-INNER: '%s' caused a failure at the previous merge step\n",
+               M.LastFailure.c_str());
 
     Printf("MERGE-INNER: %zd total files;"
            " %zd processed earlier; will process %zd files now\n",
@@ -197,7 +198,8 @@ void Fuzzer::CrashResistantMergeInternalStep(const std::string &CFPath) {
 }
 
 // Outer process. Does not call the target code and thus sohuld not fail.
-void Fuzzer::CrashResistantMerge(const std::vector<std::string> &Args, const std::vector<std::string> &Corpora) {
+void Fuzzer::CrashResistantMerge(const std::vector<std::string> &Args,
+                                 const std::vector<std::string> &Corpora) {
     if (Corpora.size() <= 1) {
         Printf("Merge requires two or more corpus dirs\n");
         return;
@@ -207,7 +209,8 @@ void Fuzzer::CrashResistantMerge(const std::vector<std::string> &Args, const std
     size_t NumFilesInFirstCorpus = AllFiles.size();
     for (size_t i = 1; i < Corpora.size(); i++)
         ListFilesInDirRecursive(Corpora[i], nullptr, &AllFiles, /*TopDir*/ true);
-    Printf("MERGE-OUTER: %zd files, %zd in the initial corpus\n", AllFiles.size(), NumFilesInFirstCorpus);
+    Printf("MERGE-OUTER: %zd files, %zd in the initial corpus\n", AllFiles.size(),
+           NumFilesInFirstCorpus);
     std::string CFPath = "libFuzzerTemp." + std::to_string(GetPid()) + ".txt";
     // Write the control file.
     RemoveFile(CFPath);
@@ -235,7 +238,8 @@ void Fuzzer::CrashResistantMerge(const std::vector<std::string> &Args, const std
     IF.close();
     std::vector<std::string> NewFiles;
     size_t NumNewFeatures = M.Merge(&NewFiles);
-    Printf("MERGE-OUTER: %zd new files with %zd new features added\n", NewFiles.size(), NumNewFeatures);
+    Printf("MERGE-OUTER: %zd new files with %zd new features added\n", NewFiles.size(),
+           NumNewFeatures);
     for (auto &F : NewFiles) WriteToOutputCorpus(FileToVector(F));
     // We are done, delete the control file.
     RemoveFile(CFPath);

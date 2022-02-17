@@ -107,7 +107,8 @@ void sha1_hashBlock(sha1nfo *s) {
     e = s->state[4];
     for (i = 0; i < 80; i++) {
         if (i >= 16) {
-            t = s->buffer[(i + 13) & 15] ^ s->buffer[(i + 8) & 15] ^ s->buffer[(i + 2) & 15] ^ s->buffer[i & 15];
+            t = s->buffer[(i + 13) & 15] ^ s->buffer[(i + 8) & 15] ^ s->buffer[(i + 2) & 15] ^
+                    s->buffer[i & 15];
             s->buffer[i & 15] = sha1_rol32(t, 1);
         }
         if (i < 20) {
@@ -183,7 +184,7 @@ uint8_t *sha1_result(sha1nfo *s) {
     int i;
     for (i = 0; i < 5; i++) {
         s->state[i] = (((s->state[i]) << 24) & 0xff000000) | (((s->state[i]) << 8) & 0x00ff0000) |
-                      (((s->state[i]) >> 8) & 0x0000ff00) | (((s->state[i]) >> 24) & 0x000000ff);
+                (((s->state[i]) >> 8) & 0x0000ff00) | (((s->state[i]) >> 24) & 0x000000ff);
     }
 #endif
 
@@ -205,7 +206,8 @@ void ComputeSHA1(const uint8_t *Data, size_t Len, uint8_t *Out) {
 
 std::string Sha1ToString(const uint8_t Sha1[kSHA1NumBytes]) {
     std::stringstream SS;
-    for (int i = 0; i < kSHA1NumBytes; i++) SS << std::hex << std::setfill('0') << std::setw(2) << (unsigned)Sha1[i];
+    for (int i = 0; i < kSHA1NumBytes; i++)
+        SS << std::hex << std::setfill('0') << std::setw(2) << (unsigned)Sha1[i];
     return SS.str();
 }
 

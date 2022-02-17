@@ -14,13 +14,12 @@
  * Target
  * defines specific interface that Client uses
  */
-class Target
-{
+class Target {
 public:
-  virtual ~Target() {}
-  
-  virtual void request() = 0;
-  // ...
+    virtual ~Target() {}
+
+    virtual void request() = 0;
+    // ...
 };
 
 /*
@@ -29,14 +28,10 @@ public:
  * to Adapter it will get calls that client makes on the Target
  *
  */
-class Adaptee
-{
+class Adaptee {
 public:
-  void specificRequest()
-  {
-    std::cout << "specific request" << std::endl;
-  }
-  // ...
+    void specificRequest() { std::cout << "specific request" << std::endl; }
+    // ...
 };
 
 /*
@@ -44,34 +39,27 @@ public:
  * implements the Target interface and when it gets a method call it
  * delegates the call to a Adaptee
  */
-class Adapter : public Target
-{
+class Adapter : public Target {
 public:
-  Adapter() : adaptee() {}
-  
-  ~Adapter()
-  {
-    delete adaptee;
-  }
-  
-  void request()
-  {
-    adaptee->specificRequest();
-  // ...
-  }
-  // ...
+    Adapter() : adaptee() {}
+
+    ~Adapter() { delete adaptee; }
+
+    void request() {
+        adaptee->specificRequest();
+        // ...
+    }
+    // ...
 
 private:
-  Adaptee *adaptee;
-  // ...
+    Adaptee *adaptee;
+    // ...
 };
 
+int main() {
+    Target *t = new Adapter();
+    t->request();
+    delete t;
 
-int main()
-{
-  Target *t = new Adapter();
-  t->request();
-  delete t;
-  
-  return 0;
+    return 0;
 }

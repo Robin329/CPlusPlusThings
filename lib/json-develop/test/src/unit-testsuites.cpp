@@ -39,25 +39,39 @@ TEST_CASE("compliance tests from json.org") {
     // test cases are from https://json.org/JSON_checker/
 
     SECTION("expected failures") {
-        for (const auto* filename :
-             {// TEST_DATA_DIRECTORY "/json_tests/fail1.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail2.json", TEST_DATA_DIRECTORY "/json_tests/fail3.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail4.json", TEST_DATA_DIRECTORY "/json_tests/fail5.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail6.json", TEST_DATA_DIRECTORY "/json_tests/fail7.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail8.json", TEST_DATA_DIRECTORY "/json_tests/fail9.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail10.json", TEST_DATA_DIRECTORY "/json_tests/fail11.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail12.json", TEST_DATA_DIRECTORY "/json_tests/fail13.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail14.json", TEST_DATA_DIRECTORY "/json_tests/fail15.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail16.json", TEST_DATA_DIRECTORY "/json_tests/fail17.json",
-              // TEST_DATA_DIRECTORY "/json_tests/fail18.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail19.json", TEST_DATA_DIRECTORY "/json_tests/fail20.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail21.json", TEST_DATA_DIRECTORY "/json_tests/fail22.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail23.json", TEST_DATA_DIRECTORY "/json_tests/fail24.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail25.json", TEST_DATA_DIRECTORY "/json_tests/fail26.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail27.json", TEST_DATA_DIRECTORY "/json_tests/fail28.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail29.json", TEST_DATA_DIRECTORY "/json_tests/fail30.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail31.json", TEST_DATA_DIRECTORY "/json_tests/fail32.json",
-              TEST_DATA_DIRECTORY "/json_tests/fail33.json"}) {
+        for (const auto* filename : {// TEST_DATA_DIRECTORY "/json_tests/fail1.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail2.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail3.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail4.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail5.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail6.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail7.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail8.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail9.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail10.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail11.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail12.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail13.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail14.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail15.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail16.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail17.json",
+                                     // TEST_DATA_DIRECTORY "/json_tests/fail18.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail19.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail20.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail21.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail22.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail23.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail24.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail25.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail26.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail27.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail28.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail29.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail30.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail31.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail32.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/fail33.json"}) {
             CAPTURE(filename)
             std::ifstream f(filename);
             json _;
@@ -82,9 +96,9 @@ TEST_CASE("compliance tests from json.org") {
     }
 
     SECTION("expected passes") {
-        for (const auto* filename :
-             {TEST_DATA_DIRECTORY "/json_tests/pass1.json", TEST_DATA_DIRECTORY "/json_tests/pass2.json",
-              TEST_DATA_DIRECTORY "/json_tests/pass3.json"}) {
+        for (const auto* filename : {TEST_DATA_DIRECTORY "/json_tests/pass1.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/pass2.json",
+                                     TEST_DATA_DIRECTORY "/json_tests/pass3.json"}) {
             CAPTURE(filename)
             std::ifstream f(filename);
             json j;
@@ -165,8 +179,10 @@ TEST_CASE("compliance tests from nativejson-benchmark") {
         // More closer to normal/subnormal boundary
         // boundary = 2^-1022 - 2^-1075
         // = 2.225073858507201136057409796709131975934819546351645648... ¡Á 10^-308
-        TEST_DOUBLE("[2.22507385850720113605740979670913197593481954635164564e-308]", 2.2250738585072009e-308);
-        TEST_DOUBLE("[2.22507385850720113605740979670913197593481954635164565e-308]", 2.2250738585072014e-308);
+        TEST_DOUBLE("[2.22507385850720113605740979670913197593481954635164564e-308]",
+                    2.2250738585072009e-308);
+        TEST_DOUBLE("[2.22507385850720113605740979670913197593481954635164565e-308]",
+                    2.2250738585072014e-308);
 
         // 1.0 is in (1.0 - 2^-54, 1.0 + 2^-53)
         // 1.0 - 2^-54 = 0.999999999999999944488848768742172978818416595458984375
@@ -202,8 +218,10 @@ TEST_CASE("compliance tests from nativejson-benchmark") {
         TEST_DOUBLE("[10141204801825834086073718800384]", 10141204801825834086073718800384.0);
         TEST_DOUBLE("[10141204801825835211973625643008]", 10141204801825835211973625643008.0);
         TEST_DOUBLE("[10141204801825834649023672221696]", 10141204801825835211973625643008.0);
-        TEST_DOUBLE("[1014120480182583464902367222169599999e-5]", 10141204801825834086073718800384.0);
-        TEST_DOUBLE("[1014120480182583464902367222169600001e-5]", 10141204801825835211973625643008.0);
+        TEST_DOUBLE("[1014120480182583464902367222169599999e-5]",
+                    10141204801825834086073718800384.0);
+        TEST_DOUBLE("[1014120480182583464902367222169600001e-5]",
+                    10141204801825835211973625643008.0);
 
         TEST_DOUBLE("[5708990770823838890407843763683279797179383808]",
                     5708990770823838890407843763683279797179383808.0);
@@ -308,7 +326,8 @@ TEST_CASE("compliance tests from nativejson-benchmark") {
              }) {
             CAPTURE(filename)
             std::ifstream f(filename);
-            std::string json_string((std::istreambuf_iterator<char>(f)), (std::istreambuf_iterator<char>()));
+            std::string json_string((std::istreambuf_iterator<char>(f)),
+                                    (std::istreambuf_iterator<char>()));
 
             CAPTURE(json_string)
             json j = json::parse(json_string);
@@ -363,35 +382,45 @@ TEST_CASE("json.org examples") {
         CHECK_NOTHROW(f >> j);
     }
     SECTION("FILE 1.json") {
-        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY "/json.org/1.json", "r"),
+        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY
+                                                                        "/json.org/1.json",
+                                                                        "r"),
                                                              &std::fclose);
         json _;
         CHECK_NOTHROW(_ = json::parse(f.get()));
     }
 
     SECTION("FILE 2.json") {
-        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY "/json.org/2.json", "r"),
+        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY
+                                                                        "/json.org/2.json",
+                                                                        "r"),
                                                              &std::fclose);
         json _;
         CHECK_NOTHROW(_ = json::parse(f.get()));
     }
 
     SECTION("FILE 3.json") {
-        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY "/json.org/3.json", "r"),
+        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY
+                                                                        "/json.org/3.json",
+                                                                        "r"),
                                                              &std::fclose);
         json _;
         CHECK_NOTHROW(_ = json::parse(f.get()));
     }
 
     SECTION("FILE 4.json") {
-        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY "/json.org/4.json", "r"),
+        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY
+                                                                        "/json.org/4.json",
+                                                                        "r"),
                                                              &std::fclose);
         json _;
         CHECK_NOTHROW(_ = json::parse(f.get()));
     }
 
     SECTION("FILE 5.json") {
-        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY "/json.org/5.json", "r"),
+        std::unique_ptr<std::FILE, decltype(&std::fclose)> f(std::fopen(TEST_DATA_DIRECTORY
+                                                                        "/json.org/5.json",
+                                                                        "r"),
                                                              &std::fclose);
         json _;
         CHECK_NOTHROW(_ = json::parse(f.get()));
@@ -407,7 +436,9 @@ TEST_CASE("RFC 8259 examples") {
         CHECK(json::parse("\"𝄞\"") == json("𝄞"));
     }
 
-    SECTION("8.3 String Comparison") { CHECK(json::parse("\"a\\b\"") == json::parse("\"a\u005Cb\"")); }
+    SECTION("8.3 String Comparison") {
+        CHECK(json::parse("\"a\\b\"") == json::parse("\"a\u005Cb\""));
+    }
 
     SECTION("13 Examples") {
         {
@@ -468,75 +499,98 @@ TEST_CASE("nst's JSONTestSuite") {
     SECTION("test_parsing") {
         SECTION("y") {
             for (const auto* filename :
-                 {TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_arraysWithSpaces.json",
+                 {TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_arraysWithSpaces.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_empty-string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_empty.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_ending_with_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_ending_with_newline.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_false.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_heterogeneous.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_with_1_and_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_with_leading_space.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_with_several_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_array_with_trailing_space.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_with_1_and_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_with_leading_space.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_with_several_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_array_with_trailing_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_0e+1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_0e1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_after_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_double_close_to_zero.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_double_huge_neg_exp.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_double_huge_neg_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_int_with_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_minus_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_negative_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_negative_one.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_negative_zero.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_capital_e.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_negative_zero.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_real_capital_e.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_real_capital_e_neg_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_real_capital_e_pos_exp.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_exponent.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_real_exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_real_fraction_exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_neg_exp.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_pos_exponent.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_underflow.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_real_pos_exponent.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_real_underflow.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_simple_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_simple_real.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_too_big_neg_int.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_too_big_pos_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_too_big_neg_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_too_big_pos_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_very_big_negative_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_basic.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_duplicated_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_object_duplicated_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_object_duplicated_key_and_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_empty.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_empty_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_escaped_null_in_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_extreme_numbers.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_object_escaped_null_in_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_object_extreme_numbers.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_long_strings.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_simple.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_string_unicode.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_object_with_newlines.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_object_string_unicode.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_object_with_newlines.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_1_2_3_bytes_UTF-8_sequences.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                      "y_string_UTF-16_Surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/"
+                  "y_string_UTF-16_Surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_accepted_surrogate_pair.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_accepted_surrogate_pairs.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_allowed_escapes.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_allowed_escapes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_backslash_and_u_escaped_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_backslash_doublequotes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_comments.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_double_escape_a.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_double_escape_n.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_double_escape_a.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_double_escape_n.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_escaped_control_character.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -546,7 +600,8 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "y_string_in_array_with_leading_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_last_surrogates_1_and_2.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_newline_uescaped.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_newline_uescaped.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_nonCharacterInUTF-8_U+10FFFF.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -554,14 +609,19 @@ TEST_CASE("nst's JSONTestSuite") {
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_nonCharacterInUTF-8_U+FFFF.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_null_escape.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_one-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_one-byte-utf-8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_pi.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_simple_ascii.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_space.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_three-byte-utf-8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_two-byte-utf-8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_u+2028_line_sep.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_u+2029_par_sep.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_three-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_two-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_u+2028_line_sep.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_u+2029_par_sep.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_uEscape.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_string_unescaped_char_delete.json",
@@ -578,17 +638,26 @@ TEST_CASE("nst's JSONTestSuite") {
                   // TEST_DATA_DIRECTORY
                   // "/nst_json_testsuite/test_parsing/y_string_utf16.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_utf8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_string_with_del_character.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_lonely_false.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_lonely_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_string_with_del_character.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_lonely_false.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_lonely_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_structure_lonely_negative_real.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_lonely_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_lonely_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_lonely_true.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_string_empty.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_trailing_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_structure_true_in_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_lonely_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_lonely_string.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_lonely_true.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_string_empty.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_trailing_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_structure_true_in_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_structure_whitespace_array.json"}) {
                 CAPTURE(filename)
@@ -600,28 +669,36 @@ TEST_CASE("nst's JSONTestSuite") {
 
         SECTION("n") {
             for (const auto* filename :
-                 {TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_1_true_without_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_a_invalid_utf8.json",
+                 {TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_1_true_without_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_a_invalid_utf8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_array_colon_instead_of_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_comma_after_close.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_comma_and_number.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_comma_after_close.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_comma_and_number.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_double_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_double_extra_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_double_extra_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_extra_close.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_extra_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_incomplete.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_array_incomplete_invalid_value.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_inner_array_no_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_inner_array_no_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_invalid_utf8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_array_items_separated_by_semicolon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_just_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_just_minus.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_missing_value.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_newlines_unclosed.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_number_and_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_newlines_unclosed.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_number_and_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_array_number_and_several_commas.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -680,10 +757,12 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_number_invalid-utf-8-in-exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_number_invalid-utf-8-in-int.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_minus_infinity.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_number_minus_infinity.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_number_minus_sign_with_trailing_garbage.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_minus_space_1.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_number_minus_space_1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_number_neg_int_starting_with_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -696,47 +775,61 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_number_real_with_invalid_utf8_after_e.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_number_real_without_fractional_part.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_starting_with_dot.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_number_starting_with_dot.json",
                   // TEST_DATA_DIRECTORY
                   // "/nst_json_testsuite/test_parsing/n_number_then_00.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_with_alpha.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_with_alpha_char.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_number_with_leading_zero.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_number_with_alpha_char.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_number_with_leading_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_bad_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_bracket_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_comma_instead_of_colon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_double_colon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_emoji.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_garbage_at_end.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_garbage_at_end.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_key_with_single_quotes.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_missing_colon.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_missing_colon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_missing_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_missing_semicolon.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_missing_value.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_missing_semicolon.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_missing_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_no-colon.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_non_string_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_non_string_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_non_string_key_but_huge_number_instead.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_pi_in_key_and_trailing_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_repeated_null_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_repeated_null_null.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_several_trailing_commas.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_single_quote.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_trailing_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_trailing_comment.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_trailing_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_trailing_comment.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_trailing_comment_open.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_trailing_comment_slash_open.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_trailing_comment_slash_open_incomplete.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_two_commas_in_a_row.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_two_commas_in_a_row.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_unquoted_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_unterminated-value.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_with_single_string.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_unterminated-value.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_with_single_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_with_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_single_space.json",
@@ -760,8 +853,10 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_string_escaped_backslash_bad.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_escaped_ctrl_char_tab.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_escaped_emoji.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_incomplete_escape.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_escaped_emoji.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_incomplete_escape.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_incomplete_escaped_character.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -772,7 +867,8 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_string_invalid_backslash_esc.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_invalid_unicode_escape.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_invalid_utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_invalid_utf-8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_invalid_utf8_after_escape.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_iso_latin_1.json",
@@ -788,16 +884,21 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_string_overlong_sequence_6_bytes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_overlong_sequence_6_bytes_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_single_doublequote.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_single_doublequote.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_single_quote.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_single_string_no_double_quotes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_start_escape_unclosed.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_unescaped_crtl_char.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_unescaped_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_unescaped_tab.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_string_unicode_CapitalU.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_unescaped_crtl_char.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_unescaped_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_unescaped_tab.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_string_unicode_CapitalU.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_string_with_trailing_garbage.json",
                   //! TEST_DATA_DIRECTORY
@@ -806,7 +907,8 @@ TEST_CASE("nst's JSONTestSuite") {
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_3Cnull3E.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_U+2060_word_joined.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_UTF8_BOM_no_data.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_UTF8_BOM_no_data.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_array_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -815,12 +917,14 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_structure_array_with_unclosed_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_ascii-unicode-identifier.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_capitalized_True.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_capitalized_True.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_close_unopened_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_comma_instead_of_closing_brace.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_double_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_double_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_end_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_incomplete_UTF8_BOM.json",
@@ -843,7 +947,8 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_structure_object_with_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_open_array_apostrophe.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_open_array_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_open_array_comma.json",
                   //! TEST_DATA_DIRECTORY
                   //! "/nst_json_testsuite/test_parsing/n_structure_open_array_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -852,7 +957,8 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_structure_open_array_open_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_open_array_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_open_object.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_open_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_open_object_close_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -864,19 +970,24 @@ TEST_CASE("nst's JSONTestSuite") {
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_open_object_string_with_apostrophes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_open_open.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_single_point.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_single_star.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_trailing_#.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_single_point.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_single_star.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_trailing_#.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_uescaped_LF_before_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_unclosed_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_unclosed_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_unclosed_array_partial_null.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_unclosed_array_unfinished_false.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_unclosed_array_unfinished_true.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_unclosed_object.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_unclosed_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_unicode-identifier.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -895,9 +1006,11 @@ TEST_CASE("nst's JSONTestSuite") {
             // they succeed when the operator>> is used, because it does not
             // have this constraint
             for (const auto* filename :
-                 {TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_comma_after_close.json",
+                 {TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_array_comma_after_close.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_array_extra_close.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_object_trailing_comment.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_object_trailing_comment.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_object_trailing_comment_open.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
@@ -914,14 +1027,16 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "n_structure_array_with_extra_array_close.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_close_unopened_array.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_double_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_double_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_number_with_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_object_followed_by_closing_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "n_structure_object_with_trailing_garbage.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/n_structure_trailing_#.json"}) {
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/n_structure_trailing_#.json"}) {
                 CAPTURE(filename)
                 std::ifstream f(filename);
                 json j;
@@ -930,21 +1045,22 @@ TEST_CASE("nst's JSONTestSuite") {
         }
 
         SECTION("i -> y") {
-            for (const auto* filename : {// we do not pose a limit on nesting
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_structure_500_nested_arrays.json",
-                                         // we silently ignore BOMs
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_structure_UTF-8_BOM_empty_object.json",
-                                         // we accept and forward non-characters
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_string_unicode_U+10FFFE_nonchar.json",
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_string_unicode_U+1FFFE_nonchar.json",
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_string_unicode_U+FDD0_nonchar.json",
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
-                                                             "i_string_unicode_U+FFFE_nonchar.json"}) {
+            for (const auto* filename :
+                 {// we do not pose a limit on nesting
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_structure_500_nested_arrays.json",
+                  // we silently ignore BOMs
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_structure_UTF-8_BOM_empty_object.json",
+                  // we accept and forward non-characters
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_string_unicode_U+10FFFE_nonchar.json",
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_string_unicode_U+1FFFE_nonchar.json",
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_string_unicode_U+FDD0_nonchar.json",
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
+                                      "i_string_unicode_U+FFFE_nonchar.json"}) {
                 CAPTURE(filename)
                 std::ifstream f(filename);
                 json j;
@@ -955,11 +1071,13 @@ TEST_CASE("nst's JSONTestSuite") {
         // numbers that overflow during parsing
         SECTION("i/y -> n (out of range)") {
             for (const auto* filename :
-                 {TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/i_number_neg_int_huge_exp.json",
+                 {TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/i_number_neg_int_huge_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "i_number_pos_double_huge_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_huge_exp.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/y_number_real_neg_overflow.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/y_number_real_neg_overflow.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "y_number_real_pos_overflow.json"}) {
                 CAPTURE(filename)
@@ -995,7 +1113,8 @@ TEST_CASE("nst's JSONTestSuite") {
                                       "i_string_lone_second_surrogate.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/"
                                       "i_string_not_in_unicode_range.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite/test_parsing/i_string_truncated-utf-8.json"}) {
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite/test_parsing/i_string_truncated-utf-8.json"}) {
                 CAPTURE(filename)
                 std::ifstream f(filename);
                 json j;
@@ -1009,68 +1128,91 @@ TEST_CASE("nst's JSONTestSuite (2)") {
     SECTION("test_parsing") {
         SECTION("y") {
             for (const auto* filename :
-                 {TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_arraysWithSpaces.json",
+                 {TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_arraysWithSpaces.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_empty-string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_empty.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_ending_with_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_ending_with_newline.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_false.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_heterogeneous.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_heterogeneous.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_with_1_and_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_with_leading_space.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_with_several_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_array_with_trailing_space.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_with_1_and_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_with_leading_space.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_with_several_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_array_with_trailing_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_0e+1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_0e1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_after_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_number_double_close_to_zero.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_int_with_exp.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_int_with_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_minus_zero.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_negative_int.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_negative_one.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_negative_zero.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_real_capital_e.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_negative_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_negative_one.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_negative_zero.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_real_capital_e.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_number_real_capital_e_neg_exp.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_number_real_capital_e_pos_exp.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_real_exponent.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_real_exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_number_real_fraction_exponent.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_real_neg_exp.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_real_pos_exponent.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_real_neg_exp.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_number_real_pos_exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_simple_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_number_simple_real.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_basic.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_duplicated_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_object_duplicated_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_object_duplicated_key_and_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_empty.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_empty_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_object_escaped_null_in_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_extreme_numbers.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_long_strings.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_object_extreme_numbers.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_object_long_strings.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_simple.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_string_unicode.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_object_with_newlines.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_object_string_unicode.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_object_with_newlines.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_1_2_3_bytes_UTF-8_sequences.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_accepted_surrogate_pair.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_accepted_surrogate_pairs.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_allowed_escapes.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_allowed_escapes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_backslash_and_u_escaped_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_backslash_doublequotes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_comments.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_double_escape_a.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_double_escape_n.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_double_escape_a.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_double_escape_n.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_escaped_control_character.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1080,26 +1222,34 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "y_string_in_array_with_leading_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_last_surrogates_1_and_2.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_nbsp_uescaped.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_nbsp_uescaped.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_nonCharacterInUTF-8_U+10FFFF.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_nonCharacterInUTF-8_U+FFFF.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_null_escape.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_one-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_one-byte-utf-8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_pi.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_reservedCharacterInUTF-8_U+1BFFF.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_simple_ascii.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_simple_ascii.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_space.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_surrogates_U+1D11E_MUSICAL_SYMBOL_G_CLEF.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_three-byte-utf-8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_two-byte-utf-8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_u+2028_line_sep.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_u+2029_par_sep.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_three-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_two-byte-utf-8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_u+2028_line_sep.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_u+2029_par_sep.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_uEscape.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_uescaped_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_uescaped_newline.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_unescaped_char_delete.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_unicode.json",
@@ -1121,18 +1271,26 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_string_unicode_escaped_double_quote.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_utf8.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_string_with_del_character.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_lonely_false.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_lonely_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_string_with_del_character.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_lonely_false.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_lonely_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_structure_lonely_negative_real.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_lonely_null.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_lonely_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_lonely_true.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_string_empty.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_lonely_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_lonely_string.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_lonely_true.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_string_empty.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_structure_trailing_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/y_structure_true_in_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/y_structure_true_in_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "y_structure_whitespace_array.json"}) {
                 CAPTURE(filename)
@@ -1148,13 +1306,17 @@ TEST_CASE("nst's JSONTestSuite (2)") {
             for (const auto* filename :
                  {TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_array_1_true_without_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_a_invalid_utf8.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_a_invalid_utf8.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_array_colon_instead_of_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_comma_after_close.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_comma_and_number.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_comma_after_close.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_comma_and_number.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_double_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_double_extra_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_double_extra_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_extra_close.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_extra_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_incomplete.json",
@@ -1167,9 +1329,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_array_items_separated_by_semicolon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_just_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_just_minus.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_missing_value.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_newlines_unclosed.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_array_number_and_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_missing_value.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_newlines_unclosed.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_array_number_and_comma.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_array_number_and_several_commas.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1200,7 +1365,8 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0.3e+.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0.3e.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0.e1.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0_capital_E+.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_0_capital_E+.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0_capital_E.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0e+.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_0e.json",
@@ -1219,7 +1385,8 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_number_U+FF11_fullwidth_digit_one.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_expression.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_hex_1_digit.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_hex_2_digits.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_hex_2_digits.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_infinity.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_invalid+-.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1230,10 +1397,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_number_invalid-utf-8-in-exponent.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_number_invalid-utf-8-in-int.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_minus_infinity.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_minus_infinity.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_number_minus_sign_with_trailing_garbage.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_minus_space_1.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_minus_space_1.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_number_neg_int_starting_with_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1246,35 +1415,49 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_number_real_with_invalid_utf8_after_e.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_number_real_without_fractional_part.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_starting_with_dot.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_starting_with_dot.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_with_alpha.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_with_alpha_char.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_number_with_leading_zero.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_with_alpha_char.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_number_with_leading_zero.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_bad_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_bracket_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_comma_instead_of_colon.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_double_colon.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_double_colon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_emoji.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_garbage_at_end.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_garbage_at_end.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_key_with_single_quotes.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
-                                      "n_object_lone_continuation_byte_in_key_and_trailing_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_missing_colon.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/"
+                  "n_object_lone_continuation_byte_in_key_and_trailing_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_missing_colon.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_missing_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_missing_semicolon.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_missing_value.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_missing_semicolon.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_missing_value.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_no-colon.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_non_string_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_non_string_key.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_non_string_key_but_huge_number_instead.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_repeated_null_null.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_repeated_null_null.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_several_trailing_commas.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_single_quote.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_trailing_comma.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_trailing_comment.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_single_quote.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_trailing_comma.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_trailing_comment.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_trailing_comment_open.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1283,9 +1466,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_object_trailing_comment_slash_open_incomplete.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_two_commas_in_a_row.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_unquoted_key.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_unterminated-value.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_object_with_single_string.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_unquoted_key.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_unterminated-value.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_object_with_single_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_object_with_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_single_space.json",
@@ -1299,14 +1485,17 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_string_1_surrogate_then_escape_u1x.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_accentuated_char_no_quotes.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_backslash_00.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_backslash_00.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_escape_x.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_escaped_backslash_bad.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_escaped_ctrl_char_tab.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_escaped_emoji.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_incomplete_escape.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_escaped_emoji.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_incomplete_escape.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_incomplete_escaped_character.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1325,24 +1514,30 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_string_leading_uescaped_thinspace.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_no_quotes_with_bad_escape.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_single_doublequote.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_single_quote.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_single_doublequote.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_single_quote.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_single_string_no_double_quotes.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_start_escape_unclosed.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_unescaped_crtl_char.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_unescaped_newline.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_unescaped_tab.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_string_unicode_CapitalU.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_unescaped_newline.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_unescaped_tab.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_string_unicode_CapitalU.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_string_with_trailing_garbage.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_U+2060_word_joined.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_UTF8_BOM_no_data.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_angle_bracket_..json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_angle_bracket_..json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_angle_bracket_null.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1359,8 +1554,10 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_structure_close_unopened_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_comma_instead_of_closing_brace.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_double_array.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_end_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_double_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_end_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_incomplete_UTF8_BOM.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1390,7 +1587,8 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_structure_open_array_open_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_open_array_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_open_object.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_open_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_open_object_close_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1401,20 +1599,26 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                       "n_structure_open_object_open_string.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_open_object_string_with_apostrophes.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_open_open.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_single_eacute.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_single_star.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_trailing_#.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_open_open.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_single_eacute.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_single_star.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_trailing_#.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_uescaped_LF_before_string.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_unclosed_array.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_unclosed_array.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_unclosed_array_partial_null.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_unclosed_array_unfinished_false.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_unclosed_array_unfinished_true.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/n_structure_unclosed_object.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/n_structure_unclosed_object.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "n_structure_unicode-identifier.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1431,10 +1635,11 @@ TEST_CASE("nst's JSONTestSuite (2)") {
         }
 
         SECTION("n (previously overflowed)") {
-            for (const auto* filename : {TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
-                                                             "n_structure_100000_opening_arrays.json",
-                                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
-                                                             "n_structure_open_array_object.json"}) {
+            for (const auto* filename :
+                 {TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
+                                      "n_structure_100000_opening_arrays.json",
+                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
+                                      "n_structure_open_array_object.json"}) {
                 CAPTURE(filename)
                 std::ifstream f(filename);
                 CHECK(!json::accept(f));
@@ -1455,9 +1660,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                   // "/nst_json_testsuite2/test_parsing/i_number_real_neg_overflow.json",
                   // TEST_DATA_DIRECTORY
                   // "/nst_json_testsuite2/test_parsing/i_number_real_pos_overflow.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_number_real_underflow.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_number_too_big_neg_int.json",
-                  TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_number_too_big_pos_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/i_number_real_underflow.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/i_number_too_big_neg_int.json",
+                  TEST_DATA_DIRECTORY
+                  "/nst_json_testsuite2/test_parsing/i_number_too_big_pos_int.json",
                   TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                       "i_number_very_big_negative_int.json",
                   // TEST_DATA_DIRECTORY
@@ -1523,7 +1731,8 @@ TEST_CASE("nst's JSONTestSuite (2)") {
             for (const auto* filename : {
                          // TEST_DATA_DIRECTORY
                          // "/nst_json_testsuite2/test_parsing/i_number_double_huge_neg_exp.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_number_huge_exp.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_number_huge_exp.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                              "i_number_neg_int_huge_exp.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1562,10 +1771,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                              "i_string_invalid_lonely_surrogate.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                              "i_string_invalid_surrogate.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_string_invalid_utf-8.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_string_invalid_utf-8.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                              "i_string_inverted_surrogates_U+1D11E.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_string_iso_latin_1.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_string_iso_latin_1.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                              "i_string_lone_second_surrogate.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
@@ -1578,9 +1789,12 @@ TEST_CASE("nst's JSONTestSuite (2)") {
                                              "i_string_overlong_sequence_6_bytes.json",
                          TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/"
                                              "i_string_overlong_sequence_6_bytes_null.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_string_truncated-utf-8.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_string_utf16BE_no_BOM.json",
-                         TEST_DATA_DIRECTORY "/nst_json_testsuite2/test_parsing/i_string_utf16LE_no_BOM.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_string_truncated-utf-8.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_string_utf16BE_no_BOM.json",
+                         TEST_DATA_DIRECTORY
+                         "/nst_json_testsuite2/test_parsing/i_string_utf16LE_no_BOM.json",
                          // TEST_DATA_DIRECTORY
                          // "/nst_json_testsuite2/test_parsing/i_structure_500_nested_arrays.json",
                          // TEST_DATA_DIRECTORY

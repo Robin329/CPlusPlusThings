@@ -28,8 +28,8 @@
 
 class Solution {
 private:
-    bool dfs(unordered_map<string, unordered_map<string, double>> &m, unordered_map<string, bool> &visited,
-             string &start, string &end, double &res) {
+    bool dfs(unordered_map<string, unordered_map<string, double>> &m,
+             unordered_map<string, bool> &visited, string &start, string &end, double &res) {
         if (m.find(start) == m.end() || m.find(end) == m.end()) return false;
         if (start == end) return true;
 

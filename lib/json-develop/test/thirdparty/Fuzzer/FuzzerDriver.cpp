@@ -55,10 +55,12 @@ struct {
 
 static const FlagDescription FlagDescriptions[]{
 #define FUZZER_DEPRECATED_FLAG(Name) {#Name, "Deprecated; don't use", 0, nullptr, nullptr, nullptr},
-#define FUZZER_FLAG_INT(Name, Default, Description) {#Name, Description, Default, &Flags.Name, nullptr, nullptr},
+#define FUZZER_FLAG_INT(Name, Default, Description) \
+    {#Name, Description, Default, &Flags.Name, nullptr, nullptr},
 #define FUZZER_FLAG_UNSIGNED(Name, Default, Description) \
     {#Name, Description, static_cast<int>(Default), nullptr, nullptr, &Flags.Name},
-#define FUZZER_FLAG_STRING(Name, Description) {#Name, Description, 0, nullptr, &Flags.Name, nullptr},
+#define FUZZER_FLAG_STRING(Name, Description) \
+    {#Name, Description, 0, nullptr, &Flags.Name, nullptr},
 #include "FuzzerFlags.def"
 #undef FUZZER_DEPRECATED_FLAG
 #undef FUZZER_FLAG_INT
@@ -82,7 +84,8 @@ static void PrintHelp() {
 
     Printf("\nFlags: (strictly in form -flag=value)\n");
     size_t MaxFlagLen = 0;
-    for (size_t F = 0; F < kNumFlags; F++) MaxFlagLen = std::max(strlen(FlagDescriptions[F].Name), MaxFlagLen);
+    for (size_t F = 0; F < kNumFlags; F++)
+        MaxFlagLen = std::max(strlen(FlagDescriptions[F].Name), MaxFlagLen);
 
     for (size_t F = 0; F < kNumFlags; F++) {
         const auto &D = FlagDescriptions[F];
@@ -98,7 +101,8 @@ static void PrintHelp() {
 
 static const char *FlagValue(const char *Param, const char *Name) {
     size_t Len = strlen(Name);
-    if (Param[0] == '-' && strstr(Param + 1, Name) == Param + 1 && Param[Len + 1] == '=') return &Param[Len + 2];
+    if (Param[0] == '-' && strstr(Param + 1, Name) == Param + 1 && Param[Len + 1] == '=')
+        return &Param[Len + 2];
     return nullptr;
 }
 
@@ -202,7 +206,8 @@ static void WorkerThread(const std::string &Cmd, std::atomic<unsigned> *Counter,
     }
 }
 
-std::string CloneArgsWithoutX(const std::vector<std::string> &Args, const char *X1, const char *X2) {
+std::string CloneArgsWithoutX(const std::vector<std::string> &Args, const char *X1,
+                              const char *X2) {
     std::string Cmd;
     for (auto &S : Args) {
         if (FlagValue(S.c_str(), X1) || FlagValue(S.c_str(), X2)) continue;
@@ -211,7 +216,8 @@ std::string CloneArgsWithoutX(const std::vector<std::string> &Args, const char *
     return Cmd;
 }
 
-static int RunInMultipleProcesses(const std::vector<std::string> &Args, unsigned NumWorkers, unsigned NumJobs) {
+static int RunInMultipleProcesses(const std::vector<std::string> &Args, unsigned NumWorkers,
+                                  unsigned NumJobs) {
     std::atomic<unsigned> Counter(0);
     std::atomic<bool> HasErrors(false);
     std::string Cmd = CloneArgsWithoutX(Args, "jobs", "workers");
@@ -278,7 +284,8 @@ int MinimizeCrashInput(const std::vector<std::string> &Args) {
             Printf("CRASH_MIN: '%s' is small enough\n", CurrentFilePath.c_str());
             return 0;
         }
-        Printf("CRASH_MIN: minimizing crash input: '%s' (%zd bytes)\n", CurrentFilePath.c_str(), U.size());
+        Printf("CRASH_MIN: minimizing crash input: '%s' (%zd bytes)\n", CurrentFilePath.c_str(),
+               U.size());
 
         auto Cmd = BaseCmd + " " + CurrentFilePath;
 
@@ -301,7 +308,8 @@ int MinimizeCrashInput(const std::vector<std::string> &Args) {
                 CurrentFilePath = Flags.exact_artifact_path;
                 WriteToFile(U, CurrentFilePath);
             }
-            Printf("CRASH_MIN: failed to minimize beyond %s (%d bytes), exiting\n", CurrentFilePath.c_str(), U.size());
+            Printf("CRASH_MIN: failed to minimize beyond %s (%d bytes), exiting\n",
+                   CurrentFilePath.c_str(), U.size());
             return 0;
         }
         CurrentFilePath = ArtifactPath;
@@ -349,7 +357,8 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
         if (Flags.workers > 1) Printf("Running %u workers\n", Flags.workers);
     }
 
-    if (Flags.workers > 0 && Flags.jobs > 0) return RunInMultipleProcesses(Args, Flags.workers, Flags.jobs);
+    if (Flags.workers > 0 && Flags.jobs > 0)
+        return RunInMultipleProcesses(Args, Flags.workers, Flags.jobs);
 
     const size_t kMaxSaneLen = 1 << 20;
     const size_t kMinDefaultLen = 64;
@@ -378,14 +387,16 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
     Options.TraceMalloc = Flags.trace_malloc;
     Options.RssLimitMb = Flags.rss_limit_mb;
     if (Flags.runs >= 0) Options.MaxNumberOfRuns = Flags.runs;
-    if (!Inputs->empty() && !Flags.minimize_crash_internal_step) Options.OutputCorpus = (*Inputs)[0];
+    if (!Inputs->empty() && !Flags.minimize_crash_internal_step)
+        Options.OutputCorpus = (*Inputs)[0];
     Options.ReportSlowUnits = Flags.report_slow_units;
     if (Flags.artifact_prefix) Options.ArtifactPrefix = Flags.artifact_prefix;
     if (Flags.exact_artifact_path) Options.ExactArtifactPath = Flags.exact_artifact_path;
     std::vector<Unit> Dictionary;
     if (Flags.dict)
         if (!ParseDictionaryFile(FileToString(Flags.dict), &Dictionary)) return 1;
-    if (Flags.verbosity > 0 && !Dictionary.empty()) Printf("Dictionary: %zd entries\n", Dictionary.size());
+    if (Flags.verbosity > 0 && !Dictionary.empty())
+        Printf("Dictionary: %zd entries\n", Dictionary.size());
     bool DoPlainRun = AllInputsAreFiles();
     Options.SaveArtifacts = !DoPlainRun || Flags.minimize_crash_internal_step;
     Options.PrintNewCovPcs = Flags.print_pcs;
@@ -398,7 +409,8 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
 
     unsigned Seed = Flags.seed;
     // Initialize Seed.
-    if (Seed == 0) Seed = (std::chrono::system_clock::now().time_since_epoch().count() << 10) + GetPid();
+    if (Seed == 0)
+        Seed = (std::chrono::system_clock::now().time_since_epoch().count() << 10) + GetPid();
     if (Flags.verbosity) Printf("INFO: Seed: %u\n", Seed);
 
     Random Rand(Seed);
@@ -425,7 +437,8 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
     if (DoPlainRun) {
         Options.SaveArtifacts = false;
         int Runs = std::max(1, Flags.runs);
-        Printf("%s: Running %zd inputs %d time(s) each.\n", ProgName->c_str(), Inputs->size(), Runs);
+        Printf("%s: Running %zd inputs %d time(s) each.\n", ProgName->c_str(), Inputs->size(),
+               Runs);
         for (auto &Path : *Inputs) {
             auto StartTime = system_clock::now();
             Printf("Running: %s\n", Path.c_str());
@@ -460,7 +473,8 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
     UnitVector InitialCorpus;
     for (auto &Inp : *Inputs) {
         Printf("Loading corpus dir: %s\n", Inp.c_str());
-        ReadDirToVectorOfUnits(Inp.c_str(), &InitialCorpus, nullptr, TemporaryMaxLen, /*ExitOnError=*/false);
+        ReadDirToVectorOfUnits(Inp.c_str(), &InitialCorpus, nullptr, TemporaryMaxLen,
+                               /*ExitOnError=*/false);
     }
 
     if (Options.MaxLen == 0) {
@@ -471,14 +485,16 @@ int FuzzerDriver(int *argc, char ***argv, UserCallback Callback) {
 
     if (InitialCorpus.empty()) {
         InitialCorpus.push_back(Unit({'\n'})); // Valid ASCII input.
-        if (Options.Verbosity) Printf("INFO: A corpus is not provided, starting from an empty corpus\n");
+        if (Options.Verbosity)
+            Printf("INFO: A corpus is not provided, starting from an empty corpus\n");
     }
     F->ShuffleAndMinimize(&InitialCorpus);
     InitialCorpus.clear(); // Don't need this memory any more.
     F->Loop();
 
     if (Flags.verbosity)
-        Printf("Done %d runs in %zd second(s)\n", F->getTotalNumberOfRuns(), F->secondsSinceProcessStartUp());
+        Printf("Done %d runs in %zd second(s)\n", F->getTotalNumberOfRuns(),
+               F->secondsSinceProcessStartUp());
     F->PrintFinalStats();
 
     exit(0); // Don't let F destroy itself.

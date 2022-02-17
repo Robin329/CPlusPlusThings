@@ -46,7 +46,8 @@ public:
         return result;
     }
 
-    void generatePathSum(TreeNode *root, int sum, int s, vector<int> v, vector<vector<int>> &result) {
+    void generatePathSum(TreeNode *root, int sum, int s, vector<int> v,
+                         vector<vector<int>> &result) {
         if (root == NULL) return;
 
         s += root->val;

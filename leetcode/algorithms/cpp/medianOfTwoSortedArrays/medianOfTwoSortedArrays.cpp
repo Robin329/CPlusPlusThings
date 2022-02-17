@@ -30,7 +30,8 @@ int binarySearch(int A[], int low, int high, int key) {
 // Notes:
 // I feel the following methods is quite complicated, it should have a better
 // high clear and readable solution
-double findMedianSortedArrayHelper(int A[], int m, int B[], int n, int lowA, int highA, int lowB, int highB) {
+double findMedianSortedArrayHelper(int A[], int m, int B[], int n, int lowA, int highA, int lowB,
+                                   int highB) {
     // Take the A[middle], search its position in B array
     int mid = lowA + (highA - lowA) / 2;
     int pos = binarySearch(B, lowB, highB, A[mid]);

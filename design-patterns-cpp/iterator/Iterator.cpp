@@ -20,13 +20,12 @@ class ConcreteAggregate;
  * defines an interface for aggregates and it decouples your
  * client from the implementation of your collection of objects
  */
-class Aggregate
-{
+class Aggregate {
 public:
-  virtual ~Aggregate() {}
-  
-  virtual Iterator *createIterator() = 0;
-  // ...
+    virtual ~Aggregate() {}
+
+    virtual Iterator *createIterator() = 0;
+    // ...
 };
 
 /*
@@ -35,37 +34,26 @@ public:
  * that returns an Iterator for its collection
  *
  */
-class ConcreteAggregate : public Aggregate
-{
+class ConcreteAggregate : public Aggregate {
 public:
-  ConcreteAggregate( const unsigned int size )
-  {
-    list = new int[size]();
-    count = size;
-  }
-  
-  ~ConcreteAggregate()
-  {
-    delete[] list;
-  }
-  
-  Iterator *createIterator();
-  
-  unsigned int size() const
-  {
-    return count;
-  }
-  
-  int at( unsigned int index )
-  {
-    return list[ index ];
-  }
-  // ...
+    ConcreteAggregate(const unsigned int size) {
+        list = new int[size]();
+        count = size;
+    }
+
+    ~ConcreteAggregate() { delete[] list; }
+
+    Iterator *createIterator();
+
+    unsigned int size() const { return count; }
+
+    int at(unsigned int index) { return list[index]; }
+    // ...
 
 private:
-  int *list;
-  unsigned int count;
-  // ...
+    int *list;
+    unsigned int count;
+    // ...
 };
 
 /*
@@ -73,16 +61,16 @@ private:
  * provides the interface that all iterators must implement and
  * a set of methods for traversing over elements
  */
-class Iterator
-{
+class Iterator {
 public:
-  virtual ~Iterator() { /* ... */ }
-  
-  virtual void first() = 0;
-  virtual void next() = 0;
-  virtual bool isDone() const = 0;
-  virtual int currentItem() const = 0;
-  // ...
+    virtual ~Iterator() { /* ... */
+    }
+
+    virtual void first() = 0;
+    virtual void next() = 0;
+    virtual bool isDone() const = 0;
+    virtual int currentItem() const = 0;
+    // ...
 };
 
 /*
@@ -90,62 +78,45 @@ public:
  * implements the interface and is responsible for managing
  * the current position of the iterator
  */
-class ConcreteIterator : public Iterator
-{
+class ConcreteIterator : public Iterator {
 public:
-  ConcreteIterator( ConcreteAggregate *l ) :
-    list( l ), index( 0 ) {}
-  
-  ~ConcreteIterator() {}
-  
-  void first()
-  {
-    index = 0;
-  }
-  
-  void next()
-  {
-    index++;
-  }
-  
-  bool isDone() const
-  {
-    return ( index >= list->size() );
-  }
-  
-  int currentItem() const
-  {
-    if ( isDone() )
-    {
-      return -1;
+    ConcreteIterator(ConcreteAggregate *l) : list(l), index(0) {}
+
+    ~ConcreteIterator() {}
+
+    void first() { index = 0; }
+
+    void next() { index++; }
+
+    bool isDone() const { return (index >= list->size()); }
+
+    int currentItem() const {
+        if (isDone()) {
+            return -1;
+        }
+        return list->at(index);
     }
-    return list->at(index);
-  }
-  // ...
+    // ...
 
 private:
-  ConcreteAggregate *list;
-  unsigned int index;
-  // ...
+    ConcreteAggregate *list;
+    unsigned int index;
+    // ...
 };
 
-Iterator *ConcreteAggregate::createIterator()
-{
-  return new ConcreteIterator( this );
+Iterator *ConcreteAggregate::createIterator() {
+    return new ConcreteIterator(this);
 }
 
+int main() {
+    unsigned int size = 5;
+    ConcreteAggregate list = ConcreteAggregate(size);
 
-int main()
-{
-  unsigned int size = 5;
-  ConcreteAggregate list = ConcreteAggregate( size );
-  
-  Iterator *it = list.createIterator();
-  for ( ; !it->isDone(); it->next())
-  {
-    std::cout << "Item value: " << it->currentItem() << std::endl;
-  }
-  
-  delete it;
-  return 0;
+    Iterator *it = list.createIterator();
+    for (; !it->isDone(); it->next()) {
+        std::cout << "Item value: " << it->currentItem() << std::endl;
+    }
+
+    delete it;
+    return 0;
 }

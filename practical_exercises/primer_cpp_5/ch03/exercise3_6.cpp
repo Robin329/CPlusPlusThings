@@ -1,21 +1,19 @@
+#include <cctype>
 #include <iostream>
 #include <string>
-#include <cctype>
 
-using std::string;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::string;
 
-int main()
-{
-	string s = "this is a string";
+int main() {
+    string s = "this is a string";
 
-	for (auto &x : s)
-	{
-		x = 'X';
-	}
+    for (auto &x : s) {
+        x = 'X';
+    }
 
-	cout << s << endl;
-	return 0;
+    cout << s << endl;
+    return 0;
 }

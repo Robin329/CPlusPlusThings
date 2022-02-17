@@ -15,12 +15,12 @@
  * defines an interface for encapsulating the behavior associated
  * with a particular state of the Context
  */
-class State
-{
+class State {
 public:
-  virtual ~State() { /* ... */ }
-  virtual void handle() = 0;
-  // ...
+    virtual ~State() { /* ... */
+    }
+    virtual void handle() = 0;
+    // ...
 };
 
 /*
@@ -28,75 +28,59 @@ public:
  * each subclass implements a behavior associated with a state
  * of the Context
  */
-class ConcreteStateA : public State
-{
+class ConcreteStateA : public State {
 public:
-  ~ConcreteStateA() { /* ... */ }
-  
-  void handle()
-  {
-    std::cout << "State A handled." << std::endl;
-  }
-  // ...
+    ~ConcreteStateA() { /* ... */
+    }
+
+    void handle() { std::cout << "State A handled." << std::endl; }
+    // ...
 };
 
-class ConcreteStateB : public State
-{
+class ConcreteStateB : public State {
 public:
-  ~ConcreteStateB() { /* ... */ }
-  
-  void handle()
-  {
-    std::cout << "State B handled." << std::endl;
-  }
-  // ...
+    ~ConcreteStateB() { /* ... */
+    }
+
+    void handle() { std::cout << "State B handled." << std::endl; }
+    // ...
 };
 
 /*
  * Context
  * defines the interface of interest to clients
  */
-class Context
-{
+class Context {
 public:
-  Context() : state() { /* ... */ }
-  
-  ~Context()
-  {
-    delete state;
-  }
-  
-  void setState( State* const s )
-  {
-    if ( state )
-    {
-      delete state;
+    Context() : state() { /* ... */
     }
-    state = s;
-  }
-  
-  void request()
-  {
-    state->handle();
-  }
-  // ...
+
+    ~Context() { delete state; }
+
+    void setState(State *const s) {
+        if (state) {
+            delete state;
+        }
+        state = s;
+    }
+
+    void request() { state->handle(); }
+    // ...
 
 private:
-  State *state;
-  // ...
+    State *state;
+    // ...
 };
 
+int main() {
+    Context *context = new Context();
 
-int main()
-{
-  Context *context = new Context();
-  
-  context->setState( new ConcreteStateA() );
-  context->request();
-  
-  context->setState( new ConcreteStateB() );
-  context->request();
-  
-  delete context;
-  return 0;
+    context->setState(new ConcreteStateA());
+    context->request();
+
+    context->setState(new ConcreteStateB());
+    context->request();
+
+    delete context;
+    return 0;
 }

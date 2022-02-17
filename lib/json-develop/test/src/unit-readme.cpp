@@ -111,7 +111,8 @@ TEST_CASE("README" * doctest::skip()) {
 
         {
             // create object from string literal
-            json j = "{ \"happy\": true, \"pi\": 3.141 }"_json; // NOLINT(modernize-raw-string-literal)
+            json j =
+                    "{ \"happy\": true, \"pi\": 3.141 }"_json; // NOLINT(modernize-raw-string-literal)
 
             // or even nicer with a raw string literal
             auto j2 = R"(
@@ -150,7 +151,8 @@ TEST_CASE("README" * doctest::skip()) {
             CHECK(x == true);
 
             // iterate the array
-            for (json::iterator it = j.begin(); it != j.end(); ++it) // NOLINT(modernize-loop-convert)
+            for (json::iterator it = j.begin(); it != j.end();
+                 ++it) // NOLINT(modernize-loop-convert)
             {
                 std::cout << *it << '\n';
             }
@@ -197,7 +199,8 @@ TEST_CASE("README" * doctest::skip()) {
             json j_list(c_list);
             // [true, true, false, true]
 
-            std::forward_list<int64_t> c_flist{12345678909876, 23456789098765, 34567890987654, 45678909876543};
+            std::forward_list<int64_t> c_flist{12345678909876, 23456789098765, 34567890987654,
+                                               45678909876543};
             json j_flist(c_flist);
             // [12345678909876, 23456789098765, 34567890987654, 45678909876543]
 
@@ -227,11 +230,16 @@ TEST_CASE("README" * doctest::skip()) {
             json j_map(c_map);
             // {"one": 1, "two": 2, "three": 3}
 
-            std::unordered_map<const char*, float> c_umap{{"one", 1.2f}, {"two", 2.3f}, {"three", 3.4f}};
+            std::unordered_map<const char*, float> c_umap{{"one", 1.2f},
+                                                          {"two", 2.3f},
+                                                          {"three", 3.4f}};
             json j_umap(c_umap);
             // {"one": 1.2, "two": 2.3, "three": 3.4}
 
-            std::multimap<std::string, bool> c_mmap{{"one", true}, {"two", true}, {"three", false}, {"three", true}};
+            std::multimap<std::string, bool> c_mmap{{"one", true},
+                                                    {"two", true},
+                                                    {"three", false},
+                                                    {"three", true}};
             json j_mmap(c_mmap); // only one entry for key "three" is used
             // maybe {"one": true, "two": true, "three": true}
 

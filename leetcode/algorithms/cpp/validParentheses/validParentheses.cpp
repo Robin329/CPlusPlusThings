@@ -26,7 +26,8 @@ bool isValid(string s) {
         } else if (ch == '}' || ch == ']' || ch == ')') {
             if (st.empty()) return false;
             char sch = st.top();
-            if ((sch == '{' && ch == '}') || (sch == '[' && ch == ']') || (sch == '(' && ch == ')')) {
+            if ((sch == '{' && ch == '}') || (sch == '[' && ch == ']') ||
+                (sch == '(' && ch == ')')) {
                 st.pop();
             } else {
                 return false;

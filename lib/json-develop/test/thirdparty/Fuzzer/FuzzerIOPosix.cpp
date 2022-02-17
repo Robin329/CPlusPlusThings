@@ -33,7 +33,8 @@ bool IsFile(const std::string &Path) {
     return S_ISREG(St.st_mode);
 }
 
-void ListFilesInDirRecursive(const std::string &Dir, long *Epoch, std::vector<std::string> *V, bool TopDir) {
+void ListFilesInDirRecursive(const std::string &Dir, long *Epoch, std::vector<std::string> *V,
+                             bool TopDir) {
     auto E = GetEpoch(Dir);
     if (Epoch)
         if (E && *Epoch >= E) return;

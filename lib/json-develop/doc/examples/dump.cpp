@@ -24,7 +24,9 @@ int main() {
               << j_array.dump(4) << "\n\n"
               << j_array.dump(1, '\t') << "\n\n";
 
-    std::cout << "strings:" << '\n' << j_string.dump() << '\n' << j_string.dump(-1, ' ', true) << '\n';
+    std::cout << "strings:" << '\n'
+              << j_string.dump() << '\n'
+              << j_string.dump(-1, ' ', true) << '\n';
 
     // create JSON value with invalid UTF-8 byte sequence
     json j_invalid = "ä\xA9ü";

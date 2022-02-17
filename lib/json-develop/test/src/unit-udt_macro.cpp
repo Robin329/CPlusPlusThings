@@ -90,11 +90,12 @@ NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(person_without_private_data_2, age, name, met
 class person_with_private_alphabet {
 public:
     bool operator==(const person_with_private_alphabet& other) const {
-        return a == other.a && b == other.b && c == other.c && d == other.d && e == other.e && f == other.f &&
-               g == other.g && h == other.h && i == other.i && j == other.j && k == other.k && l == other.l &&
-               m == other.m && n == other.n && o == other.o && p == other.p && q == other.q && r == other.r &&
-               s == other.s && t == other.t && u == other.u && v == other.v && w == other.w && x == other.x &&
-               y == other.y && z == other.z;
+        return a == other.a && b == other.b && c == other.c && d == other.d && e == other.e &&
+                f == other.f && g == other.g && h == other.h && i == other.i && j == other.j &&
+                k == other.k && l == other.l && m == other.m && n == other.n && o == other.o &&
+                p == other.p && q == other.q && r == other.r && s == other.s && t == other.t &&
+                u == other.u && v == other.v && w == other.w && x == other.x && y == other.y &&
+                z == other.z;
     }
 
 private:
@@ -124,18 +125,19 @@ private:
     int x = 0;
     int y = 0;
     int z = 0;
-    NLOHMANN_DEFINE_TYPE_INTRUSIVE(person_with_private_alphabet, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r,
-                                   s, t, u, v, w, x, y, z)
+    NLOHMANN_DEFINE_TYPE_INTRUSIVE(person_with_private_alphabet, a, b, c, d, e, f, g, h, i, j, k, l,
+                                   m, n, o, p, q, r, s, t, u, v, w, x, y, z)
 };
 
 class person_with_public_alphabet {
 public:
     bool operator==(const person_with_public_alphabet& other) const {
-        return a == other.a && b == other.b && c == other.c && d == other.d && e == other.e && f == other.f &&
-               g == other.g && h == other.h && i == other.i && j == other.j && k == other.k && l == other.l &&
-               m == other.m && n == other.n && o == other.o && p == other.p && q == other.q && r == other.r &&
-               s == other.s && t == other.t && u == other.u && v == other.v && w == other.w && x == other.x &&
-               y == other.y && z == other.z;
+        return a == other.a && b == other.b && c == other.c && d == other.d && e == other.e &&
+                f == other.f && g == other.g && h == other.h && i == other.i && j == other.j &&
+                k == other.k && l == other.l && m == other.m && n == other.n && o == other.o &&
+                p == other.p && q == other.q && r == other.r && s == other.s && t == other.t &&
+                u == other.u && v == other.v && w == other.w && x == other.x && y == other.y &&
+                z == other.z;
     }
 
     int a = 0;
@@ -166,8 +168,8 @@ public:
     int z = 0;
 };
 
-NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(person_with_public_alphabet, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s,
-                                   t, u, v, w, x, y, z)
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(person_with_public_alphabet, a, b, c, d, e, f, g, h, i, j, k, l,
+                                   m, n, o, p, q, r, s, t, u, v, w, x, y, z)
 
 } // namespace persons
 
@@ -190,7 +192,8 @@ TEST_CASE_TEMPLATE("Serialization/deserialization via NLOHMANN_DEFINE_TYPE_INTRU
         // check exception in case of missing field
         json j = json(p1);
         j.erase("age");
-        CHECK_THROWS_WITH_AS(j.get<T>(), "[json.exception.out_of_range.403] key 'age' not found", json::out_of_range);
+        CHECK_THROWS_WITH_AS(j.get<T>(), "[json.exception.out_of_range.403] key 'age' not found",
+                             json::out_of_range);
     }
 }
 

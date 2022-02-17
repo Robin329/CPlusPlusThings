@@ -17,7 +17,8 @@ extern "C" int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
             abort();
         }
     };
-    std::thread T[] = {std::thread(C), std::thread(C), std::thread(C), std::thread(C), std::thread(C), std::thread(C)};
+    std::thread T[] = {std::thread(C), std::thread(C), std::thread(C),
+                       std::thread(C), std::thread(C), std::thread(C)};
     for (auto &X : T) X.join();
     return 0;
 }

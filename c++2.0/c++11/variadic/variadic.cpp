@@ -21,7 +21,7 @@ void _hash(size_t &seed, const T &val) {
 // (2)
 // 展开函数, 把参数分为一个普通参数和一个参数包，调用一次，参数包大小就减一
 template <typename T, typename... Args>
-void _hash(size_t &seed, const T &val, const Args &... args) {
+void _hash(size_t &seed, const T &val, const Args &...args) {
     cout << "parameter " << val << endl;
     // 递归调用自己
     _hash(seed, args...); // 上面如果不给T参数,会自己调用自己成死循环
@@ -29,7 +29,7 @@ void _hash(size_t &seed, const T &val, const Args &... args) {
 
 // 泛化版 (1)
 template <typename... Args>
-size_t _hash(const Args &... args) {
+size_t _hash(const Args &...args) {
     cout << "hash start " << endl;
     size_t seed = 10;
     // 递归调用自己

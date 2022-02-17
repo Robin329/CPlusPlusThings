@@ -30,12 +30,14 @@ static void ParseFile(benchmark::State& state, const char* filename) {
 }
 BENCHMARK_CAPTURE(ParseFile, jeopardy, TEST_DATA_DIRECTORY "/jeopardy/jeopardy.json");
 BENCHMARK_CAPTURE(ParseFile, canada, TEST_DATA_DIRECTORY "/nativejson-benchmark/canada.json");
-BENCHMARK_CAPTURE(ParseFile, citm_catalog, TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json");
+BENCHMARK_CAPTURE(ParseFile, citm_catalog,
+                  TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json");
 BENCHMARK_CAPTURE(ParseFile, twitter, TEST_DATA_DIRECTORY "/nativejson-benchmark/twitter.json");
 BENCHMARK_CAPTURE(ParseFile, floats, TEST_DATA_DIRECTORY "/regression/floats.json");
 BENCHMARK_CAPTURE(ParseFile, signed_ints, TEST_DATA_DIRECTORY "/regression/signed_ints.json");
 BENCHMARK_CAPTURE(ParseFile, unsigned_ints, TEST_DATA_DIRECTORY "/regression/unsigned_ints.json");
-BENCHMARK_CAPTURE(ParseFile, small_signed_ints, TEST_DATA_DIRECTORY "/regression/small_signed_ints.json");
+BENCHMARK_CAPTURE(ParseFile, small_signed_ints,
+                  TEST_DATA_DIRECTORY "/regression/small_signed_ints.json");
 
 //////////////////////////////////////////////////////////////////////////////
 // parse JSON from string
@@ -61,12 +63,14 @@ static void ParseString(benchmark::State& state, const char* filename) {
 }
 BENCHMARK_CAPTURE(ParseString, jeopardy, TEST_DATA_DIRECTORY "/jeopardy/jeopardy.json");
 BENCHMARK_CAPTURE(ParseString, canada, TEST_DATA_DIRECTORY "/nativejson-benchmark/canada.json");
-BENCHMARK_CAPTURE(ParseString, citm_catalog, TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json");
+BENCHMARK_CAPTURE(ParseString, citm_catalog,
+                  TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json");
 BENCHMARK_CAPTURE(ParseString, twitter, TEST_DATA_DIRECTORY "/nativejson-benchmark/twitter.json");
 BENCHMARK_CAPTURE(ParseString, floats, TEST_DATA_DIRECTORY "/regression/floats.json");
 BENCHMARK_CAPTURE(ParseString, signed_ints, TEST_DATA_DIRECTORY "/regression/signed_ints.json");
 BENCHMARK_CAPTURE(ParseString, unsigned_ints, TEST_DATA_DIRECTORY "/regression/unsigned_ints.json");
-BENCHMARK_CAPTURE(ParseString, small_signed_ints, TEST_DATA_DIRECTORY "/regression/small_signed_ints.json");
+BENCHMARK_CAPTURE(ParseString, small_signed_ints,
+                  TEST_DATA_DIRECTORY "/regression/small_signed_ints.json");
 
 //////////////////////////////////////////////////////////////////////////////
 // serialize JSON
@@ -87,17 +91,22 @@ BENCHMARK_CAPTURE(Dump, jeopardy / -, TEST_DATA_DIRECTORY "/jeopardy/jeopardy.js
 BENCHMARK_CAPTURE(Dump, jeopardy / 4, TEST_DATA_DIRECTORY "/jeopardy/jeopardy.json", 4);
 BENCHMARK_CAPTURE(Dump, canada / -, TEST_DATA_DIRECTORY "/nativejson-benchmark/canada.json", -1);
 BENCHMARK_CAPTURE(Dump, canada / 4, TEST_DATA_DIRECTORY "/nativejson-benchmark/canada.json", 4);
-BENCHMARK_CAPTURE(Dump, citm_catalog / -, TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json", -1);
-BENCHMARK_CAPTURE(Dump, citm_catalog / 4, TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json", 4);
+BENCHMARK_CAPTURE(Dump, citm_catalog / -,
+                  TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json", -1);
+BENCHMARK_CAPTURE(Dump, citm_catalog / 4,
+                  TEST_DATA_DIRECTORY "/nativejson-benchmark/citm_catalog.json", 4);
 BENCHMARK_CAPTURE(Dump, twitter / -, TEST_DATA_DIRECTORY "/nativejson-benchmark/twitter.json", -1);
 BENCHMARK_CAPTURE(Dump, twitter / 4, TEST_DATA_DIRECTORY "/nativejson-benchmark/twitter.json", 4);
 BENCHMARK_CAPTURE(Dump, floats / -, TEST_DATA_DIRECTORY "/regression/floats.json", -1);
 BENCHMARK_CAPTURE(Dump, floats / 4, TEST_DATA_DIRECTORY "/regression/floats.json", 4);
 BENCHMARK_CAPTURE(Dump, signed_ints / -, TEST_DATA_DIRECTORY "/regression/signed_ints.json", -1);
 BENCHMARK_CAPTURE(Dump, signed_ints / 4, TEST_DATA_DIRECTORY "/regression/signed_ints.json", 4);
-BENCHMARK_CAPTURE(Dump, unsigned_ints / -, TEST_DATA_DIRECTORY "/regression/unsigned_ints.json", -1);
+BENCHMARK_CAPTURE(Dump, unsigned_ints / -, TEST_DATA_DIRECTORY "/regression/unsigned_ints.json",
+                  -1);
 BENCHMARK_CAPTURE(Dump, unsigned_ints / 4, TEST_DATA_DIRECTORY "/regression/unsigned_ints.json", 4);
-BENCHMARK_CAPTURE(Dump, small_signed_ints / -, TEST_DATA_DIRECTORY "/regression/small_signed_ints.json", -1);
-BENCHMARK_CAPTURE(Dump, small_signed_ints / 4, TEST_DATA_DIRECTORY "/regression/small_signed_ints.json", 4);
+BENCHMARK_CAPTURE(Dump, small_signed_ints / -,
+                  TEST_DATA_DIRECTORY "/regression/small_signed_ints.json", -1);
+BENCHMARK_CAPTURE(Dump, small_signed_ints / 4,
+                  TEST_DATA_DIRECTORY "/regression/small_signed_ints.json", 4);
 
 BENCHMARK_MAIN();

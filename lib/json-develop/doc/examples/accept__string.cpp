@@ -19,5 +19,6 @@ int main() {
     }
     )";
 
-    std::cout << std::boolalpha << json::accept(valid_text) << ' ' << json::accept(invalid_text) << '\n';
+    std::cout << std::boolalpha << json::accept(valid_text) << ' ' << json::accept(invalid_text)
+              << '\n';
 }

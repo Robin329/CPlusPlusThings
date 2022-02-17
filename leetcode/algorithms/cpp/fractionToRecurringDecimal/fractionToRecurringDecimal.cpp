@@ -103,7 +103,8 @@ string fractionToDecimal(int numerator, int denominator) {
 }
 
 void test(int num, int deno) {
-    cout << "numerator: " << num << "\tdenominator: " << deno << "\tresult: " << fractionToDecimal(num, deno) << endl;
+    cout << "numerator: " << num << "\tdenominator: " << deno
+         << "\tresult: " << fractionToDecimal(num, deno) << endl;
 }
 
 int main(int argc, char **argv) {

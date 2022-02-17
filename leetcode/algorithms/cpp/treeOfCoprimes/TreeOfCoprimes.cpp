@@ -95,8 +95,9 @@ public:
         return result;
     }
 
-    void getCoprimesDFS(int parent, int root, vector<int> &nums, unordered_map<int, vector<int>> &graph,
-                        vector<int> &path, int pathLen, vector<vector<pair<int, int>>> &primePos, vector<int> &result) {
+    void getCoprimesDFS(int parent, int root, vector<int> &nums,
+                        unordered_map<int, vector<int>> &graph, vector<int> &path, int pathLen,
+                        vector<vector<pair<int, int>>> &primePos, vector<int> &result) {
         int max_level = -1;
         // find the previous closest prime
         for (int n = 0; n < primePos.size(); n++) {

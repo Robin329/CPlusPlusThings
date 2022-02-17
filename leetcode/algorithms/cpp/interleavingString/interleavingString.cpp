@@ -121,7 +121,8 @@ bool isInterleave_dfs(string s1, string s2, string s3) {
     return (*p1 == '\0' && *p2 == '\0' && *p3 == '\0');
 }
 
-#define TEST(s1, s2, s3) cout << s1 << ", " << s2 << " = " << s3 << " : " << isInterleave(s1, s2, s3) << endl;
+#define TEST(s1, s2, s3) \
+    cout << s1 << ", " << s2 << " = " << s3 << " : " << isInterleave(s1, s2, s3) << endl;
 int main(int argc, char **argv) {
     string s1 = "aabcc", s2 = "dbbca";
     TEST(s1, s2, "aadbbcbcac");

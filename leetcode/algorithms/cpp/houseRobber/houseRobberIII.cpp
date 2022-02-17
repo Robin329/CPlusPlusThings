@@ -113,8 +113,10 @@ public:
 
         // If root is not robbed, then 4 combinations are possible:
         //     left is robbed or not and right is either robbed or not robbed,
-        max_not_robbed = max(max_left_robbed + max_right_robbed, max_left_robbed + max_right_not_robbed,
-                             max_left_not_robbed + max_right_robbed, max_left_not_robbed + max_right_not_robbed);
+        max_not_robbed =
+                max(max_left_robbed + max_right_robbed, max_left_robbed + max_right_not_robbed,
+                    max_left_not_robbed + max_right_robbed,
+                    max_left_not_robbed + max_right_not_robbed);
     }
     int rob(TreeNode *root) {
         int robbed, not_robbed;

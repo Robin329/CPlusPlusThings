@@ -31,18 +31,20 @@ static bool IsFile(const std::string &Path, const DWORD &FileAttributes) {
 
     if (FileAttributes & FILE_ATTRIBUTE_DIRECTORY) return false;
 
-    HANDLE FileHandle(
-            CreateFileA(Path.c_str(), 0, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_FLAG_BACKUP_SEMANTICS, 0));
+    HANDLE FileHandle(CreateFileA(Path.c_str(), 0, FILE_SHARE_READ, NULL, OPEN_EXISTING,
+                                  FILE_FLAG_BACKUP_SEMANTICS, 0));
 
     if (FileHandle == INVALID_HANDLE_VALUE) {
-        Printf("CreateFileA() failed for \"%s\" (Error code: %lu).\n", Path.c_str(), GetLastError());
+        Printf("CreateFileA() failed for \"%s\" (Error code: %lu).\n", Path.c_str(),
+               GetLastError());
         return false;
     }
 
     DWORD FileType = GetFileType(FileHandle);
 
     if (FileType == FILE_TYPE_UNKNOWN) {
-        Printf("GetFileType() failed for \"%s\" (Error code: %lu).\n", Path.c_str(), GetLastError());
+        Printf("GetFileType() failed for \"%s\" (Error code: %lu).\n", Path.c_str(),
+               GetLastError());
         CloseHandle(FileHandle);
         return false;
     }
@@ -60,14 +62,16 @@ bool IsFile(const std::string &Path) {
     DWORD Att = GetFileAttributesA(Path.c_str());
 
     if (Att == INVALID_FILE_ATTRIBUTES) {
-        Printf("GetFileAttributesA() failed for \"%s\" (Error code: %lu).\n", Path.c_str(), GetLastError());
+        Printf("GetFileAttributesA() failed for \"%s\" (Error code: %lu).\n", Path.c_str(),
+               GetLastError());
         return false;
     }
 
     return IsFile(Path, Att);
 }
 
-void ListFilesInDirRecursive(const std::string &Dir, long *Epoch, std::vector<std::string> *V, bool TopDir) {
+void ListFilesInDirRecursive(const std::string &Dir, long *Epoch, std::vector<std::string> *V,
+                             bool TopDir) {
     auto E = GetEpoch(Dir);
     if (Epoch)
         if (E && *Epoch >= E) return;
@@ -100,7 +104,8 @@ void ListFilesInDirRecursive(const std::string &Dir, long *Epoch, std::vector<st
     } while (FindNextFileA(FindHandle, &FindInfo));
 
     DWORD LastError = GetLastError();
-    if (LastError != ERROR_NO_MORE_FILES) Printf("FindNextFileA failed (Error code: %lu).\n", LastError);
+    if (LastError != ERROR_NO_MORE_FILES)
+        Printf("FindNextFileA failed (Error code: %lu).\n", LastError);
 
     FindClose(FindHandle);
 

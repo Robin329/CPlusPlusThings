@@ -35,13 +35,17 @@ using nlohmann::ordered_map;
 TEST_CASE("ordered_map") {
     SECTION("constructor") {
         SECTION("constructor from iterator range") {
-            std::map<std::string, std::string> m{{"eins", "one"}, {"zwei", "two"}, {"drei", "three"}};
+            std::map<std::string, std::string> m{{"eins", "one"},
+                                                 {"zwei", "two"},
+                                                 {"drei", "three"}};
             ordered_map<std::string, std::string> om(m.begin(), m.end());
             CHECK(om.size() == 3);
         }
 
         SECTION("copy assignment") {
-            std::map<std::string, std::string> m{{"eins", "one"}, {"zwei", "two"}, {"drei", "three"}};
+            std::map<std::string, std::string> m{{"eins", "one"},
+                                                 {"zwei", "two"},
+                                                 {"drei", "three"}};
             ordered_map<std::string, std::string> om(m.begin(), m.end());
             const auto com = om;
             om.clear(); // silence a warning by forbidding having "const auto& com =

@@ -44,7 +44,8 @@ public:
         return dsf(numCourses, graph, outdepth);
     }
 
-    vector<unordered_set<int>> to_neighbor_repr(int numOfvex, vector<Val> &edges, vector<int> &outdepth) {
+    vector<unordered_set<int>> to_neighbor_repr(int numOfvex, vector<Val> &edges,
+                                                vector<int> &outdepth) {
         // std::cout << "building ... " << std::endl;
         vector<unordered_set<int>> graph(numOfvex);
         for (auto edge : edges) {

@@ -16,67 +16,59 @@
  * products implement the same interface so that the classes can refer
  * to the interface not the concrete product
  */
-class Product
-{
+class Product {
 public:
-  virtual ~Product() {}
-  
-  virtual std::string getName() = 0;
-  // ...
+    virtual ~Product() {}
+
+    virtual std::string getName() = 0;
+    // ...
 };
 
 class test {
 public:
-  test() {c = 1; d = 1.2;}
-  ~test() {}
-  int a;
-  float b;
+    test() {
+        c = 1;
+        d = 1.2;
+    }
+    ~test() {}
+    int a;
+    float b;
 
 private:
-  int c;
-  double d;
+    int c;
+    double d;
 };
 
 /*
  * Concrete Product
  * define product to be created
  */
-class ConcreteProductA : public Product
-{
+class ConcreteProductA : public Product {
 public:
-  ConcreteProductA() {}
-  ~ConcreteProductA() {}
-  
-  std::string getName()
-  {
-    return "type A";
-  }
-  // ...
+    ConcreteProductA() {}
+    ~ConcreteProductA() {}
+
+    std::string getName() { return "type A"; }
+    // ...
 };
 using namespace std;
-class ConcreteProductC : public Product
-{
+class ConcreteProductC : public Product {
 public:
+    ~ConcreteProductC() {}
 
-  ~ConcreteProductC() {}
-  
-  std::string getName();
-  // ...
+    std::string getName();
+    // ...
 };
 /*
  * Concrete Product
  * define product to be created
  */
-class ConcreteProductB : public Product
-{
+class ConcreteProductB : public Product {
 public:
-  ~ConcreteProductB() {}
-  
-  std::string getName()
-  {
-    return "type B";
-  }
-  // ...
+    ~ConcreteProductB() {}
+
+    std::string getName() { return "type B"; }
+    // ...
 };
 
 /*
@@ -84,17 +76,16 @@ public:
  * contains the implementation for all of the methods
  * to manipulate products except for the factory method
  */
-class Creator
-{
+class Creator {
 public:
-  virtual ~Creator() {}
-  
-  virtual Product* createProductA() = 0;
-  virtual Product* createProductB() = 0;
-  
-  virtual void removeProduct( Product *product ) = 0;
-  
-  // ...
+    virtual ~Creator() {}
+
+    virtual Product *createProductA() = 0;
+    virtual Product *createProductB() = 0;
+
+    virtual void removeProduct(Product *product) = 0;
+
+    // ...
 };
 
 /*
@@ -103,42 +94,30 @@ public:
  * one or more concrete products ie. it is class that has
  * the knowledge of how to create the products
  */
-class ConcreteCreator : public Creator
-{
+class ConcreteCreator : public Creator {
 public:
-  ~ConcreteCreator() {}
-  
-  Product* createProductA()
-  {
-    return new ConcreteProductA();
-  }
-  
-  Product* createProductB()
-  {
-    return new ConcreteProductB();
-  }
-  
-  void removeProduct( Product *product )
-  {
-    delete product;
-  }
-  // ...
+    ~ConcreteCreator() {}
+
+    Product *createProductA() { return new ConcreteProductA(); }
+
+    Product *createProductB() { return new ConcreteProductB(); }
+
+    void removeProduct(Product *product) { delete product; }
+    // ...
 };
 
+int main() {
+    Creator *creator = new ConcreteCreator();
 
-int main()
-{
-  Creator *creator = new ConcreteCreator();
-  
-  Product *p1 = creator->createProductA();
-  std::cout << "Product: " << p1->getName() << std::endl;
-  creator->removeProduct( p1 );
-  
-  Product *p2 = creator->createProductB();
-  std::cout << "Product: " << p2->getName() << std::endl;
-  creator->removeProduct( p2 );
-  
-  delete creator;
-  test *t = new test();
-  return 0;
+    Product *p1 = creator->createProductA();
+    std::cout << "Product: " << p1->getName() << std::endl;
+    creator->removeProduct(p1);
+
+    Product *p2 = creator->createProductB();
+    std::cout << "Product: " << p2->getName() << std::endl;
+    creator->removeProduct(p2);
+
+    delete creator;
+    test *t = new test();
+    return 0;
 }

@@ -70,7 +70,8 @@ TEST(Fuzzer, CrossOver) {
         std::set<Unit> FoundUnits, ExpectedUnitsWitThisLength;
         for (int Iter = 0; Iter < 3000; Iter++) {
             C.resize(Len);
-            size_t NewSize = MD.CrossOver(A.data(), A.size(), B.data(), B.size(), C.data(), C.size());
+            size_t NewSize =
+                    MD.CrossOver(A.data(), A.size(), B.data(), B.size(), C.data(), C.size());
             C.resize(NewSize);
             FoundUnits.insert(C);
         }
@@ -432,7 +433,9 @@ void TestAddWordFromDictionaryWithHint(Mutator M, int NumIter) {
 }
 
 TEST(FuzzerMutate, AddWordFromDictionaryWithHint1) {
-    TestAddWordFromDictionaryWithHint(&MutationDispatcher::Mutate_AddWordFromTemporaryAutoDictionary, 1 << 5);
+    TestAddWordFromDictionaryWithHint(&MutationDispatcher::
+                                              Mutate_AddWordFromTemporaryAutoDictionary,
+                                      1 << 5);
 }
 
 TEST(FuzzerMutate, AddWordFromDictionaryWithHint2) {
@@ -628,7 +631,8 @@ void EQ(const std::vector<std::string> &A, const std::vector<std::string> &B) {
     EXPECT_EQ(a, b);
 }
 
-static void Merge(const std::string &Input, const std::vector<std::string> Result, size_t NumNewFeatures) {
+static void Merge(const std::string &Input, const std::vector<std::string> Result,
+                  size_t NumNewFeatures) {
     Merger M;
     std::vector<std::string> NewFiles;
     EXPECT_TRUE(M.Parse(Input, true));

@@ -28,7 +28,8 @@
 using namespace std;
 
 // DFS
-void removeInvalidParenthesesHelper(string &s, int index, int pair, int remove_left, int remove_right, string solution,
+void removeInvalidParenthesesHelper(string &s, int index, int pair, int remove_left,
+                                    int remove_right, string solution,
                                     unordered_set<string> &result) {
     char ch = s[index];
 
@@ -41,7 +42,8 @@ void removeInvalidParenthesesHelper(string &s, int index, int pair, int remove_l
     }
     // other char, move to next one
     if (ch != '(' && ch != ')') {
-        removeInvalidParenthesesHelper(s, index + 1, pair, remove_left, remove_right, solution + ch, result);
+        removeInvalidParenthesesHelper(s, index + 1, pair, remove_left, remove_right, solution + ch,
+                                       result);
         return;
     }
 
@@ -50,10 +52,12 @@ void removeInvalidParenthesesHelper(string &s, int index, int pair, int remove_l
     if (ch == '(') {
         // revmoe it
         if (remove_left > 0) {
-            removeInvalidParenthesesHelper(s, index + 1, pair, remove_left - 1, remove_right, solution, result);
+            removeInvalidParenthesesHelper(s, index + 1, pair, remove_left - 1, remove_right,
+                                           solution, result);
         }
         // keep it
-        removeInvalidParenthesesHelper(s, index + 1, pair + 1, remove_left, remove_right, solution + ch, result);
+        removeInvalidParenthesesHelper(s, index + 1, pair + 1, remove_left, remove_right,
+                                       solution + ch, result);
     }
 
     // if we meet right one, and we need to remove right one,
@@ -61,10 +65,12 @@ void removeInvalidParenthesesHelper(string &s, int index, int pair, int remove_l
     // left already.
     if (ch == ')') {
         if (remove_right > 0) {
-            removeInvalidParenthesesHelper(s, index + 1, pair, remove_left, remove_right - 1, solution, result);
+            removeInvalidParenthesesHelper(s, index + 1, pair, remove_left, remove_right - 1,
+                                           solution, result);
         }
         if (pair > 0) {
-            removeInvalidParenthesesHelper(s, index + 1, pair - 1, remove_left, remove_right, solution + ch, result);
+            removeInvalidParenthesesHelper(s, index + 1, pair - 1, remove_left, remove_right,
+                                           solution + ch, result);
         }
     }
 }

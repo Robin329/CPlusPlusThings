@@ -43,7 +43,8 @@ TEST_CASE("Better diagnostics") {
         json j = 1;
         std::string s;
         CHECK_THROWS_WITH_AS(s = j.get<std::string>(),
-                             "[json.exception.type_error.302] type must be string, but is number", json::type_error);
+                             "[json.exception.type_error.302] type must be string, but is number",
+                             json::type_error);
     }
 
     SECTION("invalid type") {
@@ -60,7 +61,8 @@ TEST_CASE("Better diagnostics") {
         json j;
         j["object"]["object"] = true;
         CHECK_THROWS_WITH_AS(j["object"].at("not_found"),
-                             "[json.exception.out_of_range.403] (/object) key 'not_found' not found",
+                             "[json.exception.out_of_range.403] (/object) key 'not_found' not "
+                             "found",
                              json::out_of_range);
     }
 

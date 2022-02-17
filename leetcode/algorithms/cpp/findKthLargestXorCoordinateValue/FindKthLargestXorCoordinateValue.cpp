@@ -84,7 +84,8 @@ public:
 
         for (int i = 1; i < row; i++) {
             for (int j = 1; j < col; j++) {
-                xmatrix[i][j] = matrix[i][j] ^ xmatrix[i - 1][j] ^ xmatrix[i][j - 1] ^ xmatrix[i - 1][j - 1];
+                xmatrix[i][j] = matrix[i][j] ^ xmatrix[i - 1][j] ^ xmatrix[i][j - 1] ^
+                        xmatrix[i - 1][j - 1];
                 minHeap.push(xmatrix[i][j]);
             }
         }

@@ -136,7 +136,8 @@ int main(int argc, char **argv) {
 
         vector<int> num(a, a + cnt);
         actualMin = findMin(num);
-        cout << "findMin = " << actualMin << "   " << (expectedMin == actualMin ? "passed" : "failed") << endl;
+        cout << "findMin = " << actualMin << "   "
+             << (expectedMin == actualMin ? "passed" : "failed") << endl;
     }
     delete[] a;
 

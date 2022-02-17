@@ -56,7 +56,8 @@ public:
         for (int i = 1; i <= batchSize / 2; i++) {
             if (reminder[i] == 0 || reminder[batchSize - i] == 0) continue;
 
-            int m = (i == batchSize - i) ? reminder[i] / 2 : min(reminder[i], reminder[batchSize - i]);
+            int m = (i == batchSize - i) ? reminder[i] / 2
+                                         : min(reminder[i], reminder[batchSize - i]);
 
             reminder[i] -= m;
             reminder[batchSize - i] -= m;

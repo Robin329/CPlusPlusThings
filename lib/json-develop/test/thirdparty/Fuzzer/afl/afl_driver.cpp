@@ -142,7 +142,8 @@ static void write_extra_stats() {
 
     if (peak_rss < previous_peak_rss) peak_rss = previous_peak_rss;
 
-    int chars_printed = fprintf(extra_stats_file, kExtraStatsFormatString, peak_rss, slowest_unit_time_secs);
+    int chars_printed =
+            fprintf(extra_stats_file, kExtraStatsFormatString, peak_rss, slowest_unit_time_secs);
 
     CHECK_ERROR(chars_printed != 0, "Failed to write extra_stats_file");
 
@@ -180,7 +181,8 @@ static void maybe_initialize_extra_stats() {
 
     // If extra_stats_file already exists: read old stats from it.
     if (extra_stats_file) {
-        int matches = fscanf(extra_stats_file, kExtraStatsFormatString, &previous_peak_rss, &slowest_unit_time_secs);
+        int matches = fscanf(extra_stats_file, kExtraStatsFormatString, &previous_peak_rss,
+                             &slowest_unit_time_secs);
 
         // Make sure we have read a real extra stats file and that we have used it
         // to set slowest_unit_time_secs and previous_peak_rss.

@@ -101,7 +101,8 @@ public:
 class Solution {
 private:
     template <typename T1, typename T2>
-    void processOrder(T1 &q1, T2 &q2, COMP op, int price, int amount, string n1 = "q1", string n2 = "q2") {
+    void processOrder(T1 &q1, T2 &q2, COMP op, int price, int amount, string n1 = "q1",
+                      string n2 = "q2") {
         if (q2.size() == 0) {
             q1.push(Order{price, amount});
             return;

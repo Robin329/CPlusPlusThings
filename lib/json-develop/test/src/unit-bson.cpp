@@ -43,52 +43,59 @@ TEST_CASE("BSON") {
         SECTION("null") {
             json j = nullptr;
             CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-            CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, "
-                                                "top-level type must be object, but is null");
+            CHECK_THROWS_WITH(json::to_bson(j),
+                              "[json.exception.type_error.317] to serialize to BSON, "
+                              "top-level type must be object, but is null");
         }
 
         SECTION("boolean") {
             SECTION("true") {
                 json j = true;
                 CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-                CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, top-level "
-                                                    "type must be object, but is boolean");
+                CHECK_THROWS_WITH(json::to_bson(j),
+                                  "[json.exception.type_error.317] to serialize to BSON, top-level "
+                                  "type must be object, but is boolean");
             }
 
             SECTION("false") {
                 json j = false;
                 CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-                CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, top-level "
-                                                    "type must be object, but is boolean");
+                CHECK_THROWS_WITH(json::to_bson(j),
+                                  "[json.exception.type_error.317] to serialize to BSON, top-level "
+                                  "type must be object, but is boolean");
             }
         }
 
         SECTION("number") {
             json j = 42;
             CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-            CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, "
-                                                "top-level type must be object, but is number");
+            CHECK_THROWS_WITH(json::to_bson(j),
+                              "[json.exception.type_error.317] to serialize to BSON, "
+                              "top-level type must be object, but is number");
         }
 
         SECTION("float") {
             json j = 4.2;
             CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-            CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, "
-                                                "top-level type must be object, but is number");
+            CHECK_THROWS_WITH(json::to_bson(j),
+                              "[json.exception.type_error.317] to serialize to BSON, "
+                              "top-level type must be object, but is number");
         }
 
         SECTION("string") {
             json j = "not supported";
             CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-            CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, "
-                                                "top-level type must be object, but is string");
+            CHECK_THROWS_WITH(json::to_bson(j),
+                              "[json.exception.type_error.317] to serialize to BSON, "
+                              "top-level type must be object, but is string");
         }
 
         SECTION("array") {
             json j = std::vector<int>{1, 2, 3, 4, 5, 6, 7};
             CHECK_THROWS_AS(json::to_bson(j), json::type_error&);
-            CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.type_error.317] to serialize to BSON, "
-                                                "top-level type must be object, but is array");
+            CHECK_THROWS_WITH(json::to_bson(j),
+                              "[json.exception.type_error.317] to serialize to BSON, "
+                              "top-level type must be object, but is array");
         }
     }
 
@@ -96,11 +103,13 @@ TEST_CASE("BSON") {
         json j = {{std::string("en\0try", 6), true}};
         CHECK_THROWS_AS(json::to_bson(j), json::out_of_range&);
 #if JSON_DIAGNOSTICS
-        CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.out_of_range.409] (/en) BSON key cannot "
-                                            "contain code point U+0000 (at byte 2)");
+        CHECK_THROWS_WITH(json::to_bson(j),
+                          "[json.exception.out_of_range.409] (/en) BSON key cannot "
+                          "contain code point U+0000 (at byte 2)");
 #else
-        CHECK_THROWS_WITH(json::to_bson(j), "[json.exception.out_of_range.409] BSON key cannot "
-                                            "contain code point U+0000 (at byte 2)");
+        CHECK_THROWS_WITH(json::to_bson(j),
+                          "[json.exception.out_of_range.409] BSON key cannot "
+                          "contain code point U+0000 (at byte 2)");
 #endif
     }
 
@@ -109,9 +118,10 @@ TEST_CASE("BSON") {
         std::vector<std::uint8_t> v = {0x20, 0x20, 0x20, 0x20, 0x02, 0x00, 0x00, 0x00, 0x00, 0x80};
         json _;
         CHECK_THROWS_AS(_ = json::from_bson(v), json::parse_error&);
-        CHECK_THROWS_WITH(_ = json::from_bson(v), "[json.exception.parse_error.112] parse error at byte "
-                                                  "10: syntax error while parsing BSON string: string "
-                                                  "length must be at least 1, is -2147483648");
+        CHECK_THROWS_WITH(_ = json::from_bson(v),
+                          "[json.exception.parse_error.112] parse error at byte "
+                          "10: syntax error while parsing BSON string: string "
+                          "length must be at least 1, is -2147483648");
     }
 
     SECTION("objects") {
@@ -175,7 +185,8 @@ TEST_CASE("BSON") {
             std::vector<std::uint8_t> expected = {
                     0x14, 0x00, 0x00, 0x00, // size (little endian)
                     0x01,                   /// entry: double
-                    'e',  'n',  't',  'r',  'y', '\x00', 0xcd, 0xcc, 0xcc, 0xcc, 0xcc, 0xcc, 0x10, 0x40,
+                    'e',  'n',  't',  'r',  'y',  '\x00', 0xcd,
+                    0xcc, 0xcc, 0xcc, 0xcc, 0xcc, 0x10,   0x40,
                     0x00 // end marker
             };
 
@@ -248,7 +259,8 @@ TEST_CASE("BSON") {
             std::vector<std::uint8_t> expected = {
                     0x14, 0x00, 0x00, 0x00, // size (little endian)
                     0x12,                   /// entry: int64
-                    'e',  'n',  't',  'r',  'y', '\x00', 0x01, 0x02, 0x03, 0x04, 0x78, 0x56, 0x34, 0x12,
+                    'e',  'n',  't',  'r',  'y',  '\x00', 0x01,
+                    0x02, 0x03, 0x04, 0x78, 0x56, 0x34,   0x12,
                     0x00 // end marker
             };
 
@@ -304,7 +316,8 @@ TEST_CASE("BSON") {
             std::vector<std::uint8_t> expected = {
                     0x14, 0x00, 0x00, 0x00, // size (little endian)
                     0x12,                   /// entry: int64
-                    'e',  'n',  't',  'r',  'y', '\x00', 0x01, 0x02, 0x03, 0x04, 0x78, 0x56, 0x34, 0x12,
+                    'e',  'n',  't',  'r',  'y',  '\x00', 0x01,
+                    0x02, 0x03, 0x04, 0x78, 0x56, 0x34,   0x12,
                     0x00 // end marker
             };
 
@@ -389,10 +402,11 @@ TEST_CASE("BSON") {
                     'e',  'n',  't',  'r',  'y',  '\x00',
 
                     0x3D, 0x00, 0x00, 0x00, // size (little endian)
-                    0x10, '0',  0x00, 0x01, 0x00, 0x00,   0x00, 0x10, '1', 0x00, 0x02, 0x00, 0x00, 0x00,
-                    0x10, '2',  0x00, 0x03, 0x00, 0x00,   0x00, 0x10, '3', 0x00, 0x04, 0x00, 0x00, 0x00,
-                    0x10, '4',  0x00, 0x05, 0x00, 0x00,   0x00, 0x10, '5', 0x00, 0x06, 0x00, 0x00, 0x00,
-                    0x10, '6',  0x00, 0x07, 0x00, 0x00,   0x00, 0x10, '7', 0x00, 0x08, 0x00, 0x00, 0x00,
+                    0x10, '0',  0x00, 0x01, 0x00, 0x00,   0x00, 0x10, '1',  0x00, 0x02, 0x00,
+                    0x00, 0x00, 0x10, '2',  0x00, 0x03,   0x00, 0x00, 0x00, 0x10, '3',  0x00,
+                    0x04, 0x00, 0x00, 0x00, 0x10, '4',    0x00, 0x05, 0x00, 0x00, 0x00, 0x10,
+                    '5',  0x00, 0x06, 0x00, 0x00, 0x00,   0x10, '6',  0x00, 0x07, 0x00, 0x00,
+                    0x00, 0x10, '7',  0x00, 0x08, 0x00,   0x00, 0x00,
                     0x00, // end marker (embedded document)
 
                     0x00 // end marker
@@ -433,8 +447,9 @@ TEST_CASE("BSON") {
 
         SECTION("non-empty object with binary member with subtype") {
             // an MD5 hash
-            const std::vector<std::uint8_t> md5hash = {0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12, 0x37, 0xfe,
-                                                       0xd6, 0x0c, 0x33, 0x98, 0x30, 0x3b, 0x8d, 0xc4};
+            const std::vector<std::uint8_t> md5hash = {0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12,
+                                                       0x37, 0xfe, 0xd6, 0x0c, 0x33, 0x98,
+                                                       0x30, 0x3b, 0x8d, 0xc4};
             json j = {{"entry", json::binary(md5hash, 5)}};
 
             std::vector<std::uint8_t> expected = {
@@ -444,7 +459,8 @@ TEST_CASE("BSON") {
 
                     0x10, 0x00, 0x00, 0x00, // size of binary (little endian)
                     0x05,                   // MD5 binary subtype
-                    0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12,   0x37, 0xfe, 0xd6, 0x0c, 0x33, 0x98, 0x30, 0x3b, 0x8d, 0xc4,
+                    0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12,   0x37, 0xfe,
+                    0xd6, 0x0c, 0x33, 0x98, 0x30, 0x3b,   0x8d, 0xc4,
 
                     0x00 // end marker
             };
@@ -460,7 +476,10 @@ TEST_CASE("BSON") {
         SECTION("Some more complex document") {
             // directly encoding uint64 is not supported in bson (only for timestamp
             // values)
-            json j = {{"double", 42.5}, {"entry", 4.2}, {"number", 12345}, {"object", {{"string", "value"}}}};
+            json j = {{"double", 42.5},
+                      {"entry", 4.2},
+                      {"number", 12345},
+                      {"object", {{"string", "value"}}}};
 
             std::vector<std::uint8_t> expected = {/*size */ 0x4f,
                                                   0x00,
@@ -553,8 +572,9 @@ TEST_CASE("BSON") {
 
     SECTION("Examples from http://bsonspec.org/faq.html") {
         SECTION("Example 1") {
-            std::vector<std::uint8_t> input = {0x16, 0x00, 0x00, 0x00, 0x02, 'h', 'e', 'l', 'l', 'o',  0x00,
-                                               0x06, 0x00, 0x00, 0x00, 'w',  'o', 'r', 'l', 'd', 0x00, 0x00};
+            std::vector<std::uint8_t> input = {0x16, 0x00, 0x00, 0x00, 0x02, 'h',  'e',  'l',
+                                               'l',  'o',  0x00, 0x06, 0x00, 0x00, 0x00, 'w',
+                                               'o',  'r',  'l',  'd',  0x00, 0x00};
             json parsed = json::from_bson(input);
             json expected = {{"hello", "world"}};
             CHECK(parsed == expected);
@@ -564,11 +584,12 @@ TEST_CASE("BSON") {
         }
 
         SECTION("Example 2") {
-            std::vector<std::uint8_t> input = {0x31, 0x00, 0x00, 0x00, 0x04, 'B',  'S',  'O',  'N',  0x00,
-                                               0x26, 0x00, 0x00, 0x00, 0x02, 0x30, 0x00, 0x08, 0x00, 0x00,
-                                               0x00, 'a',  'w',  'e',  's',  'o',  'm',  'e',  0x00, 0x01,
-                                               0x31, 0x00, 0x33, 0x33, 0x33, 0x33, 0x33, 0x33, 0x14, 0x40,
-                                               0x10, 0x32, 0x00, 0xc2, 0x07, 0x00, 0x00, 0x00, 0x00};
+            std::vector<std::uint8_t> input = {0x31, 0x00, 0x00, 0x00, 0x04, 'B',  'S',  'O',  'N',
+                                               0x00, 0x26, 0x00, 0x00, 0x00, 0x02, 0x30, 0x00, 0x08,
+                                               0x00, 0x00, 0x00, 'a',  'w',  'e',  's',  'o',  'm',
+                                               'e',  0x00, 0x01, 0x31, 0x00, 0x33, 0x33, 0x33, 0x33,
+                                               0x33, 0x33, 0x14, 0x40, 0x10, 0x32, 0x00, 0xc2, 0x07,
+                                               0x00, 0x00, 0x00, 0x00};
             json parsed = json::from_bson(input);
             json expected = {{"BSON", {"awesome", 5.05, 1986}}};
             CHECK(parsed == expected);
@@ -580,7 +601,10 @@ TEST_CASE("BSON") {
 }
 
 TEST_CASE("BSON input/output_adapters") {
-    json json_representation = {{"double", 42.5}, {"entry", 4.2}, {"number", 12345}, {"object", {{"string", "value"}}}};
+    json json_representation = {{"double", 42.5},
+                                {"entry", 4.2},
+                                {"number", 12345},
+                                {"object", {{"string", "value"}}}};
 
     std::vector<std::uint8_t> bson_representation = {/*size */ 0x4f,
                                                      0x00,
@@ -705,7 +729,9 @@ public:
 
     bool number_unsigned(json::number_unsigned_t /*unused*/) { return events_left-- > 0; }
 
-    bool number_float(json::number_float_t /*unused*/, const std::string& /*unused*/) { return events_left-- > 0; }
+    bool number_float(json::number_float_t /*unused*/, const std::string& /*unused*/) {
+        return events_left-- > 0;
+    }
 
     bool string(std::string& /*unused*/) { return events_left-- > 0; }
 
@@ -721,8 +747,10 @@ public:
 
     bool end_array() { return events_left-- > 0; }
 
-    bool parse_error(std::size_t /*unused*/, const std::string& /*unused*/,
-                     const json::exception& /*unused*/) // NOLINT(readability-convert-member-functions-to-static)
+    bool parse_error(
+            std::size_t /*unused*/, const std::string& /*unused*/,
+            const json::
+                    exception& /*unused*/) // NOLINT(readability-convert-member-functions-to-static)
     {
         return false;
     }
@@ -834,7 +862,8 @@ TEST_CASE("Negative size of binary value") {
 
             0xFF, 0xFF, 0xFF, 0xFF, // size of binary (little endian)
             0x05,                   // MD5 binary subtype
-            0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12,   0x37, 0xfe, 0xd6, 0x0c, 0x33, 0x98, 0x30, 0x3b, 0x8d, 0xc4,
+            0xd7, 0x7e, 0x27, 0x54, 0xbe, 0x12,   0x37, 0xfe,
+            0xd6, 0x0c, 0x33, 0x98, 0x30, 0x3b,   0x8d, 0xc4,
 
             0x00 // end marker
     };
@@ -855,8 +884,9 @@ TEST_CASE("Unsupported BSON input") {
 
     json _;
     CHECK_THROWS_AS(_ = json::from_bson(bson), json::parse_error&);
-    CHECK_THROWS_WITH(_ = json::from_bson(bson), "[json.exception.parse_error.114] parse error at byte 5: "
-                                                 "Unsupported BSON record type 0xFF");
+    CHECK_THROWS_WITH(_ = json::from_bson(bson),
+                      "[json.exception.parse_error.114] parse error at byte 5: "
+                      "Unsupported BSON record type 0xFF");
     CHECK(json::from_bson(bson, true, false).is_discarded());
 
     SaxCountdown scp(0);
@@ -923,11 +953,13 @@ TEST_CASE("BSON numerical data") {
             }
 
             SECTION("signed std::int32_t: INT32_MIN .. INT32_MAX") {
-                std::vector<int32_t> numbers{INT32_MIN, -2147483647L, -1000000000L, -100000000L, -10000000L,
-                                             -1000000L, -100000L,     -10000L,      -1000L,      -100L,
-                                             -10L,      -1L,          0L,           1L,          10L,
-                                             100L,      1000L,        10000L,       100000L,     1000000L,
-                                             10000000L, 100000000L,   1000000000L,  2147483646L, INT32_MAX};
+                std::vector<int32_t> numbers{INT32_MIN,  -2147483647L, -1000000000L, -100000000L,
+                                             -10000000L, -1000000L,    -100000L,     -10000L,
+                                             -1000L,     -100L,        -10L,         -1L,
+                                             0L,         1L,           10L,          100L,
+                                             1000L,      10000L,       100000L,      1000000L,
+                                             10000000L,  100000000L,   1000000000L,  2147483646L,
+                                             INT32_MAX};
 
                 for (auto i : numbers) {
                     CAPTURE(i)
@@ -1175,13 +1207,17 @@ TEST_CASE("BSON numerical data") {
                     CHECK_THROWS_AS(json::to_bson(j), json::out_of_range&);
 #if JSON_DIAGNOSTICS
                     CHECK_THROWS_WITH_STD_STR(json::to_bson(j),
-                                              "[json.exception.out_of_range.407] (/entry) integer number " +
+                                              "[json.exception.out_of_range.407] (/entry) integer "
+                                              "number " +
                                                       std::to_string(i) +
-                                                      " cannot be represented by BSON as it does not fit int64");
+                                                      " cannot be represented by BSON as it does "
+                                                      "not fit int64");
 #else
                     CHECK_THROWS_WITH_STD_STR(json::to_bson(j),
-                                              "[json.exception.out_of_range.407] integer number " + std::to_string(i) +
-                                                      " cannot be represented by BSON as it does not fit int64");
+                                              "[json.exception.out_of_range.407] integer number " +
+                                                      std::to_string(i) +
+                                                      " cannot be represented by BSON as it does "
+                                                      "not fit int64");
 #endif
                 }
             }
@@ -1191,9 +1227,10 @@ TEST_CASE("BSON numerical data") {
 
 TEST_CASE("BSON roundtrips" * doctest::skip()) {
     SECTION("reference files") {
-        for (std::string filename : {TEST_DATA_DIRECTORY "/json.org/1.json", TEST_DATA_DIRECTORY "/json.org/2.json",
-                                     TEST_DATA_DIRECTORY "/json.org/3.json", TEST_DATA_DIRECTORY "/json.org/4.json",
-                                     TEST_DATA_DIRECTORY "/json.org/5.json"}) {
+        for (std::string filename :
+             {TEST_DATA_DIRECTORY "/json.org/1.json", TEST_DATA_DIRECTORY "/json.org/2.json",
+              TEST_DATA_DIRECTORY "/json.org/3.json", TEST_DATA_DIRECTORY "/json.org/4.json",
+              TEST_DATA_DIRECTORY "/json.org/5.json"}) {
             CAPTURE(filename)
 
             {

@@ -53,7 +53,8 @@ private:
 
 public:
     int maximumUnits(vector<vector<int>> &boxTypes, int truckSize) {
-        sort(boxTypes.begin(), boxTypes.end(), [&](vector<int> &lhs, vector<int> &rhs) { return lhs[1] > rhs[1]; });
+        sort(boxTypes.begin(), boxTypes.end(),
+             [&](vector<int> &lhs, vector<int> &rhs) { return lhs[1] > rhs[1]; });
         // print(boxTypes);
         int units = 0;
         for (auto &box : boxTypes) {

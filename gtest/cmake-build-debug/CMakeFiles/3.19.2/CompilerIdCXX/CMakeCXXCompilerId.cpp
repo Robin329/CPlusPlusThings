@@ -262,7 +262,8 @@
 #define COMPILER_VERSION_TWEAK DEC(_MSC_BUILD)
 #endif
 
-#elif defined(__VISUALDSPVERSION__) || defined(__ADSPBLACKFIN__) || defined(__ADSPTS__) || defined(__ADSP21000__)
+#elif defined(__VISUALDSPVERSION__) || defined(__ADSPBLACKFIN__) || defined(__ADSPTS__) || \
+        defined(__ADSP21000__)
 #define COMPILER_ID "ADSP"
 #if defined(__VISUALDSPVERSION__)
 /* __VISUALDSPVERSION__ = 0xVVRRPP00 */
@@ -278,9 +279,10 @@
 #define COMPILER_VERSION_MINOR DEC(((__VER__) / 1000) % 1000)
 #define COMPILER_VERSION_PATCH DEC((__VER__) % 1000)
 #define COMPILER_VERSION_INTERNAL DEC(__IAR_SYSTEMS_ICC__)
-#elif defined(__VER__) &&                                                                              \
-        (defined(__ICCAVR__) || defined(__ICCRX__) || defined(__ICCRH850__) || defined(__ICCRL78__) || \
-         defined(__ICC430__) || defined(__ICCRISCV__) || defined(__ICCV850__) || defined(__ICC8051__))
+#elif defined(__VER__) &&                                                        \
+        (defined(__ICCAVR__) || defined(__ICCRX__) || defined(__ICCRH850__) ||   \
+         defined(__ICCRL78__) || defined(__ICC430__) || defined(__ICCRISCV__) || \
+         defined(__ICCV850__) || defined(__ICC8051__))
 #define COMPILER_VERSION_MAJOR DEC((__VER__) / 100)
 #define COMPILER_VERSION_MINOR DEC((__VER__) - (((__VER__) / 100) * 100))
 #define COMPILER_VERSION_PATCH DEC(__SUBVERSION__)
@@ -553,15 +555,17 @@ char const* info_cray = "INFO"
 #endif
 
 /* Convert integer to decimal digit literals.  */
-#define DEC(n)                                                                                      \
-    ('0' + (((n) / 10000000) % 10)), ('0' + (((n) / 1000000) % 10)), ('0' + (((n) / 100000) % 10)), \
-            ('0' + (((n) / 10000) % 10)), ('0' + (((n) / 1000) % 10)), ('0' + (((n) / 100) % 10)),  \
-            ('0' + (((n) / 10) % 10)), ('0' + ((n) % 10))
+#define DEC(n)                                                                                  \
+    ('0' + (((n) / 10000000) % 10)), ('0' + (((n) / 1000000) % 10)),                            \
+            ('0' + (((n) / 100000) % 10)), ('0' + (((n) / 10000) % 10)),                        \
+            ('0' + (((n) / 1000) % 10)), ('0' + (((n) / 100) % 10)), ('0' + (((n) / 10) % 10)), \
+            ('0' + ((n) % 10))
 
 /* Convert integer to hex digit literals.  */
-#define HEX(n)                                                                                                  \
-    ('0' + ((n) >> 28 & 0xF)), ('0' + ((n) >> 24 & 0xF)), ('0' + ((n) >> 20 & 0xF)), ('0' + ((n) >> 16 & 0xF)), \
-            ('0' + ((n) >> 12 & 0xF)), ('0' + ((n) >> 8 & 0xF)), ('0' + ((n) >> 4 & 0xF)), ('0' + ((n)&0xF))
+#define HEX(n)                                                                              \
+    ('0' + ((n) >> 28 & 0xF)), ('0' + ((n) >> 24 & 0xF)), ('0' + ((n) >> 20 & 0xF)),        \
+            ('0' + ((n) >> 16 & 0xF)), ('0' + ((n) >> 12 & 0xF)), ('0' + ((n) >> 8 & 0xF)), \
+            ('0' + ((n) >> 4 & 0xF)), ('0' + ((n)&0xF))
 
 /* Construct a string literal encoding the version number components. */
 #ifdef COMPILER_VERSION_MAJOR

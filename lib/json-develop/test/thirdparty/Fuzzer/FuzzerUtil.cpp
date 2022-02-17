@@ -107,7 +107,8 @@ bool ParseOneDictionaryEntry(const std::string &Str, Unit *U) {
                 continue;
             }
             // Handle '\xAB'
-            if (Pos + 3 <= R && Str[Pos + 1] == 'x' && isxdigit(Str[Pos + 2]) && isxdigit(Str[Pos + 3])) {
+            if (Pos + 3 <= R && Str[Pos + 1] == 'x' && isxdigit(Str[Pos + 2]) &&
+                isxdigit(Str[Pos + 3])) {
                 char Hex[] = "0xAA";
                 Hex[2] = Str[Pos + 2];
                 Hex[3] = Str[Pos + 3];
@@ -181,7 +182,8 @@ std::string Base64(const Unit &U) {
 std::string DescribePC(const char *SymbolizedFMT, uintptr_t PC) {
     if (!EF->__sanitizer_symbolize_pc) return "<can not symbolize>";
     char PcDescr[1024];
-    EF->__sanitizer_symbolize_pc(reinterpret_cast<void *>(PC), SymbolizedFMT, PcDescr, sizeof(PcDescr));
+    EF->__sanitizer_symbolize_pc(reinterpret_cast<void *>(PC), SymbolizedFMT, PcDescr,
+                                 sizeof(PcDescr));
     PcDescr[sizeof(PcDescr) - 1] = 0; // Just in case.
     return PcDescr;
 }

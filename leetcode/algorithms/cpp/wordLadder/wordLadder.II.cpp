@@ -73,7 +73,8 @@ using namespace std;
 //        |                                  |
 //        +----------------------------------+
 
-map<string, unordered_set<string>> &buildTree(string &start, string &end, unordered_set<string> &dict) {
+map<string, unordered_set<string>> &buildTree(string &start, string &end,
+                                              unordered_set<string> &dict) {
     static map<string, unordered_set<string>> parents;
     parents.clear();
 
@@ -122,8 +123,8 @@ map<string, unordered_set<string>> &buildTree(string &start, string &end, unorde
     return parents;
 }
 
-void generatePath(string start, string end, map<string, unordered_set<string>> &parents, vector<string> path,
-                  vector<vector<string>> &paths) {
+void generatePath(string start, string end, map<string, unordered_set<string>> &parents,
+                  vector<string> path, vector<vector<string>> &paths) {
     if (parents.find(start) == parents.end()) {
         if (start == end) {
             paths.push_back(path);
@@ -173,7 +174,8 @@ int main(int argc, char **argv) {
     string start = "hit";
     string end = "cog";
     // unordered_set<string> dict ({"hot","dot","dog","lot","log"});
-    unordered_set<string> dict({"bot", "cig", "cog", "dit", "dut", "hot", "hit", "dot", "dog", "lot", "log"});
+    unordered_set<string> dict(
+            {"bot", "cig", "cog", "dit", "dut", "hot", "hit", "dot", "dog", "lot", "log"});
 
     vector<vector<string>> ladders;
     ladders = findLadders(start, end, dict);

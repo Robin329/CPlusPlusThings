@@ -81,8 +81,8 @@ void PrintMat(cv::Mat A) {
     for (int i = 0; i < A.rows; i++) {
         for (int j = 0; j < A.cols; j++)
             //      cout << A.at<float>(i, j) << ' ';
-            printf("%d %d %d %d\n", A.at<cv::Vec3b>(i, j)[0], A.at<cv::Vec3b>(i, j)[1], A.at<cv::Vec3b>(i, j)[2],
-                   A.at<cv::Vec3b>(i, j)[3]);
+            printf("%d %d %d %d\n", A.at<cv::Vec3b>(i, j)[0], A.at<cv::Vec3b>(i, j)[1],
+                   A.at<cv::Vec3b>(i, j)[2], A.at<cv::Vec3b>(i, j)[3]);
         cout << endl;
     }
     cout << endl;
@@ -91,7 +91,8 @@ void PrintMat(cv::Mat A) {
 void printMat1(cv::Mat H) {
     for (int i = 0; i < H.rows; i++) {
         for (int j = 0; j < H.cols * H.elemSize(); j++) {
-            printf("H.data[%lu]: %d\n", i * H.cols * H.elemSize() + j, H.data[i * H.cols * H.elemSize() + j]);
+            printf("H.data[%lu]: %d\n", i * H.cols * H.elemSize() + j,
+                   H.data[i * H.cols * H.elemSize() + j]);
         }
     }
 }

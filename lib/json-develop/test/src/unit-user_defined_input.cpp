@@ -116,7 +116,8 @@ TEST_CASE("Custom iterator") {
     CHECK(std::is_same<MyIterator::iterator_category, std::input_iterator_tag>::value);
 
     MyIterator begin{raw_data};
-    MyIterator end{raw_data + strlen(raw_data)}; // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
+    MyIterator end{raw_data +
+                   strlen(raw_data)}; // NOLINT(cppcoreguidelines-pro-bounds-pointer-arithmetic)
 
     json as_json = json::parse(begin, end);
     CHECK(as_json.at(0) == 1);

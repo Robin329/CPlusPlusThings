@@ -40,7 +40,7 @@ int hello(int a) {
 char *hello1(void) {
     char *ret = nullptr;
     int a = -1;
-    ret = (char *) &a;
+    ret = (char *)&a;
     return ret;
 }
 

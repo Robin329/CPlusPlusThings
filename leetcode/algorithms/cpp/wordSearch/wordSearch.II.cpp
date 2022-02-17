@@ -87,8 +87,10 @@ private:
 
 class Solution {
 public:
-    void findWords(vector<vector<char>> &board, TrieNode *root, int row, int col, vector<string> &result) {
-        if (row < 0 || col < 0 || row >= board.size() || col >= board[row].size() || board[row][col] == '\0') {
+    void findWords(vector<vector<char>> &board, TrieNode *root, int row, int col,
+                   vector<string> &result) {
+        if (row < 0 || col < 0 || row >= board.size() || col >= board[row].size() ||
+            board[row][col] == '\0') {
             return;
         }
 

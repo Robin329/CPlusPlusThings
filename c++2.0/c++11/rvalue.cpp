@@ -83,8 +83,8 @@ int main() {
     process(1);        // R
     process(move(aa)); // R
 
-    UnPerfectForward(2);        // 希望通过转交调用的是右值传入函数,可是调用的是左值传入
-                                // 这就是个Unperfect Forwarding
+    UnPerfectForward(2); // 希望通过转交调用的是右值传入函数,可是调用的是左值传入
+                         // 这就是个Unperfect Forwarding
     UnPerfectForward(move(aa)); // 同上
     // 那如何设计Perfect Forwarding?
     // 为传递加上static_cast<int &&>强转或者直接使用std::forward()

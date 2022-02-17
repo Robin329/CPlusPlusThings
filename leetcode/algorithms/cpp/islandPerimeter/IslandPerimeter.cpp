@@ -34,10 +34,11 @@ public:
     int edge(vector<vector<int>> &grid, int x, int y) {
         int edge = 0;
 
-        if (x == 0 || (x > 0 && grid[x - 1][y] == 0)) edge++;                                   // up
-        if (y == 0 || (y > 0 && grid[x][y - 1] == 0)) edge++;                                   // left
-        if (x == grid.size() - 1 || (x < grid.size() - 1 && grid[x + 1][y] == 0)) edge++;       // down
-        if (y == grid[0].size() - 1 || (y < grid[0].size() - 1 && grid[x][y + 1] == 0)) edge++; // right
+        if (x == 0 || (x > 0 && grid[x - 1][y] == 0)) edge++;                             // up
+        if (y == 0 || (y > 0 && grid[x][y - 1] == 0)) edge++;                             // left
+        if (x == grid.size() - 1 || (x < grid.size() - 1 && grid[x + 1][y] == 0)) edge++; // down
+        if (y == grid[0].size() - 1 || (y < grid[0].size() - 1 && grid[x][y + 1] == 0))
+            edge++; // right
 
         return edge;
     }
