@@ -9,4 +9,5 @@ cmake-build-debug/*
 practical_exercises/.*
 .idea/*
 .DS_Store
-*.idea/*
+*.idea/
+./build/**

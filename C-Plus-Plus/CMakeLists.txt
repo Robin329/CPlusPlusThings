@@ -10,7 +10,6 @@ project(Algorithms_in_C++
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 if(MSVC)
     # set(CMAKE_CXX_STANDARD 14)
     add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
@@ -25,7 +24,7 @@ if(USE_OPENMP)
         message(STATUS "No OpenMP found, no multithreading.")
     endif()
 endif()
-    
+
 add_subdirectory(math)
 add_subdirectory(others)
 add_subdirectory(search)
