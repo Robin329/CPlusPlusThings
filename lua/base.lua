@@ -3,3 +3,47 @@
 --- Created by renbinjiang.
 --- DateTime: 2021/6/24 6:38 下午
 ---
+print("robin.jiang hello")
+--参数:
+--
+--str: 将要被截取的原字符串
+--
+--s_begin: 开始截取的字符串
+--
+--s_end:结束截取的字符串
+--效果:
+--
+--StringCut("123456789","4","7")--->56
+--
+--StringCut("123456789","23","78")--->456
+--
+--StringCut("123456789","56","888")--->789
+--
+--StringCut("这个CSDN是全中国最好的网站之一","这个","之一")--->CSDN是全中国最好的网站
+function StringCut(str,s_begin,s_end)
+    local StrLen = string.len(str)
+    local s_begin_Len = string.len(s_begin)
+    local s_end_Len = string.len(s_end)
+    local s_begin_x = string.find(str, s_begin, 1)
+    print(s_begin_x)
+    local s_end_x = string.find(str, s_end, s_begin_x+1)
+    print(s_end_x)
+    local rs=(string.sub(str, s_begin_x+s_begin_Len, s_end_x-1))
+    return rs
+end
+StringCut("123456789","56","8")--->789
+
+-- curl cht.sh/lua/ls
+function scandir(directory)
+    local i, t, popen = 0, {}, io.popen
+    local pfile = popen('ls -a "'..directory..'"')
+    for filename in pfile:lines() do
+        i = i + 1
+        t[i] = filename
+        print(filename)
+    end
+    pfile:close()
+    return t
+end
+scandir(".")
+

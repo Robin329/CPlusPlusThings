@@ -114,7 +114,7 @@ add_executable(thread_test thread_example/thread/thread_test.c)
 add_executable(thread_param thread_example/thread/thread_param.cpp)
 add_executable(mutex_cond thread_example/lock/mutex_cond.cpp)
 add_executable(simple_thread thread_example/thread/simple_thread.cpp)
-
+add_executable(thread_pool thread_example/thread/threadpool.cpp thread_example/thread/threadpool.h)
 
 ################################
 #practical_exercises
@@ -127,6 +127,7 @@ add_executable(7.load_settings practical_exercises/key_exercises/7.load_setting.
 target_link_libraries(4.dynamic_array gtest gtest_main pthread)
 add_executable(5.Dictionary_insertion_and_lookup practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
 add_executable(unique_ptr src_analysis/stl/stl_src/Ptr/unique_ptr.cpp)
+add_executable(19.StringSplitCpp practical_exercises/key_exercises/19.StringSplitCpp.cpp)
 
 
 ################################
@@ -306,9 +307,9 @@ foreach(CHAPTER ${CHAPTERS})
                         "${CHAPTER}/${DEMO}/${SUB1}/${SUB2}.cpp"
                         "${CHAPTER}/${DEMO}/${SUB1}/${SUB2}.cpp"
                         )
-                message("SOURCE -->${SOURCE}")
+#                message("SOURCE -->${SOURCE}")
                 set(NAME "${CHAPTER}_${DEMO}_${SUB2}")
-                message("NAME -->${NAME}")
+#                message("NAME -->${NAME}")
                 add_executable(${NAME} ${SOURCE})
             endforeach(SUB2)
         endforeach(SUB1)
