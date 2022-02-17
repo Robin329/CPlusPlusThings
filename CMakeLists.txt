@@ -133,7 +133,8 @@ add_executable(19.StringSplitCpp practical_exercises/key_exercises/19.StringSpli
 ################################
 #practical_exercises/primer_cpp_6
 ################################
-add_subdirectory(practical_exercises/primer_cpp_6/)
+add_subdirectory(practical_exercises/primer_cpp_6)
+add_subdirectory(practical_exercises/primer_cpp_5)
 
 add_executable(template learn_class/modern_C++_30/compilerpoly/template.cpp)
 add_executable(what_is_stl src_analysis/stl/stl_src/what_is_stl.cpp)

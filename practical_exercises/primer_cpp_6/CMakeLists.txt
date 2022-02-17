@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(10_day_practice)
+project(primer_cpp_6)
 
 set(CMAKE_CXX_STANDARD 17)
 add_executable(4.3_string 4.3_string.cpp)

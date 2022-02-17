@@ -143,6 +143,7 @@ void test_simple_shared() {
 
 int main() {
     CAL_TIME("test_simple_shared");
+    t.ShowCurTime();
     CAL_TIME_BEGIN(f1);
     test_simple_shared();
     CAL_TIME_END(f1);

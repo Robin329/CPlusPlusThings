@@ -4,6 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/CPlusPlusThings" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/design-patterns-cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/practical_exercises/Cpp_Primer_Answers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practical_exercises/geek_time_cpp" vcs="Git" />
   </component>
 </project>
