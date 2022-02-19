@@ -10,4 +10,5 @@ practical_exercises/.*
 .idea/*
 .DS_Store
 *.idea/
-./build/**
+.vscode/*
+build/

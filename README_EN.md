@@ -1,12 +1,3 @@
-# Stories About C Plus Plus
-
-Thanks for all the support about << Stories About C ++ >>, right now you could open this link(https://light-city.club/sc/) to read this article.
-Any star, retweet or pr will be weclomed.
-
-
------------------------
-
-
 ### 0. Directory
 
 - Chinese version：**C++ 那些事**

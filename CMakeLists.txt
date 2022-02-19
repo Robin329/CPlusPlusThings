@@ -8,49 +8,12 @@ include_directories("/usr/local/include/")
 ################################
 #basic_content
 ################################
-add_executable(copy_consrtuct basic_content/virtual/set3/copy_consrtuct.cpp)
-add_executable(derived_full basic_content/abstract/derived_full.cpp)
-add_executable(interesting_facts1 basic_content/abstract/interesting_facts1.cpp)
-add_executable(interesting_facts2 basic_content/abstract/interesting_facts2.cpp)
-add_executable(interesting_facts5 basic_content/abstract/interesting_facts5.cpp)
-add_executable(pure_virtual basic_content/abstract/pure_virtual.cpp)
-#add_executable(test basic_content/abstract/test.cpp)
-add_executable(assert basic_content/assert/assert.c)
-add_executable(ignore_assert basic_content/assert/ignore_assert.c)
-add_executable(c++_examp basic_content/c_poly/c++_examp.cpp)
-add_executable(c_examp basic_content/c_poly/c_examp.c)
-add_executable(main basic_content/const/class_const/overload_example/main.cpp)
-
-add_executable(const_file2 basic_content/const/extern_const/const_file2.cpp)
-add_executable(file2 basic_content/const/extern_const/file2.cpp)
-add_executable(condition3 basic_content/const/funciton_const/condition2/condition3.cpp)
-add_executable(condition1 basic_content/const/funciton_const/condition2/condition1.cpp)
-
-add_executable(volatile basic_content/volatile/volatile.cpp)
-add_executable(volatile_noopt basic_content/volatile/noopt_vola.cpp)
-
-add_executable(const_function basic_content/const/const_function.cpp)
-add_executable(const_num basic_content/const/const_num.cpp)
-add_executable(decltype1 basic_content/decltype/decltype.cpp)
-add_executable(friend_class basic_content/friend/friend_class.cpp)
-add_executable(learn basic_content/bit/learn.cpp)
-add_executable(classic_practice basic_content/enum/classic_practice.cpp)
-target_link_libraries(classic_practice dl)
-add_executable(extern_c basic_content/extern/extern_c/add.c basic_content/extern/extern_c/add.cpp basic_content/extern/extern_c/add.h)
-add_executable(extern_cpp basic_content/extern/extern_c++/add.h basic_content/extern/extern_c++/add.cpp basic_content/extern/extern_c++/add.c)
-add_executable(person basic_content/this/person.cpp)
-add_executable(macro basic_content/macro/sig_examp.cpp)
+add_subdirectory(basic_content)
 
 ################################
 #codingStyleldIoms
 ################################
-add_subdirectory(codingStyleIdioms/1_classInitializers)
-add_executable(2_enumclass codingStyleIdioms/2_enumclass/namespace.cpp)
-add_subdirectory(codingStyleIdioms/3_RAII)
-add_executable(4_copy-swap codingStyleIdioms/4_copy-swap/copy-swapAndADL.cpp)
-add_executable(5_no_pimpl codingStyleIdioms/5_pImpl/noPimpl.cpp)
-add_executable(5_pimpl codingStyleIdioms/5_pImpl/pimpl.cpp)
-add_executable(5_pimpl_time codingStyleIdioms/5_pImpl/pimplTime.cpp codingStyleIdioms/5_pImpl/pimplTime.h)
+add_subdirectory(codingStyleIdioms)
 ################################
 #concurrency
 ################################
@@ -106,29 +69,12 @@ add_subdirectory(leetcode/algorithms/cpp)
 ################################
 #thread_example
 ################################
-add_executable(opencv thread_example/opencv.cpp)
-add_executable(mutex_demo thread_example/lock/mutex_demo.c)
-add_executable(mutex_cpp thread_example/lock/mutex_cpp.cpp)
-add_executable(mutex_try_lock thread_example/lock/mutex_try_lock.cpp)
-add_executable(thread_test thread_example/thread/thread_test.c)
-add_executable(thread_param thread_example/thread/thread_param.cpp)
-add_executable(mutex_cond thread_example/lock/mutex_cond.cpp)
-add_executable(simple_thread thread_example/thread/simple_thread.cpp)
-add_executable(thread_pool thread_example/thread/threadpool.cpp thread_example/thread/threadpool.h)
+add_subdirectory(thread_example)
 
 ################################
 #practical_exercises
 ################################
-add_executable(conversion_func practical_exercises/key_exercises/1.conversion_func.cpp)
-add_executable(2.bracket_overload practical_exercises/key_exercises/2.bracket_overload.cpp)
-add_executable(3.function_template practical_exercises/key_exercises/3.function_template.cpp)
-add_executable(4.dynamic_array practical_exercises/key_exercises/4.dynamic_array.cpp)
-add_executable(7.load_settings practical_exercises/key_exercises/7.load_setting.cpp practical_exercises/key_exercises/7.382_reg.h)
-target_link_libraries(4.dynamic_array gtest gtest_main pthread)
-add_executable(5.Dictionary_insertion_and_lookup practical_exercises/key_exercises/5.Dictionary_insertion_and_lookup.cpp)
-add_executable(unique_ptr src_analysis/stl/stl_src/Ptr/unique_ptr.cpp)
-add_executable(19.StringSplitCpp practical_exercises/key_exercises/19.StringSplitCpp.cpp)
-
+add_subdirectory(practical_exercises)
 
 ################################
 #practical_exercises/primer_cpp_6
@@ -137,19 +83,6 @@ add_subdirectory(practical_exercises/primer_cpp_6)
 add_subdirectory(practical_exercises/primer_cpp_5)
 
 add_executable(template learn_class/modern_C++_30/compilerpoly/template.cpp)
-add_executable(what_is_stl src_analysis/stl/stl_src/what_is_stl.cpp)
-add_executable(6.timer_clock practical_exercises/key_exercises/6.timer_clock.cpp)
-add_executable(8.array_of_class_temp practical_exercises/key_exercises/8.Array_of_class_template_specialization.cpp)
-add_executable(9.casting_Of_operator_overloading practical_exercises/key_exercises/9.Casting_of_operator_overloading.cpp)
-add_executable(10.clock++_operator_ov practical_exercises/key_exercises/10.Clock++_operator_overloading.cpp)
-add_executable(11.clock_with_overloaded_par practical_exercises/key_exercises/11.Clock_with_overloaded_parentheses.cpp)
-add_executable(12.exception_catch practical_exercises/key_exercises/12.Exception_catch.cpp)
-add_executable(13.inheritance_encap practical_exercises/key_exercises/13.Inheritance_encapsulation.cpp)
-add_executable(14.input_and_output_operator practical_exercises/key_exercises/14.Input_and_output_operator_overloading.cpp)
-add_executable(15.input_and_output_overload practical_exercises/key_exercises/15.Input_and_output_overload.cpp)
-add_executable(16.output_format practical_exercises/key_exercises/16.Output_format.cpp)
-add_executable(17.readwrite_files practical_exercises/key_exercises/17.readwrite_files.cpp)
-add_executable(18.stack_of_class_templates practical_exercises/key_exercises/18.Stack_of_class_templates.cpp)
 
 include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
@@ -214,6 +147,9 @@ link_directories(${GMOCK_LINK_DIR})
 set(BASE_LIB_DIR ${BASE_INCLUDES}/lib)
 
 include_directories(${BASE_LIB_DIR})
+
+set(MAGIC_ENUM_DIR ${BASE_INCLUDES}/lib/magic_enum)
+include_directories(${MAGIC_ENUM_DIR}/include)
 #MESSAGE("base lib dir = ${BASE_LIB_DIR} ${BASE_INCLUDES} ${CMAKE_CURRENT_SOURCE_DIR}")
 #add_executable(RAII ${SOURCE_FILES})
 #######################json lib#######################

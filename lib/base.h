@@ -114,13 +114,13 @@ public:
     void Reset() { m_begin_ = std::chrono::high_resolution_clock::now(); }
 
     long long Elapsed() {
-        return static_cast<long long>(duration_cast<std::chrono::milliseconds>(
+        return static_cast<long long>(std::chrono::duration_cast<std::chrono::milliseconds>(
                                               std::chrono::high_resolution_clock::now() - m_begin_)
                                               .count());
     }
 
     ~TimerLog() { // 对象析构时候计算当前时间与对象构造时候的时间差就是对象存活的时间
-        auto time = duration_cast<std::chrono::milliseconds>(
+        auto time = std::chrono::duration_cast<std::chrono::milliseconds>(
                             std::chrono::high_resolution_clock::now() - m_begin_)
                             .count();
         std::cout << "time cost:{ " << m_tag_ << " } " << static_cast<double>(time) << " ms"
@@ -133,13 +133,13 @@ public:
     static long long DiffUs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
                             std::chrono::time_point<std::chrono::high_resolution_clock> after) {
         return static_cast<long long>(
-                duration_cast<std::chrono::microseconds>(after - before).count());
+                std::chrono::duration_cast<std::chrono::microseconds>(after - before).count());
     }
 
     static long long DiffMs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
                             std::chrono::time_point<std::chrono::high_resolution_clock> after) {
         return static_cast<long long>(
-                duration_cast<std::chrono::milliseconds>(after - before).count());
+                std::chrono::duration_cast<std::chrono::milliseconds>(after - before).count());
     }
 
     static long long GetCurrentMs() {
