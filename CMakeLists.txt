@@ -18,7 +18,7 @@ add_subdirectory(codingStyleIdioms)
 #concurrency
 ################################
 add_subdirectory(concurrency/Threading_In_CPlusPlus)
-
+add_subdirectory(concurrency/thread_example)
 ################################
 #design_pattern
 ################################
@@ -66,10 +66,6 @@ add_subdirectory(c++2.0/c++11)
 #add_executable(3SumClosest leetcode/algorithms/cpp/3SumClosest/3SumClosest.cpp)
 #add_executable(addBinary leetcode/algorithms/cpp/addBinary/addBinary.cpp)
 add_subdirectory(leetcode/algorithms/cpp)
-################################
-#thread_example
-################################
-add_subdirectory(thread_example)
 
 ################################
 #practical_exercises
@@ -199,7 +195,8 @@ set(CHAPTERS
         leetcode
         practical_exercises
         src_analysis
-        thread_example)
+#        concurrency/thread_example
+        )
 set(basic_content
         func_pointer
         maohao

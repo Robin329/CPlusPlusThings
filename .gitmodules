@@ -1,0 +1,6 @@
+[submodule "ref/cpp-learning"]
+	path = ref/cpp-learning
+	url = git@github.com:chengxumiaodaren/cpp-learning.git
+[submodule "lib/magic_enum"]
+    path = lib/magic_enum
+    url = git@github.com:Neargye/magic_enum.git
