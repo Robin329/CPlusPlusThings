@@ -78,6 +78,45 @@ static int dbgLevel = 0;
         }                                                                                      \
     }
 
+class Timer1 {
+public:
+#define MILLION 1000000
+
+    Timer1(std::string tag) {
+        std::cout << "Timer()" << std::endl;
+
+        m_tag = tag;
+
+        if (m_tag.empty()) {
+            m_tag = "GL";
+        }
+
+        clock_gettime(CLOCK_MONOTONIC, &tpStart);
+    }
+
+    ~Timer1() {
+        std::cout << "~Timer()" << std::endl;
+
+        clock_gettime(CLOCK_MONOTONIC, &tpEnd);
+
+        timeCost = MILLION * (tpEnd.tv_sec - tpStart.tv_sec) +
+                (tpEnd.tv_nsec - tpStart.tv_nsec) / 1000;
+
+        std::cout << "[" << m_tag << "] cost: " << timeCost << " mS" << std::endl;
+
+        m_tag = "";
+    }
+
+private:
+    struct timespec tpStart;
+
+    struct timespec tpEnd;
+
+    float timeCost;
+
+    std::string m_tag;
+};
+
 class Timer {
 public:
     class boot_clock {

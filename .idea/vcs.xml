@@ -7,5 +7,6 @@
     <mapping directory="$PROJECT_DIR$/lib/magic_enum" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practical_exercises/Cpp_Primer_Answers" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/practical_exercises/geek_time_cpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ref/cpp-learning" vcs="Git" />
   </component>
 </project>
