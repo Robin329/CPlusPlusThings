@@ -14,3 +14,7 @@ add_executable(5.static_member_function 2.create_type/5.static_member_function.c
 add_executable(join 3.join_detach/join.cpp)
 add_executable(detach 3.join_detach/detach.cpp)
 add_executable(critical_section 4.mutex/critical_section.cpp)
+
+add_executable(mutex_try_lock.cpp 4.mutex/mutex_try_lock.cpp)
+add_executable(5.condition_variable 5.condition_variable/condition_variable_example.cpp)
+add_executable(6.future_example 6.future/future_examples.cpp)

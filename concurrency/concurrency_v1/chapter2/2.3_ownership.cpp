@@ -54,7 +54,9 @@ public:
     scoped_thread &operator=(scoped_thread const &) = delete;
 };
 
-void do_work(unsigned id) {}
+void do_work(unsigned id) {
+    std::cout << "i = " << i << std::endl;
+}
 
 void f() {
     std::vector<std::thread> threads;

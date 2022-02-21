@@ -22,22 +22,33 @@ ull OddSum = 0;
 ull EvenSum = 0;
 
 void findEven(ull start, ull end) {
-    for (ull i = start; i <= end; ++i)
-        if ((i & 1) == 0) EvenSum += i;
+    ull i;
+    for (i = start; i <= end; ++i) {
+        //        std::cout << "findEven i:" << i << std::endl;
+    }
+    if ((i & 1) == 0) EvenSum += i;
+    std::cout << "EvenSum:" << EvenSum << std::endl;
 }
 
 void findOdd(ull start, ull end) {
-    for (ull i = start; i <= end; ++i)
-        if ((i & 1) == 1) OddSum += i;
+    ull i;
+    for (i = start; i <= end; ++i) {
+        //        std::cout << "findOdd i:" << i << std::endl;
+    }
+    if ((i & 1) == 1) OddSum += i;
+    std::cout << "OddSum:" << OddSum << std::endl;
 }
 
 int main() {
-    ull start = 0, end = 1900000000;
+    ull start = 0, end = 19;
 
     auto startTime = high_resolution_clock::now();
     std::thread t1(findEven, start, end);
+    std::this_thread::sleep_for(std::chrono::seconds(10));
     std::thread t2(findOdd, start, end);
-
+    std::cout << "sleep before" << std::endl;
+    std::this_thread::sleep_for(std::chrono::seconds(5));
+    std::cout << "sleep after" << std::endl;
     t1.join();
     t2.join();
 

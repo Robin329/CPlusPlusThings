@@ -19,6 +19,7 @@ add_subdirectory(codingStyleIdioms)
 ################################
 add_subdirectory(concurrency/Threading_In_CPlusPlus)
 add_subdirectory(concurrency/thread_example)
+add_subdirectory(concurrency/concurrency_v1)
 ################################
 #design_pattern
 ################################
