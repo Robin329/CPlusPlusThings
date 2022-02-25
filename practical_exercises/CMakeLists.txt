@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(Morden_C++)
+project(key_exercises)
 
 set(CMAKE_CXX_STANDARD 17)
 include_directories(../lib/magic_enum/include)
@@ -25,3 +25,4 @@ add_executable(15.input_and_output_overload key_exercises/15.Input_and_output_ov
 add_executable(16.output_format key_exercises/16.Output_format.cpp)
 add_executable(17.readwrite_files key_exercises/17.readwrite_files.cpp)
 add_executable(18.stack_of_class_templates key_exercises/18.Stack_of_class_templates.cpp)
+add_executable(21.MultiDimensionalArray key_exercises/21.MultiDimensionalArray.cpp)

@@ -18,3 +18,6 @@ add_executable(critical_section 4.mutex/critical_section.cpp)
 add_executable(mutex_try_lock.cpp 4.mutex/mutex_try_lock.cpp)
 add_executable(5.condition_variable 5.condition_variable/condition_variable_example.cpp)
 add_executable(6.future_example 6.future/future_examples.cpp)
+
+add_executable(4.semaphore 4.mutex/semaphore.cpp)
+target_link_libraries(4.semaphore -lpthread)

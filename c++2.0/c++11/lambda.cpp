@@ -199,6 +199,21 @@ int test6() {
     print_all(v);
     return 0;
 }
+int a = 4;
+int& f(int x) {
+    a = a + x;
+    return a;
+}
+int test7() {
+    int t = 5;
+    cout << "1:" << f(t) << endl; // a = 9
+    f(t) = 20;                    // a = 20
+    cout << "2:" << f(t) << endl; // t = 5,a = 20  a = 25
+    t = f(t);                     // a = 30 t = 30
+    cout << "3:" << f(t) << endl; // t = 60
+    return 1;
+}
+
 TEST(FOREACH, FOREACH_demo) {
     EXPECT_EQ(0, for_each_test());
     float x = 2.33333;
@@ -210,4 +225,5 @@ TEST(FOREACH, FOREACH_demo) {
     EXPECT_EQ(0, test4());
     EXPECT_EQ(0, test2());
     EXPECT_EQ(0, test6());
+    EXPECT_EQ(1, test7());
 }
