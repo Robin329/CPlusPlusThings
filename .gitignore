@@ -12,3 +12,4 @@ practical_exercises/.*
 *.idea/
 .vscode/*
 build/
+.cache/*
