@@ -10,12 +10,13 @@
 
 using namespace std;
 
-void thread_func1(const int num) {
+bool thread_func1(const int num) {
     for (int i = 0; i < num; i++) {
         cout << "<--- thread1 runing [" << i << "] ID:[ " << std::this_thread::get_id() << "]--->"
              << endl;
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
+    return true;
 }
 
 void thread_func2(const char *name) {

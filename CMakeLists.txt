@@ -104,7 +104,7 @@ if (POLICY CMP0048)
     cmake_policy(SET CMP0048 NEW)
 endif (POLICY CMP0048)
 
-project(googletest-distribution)
+#project(googletest-distribution)
 set(GOOGLETEST_VERSION 1.10.0)
 
 if (CMAKE_VERSION VERSION_GREATER "3.0.2")
