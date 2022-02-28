@@ -23,7 +23,7 @@ add_subdirectory(concurrency/concurrency_v1)
 ################################
 #design_pattern
 ################################
-add_executable(producer_consumer design-patterns-cpp/producer_consumer/producer_consumer.cpp)
+add_executable(producer_consumer design_patterns/design-patterns-cpp/producer_consumer/producer_consumer.cpp)
 target_link_libraries(producer_consumer -lpthread)
 
 
@@ -85,7 +85,8 @@ include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
 add_subdirectory(learn_class/modern_C++_30)
 add_subdirectory(C-Plus-Plus)
-add_subdirectory(design-patterns-cpp)
+add_subdirectory(design_patterns/design-patterns-cpp)
+add_subdirectory(design_patterns/Hands-On-Design-Patterns-with-CPP)
 add_subdirectory(lib/json-develop/test)
 add_subdirectory(practical_exercises/10_day_practice)
 

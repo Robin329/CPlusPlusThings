@@ -13,3 +13,8 @@ practical_exercises/.*
 .vscode/*
 build/
 .cache/*
+**/**/cmake-build-debug/
+*/cmake-build-debug/*
+*/cmake-build-debug*/
+*/*cmake-build-debug*/
+**/**/**/cmake-build-debug/*
