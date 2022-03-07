@@ -4,8 +4,12 @@
 
 #include <complex>
 #include <iostream>
+#include <type_traits>
 #include <vector>
 
+#include "base.h"
+
+using namespace base;
 using namespace std;
 
 // Rvalue references 解决非必要的拷贝
@@ -91,5 +95,31 @@ int main() {
     PerfectForward(2);
     PerfectForward(move(aa));
 
+    int r = 1;
+    int &ra = a;
+    int &&bb = 1;
+    class A {};
+    std::cout << std::boolalpha;
+    std::cout << "Is Left value?" << std::endl;
+    std::cout << "----------------------" << std::endl;
+    std::cout << std::is_lvalue_reference<decltype(ra)>::value << std::endl;
+    std::cout << "A:" << std::is_lvalue_reference<A>::value << '\n';
+    std::cout << "A&:" << std::is_lvalue_reference<A &>::value << '\n';
+    std::cout << "A&&:" << std::is_lvalue_reference<A &&>::value << '\n';
+    std::cout << "int:" << std::is_lvalue_reference<int>::value << '\n';
+    std::cout << "int &:" << std::is_lvalue_reference<int &>::value << '\n';
+    std::cout << "int &&:" << std::is_lvalue_reference<int &&>::value << '\n';
+
+    std::cout << std::endl;
+    std::cout << "Is R value?" << std::endl;
+    std::cout << "----------------------" << std::endl;
+    std::cout << "A:" << std::is_rvalue_reference_v<A> << std::endl;
+    std::cout << "A &:" << std::is_rvalue_reference_v<A &> << std::endl;
+    std::cout << "A &&:" << std::is_rvalue_reference_v<A &&> << std::endl;
+    std::cout << "int:" << std::is_rvalue_reference_v<int> << std::endl;
+    std::cout << "int &:" << std::is_rvalue_reference_v<int &> << std::endl;
+    std::cout << "int &&:" << std::is_rvalue_reference_v<int &&> << std::endl;
+
+    ROBIN_DBG("hello, world!!!\n");
     return 0;
 }

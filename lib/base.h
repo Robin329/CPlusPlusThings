@@ -2,14 +2,21 @@
 // Created by renbin jiang on 2021/8/30.
 //
 
-#ifndef GOOGLETEST_DISTRIBUTION_BASE_H
-#define GOOGLETEST_DISTRIBUTION_BASE_H
+#ifndef _BASE_H_
+#define _BASE_H_
 
 #include <stdlib.h>
 #include <string.h>
 #include <sys/syscall.h>
 #include <sys/time.h>
 #include <unistd.h>
+#if defined(__APPLE__)
+#include <pthread.h>
+#elif defined(__linux__) && !defined(__ANDROID__)
+#include <syscall.h>
+#elif defined(_WIN32)
+#include <windows.h>
+#endif
 
 #include <chrono>
 #include <ctime>
@@ -45,7 +52,23 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
+char *getCurTimeString() {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    struct tm *pTm = localtime(&ts.tv_sec);
+    static char timeStr[20];
+    sprintf(timeStr, "%.2d-%.2d %.2d:%.2d:%.2d.%.3ld", pTm->tm_mon + 1, pTm->tm_mday, pTm->tm_hour,
+            pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);
+    return timeStr;
+}
+
 #define getpid() syscall(SYS_thread_selfid)
+#ifndef TAG
+#define TAG "base"
+#endif
+#define ROBIN_DBG(format, ...)                                                    \
+    printf("%s %d %d D %s : %s " #format "\n", getCurTimeString(), (int)getpid(), \
+           (int)syscall(SYS_gettid), TAG, __FUNCTION__, ##__VA_ARGS__)
 
 typedef struct coor_t {
     float x;
@@ -153,6 +176,20 @@ private:
     boot_clock::time_point start_;
 };
 
+uint64_t GetThreadId() {
+#if defined(__BIONIC__)
+    return gettid();
+#elif defined(__APPLE__)
+    uint64_t tid;
+    pthread_threadid_np(NULL, &tid);
+    return tid;
+#elif defined(__linux__)
+    return syscall(__NR_gettid);
+#elif defined(_WIN32)
+    return GetCurrentThreadId();
+#endif
+}
+
 class TimerLog {
 public:
     TimerLog(const std::string tag) { // 对象构造时候保存开始时间
@@ -192,10 +229,16 @@ public:
     }
 
     static long long GetCurrentMs() {
+#if 0
         struct timeval time;
         gettimeofday(&time, NULL);
         return static_cast<long long>(time.tv_sec * 1000) +
                 static_cast<long long>(time.tv_usec / 1000);
+#else
+        struct timespec curTime;
+        clock_gettime(CLOCK_MONOTONIC, &curTime);
+        return MILLION * curTime.tv_sec + curTime.tv_nsec / 1000;
+#endif
     }
 
     static void ShowCurTime() {
@@ -289,4 +332,4 @@ inline bool ConsumeSuffix(std::string_view *s, std::string_view suffix) {
 [[nodiscard]] std::string StringReplace(std::string_view s, std::string_view from,
                                         std::string_view to, bool all);
 } // namespace base
-#endif // GOOGLETEST_DISTRIBUTION_BASE_H
+#endif // _BASE_H_
