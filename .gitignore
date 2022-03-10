@@ -1,7 +1,6 @@
 com.sh
 cmake-build-debug/*
 *.make
-*.cmake
 *~
 **/.DS_Store
 *.DS_Store

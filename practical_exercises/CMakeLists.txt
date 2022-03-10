@@ -27,6 +27,7 @@ add_executable(17.readwrite_files key_exercises/17.readwrite_files.cpp)
 add_executable(18.stack_of_class_templates key_exercises/18.Stack_of_class_templates.cpp)
 add_executable(21.MultiDimensionalArray key_exercises/21.MultiDimensionalArray.cpp)
 add_executable(22.helen_formula key_exercises/22.helen_formula.cpp)
+add_executable(23.average_method key_exercises/23.average_method.cpp)
 
 
 add_executable(timerfunc timerfunc/timer.cpp timerfunc/timer.h timerfunc/alarm_timer.cpp timerfunc/alarm_timer.h timerfunc/main.cpp)
