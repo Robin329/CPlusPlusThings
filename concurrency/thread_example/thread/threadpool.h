@@ -9,13 +9,13 @@
 #define THREAD_POOL_H
 
 #include <atomic>
+#include <condition_variable>
+#include <functional>
 #include <future>
 #include <queue>
-#include <vector>
-//#include <condition_variable>
-//#include <thread>
-//#include <functional>
 #include <stdexcept>
+#include <thread>
+#include <vector>
 
 namespace std {
 //线程池最大容量,应尽量设小一点

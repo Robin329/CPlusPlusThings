@@ -7,6 +7,7 @@
 #include <iostream>
 #include <thread>
 #include <vector>
+#include <pthread.h>
 
 using namespace std;
 
@@ -55,7 +56,7 @@ public:
 };
 
 void do_work(unsigned id) {
-    std::cout << "i = " << i << std::endl;
+    std::cout << "i = " << id << std::endl;
 }
 
 void f() {

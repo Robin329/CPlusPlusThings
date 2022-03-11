@@ -1,4 +1,6 @@
 #include <iostream>
+#include <memory>
+#include <cstring>
 using namespace std;
 class Base {
     int x;

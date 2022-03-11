@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5)
 
 project(Hands-On-Design-Patterns)
 
-find_package(benchmark REQUIRED)
+#find_package(benchmark REQUIRED)
 
 add_executable(4.list_swap.c Chapter04/list_swap.C)
 add_executable(5.mutex1.c Chapter05/mutex1.C)

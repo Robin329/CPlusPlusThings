@@ -1,6 +1,8 @@
 //
 // Created by renbin jiang on 2022/2/27.
 //
+#include <string.h>
+
 #include <chrono>
 #include <iostream>
 #include <string>

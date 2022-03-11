@@ -25,6 +25,20 @@ std::vector<std::string> Split(const std::string &s, const std::string &delimite
 
     return result;
 }
+uint64_t GetThreadId() {
+#if defined(__BIONIC__)
+    return gettid();
+#elif defined(__APPLE__)
+    uint64_t tid;
+    pthread_threadid_np(NULL, &tid);
+    return tid;
+#elif defined(__linux__)
+    return syscall(__NR_gettid);
+#elif defined(_WIN32)
+    return GetCurrentThreadId();
+#endif
+}
+
 
 std::string Trim(const std::string &s) {
     std::string result;

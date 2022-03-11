@@ -62,7 +62,9 @@ char *getCurTimeString() {
     return timeStr;
 }
 
+#ifdef __apple__
 #define getpid() syscall(SYS_thread_selfid)
+#endif
 #ifndef TAG
 #define TAG "base"
 #endif
@@ -160,7 +162,11 @@ public:
 
         static time_point now() {
             timespec ts;
+#ifdef __apple__
             clock_gettime(_CLOCK_REALTIME, &ts);
+#else
+            clock_gettime(CLOCK_REALTIME, &ts);
+#endif
             return boot_clock::time_point(std::chrono::seconds(ts.tv_sec) +
                                           std::chrono::nanoseconds(ts.tv_nsec));
         }
@@ -176,19 +182,7 @@ private:
     boot_clock::time_point start_;
 };
 
-uint64_t GetThreadId() {
-#if defined(__BIONIC__)
-    return gettid();
-#elif defined(__APPLE__)
-    uint64_t tid;
-    pthread_threadid_np(NULL, &tid);
-    return tid;
-#elif defined(__linux__)
-    return syscall(__NR_gettid);
-#elif defined(_WIN32)
-    return GetCurrentThreadId();
-#endif
-}
+uint64_t GetThreadId();
 
 class TimerLog {
 public:

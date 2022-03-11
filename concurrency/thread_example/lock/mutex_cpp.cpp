@@ -10,6 +10,7 @@
 #include <mutex>
 #include <string>
 #include <thread>
+#include <pthread.h>
 
 std::map<std::string, std::string> g_pages;
 std::mutex g_pages_mutex;

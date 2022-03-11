@@ -28,7 +28,7 @@ int main() {
     for (auto const &temp : eql) {
         std::cout << "temp:" << temp << endl;
     }
-    int *anr = new int[]{2, 3, 4, 5};
+    int *anr = new int[4]{2, 3, 4, 5};
     for (int a = 0; a < sizeof(*anr); a++) {
         std::cout << "anr:" << *anr++ << endl;
     }

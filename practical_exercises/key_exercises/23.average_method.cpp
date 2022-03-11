@@ -47,7 +47,9 @@ unsigned average6(unsigned a, unsigned b) {
     sum = __builtin_addc(a, b, 0, &carry);
     return __builtin_rotateright32(sum, 1);
 #else
+#if __apple__
 #error Unsupported compiler.
+#endif
 #endif
 }
 int main() {
