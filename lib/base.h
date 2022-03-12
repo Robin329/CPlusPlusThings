@@ -52,15 +52,16 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-char *getCurTimeString() {
-    struct timespec ts;
-    clock_gettime(CLOCK_MONOTONIC, &ts);
-    struct tm *pTm = localtime(&ts.tv_sec);
-    static char timeStr[20];
-    sprintf(timeStr, "%.2d-%.2d %.2d:%.2d:%.2d.%.3ld", pTm->tm_mon + 1, pTm->tm_mday, pTm->tm_hour,
-            pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);
-    return timeStr;
-}
+#define GET_CUR_TIME_STRING(s)                                                                                 \
+    do {                                                                                                       \
+        struct timespec ts;                                                                                    \
+        clock_gettime(CLOCK_MONOTONIC, &ts);                                                                   \
+        struct tm *pTm = localtime(&ts.tv_sec);                                                                \
+        char timeStr[20] = {};                                                                                 \
+        sprintf(timeStr, "[%s]%.2d-%.2d %.2d:%.2d:%.2d.%.3ld", s, pTm->tm_mon + 1, pTm->tm_mday, pTm->tm_hour, \
+                pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);                                               \
+        return timeStr;                                                                                        \
+    } while (0)
 
 #ifdef __apple__
 #define getpid() syscall(SYS_thread_selfid)
@@ -68,9 +69,8 @@ char *getCurTimeString() {
 #ifndef TAG
 #define TAG "base"
 #endif
-#define ROBIN_DBG(format, ...)                                                    \
-    printf("%s %d %d D %s : %s " #format "\n", getCurTimeString(), (int)getpid(), \
-           (int)syscall(SYS_gettid), TAG, __FUNCTION__, ##__VA_ARGS__)
+#define ROBIN_DBG(format, ...) \
+    printf(" %d %d D %s : %s " #format "\n", (int)getpid(), (int)syscall(SYS_gettid), TAG, __FUNCTION__, ##__VA_ARGS__)
 
 typedef struct coor_t {
     float x;
@@ -96,7 +96,7 @@ static int dbgLevel = 0;
                 }                                                                        \
             } while (0);                                                                 \
         }                                                                                \
-    }
+        '    }'
 
 #define POINT_LOG(tag, var, line, column)                                                      \
     {                                                                                          \
