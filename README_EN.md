@@ -1,48 +1,50 @@
 ```text
-   _____       _                 _
-  / ____|     | |               | |
- | |     _ __ | |_   _ ___ _ __ | |_   _ ___
- | |    | '_ \| | | | / __| '_ \| | | | / __|
- | |____| |_) | | |_| \__ \ |_) | | |_| \__ \
-  \_____| .__/|_|\__,_|___/ .__/|_|\__,_|___/
-        | |               | |
-        |_|               |_|
+
+ _____ ______ _     _   _ ___________ _     _   _ _____
+/  __ \| ___ \ |   | | | /  ___| ___ \ |   | | | /  ___|
+| /  \/| |_/ / |   | | | \ `--.| |_/ / |   | | | \ `--.
+| |    |  __/| |   | | | |`--. \  __/| |   | | | |`--. \
+| \__/\| |   | |___| |_| /\__/ / |   | |___| |_| /\__/ /
+ \____/\_|   \_____/\___/\____/\_|   \_____/\___/\____/
+
+
+
 ```
 ### 0. Directory
 
-- Chinese version：**C++ 那些事**
-- English version：**Stories About C Plus Plus**
+- Chinese version：**C++**
+- English version：**C Plus Plus**
 
 This repository meets the need of people who wants to really know about C++, and may help you in the interview. Besides, it also provides
 other details,such as in-depth source code analysis and multi-threaded concurrency. It is a comprehensive C ++ repository from entry to advanced improvement
 
 ### 1.Foundation
 
-- [Stories About const](./basic_content/const)
-- [Stories About static](./basic_content/static)
+- [const](./basic_content/const)
+- [static](./basic_content/static)
 - [Stories about this](./basic_content/this)
-- [Stories About inline](./basic_content/inline)
-- [Stories About sizeof](./basic_content/sizeof)
-- [Stories About pointer of function](./basic_content/func_pointer)
-- [Stories About pure virtual function and abstract](./basic_content/abstract)
-- [Stories About vptr_vtable](./basic_content/vptr_vtable)
-- [Stories About virtual](./basic_content/virtual)
-- [Stories About volatile](./basic_content/volatile)
-- [Stories About assert](./basic_content/assert)
-- [Stories About bit](./basic_content/bit)
-- [Stories About extern](./basic_content/extern)
-- [Stories About struct](./basic_content/struct)
-- [Stories About struct and class](./basic_content/struct_class)
-- [Stories About union](./basic_content/union)
-- [Stories About polymorphism](./basic_content/c_poly)
-- [Stories About explicit](./basic_content/explicit)
-- [Stories About friend](./basic_content/friend)
-- [Stories About using](./basic_content/using)
-- [Stories About :: ](./basic_content/maohao)
-- [Stories About enum](./basic_content/enum)
-- [Stories About decltype](./basic_content/decltype)
-- [Stories About pointer_refer](./basic_content/pointer_refer)
-- [Stories About macro](./basic_content/macro)
+- [inline](./basic_content/inline)
+- [sizeof](./basic_content/sizeof)
+- [pointer of function](./basic_content/func_pointer)
+- [pure virtual function and abstract](./basic_content/abstract)
+- [vptr_vtable](./basic_content/vptr_vtable)
+- [virtual](./basic_content/virtual)
+- [volatile](./basic_content/volatile)
+- [assert](./basic_content/assert)
+- [bit](./basic_content/bit)
+- [extern](./basic_content/extern)
+- [struct](./basic_content/struct)
+- [struct and class](./basic_content/struct_class)
+- [union](./basic_content/union)
+- [polymorphism](./basic_content/c_poly)
+- [explicit](./basic_content/explicit)
+- [friend](./basic_content/friend)
+- [using](./basic_content/using)
+- [:: ](./basic_content/maohao)
+- [enum](./basic_content/enum)
+- [decltype](./basic_content/decltype)
+- [pointer_refer](./basic_content/pointer_refer)
+- [macro](./basic_content/macro)
 
 ### 2.Code Samples
 

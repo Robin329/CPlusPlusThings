@@ -1,26 +1,26 @@
 ```text
-   _____       _                 _
-  / ____|     | |               | |
- | |     _ __ | |_   _ ___ _ __ | |_   _ ___
- | |    | '_ \| | | | / __| '_ \| | | | / __|
- | |____| |_) | | |_| \__ \ |_) | | |_| \__ \
-  \_____| .__/|_|\__,_|___/ .__/|_|\__,_|___/
-        | |               | |
-        |_|               |_|
+
+ _____ ______ _     _   _ ___________ _     _   _ _____
+/  __ \| ___ \ |   | | | /  ___| ___ \ |   | | | /  ___|
+| /  \/| |_/ / |   | | | \ `--.| |_/ / |   | | | \ `--.
+| |    |  __/| |   | | | |`--. \  __/| |   | | | |`--. \
+| \__/\| |   | |___| |_| /\__/ / |   | |___| |_| /\__/ /
+ \____/\_|   \_____/\___/\____/\_|   \_____/\___/\____/
+
+
+
 ```
 
-# C++ 那些事
+# C++
 
 [English version is here](./README_EN.md)
-
-
-感谢各位对《C++ 那些事》的支持，现将内容也同步至网站，可以打开网站直接阅读~欢迎大家 star、转发、PR。
 
 ### 项目运行
 
 - **代码环境**
 
-  Macosx
+> Macosx : Darwin 192.168.0.101 21.3.0 Darwin Kernel Version 21.3.0: Wed Jan  5 21:37:58 PST 2022;
+> root:xnu-8019.80.24~20/RELEASE_ARM64_T6000 arm64
 
 - **编辑工具**
 
@@ -33,36 +33,36 @@
 
 ### 0.项目概要
 
-- 中文名：**C++ 那些事**
-- 英文名：**Stories About C Plus Plus**
+- 中文名：**C++**
+- 英文名：**C Plus Plus**
 
 这是一个适合初学者从<u>**入门到进阶**</u>的仓库，解决了<u>**面试者与学习者**</u>想要<u>**深入 C++**</u>及如何<u>**入坑 C++**</u>的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
 
 ### 1.基础进阶
 
-- [const 那些事](./basic_content/const)
-- [static 那些事](./basic_content/static)
-- [this 那些事](./basic_content/this)
-- [inline 那些事](./basic_content/inline)
-- [sizeof 那些事](./basic_content/sizeof)
+- [const](./basic_content/const)
+- [static](./basic_content/static)
+- [this](./basic_content/this)
+- [inline](./basic_content/inline)
+- [sizeof](./basic_content/sizeof)
 - [函数指针那些事](./basic_content/func_pointer)
 - [纯虚函数和抽象类那些事](./basic_content/abstract)
-- [vptr_vtable 那些事](./basic_content/vptr_vtable)
-- [virtual 那些事](./basic_content/virtual)
-- [volatile 那些事](./basic_content/volatile)
-- [assert 那些事](./basic_content/assert)
+- [vptr_vtable](./basic_content/vptr_vtable)
+- [virtual](./basic_content/virtual)
+- [volatile](./basic_content/volatile)
+- [assert](./basic_content/assert)
 - [位域那些事](./basic_content/bit)
-- [extern 那些事](./basic_content/extern)
-- [struct 那些事](./basic_content/struct)
-- [struct 与 class 那些事](./basic_content/struct_class)
-- [union 那些事](./basic_content/union)
+- [extern](./basic_content/extern)
+- [struct](./basic_content/struct)
+- [struct 与 class](./basic_content/struct_class)
+- [union](./basic_content/union)
 - [c 实现 c++ 多态那些事](./basic_content/c_poly)
-- [explicit 那些事](./basic_content/explicit)
-- [friend 那些事](./basic_content/friend)
-- [using 那些事](./basic_content/using)
-- [:: 那些事](./basic_content/maohao)
-- [enum 那些事](./basic_content/enum)
-- [decltype 那些事](./basic_content/decltype)
+- [explicit](./basic_content/explicit)
+- [friend](./basic_content/friend)
+- [using](./basic_content/using)
+- [::](./basic_content/maohao)
+- [enum](./basic_content/enum)
+- [decltype](./basic_content/decltype)
 - [引用与指针那些事](./basic_content/pointer_refer)
 - [宏那些事](./basic_content/macro)
 
