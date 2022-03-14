@@ -4,11 +4,15 @@ project(thread_example)
 set(CMAKE_CXX_STANDARD 17)
 include_directories(../../lib/magic_enum/include)
 include_directories(../../lib)
+
+if (CMAKE_HOST_APPLE)
 set(OpenCV_DIR "/usr/local/Cellar/opencv/4.5.2/include/opencv4/opencv2/")
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(opencv opencv.cpp)
+endif()
+
 add_executable(mutex_demo lock/mutex_demo.c)
 add_executable(mutex_cpp lock/mutex_cpp.cpp)
 target_link_libraries(mutex_cpp -lpthread)

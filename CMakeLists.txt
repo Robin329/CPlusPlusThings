@@ -162,6 +162,7 @@ include_directories(${JSON_SINGLE_INCLUDE_DIR})
 #######################OPENCV SETTING#######################
 #target_link_libraries(RAII ${OpenCV_LIBS})
 #----------------------------------------------------------
+if (CMAKE_HOST_APPLE)
 find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories("/usr/local/Cellar/opencv/4.5.1_3/include/opencv4/")
@@ -180,6 +181,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(homography_2d practical_exercises/opencv/homography_2d.cpp)
 target_link_libraries(homography_2d ${OpenCV_LIBS})
+endif()
 ###############################################################
 
 #ADD_DEFINITIONS(-DOPENCV_ENABLE_NONFREE)
