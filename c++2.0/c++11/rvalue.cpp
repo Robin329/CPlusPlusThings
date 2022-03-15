@@ -119,7 +119,7 @@ int main() {
     std::cout << "int:" << std::is_rvalue_reference_v<int> << std::endl;
     std::cout << "int &:" << std::is_rvalue_reference_v<int &> << std::endl;
     std::cout << "int &&:" << std::is_rvalue_reference_v<int &&> << std::endl;
-
+    GET_CUR_TIME_STRING("D");
     ROBIN_DBG("hello, world!!!\n");
     return 0;
 }

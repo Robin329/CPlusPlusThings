@@ -2,6 +2,7 @@ com.sh
 cmake-build-debug/*
 *.make
 *~
+venv/*
 **/.DS_Store
 *.DS_Store
 **/*.dSYM/*

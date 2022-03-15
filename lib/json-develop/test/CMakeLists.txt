@@ -65,7 +65,6 @@ foreach(file ${files})
         $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wno-deprecated;-Wno-float-equal>
         $<$<CXX_COMPILER_ID:GNU>:-Wno-deprecated-declarations>
     )
-    message("CMAKE_BINARY_DIR -->> ${CMAKE_BINARY_DIR}")
     target_include_directories(${testcase} PRIVATE ${CMAKE_BINARY_DIR}/include thirdparty/doctest thirdparty/fifo_map ../include)
     target_link_libraries(${testcase} PRIVATE ${NLOHMANN_JSON_TARGET_NAME})
 

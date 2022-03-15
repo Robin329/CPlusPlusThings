@@ -52,15 +52,15 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-#define GET_CUR_TIME_STRING(s)                                                                                 \
-    do {                                                                                                       \
-        struct timespec ts;                                                                                    \
-        clock_gettime(CLOCK_MONOTONIC, &ts);                                                                   \
-        struct tm *pTm = localtime(&ts.tv_sec);                                                                \
-        char timeStr[20] = {};                                                                                 \
-        sprintf(timeStr, "[%s]%.2d-%.2d %.2d:%.2d:%.2d.%.3ld", s, pTm->tm_mon + 1, pTm->tm_mday, pTm->tm_hour, \
-                pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);                                               \
-        return timeStr;                                                                                        \
+#define GET_CUR_TIME_STRING(tag)                                                                   \
+    do {                                                                                           \
+        struct timespec ts;                                                                        \
+        clock_gettime(CLOCK_MONOTONIC, &ts);                                                       \
+        struct tm *pTm = localtime(&ts.tv_sec);                                                    \
+        char timeStr[20] = {};                                                                     \
+        sprintf(timeStr, "%.2d-%.2d %.2d:%.2d:%.2d.%.3ld %s ", tag, pTm->tm_mon + 1, pTm->tm_mday, \
+                pTm->tm_hour, pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);                     \
+        std::cout << timeStr << " [" << __FUNCTION__ << "] " << std::endl;                         \
     } while (0)
 
 #ifdef __apple__
@@ -69,8 +69,9 @@ struct TreeNode {
 #ifndef TAG
 #define TAG "base"
 #endif
-#define ROBIN_DBG(format, ...) \
-    printf(" %d %d D %s : %s " #format "\n", (int)getpid(), (int)syscall(SYS_gettid), TAG, __FUNCTION__, ##__VA_ARGS__)
+#define ROBIN_DBG(format, ...)                                                           \
+    printf("%d %d D %s : %s" #format "\n", (int)getpid(), (int)syscall(SYS_gettid), TAG, \
+           __FUNCTION__, ##__VA_ARGS__)
 
 typedef struct coor_t {
     float x;
