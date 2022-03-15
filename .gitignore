@@ -6,12 +6,12 @@ cmake-build-debug/*
 *.DS_Store
 **/*.dSYM/*
 practical_exercises/.*
-.idea/*
+.idea/
 .DS_Store
 *.idea/
-.vscode/*
+.vscode/
 build/
-.cache/*
+.cache/
 **/**/cmake-build-debug/
 */cmake-build-debug/*
 */cmake-build-debug*/
