@@ -1,19 +1,13 @@
 ```text
-
  _____ ______ _     _   _ ___________ _     _   _ _____
 /  __ \| ___ \ |   | | | /  ___| ___ \ |   | | | /  ___|
 | /  \/| |_/ / |   | | | \ `--.| |_/ / |   | | | \ `--.
 | |    |  __/| |   | | | |`--. \  __/| |   | | | |`--. \
 | \__/\| |   | |___| |_| /\__/ / |   | |___| |_| /\__/ /
  \____/\_|   \_____/\___/\____/\_|   \_____/\___/\____/
-
-
-
 ```
 
 # C++
-
-[English version is here](./README_EN.md)
 
 ### 项目运行
 
@@ -23,8 +17,8 @@
 > root:xnu-8019.80.24~20/RELEASE_ARM64_T6000 arm64
 
 - **编辑工具**
-
-  CLion
+  
+> CLion
 
 - **编译器**
 
@@ -32,9 +26,6 @@
 
 
 ### 0.项目概要
-
-- 中文名：**C++**
-- 英文名：**C Plus Plus**
 
 这是一个适合初学者从<u>**入门到进阶**</u>的仓库，解决了<u>**面试者与学习者**</u>想要<u>**深入 C++**</u>及如何<u>**入坑 C++**</u>的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
 
@@ -113,8 +104,11 @@
 #### 2.2 [重点实战练习](./practical_exercises/key_exercises/)
 
 ├── [中括号重载.cpp](practical_exercises/key_exercises/2.bracket_overload.cpp)
+
 ├── [时钟++运算符重载.cpp](./practical_exercises/key_exercises/时钟++运算符重载.cpp)
+
 ├── [运算符重载之强制转换.cpp](./practical_exercises/key_exercises/运算符重载之强制转换.cpp)
+
 └── [重载圆括号的时钟.cpp](./practical_exercises/key_exercises/重载圆括号的时钟.cpp)
 
 ├── [函数模板.cpp](practical_exercises/key_exercises/3.function_template.cpp)
@@ -132,8 +126,11 @@
 ├── [继承与封装.cpp](./practical_exercises/key_exercises/继承与封装.cpp)
 
 ├── [读写文件综合题.cpp](./practical_exercises/key_exercises/读写文件综合题.cpp)
+
 ├── [输入输出运算符重载.cpp](./practical_exercises/key_exercises/输入输出运算符重载.cpp)
+
 ├── [输入输出重载.cpp](./practical_exercises/key_exercises/输入输出重载.cpp)
+
 ├── [输出格式.cpp](./practical_exercises/key_exercises/输出格式.cpp)
 
 ### 3.[C++2.0 新特性](./c++2.0)
@@ -217,8 +214,8 @@ C++2.0 是一个简称，意为「现代 C++」，包括 C++11/14/17/20。
 
 ### 4.设计模式
 
-- [单例模式](./design_pattern/singleton)
-- [生产消费者模式](design-patterns-cpp/producer_consumer)
+- [单例模式](./design-patterns/design-patterns-cpp/singleton)
+- [生产消费者模式](./design-patterns/design-patterns-cpp/producer_consumer)
 
 ### 5. [STL 源码剖析](./src_analysis/stl)
 
@@ -259,7 +256,6 @@ C++2.0 是一个简称，意为「现代 C++」，包括 C++11/14/17/20。
 - [mutex in C++ Threading](./concurrency/Threading_In_CPlusPlus/4.mutex)
 
 > 学习自：
->
 > https://www.youtube.com/watch?v=eZ8yKZo-PGw&list=PLk6CEY9XxSIAeK-EAh3hB4fgNvYkYmghp&index=4
 
 ### 7. [C++ 惯用法](./codingStyleIdioms)

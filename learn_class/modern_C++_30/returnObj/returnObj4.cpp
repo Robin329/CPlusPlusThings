@@ -19,15 +19,16 @@ public:
 };
 
 A getA_duang() {
-    A a1;
-    A a2;
+    A *a1 = new A;
+    A *a2 = new A;
     if (rand() > 42) {
-        return a1;
+        return *a1;
     } else {
-        return a2;
+        return *a2;
     }
 }
 
 int main() {
     auto a = getA_duang();
+    return 0;
 }

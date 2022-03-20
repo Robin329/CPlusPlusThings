@@ -83,6 +83,7 @@ add_executable(template learn_class/modern_C++_30/compilerpoly/template.cpp)
 
 include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
+add_subdirectory(lib/dbg-macro)
 add_subdirectory(learn_class/modern_C++_30)
 add_subdirectory(C-Plus-Plus)
 add_subdirectory(design_patterns/design-patterns-cpp)
