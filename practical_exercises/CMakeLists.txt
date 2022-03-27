@@ -34,3 +34,7 @@ add_executable(24.cjson_parse key_exercises/25.cjson_parse.cpp)
 
 add_executable(timerfunc timerfunc/timer.cpp timerfunc/timer.h timerfunc/alarm_timer.cpp timerfunc/alarm_timer.h timerfunc/main.cpp)
 target_link_libraries(timerfunc -lpthread)
+
+# interview test
+add_executable(is_point_inside_triangle interview_test/is_point_inside_triangle.cpp)
+add_executable(interview_test_volatile interview_test/volatile.cpp)

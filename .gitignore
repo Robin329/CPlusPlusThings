@@ -3,6 +3,7 @@ cmake-build-debug/*
 *.make
 *~
 venv/*
+cmake-build-release/*
 **/.DS_Store
 *.DS_Store
 **/*.dSYM/*
