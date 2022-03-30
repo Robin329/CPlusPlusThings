@@ -67,8 +67,7 @@ add_subdirectory(c++2.0/c++11)
 #add_executable(3SumClosest leetcode/algorithms/cpp/3SumClosest/3SumClosest.cpp)
 #add_executable(addBinary leetcode/algorithms/cpp/addBinary/addBinary.cpp)
 add_subdirectory(learn_algorithms/leetcode/algorithms/cpp)
-add_subdirectory(learn_algorithms/c)
-
+add_subdirectory(learn_algorithms/self_learn)
 ################################
 #practical_exercises
 ################################
