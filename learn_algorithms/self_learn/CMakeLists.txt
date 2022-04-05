@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(self_lear)
 
 set(CMAKE_CXX_STANDARD 17)
+include_directories(../../lib)
 
 # include_directories(/usr/local/include/armadillo)
 
@@ -10,3 +11,5 @@ set(CMAKE_CXX_STANDARD 17)
 # find_library(1.spline_interpolation /usr/local/lib/)
 # target_link_libraries(1.spline_interpolation armadillo)
 # target_link_libraries(1.spline_interpolation mlpack)
+
+add_executable(2.spline_keystone 1.spline_interpolation/2.spline_keystone.cpp)

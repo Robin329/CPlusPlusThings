@@ -82,7 +82,8 @@ typedef struct pointCoordinate {
     int S16X;
     int S16Y;
 } point;
-static int dbgLevel = 0;
+
+static int dbgLevel = 1;
 #define DBG_LEVEL dbgLevel
 #define COOR_T_LOG(tag, var, line, column)                                               \
     {                                                                                    \
@@ -91,13 +92,13 @@ static int dbgLevel = 0;
                 printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                     \
                 for (int i = 0; i < column; i++) {                                       \
                     for (int j = 0; j < line; j++) {                                     \
-                        printf(" [%d][%d] = (%d, %d) ", j, i, var[j][i].x, var[j][i].y); \
+                        printf(" [%d][%d] = (%f, %f)\n", j, i, var[j][i].x, var[j][i].y); \
                     }                                                                    \
                     printf("\n");                                                        \
                 }                                                                        \
             } while (0);                                                                 \
         }                                                                                \
-        '    }'
+    }
 
 #define POINT_LOG(tag, var, line, column)                                                      \
     {                                                                                          \
