@@ -12,7 +12,7 @@ typedef struct {
 } PointCoordinate;
 
 #define SPLINE_T_LOG(tag, var) \
-    { printf("%s  %s[a=%f, b=%f, c=%f, d=%f]\n", __FUNCTION__, tag, var.a, var.b, var.c, var.d); }
+    { printf("%s  %s[a=%f, b=%f, c=%f, d=%f]\n", __FUNCTION__, tag, var.a, var.b, var.c, var.d);}
 // x: variable name, y: row num, z: line num
 #define COORDINATE_LOG(tag, x, y, z)                                                         \
     ({                                                                                       \

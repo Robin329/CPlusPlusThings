@@ -289,8 +289,8 @@ int CheckWpLimitB(float *diffy_y_sum, float *divn) {
 }
 
 int CalcWpCur(void) {
-    coord_f_t temp_pt[DEF_NUM_CUR_MAX];
-    spline_coef_t temp_spl_cf[DEF_NUM_CUR_MAX + 1];
+    coord_f_t temp_pt[DEF_NUM_CUR_MAX] = {};
+    spline_coef_t temp_spl_cf[DEF_NUM_CUR_MAX + 1] = {};
 
     float scla;
     float scl_pj, scl_cur;
@@ -325,7 +325,7 @@ int CalcWpCur(void) {
                     if (PS_WPCUR_H_EN[PM_WPMODE][h] != 0) {
                         temp_pt[area].x = PM_WPCUR[h][v].x;
                         temp_pt[area].y = PM_WPCUR[h][v].y;
-                        printf("\rH --->> PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, %f)\r", h,
+                        printf("H --->> area:%d PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, %f)\n", area, h,
                                v, PM_WPCUR[h][v].x, PM_WPCUR[h][v].y, area, temp_pt[area].x,
                                temp_pt[area].y);
                         area = area + 1;
