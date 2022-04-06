@@ -26,7 +26,26 @@ add_executable(16.output_format key_exercises/16.Output_format.cpp)
 add_executable(17.readwrite_files key_exercises/17.readwrite_files.cpp)
 add_executable(18.stack_of_class_templates key_exercises/18.Stack_of_class_templates.cpp)
 add_executable(21.MultiDimensionalArray key_exercises/21.MultiDimensionalArray.cpp)
-add_executable(22.helen_formula key_exercises/22.helen_formula.cpp)
+if (CMAKE_HOST_APPLE)
+    find_package(OpenCV)
+    include_directories(${OpenCV_INCLUDE_DIRS})
+    include_directories("/usr/local/Cellar/opencv/4.5.1_3/include/opencv4/")
+    #----------------------------------------------------------
+    # add libs you need
+    set(OpenCV_LIBS opencv_core opencv_imgproc opencv_highgui opencv_imgcodecs opencv_calib3d)
+    # or add all
+    # include_directories(${OpenCV_INCLUDE_DIRS})
+
+    set(OpenCV_DIR "/usr/local/Cellar/opencv/4.5.2/include/opencv4/opencv2/")
+    find_package(OpenCV REQUIRED)
+    include_directories(${OpenCV_INCLUDE_DIRS})
+
+    # linking
+    #target_link_libraries(RAII ${OpenCV_LIBS})
+
+    add_executable(22.helen_formula key_exercises/22.helen_formula.cpp)
+    target_link_libraries(22.helen_formula ${OpenCV_LIBS})
+endif()
 add_executable(23.average_method key_exercises/23.average_method.cpp)
 add_executable(24.cjson_parse key_exercises/25.cjson_parse.cpp)
 
