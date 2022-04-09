@@ -97,6 +97,28 @@ float calcAnyQuadArea(float point[8]) {
     return helenAnyQuardFormula(sideLen01, sideLen12, sideLen23, sideLen30);
 }
 
+
+
+// 任意多变形面积计算
+//https://www.cnblogs.com/TenosDoIt/p/4047211.html
+struct Point2d
+{
+    double x;
+    double y;
+    Point2d(double xx, double yy): x(xx), y(yy){}
+};
+
+//计算任意多边形的面积，顶点按照顺时针或者逆时针方向排列
+double ComputePolygonArea(const vector<Point2d> &points)
+{
+    int point_num = points.size();
+    if(point_num < 3)return 0.0;
+    double s = points[0].y * (points[point_num-1].x - points[1].x);
+    for(int i = 1; i < point_num; ++i)
+        s += points[i].y * (points[i-1].x - points[(i+1)%point_num].x);
+    return fabs(s/2.0);
+}
+
 int PointCoordinate2point(point point[2][2], float *p) {
     if (!p) return -1;
     // tl
@@ -106,11 +128,11 @@ int PointCoordinate2point(point point[2][2], float *p) {
      p[2] = point[0][1].S16X;
      p[3] = HEIGHT_V - point[0][1].S16Y;
      // bl
-     p[4] = point[1][0].S16X;
-     p[5] = HEIGHT_V - point[1][0].S16Y;
+     p[4] = point[1][1].S16X;
+     p[5] = HEIGHT_V - point[1][1].S16Y;
      // br
-     p[6] = point[1][1].S16X;
-     p[7] = HEIGHT_V - point[1][1].S16Y;
+     p[6] = point[1][0].S16X;
+     p[7] = HEIGHT_V - point[1][0].S16Y;
      for (int i = 0; i < sizeof (p);i++) {
          std::cout << "p" << i << ":" << p[i] << std::endl;
      }
@@ -152,7 +174,7 @@ int main() {
     
     float p1[8] = {};
     base::point point4[2][2]={};
-    point4[0][0].S16X = 24;
+    point4[0][0].S16X = 2;
     point4[0][0].S16Y = 0;
     
     point4[0][1].S16X = 1920;
@@ -175,5 +197,10 @@ int main() {
     point5.push_back(cv::Point(p1[6], p1[7]));
     printf("method3 area: %f\n", getPolygonArea(point5));
     
+    // method 4
+    vector<Point2d> point2d{
+            {0, 1080}, {1920, 1080}, {1920, 0},
+            {0, 0}};
+    printf("method4 area: %f\n", ComputePolygonArea(point2d));
     return 0;
 }

@@ -42,9 +42,6 @@ if (CMAKE_HOST_APPLE)
 
     # linking
     #target_link_libraries(RAII ${OpenCV_LIBS})
-
-    add_executable(22.helen_formula key_exercises/22.helen_formula.cpp)
-    target_link_libraries(22.helen_formula ${OpenCV_LIBS})
 endif()
 add_executable(23.average_method key_exercises/23.average_method.cpp)
 add_executable(24.cjson_parse key_exercises/25.cjson_parse.cpp)

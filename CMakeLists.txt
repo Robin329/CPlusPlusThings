@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.16)
 project(CPlusPlusThings)
 
 set(CMAKE_CXX_STANDARD 17)
-
+if (CMAKE_HOST_APPLE)
+set(CMAKE_SYSTEM_PROCESSOR arm64)
+set(CMAKE_OSX_ARCHITECTURES arm64)
+add_definitions(-DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/local/bin/gmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++)
+endif()
 include_directories("/usr/local/include/")
 #add_executable(CPlusPlusThings main.cpp)
 ################################

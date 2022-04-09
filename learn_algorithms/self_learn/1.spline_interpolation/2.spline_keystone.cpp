@@ -2,20 +2,22 @@
 // Created by renbin jiang on 2022/4/5.
 //
 
-#include "2.spline_keystone.h"
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <iostream>
+#include <cstdio>
+#include <magic_enum.hpp>
+
+#include "2.spline_keystone.h"
 
 using namespace std;
 using namespace base;
 
-
 void InitParamWp(void);
 U8 getRefMatrixCoor(U8 li, U8 col, coord_t *point);
 void InitParamWp(void);
-int CheckWpLimitA(int tbl_tlx, int tbl_tly, int tbl_trx, int tbl_try, int tbl_blx, int tbl_bly,
-                  int tbl_brx, int tbl_bry, int *x, int *y, float *diffy_y_sum, float *divn);
+int CheckWpLimitA(int tbl_tlx, int tbl_tly, int tbl_trx, int tbl_try, int tbl_blx, int tbl_bly, int tbl_brx,
+                  int tbl_bry, int *x, int *y, float *diffy_y_sum, float *divn);
 int CheckWpLimitB(float *diffy_y_sum, float *divn);
 void updateWpMatrix(PointCoordinate *pOfst);
 coord_f_t Homography(homography_coef_t coef, coord_f_t pt, coord_f_t stp);
@@ -23,17 +25,17 @@ int CalcSplineCoef(coord_f_t p[], int pnum, spline_coef_t cf[]);
 int CalcWpCur(void);
 float CalcSpline(spline_coef_t coef, float x, float x0);
 void CalcPjConv(coord_f_t wpcur[][DEF_NUM_CUR_MAX_V], coord_f_t pjcur[][DEF_NUM_CUR_MAX_V]);
-void CalcHomographyCoef(coord_f_t tl, coord_f_t tr, coord_f_t bl, coord_f_t br, coord_f_t stp,
-                        float hw, float vw, homography_coef_t *coef);
+void CalcHomographyCoef(coord_f_t tl, coord_f_t tr, coord_f_t bl, coord_f_t br, coord_f_t stp, float hw, float vw,
+                        homography_coef_t *coef);
 void updateWpMatrix(PointCoordinate *pOfst);
 int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]);
 
-
+// ref: https://www.cnblogs.com/ondaytobewhoyouwant/p/8989497.html
 float CalcSpline(spline_coef_t coef, float x, float x0) {
     float pt;
     float w;
-    float w_sq; // square
-    float w_cu; // cube
+    float w_sq; // square 二次
+    float w_cu; // cube 三次
 
     w = x - x0;
     w_sq = w * w;
@@ -124,8 +126,8 @@ int CalcSplineCoef(coord_f_t p[], int pnum, spline_coef_t cf[]) {
     return 0; // No Error
 }
 
-void CalcHomographyCoef(coord_f_t tl, coord_f_t tr, coord_f_t bl, coord_f_t br, coord_f_t stp,
-                        float hw, float vw, homography_coef_t *coef) {
+void CalcHomographyCoef(coord_f_t tl, coord_f_t tr, coord_f_t bl, coord_f_t br, coord_f_t stp, float hw, float vw,
+                        homography_coef_t *coef) {
     float det;
 
     tl.x = tl.x - stp.x;
@@ -142,12 +144,10 @@ void CalcHomographyCoef(coord_f_t tl, coord_f_t tr, coord_f_t bl, coord_f_t br, 
 
     //===== calculate homography coefficient =====//
     det = (br.x - tr.x) * (br.y - bl.y) - (br.x - bl.x) * (br.y - tr.y);
-    coef->a[0] = ((det == 0) || (hw == 0))
-            ? DEF_DIV0
-            : ((tr.x - tl.x) * (br.y - bl.y) - (br.x - bl.x) * (tr.y - tl.y)) / det / hw;
-    coef->b[0] = ((det == 0) || (vw == 0))
-            ? DEF_DIV0
-            : ((tr.x - br.x) * (tl.y - bl.y) - (tl.x - bl.x) * (tr.y - br.y)) / det / vw;
+    coef->a[0] = ((det == 0) || (hw == 0)) ? DEF_DIV0
+                                           : ((tr.x - tl.x) * (br.y - bl.y) - (br.x - bl.x) * (tr.y - tl.y)) / det / hw;
+    coef->b[0] = ((det == 0) || (vw == 0)) ? DEF_DIV0
+                                           : ((tr.x - br.x) * (tl.y - bl.y) - (tl.x - bl.x) * (tr.y - br.y)) / det / vw;
     coef->c[0] = 1.0;
     coef->a[1] = (hw == 0) ? DEF_DIV0 : tr.x * coef->a[0] + (tr.x - tl.x) / hw;
     coef->b[1] = (vw == 0) ? DEF_DIV0 : bl.x * coef->b[0] + (bl.x - tl.x) / vw;
@@ -211,14 +211,14 @@ coord_f_t Homography(homography_coef_t coef, coord_f_t pt, coord_f_t stp) {
     return opt;
 }
 
-int CheckWpLimitA(int tbl_tlx, int tbl_tly, int tbl_trx, int tbl_try, int tbl_blx, int tbl_bly,
-                  int tbl_brx, int tbl_bry, int *x, int *y, float *diffy_y_sum, float *divn) {
+int CheckWpLimitA(int tbl_tlx, int tbl_tly, int tbl_trx, int tbl_try, int tbl_blx, int tbl_bly, int tbl_brx,
+                  int tbl_bry, int *x, int *y, float *diffy_y_sum, float *divn) {
     float diffx_x, diffy_x, diffx_y, diffy_y, idiffy_y;
     float tan_h = 0;
     float tan_v = 0;
     int ihw = PS_WP_IHW * 8;
     int ivw = PS_WP_IVW * 8;
-
+    printf("tlx:%d tly:%d trx:%d try:%d blx:%d bly:%d brx:%d bry:%d x:%d y:%d\n", tbl_tlx, tbl_tly, tbl_trx, tbl_try, tbl_blx, tbl_bly, tbl_brx, tbl_bry, *x, *y);
     if ((*x > 0) || (*y > 0)) {
         if ((tbl_tlx < 0) && (tbl_trx < 0) && (tbl_blx < 0) && (tbl_brx < 0)) {
             return WARPING_NO_ERROR; // Outside of ACT (Horizontal)
@@ -269,7 +269,7 @@ int CheckWpLimitA(int tbl_tlx, int tbl_tly, int tbl_trx, int tbl_try, int tbl_bl
             // Vertical slope
             tan_v = diffx_y / diffy_y;
             if ((tan_v < (-DEF_WPLIMANG_V)) || (tan_v > DEF_WPLIMANG_V)) {
-                return WARPING_ERROR_ANG_V;
+                std::cout << "tav_v:" << tan_v << " out of [" << DEF_WPLIMANG_V << "]" << std::endl; return WARPING_ERROR_ANG_V;
             }
 
             *diffy_y_sum = (*diffy_y_sum) + idiffy_y;
@@ -306,7 +306,7 @@ int CalcWpCur(void) {
     // 计算样条插值的投影变换。
     //    COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
     CalcPjConv(PM_WPCUR, g_pj_curpos);
-    COOR_T_LOG("g_pj_curpos", g_pj_curpos, 5, 3);
+    //    COOR_T_LOG("g_pj_curpos", g_pj_curpos, 5, 3);
     for (v = 0; v < PS_NUM_CUR_MAX_V; v++) {
         for (h = 0; h < PS_NUM_CUR_MAX_H; h++) {
             if ((PS_WPCUR_H_EN[PM_WPMODE][h] == 0) || (PS_WPCUR_V_EN[PM_WPMODE][v] == 0)) {
@@ -314,7 +314,7 @@ int CalcWpCur(void) {
             }
         }
     }
-
+    //    COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
     // Calculate the coordinates of the cursor on the line where spline interpolation is
     // possible.(Horizontal line) 计算光标在可以进行样条插值的线上的坐标。（水平线）
     if ((GV_NUM_WPCUR_H >= 3) && (GV_NUM_WPCUR_H < PS_NUM_CUR_MAX_H)) {
@@ -325,14 +325,15 @@ int CalcWpCur(void) {
                     if (PS_WPCUR_H_EN[PM_WPMODE][h] != 0) {
                         temp_pt[area].x = PM_WPCUR[h][v].x;
                         temp_pt[area].y = PM_WPCUR[h][v].y;
-                        printf("H --->> area:%d PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, %f)\n", area, h,
-                               v, PM_WPCUR[h][v].x, PM_WPCUR[h][v].y, area, temp_pt[area].x,
-                               temp_pt[area].y);
+                        printf("H --->> area:%d PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, "
+                               "%f)\n",
+                               area, h, v, PM_WPCUR[h][v].x, PM_WPCUR[h][v].y, area, temp_pt[area].x, temp_pt[area].y);
                         area = area + 1;
                     }
                 }
                 //				CalcSplineCoef(temp_pt, GV_NUM_WPCUR_H,
                 // temp_spl_cf);
+                //
                 if (0 != CalcSplineCoef(temp_pt, GV_NUM_WPCUR_H, temp_spl_cf)) {
                     return 1; // Reversal of the coordinate is not allowed
                 }
@@ -342,22 +343,29 @@ int CalcWpCur(void) {
                 SPLINE_T_LOG("temp_spl_cf3", temp_spl_cf[3]);
                 SPLINE_T_LOG("temp_spl_cf4", temp_spl_cf[4]);
                 SPLINE_T_LOG("temp_spl_cf5", temp_spl_cf[5]);
+                COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
                 h0 = 0;
                 area = 0;
                 for (i = 1; i < PS_NUM_CUR_MAX_H; i++) {
                     if (PS_WPCUR_H_EN[PM_WPMODE][i] != 0) {
                         for (h = h0 + 1; h < i; h++) {
                             if (g_pj_curpos[i][v].x == g_pj_curpos[h0][v].x) {
+                                printf("i:%d, h0:%d, v:%d\n", i, h0, v);
                                 // div0
                             } else {
                                 t = (g_pj_curpos[h][v].x - g_pj_curpos[h0][v].x) /
-                                        (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
+                                    (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
+                                printf("v:%d t:%f g_pj_curpos[h][v].x:%f g_pj_curpos[h0][v].x:%f "
+                                       "g_pj_curpos[i][v].x:%f\n",
+                                       v, t, g_pj_curpos[h][v].x, g_pj_curpos[h0][v].x, g_pj_curpos[i][v].x);
                                 PM_WPCUR[h][v].x = PM_WPCUR[h][v].x +
-                                        (PM_WPCUR[h0][v].x - g_pj_curpos[h0][v].x) * (1 - t) +
-                                        (PM_WPCUR[i][v].x - g_pj_curpos[i][v].x) * t;
+                                                   (PM_WPCUR[h0][v].x - g_pj_curpos[h0][v].x) * (1 - t) +
+                                                   (PM_WPCUR[i][v].x - g_pj_curpos[i][v].x) * t;
                             }
-                            PM_WPCUR[h][v].y = CalcSpline(temp_spl_cf[area + 1], PM_WPCUR[h][v].x,
-                                                          PM_WPCUR[h0][v].x);
+                            printf("PM_WPCUR[h][v].x:%f area:%d PM_WPCUR[h0][v].x:%f\n", PM_WPCUR[h][v].x, area,
+                                   PM_WPCUR[h0][v].x);
+                            PM_WPCUR[h][v].y = CalcSpline(temp_spl_cf[area + 1], PM_WPCUR[h][v].x, PM_WPCUR[h0][v].x);
+                            printf("PM_WPCUR[h][v].y:%f\n", PM_WPCUR[h][v].y);
                         }
                         h0 = i;
                         area = area + 1;
@@ -377,9 +385,8 @@ int CalcWpCur(void) {
                     if (PS_WPCUR_V_EN[PM_WPMODE][v] != 0) {
                         temp_pt[area].x = PM_WPCUR[h][v].y; // x -> y
                         temp_pt[area].y = PM_WPCUR[h][v].x; // y -> x
-                        printf("\r\n V --->> PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, %f)\r",
-                               h, v, PM_WPCUR[h][v].x, PM_WPCUR[h][v].y, area, temp_pt[area].x,
-                               temp_pt[area].y);
+                        printf("\n V --->> PM_WPCUR[%d][%d] = (%f, %f) temp_pt[%d] = (%f, %f)\n", h, v,
+                               PM_WPCUR[h][v].x, PM_WPCUR[h][v].y, area, temp_pt[area].x, temp_pt[area].y);
                         area = area + 1;
                     }
                 }
@@ -403,13 +410,12 @@ int CalcWpCur(void) {
                                 // div0
                             } else {
                                 t = (g_pj_curpos[h][v].y - g_pj_curpos[h][v0].y) /
-                                        (g_pj_curpos[h][i].y - g_pj_curpos[h][v0].y);
+                                    (g_pj_curpos[h][i].y - g_pj_curpos[h][v0].y);
                                 PM_WPCUR[h][v].y = PM_WPCUR[h][v].y +
-                                        (PM_WPCUR[h][v0].y - g_pj_curpos[h][v0].y) * (1 - t) +
-                                        (PM_WPCUR[h][i].y - g_pj_curpos[h][i].y) * t;
+                                                   (PM_WPCUR[h][v0].y - g_pj_curpos[h][v0].y) * (1 - t) +
+                                                   (PM_WPCUR[h][i].y - g_pj_curpos[h][i].y) * t;
                             }
-                            PM_WPCUR[h][v].x = CalcSpline(temp_spl_cf[area + 1], PM_WPCUR[h][v].y,
-                                                          PM_WPCUR[h][v0].y);
+                            PM_WPCUR[h][v].x = CalcSpline(temp_spl_cf[area + 1], PM_WPCUR[h][v].y, PM_WPCUR[h][v0].y);
                         }
                         v0 = i;
                         area = area + 1;
@@ -418,7 +424,7 @@ int CalcWpCur(void) {
             }
         }
     }
-
+    COOR_T_LOG("g_pj_curpos", g_pj_curpos, 5, 3);
     // Calculate the internal cursor coordinates.
     v0 = 0; // top side
     for (j = 1; j < PS_NUM_CUR_MAX_V; j++) {
@@ -429,71 +435,77 @@ int CalcWpCur(void) {
                     if (i == (PS_NUM_CUR_MAX_H - 1)) {
                         for (h = (h0 + 1); h < i; h++) {
                             // x
+                            printf("v:%d h:%d v0:%d h0:%d i:%d j:%d g_pj_curpos[%d][%d].x:%f g_pj_curpos[%d][%d].x:%f "
+                                   "g_pj_curpos[%d][v].x:%f\n",
+                                   v, h, v0, h0, i, j, h, v, g_pj_curpos[h][v].x, h0, v, g_pj_curpos[h0][v].x, i,
+                                   g_pj_curpos[i][v].x);
                             scla = (g_pj_curpos[i][v].x == g_pj_curpos[h0][v].x)
-                                    ? 0
-                                    : (g_pj_curpos[h][v].x - g_pj_curpos[h0][v].x) /
-                                            (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
+                                           ? 0
+                                           : (g_pj_curpos[h][v].x - g_pj_curpos[h0][v].x) /
+                                                     (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
                             // top side
                             scl_pj = (g_pj_curpos[i][v0].x == g_pj_curpos[h0][v0].x)
-                                    ? 0
-                                    : (g_pj_curpos[h][v0].x - g_pj_curpos[h0][v0].x) /
-                                            (g_pj_curpos[i][v0].x - g_pj_curpos[h0][v0].x);
+                                             ? 0
+                                             : (g_pj_curpos[h][v0].x - g_pj_curpos[h0][v0].x) /
+                                                       (g_pj_curpos[i][v0].x - g_pj_curpos[h0][v0].x);
+                            // 调整之后的第一小段占整个余下的段的比例
                             scl_cur = (PM_WPCUR[i][v0].x == PM_WPCUR[h0][v0].x)
-                                    ? 0
-                                    : (PM_WPCUR[h][v0].x - PM_WPCUR[h0][v0].x) /
-                                            (PM_WPCUR[i][v0].x - PM_WPCUR[h0][v0].x);
+                                              ? 0
+                                              : (PM_WPCUR[h][v0].x - PM_WPCUR[h0][v0].x) /
+                                                        (PM_WPCUR[i][v0].x - PM_WPCUR[h0][v0].x);
                             sclb[0] = (scl_pj == 0) ? 0 : scl_cur / scl_pj;
+                            printf("top --> t:%f scla:%f scl_pj:%f scl_cur:%f\n", t, scla, scl_pj, scl_cur);
                             // bottom side
                             scl_pj = (g_pj_curpos[i][j].x == g_pj_curpos[h0][j].x)
-                                    ? 0
-                                    : (g_pj_curpos[h][j].x - g_pj_curpos[h0][j].x) /
-                                            (g_pj_curpos[i][j].x - g_pj_curpos[h0][j].x);
+                                             ? 0
+                                             : (g_pj_curpos[h][j].x - g_pj_curpos[h0][j].x) /
+                                                       (g_pj_curpos[i][j].x - g_pj_curpos[h0][j].x);
                             scl_cur = (PM_WPCUR[i][j].x == PM_WPCUR[h0][j].x)
-                                    ? 0
-                                    : (PM_WPCUR[h][j].x - PM_WPCUR[h0][j].x) /
-                                            (PM_WPCUR[i][j].x - PM_WPCUR[h0][j].x);
+                                              ? 0
+                                              : (PM_WPCUR[h][j].x - PM_WPCUR[h0][j].x) /
+                                                        (PM_WPCUR[i][j].x - PM_WPCUR[h0][j].x);
                             sclb[1] = (scl_pj == 0) ? 0 : scl_cur / scl_pj;
+                            printf("bottom --> t:%f scla:%f scl_pj:%f scl_cur:%f sclb[0]:%f sclb[1]:%f\n", t, scla,
+                                   scl_pj, scl_cur, sclb[0], sclb[1]);
                             // Calculate the internal cursor : x
                             t = (g_pj_curpos[h][j].y == g_pj_curpos[h][v0].y)
-                                    ? 0
-                                    : (g_pj_curpos[h][v].y - g_pj_curpos[h][v0].y) /
-                                            (g_pj_curpos[h][j].y - g_pj_curpos[h][v0].y);
-                            PM_WPCUR[h][v].x = PM_WPCUR[h0][v].x +
-                                    (PM_WPCUR[i][v].x - PM_WPCUR[h0][v].x) * scla *
-                                            (sclb[0] * (1 - t) + sclb[1] * t);
-                            printf("t:%f scla:%f scl_pj:%f scl_cur:%f PM_WPCUR[%d][%d].x = [%f]\n",
-                                   t, scla, scl_pj, scl_cur, h, v, PM_WPCUR[h][v].x);
+                                        ? 0
+                                        : (g_pj_curpos[h][v].y - g_pj_curpos[h][v0].y) /
+                                                  (g_pj_curpos[h][j].y - g_pj_curpos[h][v0].y);
+                            PM_WPCUR[h][v].x = PM_WPCUR[h0][v].x + (PM_WPCUR[i][v].x - PM_WPCUR[h0][v].x) * scla *
+                                                                           (sclb[0] * (1 - t) + sclb[1] * t);
+                            printf("internal x --> t:%f scla:%f scl_pj:%f scl_cur:%f PM_WPCUR[%d][%d].x = [%f]\n", t,
+                                   scla, scl_pj, scl_cur, h, v, PM_WPCUR[h][v].x);
                             // y
                             scla = (g_pj_curpos[h][v].y - g_pj_curpos[h][v0].y) /
-                                    (g_pj_curpos[h][j].y - g_pj_curpos[h][v0].y);
+                                   (g_pj_curpos[h][j].y - g_pj_curpos[h][v0].y);
                             // left side
                             scl_pj = (g_pj_curpos[h0][j].y == g_pj_curpos[h0][v0].y)
-                                    ? 0
-                                    : (g_pj_curpos[h0][v].y - g_pj_curpos[h0][v0].y) /
-                                            (g_pj_curpos[h0][j].y - g_pj_curpos[h0][v0].y);
+                                             ? 0
+                                             : (g_pj_curpos[h0][v].y - g_pj_curpos[h0][v0].y) /
+                                                       (g_pj_curpos[h0][j].y - g_pj_curpos[h0][v0].y);
                             scl_cur = (PM_WPCUR[h0][j].y == PM_WPCUR[h0][v0].y)
-                                    ? 0
-                                    : (PM_WPCUR[h0][v].y - PM_WPCUR[h0][v0].y) /
-                                            (PM_WPCUR[h0][j].y - PM_WPCUR[h0][v0].y);
+                                              ? 0
+                                              : (PM_WPCUR[h0][v].y - PM_WPCUR[h0][v0].y) /
+                                                        (PM_WPCUR[h0][j].y - PM_WPCUR[h0][v0].y);
                             sclb[0] = (scl_pj == 0) ? 0 : scl_cur / scl_pj;
                             // right side
                             scl_pj = (g_pj_curpos[i][j].y == g_pj_curpos[i][v0].y)
-                                    ? 0
-                                    : (g_pj_curpos[i][v].y - g_pj_curpos[i][v0].y) /
-                                            (g_pj_curpos[i][j].y - g_pj_curpos[i][v0].y);
+                                             ? 0
+                                             : (g_pj_curpos[i][v].y - g_pj_curpos[i][v0].y) /
+                                                       (g_pj_curpos[i][j].y - g_pj_curpos[i][v0].y);
                             scl_cur = (PM_WPCUR[i][j].y == PM_WPCUR[i][v0].y)
-                                    ? 0
-                                    : (PM_WPCUR[i][v].y - PM_WPCUR[i][v0].y) /
-                                            (PM_WPCUR[i][j].y - PM_WPCUR[i][v0].y);
+                                              ? 0
+                                              : (PM_WPCUR[i][v].y - PM_WPCUR[i][v0].y) /
+                                                        (PM_WPCUR[i][j].y - PM_WPCUR[i][v0].y);
                             sclb[1] = (scl_pj == 0) ? 0 : scl_cur / scl_pj;
                             // Calculate the internal cursor : y
                             t = (g_pj_curpos[h][v].x - g_pj_curpos[h0][v].x) /
-                                    (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
-                            PM_WPCUR[h][v].y = PM_WPCUR[h][v0].y +
-                                    (PM_WPCUR[h][j].y - PM_WPCUR[h][v0].y) * scla *
-                                            (sclb[0] * (1 - t) + sclb[1] * t);
-                            printf("t:%f scla:%f scl_pj:%f scl_cur:%f PM_WPCUR[%d][%d].y = [%f]\n",
-                                   t, scla, scl_pj, scl_cur, h, v, PM_WPCUR[h][v].y);
+                                (g_pj_curpos[i][v].x - g_pj_curpos[h0][v].x);
+                            PM_WPCUR[h][v].y = PM_WPCUR[h][v0].y + (PM_WPCUR[h][j].y - PM_WPCUR[h][v0].y) * scla *
+                                                                           (sclb[0] * (1 - t) + sclb[1] * t);
+                            printf("internal y --> t:%f scla:%f scl_pj:%f scl_cur:%f PM_WPCUR[%d][%d].y = [%f]\n", t,
+                                   scla, scl_pj, scl_cur, h, v, PM_WPCUR[h][v].y);
                         }
                         h0 = i; // new left side
                     }
@@ -502,7 +514,7 @@ int CalcWpCur(void) {
             v0 = j; // new top side
         }
     }
-
+    COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
     return 0;
 }
 
@@ -555,6 +567,7 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
 
         for (i = 0; i < (PS_NUM_CUR_MAX_H + 1); i++) {
             g_hline[i][j] = temp_spl_cf[i];
+            // SPLINE_T_LOG("g_hline[i][j]", g_hline[i][j]);
         }
     }
     // vertical line
@@ -571,9 +584,15 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
 
         for (i = 0; i < (PS_NUM_CUR_MAX_V + 1); i++) {
             g_vline[j][i] = temp_spl_cf[i];
+            // SPLINE_T_LOG("g_vline[j][i]", g_vline[j][i]);
         }
     }
-
+    // SPLINE_T_LOG("temp_spl_cf0", temp_spl_cf[0]);
+    // SPLINE_T_LOG("temp_spl_cf1", temp_spl_cf[1]);
+    // SPLINE_T_LOG("temp_spl_cf2", temp_spl_cf[2]);
+    // SPLINE_T_LOG("temp_spl_cf3", temp_spl_cf[3]);
+    // SPLINE_T_LOG("temp_spl_cf4", temp_spl_cf[4]);
+    // SPLINE_T_LOG("temp_spl_cf5", temp_spl_cf[5]);
     // table
     for (i = 0; i <= PS_WP_HW_GRD; i++) {
         x0 = (float)(i << PS_WPSPACE_BIT);
@@ -586,16 +605,21 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
                 }
                 area = area + 1;
             }
+
             if (area == 0) {
+                // x0：步长 g_hline：样条系数 cur_pos：
                 g_hor_line_y[i][j] = CalcSpline(g_hline[area][j], x0, cur_pos[area][j].x);
             } else {
                 g_hor_line_y[i][j] = CalcSpline(g_hline[area][j], x0, cur_pos[area - 1][j].x);
             }
+            // printf("area:%d i:%d j:%d x0:%f cur_pos[%d][%d].x:%f g_hor_line_y[%d][%d]:%f\n", area, i, j, x0,
+            //        area == 0 ? area : area - 1, j, cur_pos[area == 0 ? area : area - 1][j].x, i, j, g_hor_line_y[i][j]);
         }
         // vertical line
         for (j = 0; j < PS_NUM_CUR_MAX_V; j++) {
             temp_pt[j].x = g_hor_line_y[i][j];
             temp_pt[j].y = (float)PS_CUR_DEF_IY[j] - g_hor_line_y[i][j];
+            // printf("temp_pt[%d]:[%f, %f]\n",j,temp_pt[j].x, temp_pt[j].y);
         }
         //		CalcSplineCoef(temp_pt, PS_NUM_CUR_MAX_V, g_vline_mv[i]);
         if (0 != CalcSplineCoef(temp_pt, PS_NUM_CUR_MAX_V, g_vline_mv[i])) {
@@ -625,12 +649,15 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
             } else {
                 g_ver_line_x[i] = CalcSpline(g_vline[i][area], y0, cur_pos[i][area - 1].y);
             }
+            // printf("i:%d j:%d area:%d y0:%f  g_ver_line_x[%d]:%f cur_pos[%d][%d].y:%f\n", i, j, area, y0, i,
+            //        g_ver_line_x[i], i, area == 0 ? area : area - 1, cur_pos[i][area == 0 ? area : area - 1].y);
         }
 
         // horizontal line
         for (i = 0; i < PS_NUM_CUR_MAX_H; i++) {
             temp_pt[i].x = g_ver_line_x[i];
             temp_pt[i].y = (float)PS_CUR_DEF_IX[i] - g_ver_line_x[i];
+            printf("temp_pt[%d]:[%f, %f]\n", i, temp_pt[i].x, temp_pt[i].y);
         }
         //		CalcSplineCoef(temp_pt, PS_NUM_CUR_MAX_H, g_hline_mv);
         if (0 != CalcSplineCoef(temp_pt, PS_NUM_CUR_MAX_H, g_hline_mv)) {
@@ -657,10 +684,11 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
             } else {
                 x = CalcSpline(g_hline_mv[area], x0, g_ver_line_x[area - 1]);
             }
+            // printf("x:%f x0:%f area:%d g_ver_line_x[%d]:%f\n", x, x0, area, area, g_ver_line_x[area]);
             x = x + (float)(i << PS_WPSPACE_BIT);
             x = (x > tblx_max) ? tblx_max : (x < tblx_min) ? tblx_min : x;
             wdt_x = (int)(x * 8 + 0.5);
-
+            // printf("x:%f wdt_x:%d\n", x, wdt_x);
             // y
             area = 0;
             while (area < PS_NUM_CUR_MAX_V) {
@@ -678,7 +706,7 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
             y = y + (float)(j << PS_WPSPACE_BIT);
             y = (y > tbly_max) ? tbly_max : (y < tbly_min) ? tbly_min : y;
             wdt_y = (int)(y * 8 + 0.5);
-//            printf("wdt[%d, %d]\n", wdt_x, wdt_y);
+            //            printf("wdt[%d, %d]\n", wdt_x, wdt_y);
             // Warp error
             // Check Limit
             if (j == 0) {
@@ -699,6 +727,7 @@ int CalcWpTable(coord_f_t cur_pos[][DEF_NUM_CUR_MAX_V]) {
 
             err = CheckWpLimitA(tbl_tlx, tbl_tly, tbl_trx, tbl_try, tbl_blx, tbl_bly, tbl_brx,
                                 tbl_bry, &i, &j, &diffy_y_sum, &divn);
+            printf("diffy_y_sum:%f divn:%f\n", diffy_y_sum, divn);
             if (err != WARPING_NO_ERROR) {
                 //                write_C382_force();
                 //                WpTableAccClose(0);
@@ -768,22 +797,19 @@ void updateWpMatrix(PointCoordinate *pOfst) {
     vspace = vres / (m_ipcIns.mode_col - 1);
     for (i = 0; i < m_ipcIns.mode_col; i++) {    // column
         for (j = 0; j < m_ipcIns.mode_li; j++) { // line
-            if (false ==
-                getRefMatrixCoor(j, i,
-                                 &ref)) // get the ipc382 internal two dimentional matrix index
+            if (false == getRefMatrixCoor(j, i,
+                                          &ref)) // get the ipc382 internal two dimentional matrix index
                 continue;
             // PM_WPCUR[x][y] <-> PointCoordinate[m][n]
             // x <--> n
             // y <--> m
             // 2159 -> 2160 | 3839 -> 3840
-            PM_WPCUR[ref.x][ref.y].x =
-                    (hspace * j > 0 && (pOfst[i * m_ipcIns.mode_li + j].S16X == hspace * j - 1))
-                    ? hspace * j
-                    : pOfst[i * m_ipcIns.mode_li + j].S16X;
-            PM_WPCUR[ref.x][ref.y].y =
-                    (vspace * i > 0 && (pOfst[i * m_ipcIns.mode_li + j].S16Y == vspace * i - 1))
-                    ? vspace * i
-                    : pOfst[i * m_ipcIns.mode_li + j].S16Y;
+            PM_WPCUR[ref.x][ref.y].x = (hspace * j > 0 && (pOfst[i * m_ipcIns.mode_li + j].S16X == hspace * j - 1))
+                                               ? hspace * j
+                                               : pOfst[i * m_ipcIns.mode_li + j].S16X;
+            PM_WPCUR[ref.x][ref.y].y = (vspace * i > 0 && (pOfst[i * m_ipcIns.mode_li + j].S16Y == vspace * i - 1))
+                                               ? vspace * i
+                                               : pOfst[i * m_ipcIns.mode_li + j].S16Y;
         }
     }
     //     COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
@@ -850,20 +876,21 @@ void InitParamWp(void) {
 }
 
 int main() {
+    constexpr auto warpErr = magic_enum::enum_names<enm_warping_error_tag>();
     InitParamWp();
     m_ipcIns.mode_li = 3;
     m_ipcIns.mode_col = 3;
 
     PointCoordinate point[3][3];
     memset(&point[0][0], 0, sizeof(point));
-    point[0][0].S16X = 24;
-    point[0][0].S16Y = 0x00;
+    point[0][0].S16X = 0;
+    point[0][0].S16Y = 0;
     point[0][1].S16X = (C382_PANEL_H / 2) - 1;
-    point[0][1].S16Y = 0x00;
+    point[0][1].S16Y = 0;
     point[0][2].S16X = C382_PANEL_H - 1;
     point[0][2].S16Y = 0x00;
 
-    point[1][0].S16X = 0x00;
+    point[1][0].S16X = 2730;
     point[1][0].S16Y = (C382_PANEL_V / 2) - 1;
     point[1][1].S16X = (C382_PANEL_H / 2) - 1;
     point[1][1].S16Y = (C382_PANEL_V / 2) - 1;
@@ -884,9 +911,11 @@ int main() {
     if (0 != CalcWpCur()) {
         err = WARPING_ERROR_GRID_INTERVAL;
     } else {
-        COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
+            //    COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
         err = CalcWpTable(PM_WPCUR);
     }
-    printf("\r\nerr:%d\n", err);
+    COOR_T_LOG("PM_WPCUR", PM_WPCUR, 5, 3);
+    // printf("\r\nerr:%d\n", err);
+    std::cout << "err: " << warpErr[err] << std::endl;
     return 0;
 }
