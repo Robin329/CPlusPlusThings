@@ -42,7 +42,7 @@ Revised August 3, 2020: a cleanup removing support for ancient compilers
 #include <string>
 #include <unordered_map>
 #include <vector>
-
+#include "base.h"
 //------------------------------------------------------------------------------
 
 typedef long Unicode;
@@ -50,6 +50,7 @@ typedef long Unicode;
 //------------------------------------------------------------------------------
 
 using namespace std;
+using namespace base;
 
 template <class T>
 string to_string(const T& t) {
