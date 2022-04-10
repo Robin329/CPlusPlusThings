@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(key_exercises)
+project(cpp_principles_practice)
 
 set(CMAKE_CXX_STANDARD 17)
 include_directories(../lib/magic_enum/include)
@@ -20,3 +20,6 @@ add_executable(p49+ex07 Chapter3/p49_ex07.cpp)
 add_executable(p49_ex08 Chapter3/p49_ex08.cpp)
 add_executable(p50_ex10 Chapter3/p50_ex10.cpp)
 add_executable(p50_ex11 Chapter3/p50_ex11.cpp)
+
+add_executable(p59_trytry Chapter4/p59_trytry.cpp)
+add_executable(p63_tt_char_table Chapter4/p63_tt_char_table.cpp)

@@ -13,5 +13,8 @@ int main() {
     len2 = strspn(buf, ",0123456789");
     cout << "len1:" << len1 << " len2:" << len2 << endl;
     dbg(dbg::time(), buf);
+    long double i = -1.73418701740172983047108923E-320;
+    cout << "i = " << std::setprecision(100) << i << endl;
+    dbg(i);
     return 0;
 }

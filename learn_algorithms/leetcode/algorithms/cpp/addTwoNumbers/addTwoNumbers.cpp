@@ -15,37 +15,48 @@
 
 /**
  * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
+ * */
+#include "base.h"
+using namespace base;
+// struct ListNode {
+//     int val;
+//     ListNode *next;
+//     ListNode(int x) : val(x), next(NULL) {}
+// };
+//
 class Solution {
 public:
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        int x = 0, y = 0, carry = 0, sum = 0;
-        ListNode *h = NULL, **t = &h;
-
-        while (l1 != NULL || l2 != NULL) {
-            x = getValueAndMoveNext(l1);
-            y = getValueAndMoveNext(l2);
-
-            sum = carry + x + y;
-
-            ListNode *node = new ListNode(sum % 10);
-            *t = node;
-            t = (&node->next);
-
-            carry = sum / 10;
+        ListNode* head=new ListNode(-1);//存放结果的链表
+        ListNode* h=head;//移动指针
+        int sum=0;//每个位的加和结果
+        bool carry=false;//进位标志
+        while(l1!=NULL||l2!=NULL)
+        {
+            sum=0;
+            if(l1!=NULL)
+            {
+                sum+=l1->val;
+                l1=l1->next;
+            }
+            if(l2!=NULL)
+            {
+                sum+=l2->val;
+                l2=l2->next;
+            }
+            if(carry)
+                sum++;
+            h->next=new ListNode(sum%10);
+            h=h->next;
+            carry=sum>=10?true:false;
         }
-
-        if (carry > 0) {
-            ListNode *node = new ListNode(carry % 10);
-            *t = node;
+        if(carry)
+        {
+            h->next=new ListNode(1);
         }
-
-        return h;
+        printNode(head->next);
+        return head->next;
+    
     }
 
 private:
@@ -58,3 +69,35 @@ private:
         return x;
     }
 };
+
+
+//bool printNode(Node *result) {
+//    Node *p = result;
+//    stack<int> s;
+//    while (result != NULL && p != NULL) //入栈
+//    {
+//        cout << "val:" << p->val << endl;
+//        s.push(p->val);
+//        p = p->next;
+//    }
+//
+//    while (!s.empty()) //出栈
+//    {
+//        cout << s.top() << " ";
+//        s.pop();
+//    }
+//    return true;
+//
+//}
+int main() {
+    cout << "Please input first Node:\n";
+    ListNode *l1 = nodeInit();
+    cout << "Please input second Node:\n";
+
+    ListNode *l2 = nodeInit();
+
+    Solution sol;
+    ListNode *result = sol.addTwoNumbers(l1, l2);
+    printNode(result);
+    return 0;
+}

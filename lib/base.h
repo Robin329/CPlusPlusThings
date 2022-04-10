@@ -22,6 +22,7 @@
 #include <ctime>
 #include <iostream>
 #include <set>
+#include <stack>
 #include <sstream>
 #include <string>
 #include <utility>
@@ -53,6 +54,46 @@ struct TreeNode {
     TreeNode *right;
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
+
+typedef ListNode Node;
+
+ListNode* nodeInit() {
+    ListNode *l;
+    l = (ListNode *)malloc(sizeof(ListNode));
+    l->next = nullptr;
+    int x = 0, count = 0;
+    while (scanf("%d", &x) != EOF) {
+        cout << "count:" << count << " x:" << x << endl;
+        ++count;
+        
+        ListNode *p;
+        p = (ListNode *)malloc(sizeof(ListNode));
+        p->val = x;
+        p->next = l->next;
+        l->next = p;
+        if (count > 2) break;
+    }
+    return l;
+}
+
+bool printNode(Node *result) {
+    Node *p = result->next;
+    stack<int> s;
+    while (result != NULL && p != NULL) //入栈
+    {
+        cout << "val:" << p->val << endl;
+        s.push(p->val);
+        p = p->next;
+    }
+    
+    while (!s.empty()) //出栈
+    {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    return true;
+    
+}
 
 #define GET_CUR_TIME_STRING(tag)                                                                   \
     do {                                                                                           \
