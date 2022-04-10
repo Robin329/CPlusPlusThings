@@ -40,6 +40,9 @@ int main(int argc, char const *argv[]) {
     cout << s;
     cin >> s;
     cout << s;
-    system("pause");
+    int x = 12, y = 15, z = 0;
+    z = x || ( y -= x);
+    std::cout << "y :" << y << " z:" << z << endl;
+//    system("pause");
     return 0;
 }
