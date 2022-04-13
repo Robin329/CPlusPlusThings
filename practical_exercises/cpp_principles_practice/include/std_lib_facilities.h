@@ -37,6 +37,7 @@ Revised August 3, 2020: a cleanup removing support for ancient compilers
 #include <list>
 #include <random>
 #include <regex>
+#include <map>
 #include <sstream>
 #include <stdexcept>
 #include <string>
