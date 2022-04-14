@@ -57,3 +57,5 @@ add_executable(interview_test_volatile interview_test/volatile.cpp)
 
 # cpp Principles and Practice
 add_subdirectory(cpp_principles_practice)
+
+add_executable(26.compare_two_file key_exercises/26.compare_two_files.cpp)
