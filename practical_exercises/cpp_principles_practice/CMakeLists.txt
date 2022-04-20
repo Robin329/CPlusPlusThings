@@ -44,3 +44,10 @@ add_executable(p73_ex17 Chapter4/p73_ex17.cpp)
 add_executable(p73_ex18 Chapter4/p73_ex18.cpp)
 add_executable(p74_ex19 Chapter4/p74_ex19.cpp)
 add_executable(P74_ex20 Chapter4/p74_ex20.cpp)
+
+# Chapter4
+add_executable(p83_tt Chapter5/p83_tt1.cpp)
+target_link_libraries(p83_tt gtest gtest_main pthread)
+
+# Chapter6
+add_executable(p128_tt_calculator Chapter6/p128_tt_calculator.cpp)
