@@ -51,3 +51,4 @@ target_link_libraries(p83_tt gtest gtest_main pthread)
 
 # Chapter6
 add_executable(p128_tt_calculator Chapter6/p128_tt_calculator.cpp)
+add_executable(p129_tt1 Chapter6/p129_tt1.cpp)
