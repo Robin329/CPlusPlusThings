@@ -78,6 +78,8 @@ Token Token_stream::get() // ERROR 2 no ref to Token_stream
     switch (ch) {
         case '=': // for "print"
         case 'x': // for "quit"
+        case '{':
+        case '}':
         case '(':
         case ')':
         case '+':
@@ -119,11 +121,18 @@ double expression(); // declaration so that primary() can call expression()
 double primary() {
     Token t = ts.get();
     switch (t.kind) {
+        case '{':
+        {
+            double d = expression();
+            t = ts.get();
+            if (t.kind != '}' ) error("'}' expected"); // ERROR missing "
+            return d;
+        }
         case '(': // handle '(' expression ')'
         {
             double d = expression();
             t = ts.get();
-            if (t.kind != ')') error("')' expected"); // ERROR missing "
+            if (t.kind != ')' ) error("')' expected"); // ERROR missing "
             return d;
         }
         case '8':           // we use '8' to represent a number
