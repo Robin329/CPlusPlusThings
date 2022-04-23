@@ -84,6 +84,7 @@ Token Token_stream::get() // ERROR 2 no ref to Token_stream
         case ')':
         case '+':
         case '-':
+        case '!':
         case '*':
         case '/':
             return Token(ch); // let each character represent itself
@@ -117,26 +118,43 @@ double expression(); // declaration so that primary() can call expression()
 
 //------------------------------------------------------------------------------
 
+double fact(double ip) {
+    if (ip == 1 || !ip) {
+        return 1;
+    } else {
+        return ip * fact(ip - 1);
+    }
+}
+
 // deal with numbers and parentheses
 double primary() {
     Token t = ts.get();
     switch (t.kind) {
-        case '{':
-        {
+        case '{': {
             double d = expression();
             t = ts.get();
-            if (t.kind != '}' ) error("'}' expected"); // ERROR missing "
+            if (t.kind != '}') error("'}' expected"); // ERROR missing "
             return d;
         }
         case '(': // handle '(' expression ')'
         {
             double d = expression();
             t = ts.get();
-            if (t.kind != ')' ) error("')' expected"); // ERROR missing "
+            if (t.kind != ')') error("')' expected"); // ERROR missing "
             return d;
         }
-        case '8':           // we use '8' to represent a number
-            return t.value; // return the number's value
+        case '8': // we use '8' to represent a number
+        {
+            double tmp = t.value;
+            t = ts.get();
+            if (t.kind == '!') {
+                ts.putback(t);
+                return fact(tmp);
+            } else {
+                ts.putback(t);
+                return tmp; // return the number's value
+            }
+        }
         default:
             error("primary expected");
     }
