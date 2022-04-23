@@ -1,6 +1,7 @@
 #include <iostream>
+#include "base.h"
 using namespace std;
-//函数异常可以抛出去由主函数来处理
+using namespace base;
 void fun(int x) {
     try {
         if (x == 0) throw "abnormal";
@@ -16,7 +17,8 @@ int main(int argc, char const *argv[]) {
     } catch (int n) {
         cout << "in main" << endl;
     }
-
-    system("pause");
+    point p[9][9];
+    cout << "point sizeof:" << sizeof (point) << endl;
+    cout << "p sizeof:" << sizeof p << endl;
     return 0;
 }
