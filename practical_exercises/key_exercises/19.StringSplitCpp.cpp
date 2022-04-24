@@ -97,6 +97,31 @@ std::vector<std::string> stringSplit6(const std::string &str, char delim) {
                                    std::sregex_token_iterator());
     return elems;
 }
+// Method 7
+//    constexpr const char *ch1 = "12,1,3,12";
+//    int ret[1024];
+//    int num = 0;
+//    split(ret, ch1, ",", strlen(ch1), &num);
+static int split(int *ret, const char *src,  const char *separator, int len, int *num) {
+    char *pch;
+    char *pSaveStr;
+    int index = 0;
+    int count = 0;
+    char splitStr[len + 1];
+    memset(splitStr, 0, len + 1);
+    memcpy(splitStr, src, len);
+    pch = strtok_r(splitStr, separator, &pSaveStr);
+    while (pch != NULL) {
+        ret[index] = atoi(pch);
+        ++count;
+        printf("ret= %d pch:%d\n", ret[index], atoi(pch));
+        pch = strtok_r(NULL, separator, &pSaveStr);
+        index++;
+    }
+    *num = count;
+    return 0;
+}
+
 int main() {
     std::string str("hello,world!");
     std::vector<std::string> elems1 = stringSplit1(str, ',');
