@@ -102,7 +102,16 @@ std::vector<std::string> stringSplit6(const std::string &str, char delim) {
 //    int ret[1024];
 //    int num = 0;
 //    split(ret, ch1, ",", strlen(ch1), &num);
-static int split(int *ret, const char *src,  const char *separator, int len, int *num) {
+static int split(int *ret, const char *src, const char *separator, int len, int *num) {
+    if (!ret || !src || !separator || !num) {
+        printf("ERR, param is NULL!\n");
+        return -1;
+    }
+    if (!len) {
+        printf("ERR, len is wrong!\n");
+        return -1;
+    }
+
     char *pch;
     char *pSaveStr;
     int index = 0;
@@ -165,4 +174,12 @@ int main() {
     for (auto i : elems6) {
         std::cout << i << std::endl; // hello world!
     }
+
+    // Method 7
+    constexpr const char *ch1 = "12,1,3,12";
+    int ret[1024];
+    int num = 0;
+    split(ret, ch1, ",", strlen(ch1), &num);
+
+    return 0;
 }

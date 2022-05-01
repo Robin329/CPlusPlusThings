@@ -6,6 +6,7 @@ venv/*
 cmake-build-release/*
 **/.DS_Store
 .history/*
+lib/.DS_Store
 *.DS_Store
 **/*.dSYM/*
 practical_exercises/.*
