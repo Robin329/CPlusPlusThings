@@ -56,3 +56,8 @@ add_executable(p129_ex05 Chapter6/p129_ex05.cpp)
 add_executable(p129_ex08 Chapter6/p129_ex08.cpp)
 add_executable(p129_ex09 Chapter6/p129_ex09.cpp)
 add_executable(p129_ex10 Chapter6/p129_ex10.cpp)
+
+# Chapter7
+add_executable(p151_calculator08buggy_ex1 Chapter7/p151_calculator08buggy_ex1.cpp)
+add_executable(p151_ex Chapter7/p151_ex.cpp)
+add_executable(p151_ex10 Chapter7/p151_ex10.cpp)
