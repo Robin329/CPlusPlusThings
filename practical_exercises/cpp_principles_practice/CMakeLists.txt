@@ -78,3 +78,5 @@ add_executable(p181_ex13 Chapter8/p181_ex13.cpp)
 
 # Chapter9
 add_executable(p202_ex05 Chapter9/p202_ex05.cpp)
+add_executable(p205_ex02 Chapter9/p205_ex02.cpp)
+add_subdirectory(Chapter9/p205_ex05_ex09)

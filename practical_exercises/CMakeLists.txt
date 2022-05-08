@@ -59,3 +59,4 @@ add_executable(interview_test_volatile interview_test/volatile.cpp)
 add_subdirectory(cpp_principles_practice)
 
 add_executable(26.compare_two_file key_exercises/26.compare_two_files.cpp)
+add_executable(27.is_float_or_int key_exercises/27.is_float_or_int.cpp)
