@@ -47,6 +47,7 @@ Revised August 3, 2020: a cleanup removing support for ancient compilers
 //------------------------------------------------------------------------------
 
 typedef long Unicode;
+#define CURRENT_PATH "practical_exercises/cpp_principles_practice/"
 
 //------------------------------------------------------------------------------
 

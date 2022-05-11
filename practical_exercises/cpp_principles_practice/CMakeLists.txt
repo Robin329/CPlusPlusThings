@@ -84,16 +84,17 @@ add_subdirectory(Chapter9/p205_ex05_ex09)
 # Chapter10
 # add_executable(p212_read_write_file Chapter10/p212_read_write_file.cpp)
 set(PATTERNS
-    Chapter10)
-foreach(_dir IN ITEMS ${PATTERNS})
+        Chapter10
+        Chapter11)
+foreach (_dir IN ITEMS ${PATTERNS})
     file(GLOB _files "${_dir}/*.cpp")
     # message(STATUS "Pattern `${_dir}':")
-    foreach(_file IN ITEMS ${_files})
+    foreach (_file IN ITEMS ${_files})
         get_filename_component(_file_name
-                                ${_file} NAME
-        )
+                ${_file} NAME
+                )
         set(_project_name "${_file_name}")
         # message(STATUS "  ${_dir}/${_file_name} is going to be built")
         add_executable(${_project_name} "${_dir}/${_file_name}")
-    endforeach()
-endforeach()
+    endforeach ()
+endforeach ()

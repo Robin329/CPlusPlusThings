@@ -1,0 +1,32 @@
+= 36
+= -8
+Bad token
+= primary expected.
+= 2
+=  ')' was expected.
+= primary expected.
+= 36
+= -8
+Bad token
+= 36
+= -8
+Bad token
+= Bad token
+= 36
+Bad token
+= J is undefined.
+= J is undefined.
+= J is undefined.
+= 36
+= -8
+Bad token
+= 36
+= -8
+Bad token
+= 36
+= -8
+Bad token
+= primary expected.
+= 36
+= -8
+Bad token
