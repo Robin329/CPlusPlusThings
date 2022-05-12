@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 if (CMAKE_HOST_APPLE)
 set(CMAKE_SYSTEM_PROCESSOR arm64)
 set(CMAKE_OSX_ARCHITECTURES arm64)
-add_definitions(-DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/local/bin/gmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++)
+#add_definitions(-DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/local/bin/gmake -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++)
 endif()
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
@@ -19,7 +19,7 @@ add_subdirectory(basic_content)
 ################################
 #codingStyleldIoms
 ################################
-add_subdirectory(codingStyleIdioms)
+#add_subdirectory(codingStyleIdioms)
 ################################
 #concurrency
 ################################
@@ -82,8 +82,8 @@ add_subdirectory(practical_exercises)
 ################################
 #practical_exercises/primer_cpp_6
 ################################
-add_subdirectory(practical_exercises/primer_cpp_6)
-add_subdirectory(practical_exercises/primer_cpp_5)
+#add_subdirectory(practical_exercises/primer_cpp_6)
+#add_subdirectory(practical_exercises/primer_cpp_5)
 
 add_executable(template learn_class/modern_C++_30/compilerpoly/template.cpp)
 
@@ -91,7 +91,7 @@ include_directories(lib/json-develop)
 add_subdirectory(lib/json-develop)
 add_subdirectory(lib/dbg-macro)
 add_subdirectory(learn_class/modern_C++_30)
-add_subdirectory(C-Plus-Plus)
+#add_subdirectory(C-Plus-Plus)
 add_subdirectory(design_patterns/design-patterns-cpp)
 add_subdirectory(design_patterns/Hands-On-Design-Patterns-with-CPP)
 add_subdirectory(lib/json-develop/test)
