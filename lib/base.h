@@ -22,13 +22,14 @@
 #include <ctime>
 #include <iostream>
 #include <set>
-#include <stack>
 #include <sstream>
+#include <stack>
 #include <string>
 #include <utility>
 #include <vector>
-#include "filesystem.h"
+
 #include "dbg-macro/dbg.h"
+#include "filesystem.h"
 
 typedef int8_t S8;
 typedef int16_t S16;
@@ -57,7 +58,7 @@ struct TreeNode {
 
 typedef ListNode Node;
 
-ListNode* nodeInit() {
+ListNode *nodeInit() {
     ListNode *l;
     l = (ListNode *)malloc(sizeof(ListNode));
     l->next = nullptr;
@@ -65,7 +66,7 @@ ListNode* nodeInit() {
     while (scanf("%d", &x) != EOF) {
         cout << "count:" << count << " x:" << x << endl;
         ++count;
-        
+
         ListNode *p;
         p = (ListNode *)malloc(sizeof(ListNode));
         p->val = x;
@@ -85,14 +86,13 @@ bool printNode(Node *result) {
         s.push(p->val);
         p = p->next;
     }
-    
+
     while (!s.empty()) //出栈
     {
         cout << s.top() << " ";
         s.pop();
     }
     return true;
-    
 }
 
 #define GET_CUR_TIME_STRING(tag)                                                                   \
@@ -128,19 +128,19 @@ typedef struct pointCoordinate {
 
 static int dbgLevel = 1;
 #define DBG_LEVEL dbgLevel
-#define COOR_T_LOG(tag, var, line, column)                                               \
-    {                                                                                    \
-        if (DBG_LEVEL) {                                                                 \
-            do {                                                                         \
-                printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                     \
-                for (int i = 0; i < column; i++) {                                       \
-                    for (int j = 0; j < line; j++) {                                     \
+#define COOR_T_LOG(tag, var, line, column)                                                \
+    {                                                                                     \
+        if (DBG_LEVEL) {                                                                  \
+            do {                                                                          \
+                printf("%s[%d] %s:\n", __FUNCTION__, __LINE__, tag);                      \
+                for (int i = 0; i < column; i++) {                                        \
+                    for (int j = 0; j < line; j++) {                                      \
                         printf(" [%d][%d] = (%f, %f)\n", j, i, var[j][i].x, var[j][i].y); \
-                    }                                                                    \
-                    printf("\n");                                                        \
-                }                                                                        \
-            } while (0);                                                                 \
-        }                                                                                \
+                    }                                                                     \
+                    printf("\n");                                                         \
+                }                                                                         \
+            } while (0);                                                                  \
+        }                                                                                 \
     }
 
 #define POINT_LOG(tag, var, line, column)                                                      \
@@ -157,6 +157,49 @@ static int dbgLevel = 1;
             } while (0);                                                                       \
         }                                                                                      \
     }
+
+class Time {
+public:
+    Time() {
+        m_time_t = std::time(0);
+        m_time = std::localtime(&m_time_t);
+        assert(m_time);
+        m_year = m_time->tm_year + 1900;
+        m_min = m_time->tm_min;
+        m_hour = m_time->tm_hour;
+        m_day = m_time->tm_mday;
+        m_mon = m_time->tm_mon + 1;
+        m_wday = m_time->tm_wday;
+        m_yday = m_time->tm_yday;
+    }
+    static Time *getTime() {
+                if (!m_stTime) {
+                    m_stTime = new Time();
+
+                } return m_stTime;
+//        static Time t;
+//        return &t;
+    }
+    int getYear() { return m_year; }
+    int getMon() { return m_mon; }
+    int getHour() { return m_hour; }
+    int getDay() { return m_day; }
+    virtual ~Time() {
+        //        if (m_stTime) delete m_stTime;
+    }
+
+private:
+        static Time *m_stTime;
+    std::time_t m_time_t;
+    std::tm *m_time;
+    int m_year;
+    int m_min;
+    int m_hour;
+    int m_day;
+    int m_mon;
+    int m_wday;
+    int m_yday;
+};
 
 class Timer1 {
 public:

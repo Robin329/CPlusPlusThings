@@ -8,11 +8,6 @@
 //--INCLUDES--//
 #include "std_lib_facilities.h"
 
-inline ios_base &general(ios_base &b) {
-    b.setf(ios_base::fmtflags(0), ios_base::floatfield);
-    return b;
-}
-
 int main() {
     /*
     Drill 1

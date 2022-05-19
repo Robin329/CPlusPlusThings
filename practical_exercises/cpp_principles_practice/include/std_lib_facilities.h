@@ -93,6 +93,11 @@ struct Vector : public std::vector<T> {
     }
 };
 
+inline ios_base &general(ios_base &b) {
+    b.setf(ios_base::fmtflags(0), ios_base::floatfield);
+    return b;
+}
+
 // disgusting macro hack to get a range checked vector:
 #define vector Vector
 
