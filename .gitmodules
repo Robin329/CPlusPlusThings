@@ -10,3 +10,6 @@
 [submodule "learn_algorithms/c"]
        path = learn_algorithms/c
        url = git@github.com:TheAlgorithms/C.git
+[submodule "lib/fltk"]
+	path = lib/fltk
+	url = https://github.com/fltk/fltk.git

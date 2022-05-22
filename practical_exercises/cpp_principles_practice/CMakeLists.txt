@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(../lib/magic_enum/include)
 include_directories(../lib)
 include_directories(./include)
+include_directories(./Graphics)
 
 add_executable(p32_1 Chapter2/p32_1.cpp)
 add_executable(p35_3.1_input Chapter3/p35_3.1_input.cpp)
@@ -80,12 +81,14 @@ add_executable(p181_ex13 Chapter8/p181_ex13.cpp)
 add_executable(p202_ex05 Chapter9/p202_ex05.cpp)
 add_executable(p205_ex02 Chapter9/p205_ex02.cpp)
 add_subdirectory(Chapter9/p205_ex05_ex09)
-
+#add_subdirectory(Chapter12)
 # Chapter10
 # add_executable(p212_read_write_file Chapter10/p212_read_write_file.cpp)
 set(PATTERNS
         Chapter10
-        Chapter11)
+        Chapter11
+        Chapter17
+        )
 foreach (_dir IN ITEMS ${PATTERNS})
     file(GLOB _files "${_dir}/*.cpp")
     # message(STATUS "Pattern `${_dir}':")
