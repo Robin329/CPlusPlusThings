@@ -88,6 +88,7 @@ set(PATTERNS
         Chapter10
         Chapter11
         Chapter17
+        Chapter18
         )
 foreach (_dir IN ITEMS ${PATTERNS})
     file(GLOB _files "${_dir}/*.cpp")

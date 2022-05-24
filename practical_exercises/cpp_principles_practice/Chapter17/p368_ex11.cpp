@@ -1,6 +1,8 @@
 //
 // Created by renbin jiang on 2022/5/23.
 //
+#include "std_lib_facilities.h"
+
 class Link {
 public:
     Link(const string& v, Link* p = nullptr, Link* s = nullptr)
@@ -28,7 +30,6 @@ private:
 
 Link* Link::insert(Link* n) {
     if (n == nullptr) return this;
-    if (this == nullptr) return n;
 
     // this object comes after n
     n->m_succ = this;
