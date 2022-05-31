@@ -31,7 +31,7 @@ bool is_palindrome2(const char s[], int n) {
 istream &read_word(istream &is, char *buffer, int max) {
     is.width(max); // read at most max-1 characters in the next
     is >> buffer;  // read whitespace-terminated word.
-                  // add zero after the last character read into buffer
+                   // add zero after the last character read into buffer
     return is;
 }
 
@@ -84,13 +84,15 @@ int main() {
     cout << "--------------------------------\n";
     const int max = 128;
     char s[max] = {};
-    cout << "Please input string:";
-    while (read_word(cin, s, max)) {
-        cout << s << "  is  ";
-        if (!is_palindrome2(s, strlen(s))) cout << "not";
-        cout << "a palindrome\n";
-    }
+//    cout << "Please input string:";
+//    while (read_word(cin, s, max)) {
+//        cout << s << "  is  ";
+//        if (!is_palindrome2(s, strlen(s))) cout << "not";
+//        cout << "a palindrome\n";
+//    }
+#define B_PACK_CHARS(c1, c2, c3, c4) ((((c1) << 24)) | (((c2) << 16)) | (((c3) << 8)) | (c4))
 
+    cout << "dump:" << std::hex << B_PACK_CHARS('_', 'D', 'M', 'P') << endl;
     // 4a
     f(ga, 10);
 
