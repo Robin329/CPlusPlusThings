@@ -25,8 +25,10 @@ void f1(vector<int> gv) {
         cout << "tmp:" << tmp << endl;
     }
 }
-
+using namespace base;
+ Mutex mLock;
 char *func(void) {
+    Mutex::Autolock lock(mLock);
     char str[2] = {1, 2};
 //    char *ch;
     char *ch = (char *)malloc(sizeof(char) * 2);
@@ -35,9 +37,11 @@ char *func(void) {
     printf("str:%d\n", str[0]);
     cout << "str:" << (int)str[0] << endl;
     cout << "ch0:" << (int)ch[0] << endl;
+    
     return ch;
 }
 int main() {
+    
     int a[10] = {};
     int aa[10] = {1, 2 * 1, 3 * 2 * 1, 4 * 3 * 2 * 1};
     f(aa, 10);

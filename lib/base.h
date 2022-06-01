@@ -158,6 +158,153 @@ static int dbgLevel = 1;
         }                                                                                      \
     }
 
+int64_t systemTime(int /*clock*/);
+
+class Mutex;
+class Condition {
+public:
+    enum { PRIVATE = 0, SHARED = 1 };
+
+    enum WakeUpType { WAKE_UP_ONE = 0, WAKE_UP_ALL = 1 };
+
+    Condition();
+    explicit Condition(int type);
+    inline ~Condition() { pthread_cond_destroy(&mCond); }
+    // Wait on the condition variable.  Lock the mutex before calling.
+    // Note that spurious wake-ups may happen.
+    inline int32_t wait(Mutex &mutex);
+    // same with relative timeout
+    inline int32_t waitRelative(Mutex &mutex, int64_t reltime);
+
+    // Signal the condition variable, allowing one thread to continue.
+    inline void signal() { pthread_cond_signal(&mCond); }
+    // Signal the condition variable, allowing one or all threads to continue.
+    inline void signal(WakeUpType type) {
+        if (type == WAKE_UP_ONE) {
+            signal();
+        } else {
+            broadcast();
+        }
+    }
+    // Signal the condition variable, allowing all threads to continue.
+    inline void broadcast() { pthread_cond_broadcast(&mCond); }
+
+private:
+#if !defined(_WIN32)
+    pthread_cond_t mCond;
+#else
+    void *mState;
+#endif
+};
+
+class Mutex {
+public:
+    enum { PRIVATE = 0, SHARED = 1 };
+
+    Mutex() { pthread_mutex_init(&mMutex, nullptr); }
+    explicit Mutex(const char *name) { pthread_mutex_init(&mMutex, nullptr); }
+    explicit Mutex(int type, const char *name = nullptr) {
+        if (type == SHARED) {
+            pthread_mutexattr_t attr;
+            pthread_mutexattr_init(&attr);
+            pthread_mutexattr_setpshared(&attr, PTHREAD_PROCESS_SHARED);
+            pthread_mutex_init(&mMutex, &attr);
+            pthread_mutexattr_destroy(&attr);
+        } else {
+            pthread_mutex_init(&mMutex, nullptr);
+        }
+    }
+    ~Mutex() { pthread_mutex_destroy(&mMutex); }
+
+    // lock or unlock the mutex
+    int32_t lock() { return -pthread_mutex_lock(&mMutex); }
+    void unlock() { pthread_mutex_unlock(&mMutex); }
+
+    // lock if possible; returns 0 on success, error otherwise
+    int32_t tryLock() { return -pthread_mutex_trylock(&mMutex); }
+
+    // Manages the mutex automatically. It'll be locked when Autolock is
+    // constructed and released when Autolock goes out of scope.
+    class Autolock {
+    public:
+        inline explicit Autolock(Mutex &mutex) : mLock(mutex) { mLock.lock(); }
+        inline explicit Autolock(Mutex *mutex) : mLock(*mutex) { mLock.lock(); }
+        inline ~Autolock() { mLock.unlock(); }
+
+    private:
+        Mutex &mLock;
+        // Cannot be copied or moved - declarations only
+        Autolock(const Autolock &);
+        Autolock &operator=(const Autolock &);
+    };
+
+private:
+    friend class Condition;
+    // A mutex cannot be copied
+    Mutex(const Mutex &);
+    Mutex &operator=(const Mutex &);
+#if !defined(_WIN32)
+    pthread_mutex_t mMutex;
+#else
+    void _init();
+    void *mState;
+#endif
+};
+inline int32_t Condition::wait(Mutex &mutex) {
+    return -pthread_cond_wait(&mCond, &mutex.mMutex);
+}
+inline int32_t Condition::waitRelative(Mutex &mutex, int64_t reltime) {
+    struct timespec ts;
+#if defined(__linux__)
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+#else // __APPLE__
+    // Apple doesn't support POSIX clocks.
+    struct timeval t;
+    gettimeofday(&t, nullptr);
+    ts.tv_sec = t.tv_sec;
+    ts.tv_nsec = t.tv_usec * 1000;
+#endif
+
+    // On 32-bit devices, tv_sec is 32-bit, but `reltime` is 64-bit.
+    int64_t reltime_sec = reltime / 1000000000;
+
+    ts.tv_nsec += static_cast<long>(reltime % 1000000000);
+    if (reltime_sec < INT64_MAX && ts.tv_nsec >= 1000000000) {
+        ts.tv_nsec -= 1000000000;
+        ++reltime_sec;
+    }
+
+    int64_t time_sec = ts.tv_sec;
+    if (time_sec > INT64_MAX - reltime_sec) {
+        time_sec = INT64_MAX;
+    } else {
+        time_sec += reltime_sec;
+    }
+
+    ts.tv_sec = (time_sec > LONG_MAX) ? LONG_MAX : static_cast<long>(time_sec);
+
+    return -pthread_cond_timedwait(&mCond, &mutex.mMutex, &ts);
+}
+// ---------------------------------------------------------------------------
+
+/*
+ * Automatic mutex.  Declare one of these at the top of a function.
+ * When the function returns, it will go out of scope, and release the
+ * mutex.
+ */
+
+typedef Mutex::Autolock AutoMutex;
+
+int64_t systemTime(int /*clock*/) {
+    // Clock support varies widely across hosts. Mac OS doesn't support
+    // posix clocks, older glibcs don't support CLOCK_BOOTTIME and Windows
+    // is windows.
+    struct timeval t;
+    t.tv_sec = t.tv_usec = 0;
+    gettimeofday(&t, NULL);
+    return int64_t(t.tv_sec) * 1000000000LL + int64_t(t.tv_usec) * 1000LL;
+}
+
 class Time {
 public:
     Time() {
@@ -173,12 +320,12 @@ public:
         m_yday = m_time->tm_yday;
     }
     static Time *getTime() {
-                if (!m_stTime) {
-                    m_stTime = new Time();
-
-                } return m_stTime;
-//        static Time t;
-//        return &t;
+        if (!m_stTime) {
+            m_stTime = new Time();
+        }
+        return m_stTime;
+        //        static Time t;
+        //        return &t;
     }
     int getYear() { return m_year; }
     int getMon() { return m_mon; }
@@ -189,7 +336,7 @@ public:
     }
 
 private:
-        static Time *m_stTime;
+    static Time *m_stTime;
     std::time_t m_time_t;
     std::tm *m_time;
     int m_year;
