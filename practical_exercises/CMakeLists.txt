@@ -58,6 +58,9 @@ add_executable(interview_test_volatile interview_test/volatile.cpp)
 # cpp Principles and Practice
 add_subdirectory(cpp_principles_practice)
 
+# looper and handler
+add_subdirectory(looper_handler)
+
 add_executable(26.compare_two_file key_exercises/26.compare_two_files.cpp)
 add_executable(27.is_float_or_int key_exercises/27.is_float_or_int.cpp)
 add_executable(28.check_Big_Little_endian key_exercises/28.check_Big_Little_endian.cpp)
