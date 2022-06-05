@@ -76,7 +76,13 @@ int main() {
     cout << "date:" << __DATE__ <<endl;
     cout << "time:" << __TIME__ << endl;
     cout << "stdc:" << __STDC__ << endl;
-    cout << "";
+    cout << "\n\n\n";
+    int ps[5] = {1, 2, 3, 4, 5};
+    printf("ps : %#p %#p %#p\n", ps, &ps + 1, &ps[0] + 1);
+    int *ptr = (int *)(&ps + 1);
+    printf("%d, %d | %#p %#p\n", *(ps + 1), *(ptr - 1), (ps + 1), (ptr - 1));
+    char aa[5] = {'A', 'B', 'C', 'D'};
+
     //    keep_window_open();
     return 0;
 }
