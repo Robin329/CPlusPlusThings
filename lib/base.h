@@ -2,6 +2,7 @@
 // Created by renbin jiang on 2021/8/30.
 //
 
+#pragma once
 #ifndef _BASE_H_
 #define _BASE_H_
 
