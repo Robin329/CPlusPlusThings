@@ -110,7 +110,7 @@ int main(int argc, char *argv[]) {
     }
 
     /* Buffer where events are returned */
-    events = calloc(MAXEVENTS, sizeof(event));
+    events = (struct epoll_event *)calloc(MAXEVENTS, sizeof(event));
 
     /* event loop */
     while (1) {
