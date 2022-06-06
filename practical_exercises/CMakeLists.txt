@@ -65,3 +65,8 @@ add_executable(26.compare_two_file key_exercises/26.compare_two_files.cpp)
 add_executable(27.is_float_or_int key_exercises/27.is_float_or_int.cpp)
 add_executable(28.check_Big_Little_endian key_exercises/28.check_Big_Little_endian.cpp)
 add_executable(29.malloc key_exercises/29.malloc.cpp)
+
+
+# epoll
+#add_executable(epoll_sample.cpp epoll/epoll_sample.cpp)
+#add_executable(epoll.c epoll/epoll.c)

@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 #include <functional>
+#include <iostream>
 #include <memory>
 #include <string>
 #include <thread>
@@ -16,6 +17,7 @@ using namespace std;
 
 void AsyncPostExample() {
     auto looper = ALooper::create();
+    looper->setName("== AsyncPostExample ==");
     looper->start();
 
     class MyHandler : public AHandler {
@@ -28,13 +30,14 @@ void AsyncPostExample() {
     shared_ptr<AHandler> handler(new MyHandler);
     looper->registerHandler(handler);
 
-//    AMessage::create(1, handler)->post();
+    //    AMessage::create(1, handler)->post();
 
     auto msg = AMessage::create(1, handler);
     msg->setInt32("robin", 3);
     msg->post();
     usleep(3 * 1000 * 1000);
-    looper->stop();
+//    printf("sleep post\n");
+    //    looper->stop();
 }
 
 void SyncPostExample() {
@@ -156,7 +159,7 @@ void RunOnCustomThreadExample() {
     });
 
     usleep(100 * 1000);
-    printf("stop looper");
+    printf("stop looper\n");
     looper->stop();
     mythd.join();
 }
@@ -186,7 +189,8 @@ int main(int argc, char *argv[]) {
     do {
         unsigned choose = 0;
         printf("\nchoose example to run, press ctrl-c to quit\n");
-        scanf("%u", &choose);
+        //        scanf("%u", &choose);
+        std::cin >> choose;
         if (choose > n) {
             printf("invalid choose\n");
             continue;
