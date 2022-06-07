@@ -41,7 +41,9 @@ typedef uint8_t U8;
 typedef uint16_t U16;
 typedef uint32_t U32;
 typedef uint64_t U64;
-
+#define TRUE 1;
+#define FALSE 0;
+#define BOOL bool;
 using namespace std;
 namespace base {
 struct ListNode {

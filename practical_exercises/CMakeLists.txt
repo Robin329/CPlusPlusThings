@@ -65,7 +65,7 @@ add_executable(26.compare_two_file key_exercises/26.compare_two_files.cpp)
 add_executable(27.is_float_or_int key_exercises/27.is_float_or_int.cpp)
 add_executable(28.check_Big_Little_endian key_exercises/28.check_Big_Little_endian.cpp)
 add_executable(29.malloc key_exercises/29.malloc.cpp)
-
+add_executable(30.two_dimensional_array_convert key_exercises/30.two_dimensional_array_convert.cpp)
 
 # epoll
 if (${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")

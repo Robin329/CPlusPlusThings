@@ -6,6 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
 add_executable(intro 1.thread/intro.cpp)
 add_executable(1.thread 1.thread/thread.cpp)
+add_executable(1.three_threads 1.thread/three_threads.cpp)
+
 add_executable(1.function_pointer 2.create_type/1.function_pointer.cpp)
 add_executable(2.lambda_function 2.create_type/2.lambda_function.cpp)
 add_executable(3.functor 2.create_type/3.functor.cpp)

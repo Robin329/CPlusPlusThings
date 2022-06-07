@@ -39,7 +39,7 @@ void *AudioResumeThread(void *arg) {
 
 void DisplayResume(void) {
     printf("%s:%d Enter\n", __FUNCTION__, __LINE__);
-    for (int i{}; i < 12; ++i) {
+    for (int i{}; i < 5; ++i) {
         // cout << __FUNCTION__ << ":" << __LINE__ << " i -> " << i << endl;
         printf("%s[%d] i:%d\n", __FUNCTION__, __LINE__, i);
         std::this_thread::sleep_for(std::chrono::seconds(1));
@@ -104,14 +104,14 @@ int main() {
     CreateAudioResumeThread();
 
     int timeCount = 0;
-    while (timeCount < 10 * 1000) {
+    while (timeCount < 10) {
         // std::unique_lock<std::mutex> dispMutex(mtx);
         if (isDispResumeEnd) {
             printf("------------ isDispResumeEnd is true ----------------\n");
             break;
         }
         timeCount++;
-        // printf("-->> %d\n", timeCount);
+         printf("-->> %d\n", timeCount);
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
     printf("main END\n");
