@@ -72,3 +72,6 @@ if (${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
     add_executable(epoll_sample.cpp epoll/epoll_sample.cpp)
     add_executable(epoll.c epoll/epoll.c)
 endif()
+
+# share memory
+add_subdirectory(share_memory)

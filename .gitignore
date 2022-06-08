@@ -1,6 +1,7 @@
 com.sh
 cmake-build-debug/*
 *.make
+*.cmake
 *~
 venv/*
 cmake-build-release/*
@@ -21,3 +22,4 @@ build/
 */cmake-build-debug*/
 */*cmake-build-debug*/
 **/**/**/cmake-build-debug/*
+*/CMakeFiles/*

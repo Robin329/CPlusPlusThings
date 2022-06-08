@@ -131,6 +131,25 @@ static int split(int *ret, const char *src, const char *separator, int len, int 
     return 0;
 }
 
+static int split8(char dst[][128], const char *src, const char *delim, int len) {
+    if (!src || !delim || !dst) return -1;
+    char *p = NULL;
+    char *rest = const_cast<char*> (src);
+    int index = 0;
+    char splitStr[len + 1] = {0};
+    memcpy(splitStr, src, len);
+    p = strtok_r(splitStr, delim, &rest);
+    while (p != NULL) {
+        std::cout << "p:" << p  << std::endl;
+        strncpy(&dst[index][128], p, strlen(p) + 1);
+        p = strtok_r(NULL, delim, &rest);
+        std::cout << "dst:" << &dst[index][128] << std::endl;
+        index++;
+    }
+
+    return index;
+}
+
 int main() {
     std::string str("hello,world!");
     std::vector<std::string> elems1 = stringSplit1(str, ',');
@@ -181,5 +200,10 @@ int main() {
     int num = 0;
     split(ret, ch1, ",", strlen(ch1), &num);
 
+    // Method 8
+    constexpr const char *ch8 = "hello ni hao robin";
+    char ret8[128][128] = {0};
+    // std::cout << "sizeof ch8:" << sizeof(ch8);
+    split8(ret8, ch8, " ", strlen(ch8));
     return 0;
 }
