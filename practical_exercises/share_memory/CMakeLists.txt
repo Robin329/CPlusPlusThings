@@ -42,5 +42,7 @@ if (${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
     # semaphore
     add_executable(semaphore semaphore.c shm_comm.h)
     target_link_libraries(semaphore rt pthread)
+    # mmap
+    add_executable(mmap mmap.c)
 
 endif()
