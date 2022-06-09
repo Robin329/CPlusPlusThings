@@ -23,11 +23,24 @@ if (${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
     add_executable(share_memory_pipe_fifo_server_rw pipe_fifo_server_rw.c pipe_fifo_comm.h)
     add_executable(share_memory_pipe_fifo_client_rw pipe_fifo_client_rw.c pipe_fifo_comm.h)
     # share memory
-    add_executable(shm shm.c)
-    add_executable(shmctl shmctl.c)
-    add_executable(shmat shmat.c)
-    add_executable(shmdt shmdt.c)
+    add_executable(shm shm.c shm_comm.h)
+    add_executable(shmctl shmctl.c shm_comm.h)
+    add_executable(shmat shmat.c shm_comm.h)
+    add_executable(shmdt shmdt.c shm_comm.h)
+    add_executable(shmat1 shmat1.c shm_comm.h)
+    target_link_libraries(shmat1 pthread)
     # share memory server<->client
     add_executable(shm_server shm_server.c shm_comm.h)
     add_executable(shm_client shm_client.c shm_comm.h)
+    # share memory semphore
+    add_executable(shm_semphore_proc_internal shm_semphore_proc_internal.c shm_comm.h)
+    target_link_libraries(shm_semphore_proc_internal rt pthread)
+    add_executable(shm_semaphore_condition shm_semaphore_condition.c shm_comm.h)
+    target_link_libraries(shm_semaphore_condition pthread rt)
+    add_executable(shm_semphor shm_semphor.c shm_comm.h)
+    target_link_libraries(shm_semphor rt pthread)
+    # semaphore
+    add_executable(semaphore semaphore.c shm_comm.h)
+    target_link_libraries(semaphore rt pthread)
+
 endif()
