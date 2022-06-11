@@ -13,3 +13,6 @@
 [submodule "lib/fltk"]
 	path = lib/fltk
 	url = https://github.com/fltk/fltk.git
+[submodule "lib/tinyxml"]
+	path = lib/tinyxml
+	url = https://github.com/leethomason/tinyxml2.git

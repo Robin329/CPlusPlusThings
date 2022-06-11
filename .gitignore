@@ -10,7 +10,6 @@ cmake-build-release/*
 lib/.DS_Store
 *.DS_Store
 **/*.dSYM/*
-practical_exercises/.*
 .idea/
 .DS_Store
 *.idea/
