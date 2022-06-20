@@ -68,9 +68,14 @@ add_executable(29.malloc key_exercises/29.malloc.cpp)
 add_executable(30.two_dimensional_array_convert key_exercises/30.two_dimensional_array_convert.cpp)
 
 # epoll
-if (${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux")
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
+    # epoll
     add_executable(epoll_sample.cpp epoll/epoll_sample.cpp)
     add_executable(epoll.c epoll/epoll.c)
+
+    # socket
+    add_executable(socket_test socket/socket_test.cpp socket/socket.h socket/socket.cpp)
+    target_link_libraries(socket_test gtest gtest_main pthread)
 endif()
 
 # share memory
