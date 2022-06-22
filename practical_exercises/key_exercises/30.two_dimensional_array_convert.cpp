@@ -1,11 +1,6 @@
 #include <iostream>
 
 #include "base.h"
-#include "opencv2/calib3d.hpp"
-#include "opencv2/core.hpp"
-#include "opencv2/features2d.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
 
 #define COLOR_UNIFORMITY_LINE 9
 #define COLOR_UNIFORMITY_COLUMN 9
@@ -251,7 +246,7 @@ int main() {
     PM_GAIN[8][0].g[0] = 0.5;
     PM_GAIN[8][0].g[1] = 0.5;
     PM_GAIN[8][0].g[2] = 0.5;
-    
+
     PM_GAIN[8][1].g[0] = 0.5;
     PM_GAIN[8][1].g[1] = 0.5;
     PM_GAIN[8][1].g[2] = 0.5;

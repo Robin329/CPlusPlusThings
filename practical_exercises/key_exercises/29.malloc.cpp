@@ -2,18 +2,18 @@
 // Created by renbin jiang on 2022/6/5.
 //
 #include <iostream>
-
+#include <string.h>
 using namespace std;
 
-void getMemory1(char **p, int num) {
-    
-    * p = (char *)malloc(num * sizeof(char));
+void getMemory1(char **p, int num)
+{
+	*p = (char *)malloc(num * sizeof(char));
 }
 
-char * getMemory2(char *p, int num) {
-    
-    p = (char *)malloc(num * sizeof(char));
-    return p;
+char *getMemory2(char *p, int num)
+{
+	p = (char *)malloc(num * sizeof(char));
+	return p;
 }
 
 char *func(char *p1, char *p2) {
@@ -37,7 +37,7 @@ char *fun1(char *p) {
 
 char *fun2(char *p) {
     cout << __FUNCTION__  <<" p -> " << p << endl;
-    
+
     return p;
 }
 
@@ -59,23 +59,23 @@ int main() {
     cout << "str2:" << str2 << endl;
     free(str);
     cout << "str2:" << str2 << endl; // error
-    
+
     // -------------------
     // function pointer
     // -------------------
     char *(*pf)(char *p1, char *p2);
     pf = &func;
     (*pf)((char *)"aa", (char *)"bb");
-    
+
     char *(*pf1[3])(char *p);
     pf1[0] = fun1;
     pf1[1] = &fun2;
     pf1[2] = &fun3;
-    
+
     pf1[0]((char *)"fun1");
     pf1[1]((char *)"fun2");
     pf1[2]((char *)"fun3");
-    
+
     char *(*(*pf2)[3])(char *p);
     pf2 = &pf1;
     pf2[0][0]((char *)"fun1");

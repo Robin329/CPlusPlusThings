@@ -22,9 +22,12 @@ int main() {
     // read from binary file;
     int i;
     while (ifs.read(as_bytes(i), sizeof(int))) v.push_back(i);
-    for (auto const tmp : v) cout << "tmp:" << tmp << end;
+    for (auto const tmp : v) {
+	    cout << "tmp:" << tmp << endl;
+    }
     // write to binary file
-    for (int i{}; i < v.size(); ++i)) ofs.write(as_bytes(v[i]), sizeof(int));
+    for (int i{}; i < v.size(); ++i)
+	    ofs.write(as_bytes(v[i]), sizeof(int));
 
     if (ifs.is_open()) ifs.close();
     if (ofs.is_open()) ofs.close();
