@@ -16,3 +16,6 @@
 [submodule "lib/iniparser"]
 	path = lib/iniparser
 	url = https://github.com/ndevilla/iniparser.git
+[submodule "lib/ltp"]
+	path = lib/ltp
+	url = https://github.com/linux-test-project/ltp.git
