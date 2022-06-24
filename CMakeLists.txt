@@ -28,6 +28,9 @@ add_subdirectory(basic_content)
 add_subdirectory(concurrency/Threading_In_CPlusPlus)
 add_subdirectory(concurrency/thread_example)
 add_subdirectory(concurrency/concurrency_v1)
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
+add_subdirectory(concurrency/pthread)
+endif()
 ################################
 #design_pattern
 ################################
