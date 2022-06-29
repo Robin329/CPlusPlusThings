@@ -18,3 +18,14 @@ target_link_libraries(pthread_other pthread)
 
 add_executable(pthread_all pthread_attr_setschedpolicy.c pthread_common.h posixtest.h affinity.h)
 target_link_libraries(pthread_all pthread)
+
+# timers
+add_executable(twoevtimers timers/twoevtimers.c posixtest.h)
+target_link_libraries(twoevtimers rt)
+
+add_executable(twoptimers timers/twoptimers.c posixtest.h)
+target_link_libraries(twoptimers rt)
+
+#  pthread brarrier
+add_executable(pthread_barrier pthread_barrier.cpp)
+target_link_libraries(pthread_barrier pthread)
