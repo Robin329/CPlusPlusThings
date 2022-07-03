@@ -136,7 +136,8 @@ static int split8(char dst[][128], const char *src, const char *delim, int len) 
     char *p = NULL;
     char *rest = const_cast<char*> (src);
     int index = 0;
-    char splitStr[len + 1] = {0};
+    if (len <= 0) return -1;
+    char *splitStr;
     memcpy(splitStr, src, len);
     p = strtok_r(splitStr, delim, &rest);
     while (p != NULL) {

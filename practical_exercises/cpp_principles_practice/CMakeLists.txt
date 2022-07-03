@@ -7,7 +7,7 @@ include_directories(../lib)
 include_directories(./include)
 include_directories(./Graphics)
 
-if(CMAKE_HOST_APPLE)
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Darwin")
     add_executable(p32_1 Chapter2/p32_1.cpp)
     add_executable(p35_3.1_input Chapter3/p35_3.1_input.cpp)
     add_executable(p35_3.3_input Chapter3/p35_3.3_input.cpp)
