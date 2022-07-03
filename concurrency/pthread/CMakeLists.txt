@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(../../lib/magic_enum/include)
 include_directories(../../lib)
 include_directories(/usr/include)
-
+include_directories(./)
 # pthread set sched policy
 add_executable(pthread_fifo pthread_attr_setschedpolicy_fifo.c pthread_common.h posixtest.h affinity.h)
 target_link_libraries(pthread_fifo pthread)
