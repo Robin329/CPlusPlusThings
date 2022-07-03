@@ -26,9 +26,11 @@ private:
     std::string validate_currency(const std::string& m);
 
     using currencyInfoTuple = std::tuple<std::string, std::string, double>;
-    const std::vector<currencyInfoTuple>
-            currencyInfo{{"USD", "$", 1}, // keep USD first because used as the standard stored currency
-                         {"DKK", "Kr", 6.8}};
+    const std::vector<currencyInfoTuple> currencyInfo{
+	    { "USD", "$",
+	      1.0 }, // keep USD first because used as the standard stored currency
+	    { "DKK", "Kr", 6.8 }
+    };
 };
 
 #endif

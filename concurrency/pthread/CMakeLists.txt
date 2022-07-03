@@ -28,4 +28,4 @@ target_link_libraries(twoptimers rt)
 
 #  pthread brarrier
 add_executable(pthread_barrier pthread_barrier.cpp)
-target_link_libraries(pthread_barrier pthread)
+target_link_libraries(pthread_barrier pthread base)

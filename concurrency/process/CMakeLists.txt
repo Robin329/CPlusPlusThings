@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.14)
+project(pthread_example)
+
+set(CMAKE_CXX_STANDARD 17)
+include_directories(../../lib/magic_enum/include)
+include_directories(../../lib)
+include_directories(/usr/include)
+include_directories(../../lib/ltp/include)
+add_executable(proc_test proc_test.c)
+add_executable(proc_state proc.h proc_state.c)

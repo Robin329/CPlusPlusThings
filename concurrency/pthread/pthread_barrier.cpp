@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <pthread.h>
 #include <stdio.h>
+#include "base.h"
 
 // -------------------
 int cpu_thread1 = 0;
@@ -19,13 +20,13 @@ void end() {
 
 void run1() {
     x = 1;
-    // __asm__ __volatile__("mfence" ::: "memory");
+    __asm__ __volatile__("mfence" ::: "memory");
     r1 = y;
 }
 
 void run2() {
     y = 1;
-    // __asm__ __volatile__("mfence" ::: "memory");
+    __asm__ __volatile__("mfence" ::: "memory");
     r2 = x;
 }
 
@@ -38,9 +39,11 @@ static void* thread1(void*) {
         pthread_barrier_wait(&barrier_start);
         // This maybe affect running results
         // printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
-        run1();
-        pthread_barrier_wait(&barrier_end);
-        // printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
+	printf("[%s:%d] thread id:%lu\n", __FUNCTION__, __LINE__,
+	       base::GetThreadId());
+	run1();
+	pthread_barrier_wait(&barrier_end);
+	// printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
     }
 
     return NULL;
@@ -52,8 +55,10 @@ static void* thread2(void*) {
         // This maybe affect running results
         // printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
         run2();
-        pthread_barrier_wait(&barrier_end);
-        // printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
+	printf("[%s:%d] thread id:%lu\n", __FUNCTION__, __LINE__,
+	       base::GetThreadId());
+	pthread_barrier_wait(&barrier_end);
+	// printf("[%s:%d] r1:%d,r2:%d\n", __FUNCTION__, __LINE__, r1, r2);
     }
 
     return NULL;

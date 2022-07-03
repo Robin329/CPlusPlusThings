@@ -47,57 +47,77 @@ typedef uint64_t U64;
 #define BOOL bool;
 using namespace std;
 namespace base {
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
+class ListNode {
+    public:
+	int val;
+	ListNode *next;
+
+	ListNode()
+	{
+	}
+	ListNode(int x) : val(x), next(NULL)
+	{
+	}
+	~ListNode()
+	{
+	}
+	static ListNode *nodeInit()
+	{
+		ListNode *l;
+		l = (ListNode *)malloc(sizeof(ListNode));
+		l->next = nullptr;
+		int x = 0, count = 0;
+		while (scanf("%d", &x) != EOF) {
+			cout << "count:" << count << " x:" << x << endl;
+			++count;
+
+			ListNode *p;
+			p = (ListNode *)malloc(sizeof(ListNode));
+			p->val = x;
+			p->next = l->next;
+			l->next = p;
+			if (count > 2)
+				break;
+		}
+		return l;
+	}
+
+	static bool printNode(ListNode *result)
+	{
+		ListNode *p = result->next;
+		stack<int> s;
+		while (result != NULL && p != NULL) //入栈
+		{
+			cout << "val:" << p->val << endl;
+			s.push(p->val);
+			p = p->next;
+		}
+
+		while (!s.empty()) //出栈
+		{
+			cout << s.top() << " ";
+			s.pop();
+		}
+		return true;
+	}
+	class TreeNode {
+	    private:
+		int val;
+		TreeNode *left;
+		TreeNode *right;
+
+	    public:
+		TreeNode(int x) : val(x), left(NULL), right(NULL)
+		{
+		}
+		TreeNode()
+		{
+		}
+		~TreeNode()
+		{
+		}
+	};
 };
-
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
-};
-
-typedef ListNode Node;
-
-ListNode *nodeInit() {
-    ListNode *l;
-    l = (ListNode *)malloc(sizeof(ListNode));
-    l->next = nullptr;
-    int x = 0, count = 0;
-    while (scanf("%d", &x) != EOF) {
-        cout << "count:" << count << " x:" << x << endl;
-        ++count;
-
-        ListNode *p;
-        p = (ListNode *)malloc(sizeof(ListNode));
-        p->val = x;
-        p->next = l->next;
-        l->next = p;
-        if (count > 2) break;
-    }
-    return l;
-}
-
-bool printNode(Node *result) {
-    Node *p = result->next;
-    stack<int> s;
-    while (result != NULL && p != NULL) //入栈
-    {
-        cout << "val:" << p->val << endl;
-        s.push(p->val);
-        p = p->next;
-    }
-
-    while (!s.empty()) //出栈
-    {
-        cout << s.top() << " ";
-        s.pop();
-    }
-    return true;
-}
 
 #define GET_CUR_TIME_STRING(tag)                                                                   \
     do {                                                                                           \
@@ -161,8 +181,6 @@ static int dbgLevel = 1;
             } while (0);                                                                       \
         }                                                                                      \
     }
-
-int64_t systemTime(int /*clock*/);
 
 class Mutex;
 class Condition {
@@ -299,16 +317,6 @@ inline int32_t Condition::waitRelative(Mutex &mutex, int64_t reltime) {
 
 typedef Mutex::Autolock AutoMutex;
 
-int64_t systemTime(int /*clock*/) {
-    // Clock support varies widely across hosts. Mac OS doesn't support
-    // posix clocks, older glibcs don't support CLOCK_BOOTTIME and Windows
-    // is windows.
-    struct timeval t;
-    t.tv_sec = t.tv_usec = 0;
-    gettimeofday(&t, NULL);
-    return int64_t(t.tv_sec) * 1000000000LL + int64_t(t.tv_usec) * 1000LL;
-}
-
 class Time {
 public:
     Time() {
@@ -337,6 +345,17 @@ public:
     int getDay() { return m_day; }
     virtual ~Time() {
         //        if (m_stTime) delete m_stTime;
+    }
+    int64_t systemTime(int /*clock*/)
+    {
+	    // Clock support varies widely across hosts. Mac OS doesn't support
+	    // posix clocks, older glibcs don't support CLOCK_BOOTTIME and Windows
+	    // is windows.
+	    struct timeval t;
+	    t.tv_sec = t.tv_usec = 0;
+	    gettimeofday(&t, NULL);
+	    return int64_t(t.tv_sec) * 1000000000LL +
+		   int64_t(t.tv_usec) * 1000LL;
     }
 
 private:

@@ -24,52 +24,48 @@ using namespace base;
 //     ListNode(int x) : val(x), next(NULL) {}
 // };
 //
-class Solution {
-public:
-    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
-        ListNode* head=new ListNode(-1);//存放结果的链表
-        ListNode* h=head;//移动指针
-        int sum=0;//每个位的加和结果
-        bool carry=false;//进位标志
-        while(l1!=NULL||l2!=NULL)
-        {
-            sum=0;
-            if(l1!=NULL)
-            {
-                sum+=l1->val;
-                l1=l1->next;
-            }
-            if(l2!=NULL)
-            {
-                sum+=l2->val;
-                l2=l2->next;
-            }
-            if(carry)
-                sum++;
-            h->next=new ListNode(sum%10);
-            h=h->next;
-            carry=sum>=10?true:false;
-        }
-        if(carry)
-        {
-            h->next=new ListNode(1);
-        }
-        printNode(head->next);
-        return head->next;
-    
-    }
+class Solution : public ListNode {
+    public:
+	ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
+	{
+		ListNode *head = new ListNode(-1); //存放结果的链表
+		ListNode *h = head; //移动指针
+		int sum = 0; //每个位的加和结果
+		bool carry = false; //进位标志
+		while (l1 != NULL || l2 != NULL) {
+			sum = 0;
+			if (l1 != NULL) {
+				sum += l1->val;
+				l1 = l1->next;
+			}
+			if (l2 != NULL) {
+				sum += l2->val;
+				l2 = l2->next;
+			}
+			if (carry)
+				sum++;
+			h->next = new ListNode(sum % 10);
+			h = h->next;
+			carry = sum >= 10 ? true : false;
+		}
+		if (carry) {
+			h->next = new ListNode(1);
+		}
+		printNode(head->next);
+		return head->next;
+	}
 
-private:
-    int getValueAndMoveNext(ListNode *&l) {
-        int x = 0;
-        if (l != NULL) {
-            x = l->val;
-            l = l->next;
-        }
-        return x;
-    }
+    private:
+	int getValueAndMoveNext(ListNode *&l)
+	{
+		int x = 0;
+		if (l != NULL) {
+			x = l->val;
+			l = l->next;
+		}
+		return x;
+	}
 };
-
 
 //bool printNode(Node *result) {
 //    Node *p = result;
@@ -89,15 +85,16 @@ private:
 //    return true;
 //
 //}
+using namespace base;
 int main() {
     cout << "Please input first Node:\n";
-    ListNode *l1 = nodeInit();
+    ListNode *l1 = ListNode::nodeInit();
     cout << "Please input second Node:\n";
 
-    ListNode *l2 = nodeInit();
+    ListNode *l2 = ListNode::nodeInit();
 
     Solution sol;
     ListNode *result = sol.addTwoNumbers(l1, l2);
-    printNode(result);
+    ListNode::printNode(result);
     return 0;
 }
