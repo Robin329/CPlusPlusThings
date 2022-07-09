@@ -56,7 +56,7 @@ target_link_libraries(timerfunc -lpthread)
 # interview test
 add_executable(is_point_inside_triangle interview_test/is_point_inside_triangle.cpp)
 add_executable(interview_test_volatile interview_test/volatile.cpp)
-
+add_subdirectory(cpp_principles_practice)
 if(CMAKE_HOST_APPLE)
     # cpp Principles and Practice
     add_subdirectory(cpp_principles_practice)
@@ -82,4 +82,6 @@ if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
     target_link_libraries(socket_test gtest gtest_main pthread)
 endif()
 # share memory
-add_subdirectory(share_memory)
+add_subdirectory(share_memory) 
+# callback func
+add_subdirectory(callback)

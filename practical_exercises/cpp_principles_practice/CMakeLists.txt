@@ -6,7 +6,7 @@ include_directories(../lib/magic_enum/include)
 include_directories(../lib)
 include_directories(./include)
 include_directories(./Graphics)
-
+add_executable(p71_ex06 Chapter4/p71_ex06.cpp)
 if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Darwin")
     add_executable(p32_1 Chapter2/p32_1.cpp)
     add_executable(p35_3.1_input Chapter3/p35_3.1_input.cpp)
