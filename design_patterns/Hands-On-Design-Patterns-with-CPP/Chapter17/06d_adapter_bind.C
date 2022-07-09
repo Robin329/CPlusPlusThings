@@ -8,7 +8,11 @@ using std::endl;
 using namespace std::placeholders; // For _1, _2 etc
 
 // std::bind example
-int f3(int i, int j, int k) { return i + j + k; }
+int f3(int i, int j, int k)
+{
+	cout << "i:" << i << " j:" << j << " k:" << k << endl;
+	return i + j + k;
+}
 auto f2 = std::bind(f3, _1, _2, 42);
 auto f1 = std::bind(f3, 5, _1, 7);
 
