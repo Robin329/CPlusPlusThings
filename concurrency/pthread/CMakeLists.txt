@@ -29,3 +29,7 @@ target_link_libraries(twoptimers rt)
 #  pthread brarrier
 add_executable(pthread_barrier pthread_barrier.cpp)
 target_link_libraries(pthread_barrier pthread base)
+
+# pthread semaphor
+add_executable(pthread_semaphors pthread_semaphors.c posixtest.h)
+target_link_libraries(pthread_semaphors pthread)
