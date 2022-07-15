@@ -39,9 +39,9 @@ int main()
 
 	QuoteField quoteField;
 	memset(&quoteField, 0, sizeof(QuoteField));
-	printf("this is error!\n");
+	printf("this is error example!\n");
 	cout << quoteField.SCQuoteTime << endl;
-	// quoteField.SCQuoteTime = "2020-02-30 16:16:16";
+	quoteField.SCQuoteTime = "2020-02-30 16:16:16";
 	// quoteField.offersize = 100;
 	// quoteField.offerPx_s = 3.1415;
 	return 0;
