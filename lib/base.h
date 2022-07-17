@@ -42,6 +42,15 @@ typedef uint8_t U8;
 typedef uint16_t U16;
 typedef uint32_t U32;
 typedef uint64_t U64;
+
+typedef S8 s8;
+typedef U8 u8;
+typedef S16 s16;
+typedef U16 u16;
+typedef S32 s32;
+typedef U32 u32;
+typedef S64 s64;
+typedef U64 u64;
 #define TRUE 1;
 #define FALSE 0;
 #define BOOL bool;

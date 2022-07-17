@@ -70,6 +70,7 @@ add_executable(27.is_float_or_int key_exercises/27.is_float_or_int.cpp)
 add_executable(28.check_Big_Little_endian key_exercises/28.check_Big_Little_endian.cpp)
 add_executable(29.malloc key_exercises/29.malloc.cpp)
 add_executable(30.two_dimensional_array_convert key_exercises/30.two_dimensional_array_convert.cpp)
+add_executable(31.data_type_range key_exercises/31.data_type_range.cpp)
 
 # epoll
 if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
@@ -81,7 +82,8 @@ if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
     add_executable(socket_test socket/socket_test.cpp socket/socket.h socket/socket.cpp)
     target_link_libraries(socket_test gtest gtest_main pthread)
 endif()
+
 # share memory
-add_subdirectory(share_memory) 
+add_subdirectory(share_memory)
 # callback func
 add_subdirectory(callback)

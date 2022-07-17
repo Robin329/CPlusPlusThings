@@ -2,6 +2,8 @@
 // Created by renbin jiang on 2022/6/2.
 //
 #include <iostream>
+#include <math.h>
+#include "base.h"
 
 int test(void) {
 //    int a[5] = {1, 2, 3, 4, 5};
@@ -103,5 +105,6 @@ int main()
 	convertEndian2();
 	printf("---------------------------------\n");
 	convertEndian3();
-    return 0;
+
+	return 0;
 }
