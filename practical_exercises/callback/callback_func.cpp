@@ -131,10 +131,10 @@ int main()
 {
 	CBFunc *cb = new CBFunc();
 	// 注册
-	cb->setCallBack(callBackFunc1, ENUM_CB_ONE);
-	cb->setCallBack(callBackFunc1, ENUM_CB_ONE); // error， 已经注册过
-	cb->setCallBack(callBackFunc1_1, ENUM_CB_ONE);
-	cb->setCallBack(callBackFunc2, ENUM_CB_TWO);
+	cb->setCallBack(&callBackFunc1, ENUM_CB_ONE);
+	cb->setCallBack(&callBackFunc1, ENUM_CB_ONE); // error， 已经注册过
+	cb->setCallBack(&callBackFunc1_1, ENUM_CB_ONE);
+	cb->setCallBack(&callBackFunc2, ENUM_CB_TWO);
 
 	// 开始处理
 	cb->cbOneProgram();
