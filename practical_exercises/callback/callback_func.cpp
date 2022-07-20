@@ -26,12 +26,15 @@ class CBFunc {
 	std::map<cbFlags, vector<cbFuncPtr> > mCallBackList;
 	bool executeCallBack(cbFlags flag)
 	{
-		if (flag < ENUM_CB_NONE || flag > ENUM_CB_MAX) {
-			cout << "ERROR, flag out range!!" << endl;
+		if (std::find(mVecFlag.begin(), mVecFlag.end(), flag) !=
+		    mVecFlag.end()) {
+			cout << "flag found\n";
+		} else {
+			cout << "flag not found\n";
 			return false;
 		}
 
-		vector<cbFuncPtr> vecFuc(mVecFunc[flag]);
+		vector<cbFuncPtr> vecFuc(mCallBackList[flag]);
 
 		for (auto const func : vecFuc) {
 			if (func)
@@ -43,7 +46,7 @@ class CBFunc {
     public:
 	CBFunc()
 	{
-		mVecFunc.resize(sizeof(cbFlags));
+		mVecFunc.resize(ENUM_CB_MAX);
 		cout << "call CBFunc" << endl;
 	}
 
