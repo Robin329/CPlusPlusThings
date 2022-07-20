@@ -71,7 +71,7 @@ class CBFunc {
 	{
 		cout << "call ~CBFunc" << endl;
 	}
-	bool setCallBack(int (*func)(int, user_data *), cbFlags flag, void *in)
+	bool setCallBack(cbFuncPtr func, cbFlags flag, void *in)
 	{
 		if (!func || !in) {
 			cout << "callback func is null!" << endl;
