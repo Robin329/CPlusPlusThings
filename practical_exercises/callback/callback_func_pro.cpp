@@ -186,9 +186,9 @@ int main()
 	memset(&out1, 0, sizeof(out_data));
 	memset(&out2, 0, sizeof(out_data));
 	memset(&out3, 0, sizeof(out_data));
-	cb->setCallBack(callBackFunc, ENUM_CB_ONE, &data1);
+	cb->setCallBack(&callBackFunc, ENUM_CB_ONE, &data1);
 
-	cb->setCallBack(callBackFunc, ENUM_CB_ONE,
+	cb->setCallBack(&callBackFunc, ENUM_CB_ONE,
 			&data2); // error， 已经注册过
 
 	cb->setCallBack(callBackFuncPro, ENUM_CB_ONE, &data3);
