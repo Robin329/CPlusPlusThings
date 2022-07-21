@@ -44,8 +44,6 @@ target_link_libraries(producer_consumer -lpthread)
 # ###############################
 # gtest
 # ###############################
-add_executable(cpp_test gtest/cpp_test/cpp_test.cpp)
-target_link_libraries(cpp_test gtest gtest_main pthread)
 add_executable(base_test lib/base_test.cpp lib/base.cpp)
 target_link_libraries(base_test gtest gtest_main pthread)
 
@@ -134,9 +132,9 @@ option(BUILD_GMOCK "Builds the googlemock subproject" ON)
 option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" ON)
 
 if(BUILD_GMOCK)
-        add_subdirectory(gtest/googlemock)
+        add_subdirectory(googletest/googlemock)
 else()
-        add_subdirectory(gtest/googletest)
+        add_subdirectory(googletest/googletest)
 endif()
 
 set(BASE_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR})
