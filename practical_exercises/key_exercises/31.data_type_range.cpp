@@ -16,7 +16,8 @@ template <typename T> void BinaryBitset(T n)
 
 int main()
 {
-	printf("\nchar(S8)       : %d —— %d\n", CHAR_MIN, CHAR_MAX);
+	printf("\nchar(S8)       : %d —— %d(%d)\n", SCHAR_MIN,
+	       sizeof(unsigned char), SCHAR_MAX);
 	printf("unsigned char(U8): %u —— %u\n\n", 0, UCHAR_MAX);
 
 	printf("short(S16)         : %hd —— %hd\n", SHRT_MIN, SHRT_MAX);

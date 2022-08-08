@@ -143,6 +143,10 @@ int main()
 	cb->cbOneProgram();
 	cb->cbTwoProgram();
 	cb->cbThreeProgram();
+	cout << (uint16_t)0x03u << endl;
+	cout << 0x03u << endl;
+	uint8_t ss = 128;
+	cout << "ss:" << ss << endl;
 	if (cb)
 		delete cb;
 	return 0;

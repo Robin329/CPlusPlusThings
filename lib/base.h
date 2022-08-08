@@ -33,110 +33,114 @@
 #include "dbg-macro/dbg.h"
 #include "filesystem.h"
 
-typedef int8_t S8;
+typedef int8_t  S8;
 typedef int16_t S16;
 typedef int32_t S32;
 typedef int64_t S64;
 
-typedef uint8_t U8;
+typedef uint8_t  U8;
 typedef uint16_t U16;
 typedef uint32_t U32;
 typedef uint64_t U64;
 
-typedef S8 s8;
-typedef U8 u8;
+typedef S8  s8;
+typedef U8  u8;
 typedef S16 s16;
 typedef U16 u16;
 typedef S32 s32;
 typedef U32 u32;
 typedef S64 s64;
 typedef U64 u64;
+
+#define rb_normal   "\033[0m"
+#define rb_black    "\033[30m"
+#define rb_red      "\033[31m"
+#define rb_green    "\033[32m"
+#define rb_yellow   "\033[33m"
+#define rb_blue     "\033[34m"
+#define rb_magenta  "\033[35m"
+#define rb_cyan     "\033[36m"
+#define rb_white    "\033[37m"
+#define rb_bblack   "\033[30;1m"
+#define rb_bred     "\033[31;1m"
+#define rb_bgreen   "\033[32;1m"
+#define rb_byellow  "\033[33;1m"
+#define rb_bblue    "\033[34;1m"
+#define rb_bmagenta "\033[35;1m"
+#define rb_bcyan    "\033[36;1m"
+#define rb_bwhite   "\033[37;1m"
+
 #define TRUE 1;
 #define FALSE 0;
 #define BOOL bool;
 using namespace std;
 namespace base {
 class ListNode {
+public:
+    int       val;
+    ListNode *next;
+
+    ListNode() {}
+    ListNode(int x) : val(x), next(NULL) {}
+    ~ListNode() {}
+    static ListNode *nodeInit() {
+        ListNode *l;
+        l = (ListNode *)malloc(sizeof(ListNode));
+        l->next = nullptr;
+        int x = 0, count = 0;
+        while (scanf("%d", &x) != EOF) {
+            cout << "count:" << count << " x:" << x << endl;
+            ++count;
+
+            ListNode *p;
+            p = (ListNode *)malloc(sizeof(ListNode));
+            p->val = x;
+            p->next = l->next;
+            l->next = p;
+            if (count > 2) break;
+        }
+        return l;
+    }
+
+    static bool printNode(ListNode *result) {
+        ListNode * p = result->next;
+        stack<int> s;
+        while (result != NULL && p != NULL) //入栈
+        {
+            cout << "val:" << p->val << endl;
+            s.push(p->val);
+            p = p->next;
+        }
+
+        while (!s.empty()) //出栈
+        {
+            cout << s.top() << " ";
+            s.pop();
+        }
+        return true;
+    }
+    class TreeNode {
+    private:
+        int       val;
+        TreeNode *left;
+        TreeNode *right;
+
     public:
-	int val;
-	ListNode *next;
-
-	ListNode()
-	{
-	}
-	ListNode(int x) : val(x), next(NULL)
-	{
-	}
-	~ListNode()
-	{
-	}
-	static ListNode *nodeInit()
-	{
-		ListNode *l;
-		l = (ListNode *)malloc(sizeof(ListNode));
-		l->next = nullptr;
-		int x = 0, count = 0;
-		while (scanf("%d", &x) != EOF) {
-			cout << "count:" << count << " x:" << x << endl;
-			++count;
-
-			ListNode *p;
-			p = (ListNode *)malloc(sizeof(ListNode));
-			p->val = x;
-			p->next = l->next;
-			l->next = p;
-			if (count > 2)
-				break;
-		}
-		return l;
-	}
-
-	static bool printNode(ListNode *result)
-	{
-		ListNode *p = result->next;
-		stack<int> s;
-		while (result != NULL && p != NULL) //入栈
-		{
-			cout << "val:" << p->val << endl;
-			s.push(p->val);
-			p = p->next;
-		}
-
-		while (!s.empty()) //出栈
-		{
-			cout << s.top() << " ";
-			s.pop();
-		}
-		return true;
-	}
-	class TreeNode {
-	    private:
-		int val;
-		TreeNode *left;
-		TreeNode *right;
-
-	    public:
-		TreeNode(int x) : val(x), left(NULL), right(NULL)
-		{
-		}
-		TreeNode()
-		{
-		}
-		~TreeNode()
-		{
-		}
-	};
+        TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+        TreeNode() {}
+        ~TreeNode() {}
+    };
 };
 
-#define GET_CUR_TIME_STRING(tag)                                                                   \
-    do {                                                                                           \
-        struct timespec ts;                                                                        \
-        clock_gettime(CLOCK_MONOTONIC, &ts);                                                       \
-        struct tm *pTm = localtime(&ts.tv_sec);                                                    \
-        char timeStr[20] = {};                                                                     \
-        sprintf(timeStr, "%.2d-%.2d %.2d:%.2d:%.2d.%.3ld %s ", tag, pTm->tm_mon + 1, pTm->tm_mday, \
-                pTm->tm_hour, pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);                     \
-        std::cout << timeStr << " [" << __FUNCTION__ << "] " << std::endl;                         \
+#define GET_CUR_TIME_STRING(tag)                                                                                 \
+    do {                                                                                                         \
+        struct timespec ts;                                                                                      \
+        clock_gettime(CLOCK_MONOTONIC, &ts);                                                                     \
+        struct tm *pTm = localtime(&ts.tv_sec);                                                                  \
+        char       timeStr[20] = {};                                                                             \
+        sprintf(timeStr, "%.2d-%.2d %.2d:%.2d:%.2d.%.3ld %s ", tag, pTm->tm_mon + 1, pTm->tm_mday, pTm->tm_hour, \
+                pTm->tm_min, pTm->tm_sec, ts.tv_nsec / 1000000);                                                 \
+        std::cout << timeStr << " [" << __FUNCTION__ << "] " << std::endl;                                       \
     } while (0)
 
 #ifdef __apple__
@@ -145,9 +149,8 @@ class ListNode {
 #ifndef TAG
 #define TAG "base"
 #endif
-#define ROBIN_DBG(format, ...)                                                           \
-    printf("%d %d D %s : %s" #format "\n", (int)getpid(), (int)syscall(SYS_gettid), TAG, \
-           __FUNCTION__, ##__VA_ARGS__)
+#define ROBIN_DBG(format, ...) \
+    printf("%d %d D %s : %s" #format "\n", (int)getpid(), (int)syscall(SYS_gettid), TAG, __FUNCTION__, ##__VA_ARGS__)
 
 typedef struct coor_t {
     float x;
@@ -249,7 +252,7 @@ public:
 
     // lock or unlock the mutex
     int32_t lock() { return -pthread_mutex_lock(&mMutex); }
-    void unlock() { pthread_mutex_unlock(&mMutex); }
+    void    unlock() { pthread_mutex_unlock(&mMutex); }
 
     // lock if possible; returns 0 on success, error otherwise
     int32_t tryLock() { return -pthread_mutex_trylock(&mMutex); }
@@ -277,7 +280,7 @@ private:
 #if !defined(_WIN32)
     pthread_mutex_t mMutex;
 #else
-    void _init();
+    void  _init();
     void *mState;
 #endif
 };
@@ -355,29 +358,27 @@ public:
     virtual ~Time() {
         //        if (m_stTime) delete m_stTime;
     }
-    int64_t systemTime(int /*clock*/)
-    {
-	    // Clock support varies widely across hosts. Mac OS doesn't support
-	    // posix clocks, older glibcs don't support CLOCK_BOOTTIME and Windows
-	    // is windows.
-	    struct timeval t;
-	    t.tv_sec = t.tv_usec = 0;
-	    gettimeofday(&t, NULL);
-	    return int64_t(t.tv_sec) * 1000000000LL +
-		   int64_t(t.tv_usec) * 1000LL;
+    int64_t systemTime(int /*clock*/) {
+        // Clock support varies widely across hosts. Mac OS doesn't support
+        // posix clocks, older glibcs don't support CLOCK_BOOTTIME and Windows
+        // is windows.
+        struct timeval t;
+        t.tv_sec = t.tv_usec = 0;
+        gettimeofday(&t, NULL);
+        return int64_t(t.tv_sec) * 1000000000LL + int64_t(t.tv_usec) * 1000LL;
     }
 
 private:
     static Time *m_stTime;
-    std::time_t m_time_t;
-    std::tm *m_time;
-    int m_year;
-    int m_min;
-    int m_hour;
-    int m_day;
-    int m_mon;
-    int m_wday;
-    int m_yday;
+    std::time_t  m_time_t;
+    std::tm *    m_time;
+    int          m_year;
+    int          m_min;
+    int          m_hour;
+    int          m_day;
+    int          m_mon;
+    int          m_wday;
+    int          m_yday;
 };
 
 class Timer1 {
@@ -401,8 +402,7 @@ public:
 
         clock_gettime(CLOCK_MONOTONIC, &tpEnd);
 
-        timeCost = MILLION * (tpEnd.tv_sec - tpStart.tv_sec) +
-                (tpEnd.tv_nsec - tpStart.tv_nsec) / 1000;
+        timeCost = MILLION * (tpEnd.tv_sec - tpStart.tv_sec) + (tpEnd.tv_nsec - tpStart.tv_nsec) / 1000;
 
         std::cout << "[" << m_tag << "] cost: " << timeCost << " mS" << std::endl;
 
@@ -434,8 +434,7 @@ public:
 #else
             clock_gettime(CLOCK_REALTIME, &ts);
 #endif
-            return boot_clock::time_point(std::chrono::seconds(ts.tv_sec) +
-                                          std::chrono::nanoseconds(ts.tv_nsec));
+            return boot_clock::time_point(std::chrono::seconds(ts.tv_sec) + std::chrono::nanoseconds(ts.tv_nsec));
         }
     };
 
@@ -467,11 +466,10 @@ public:
     }
 
     ~TimerLog() { // 对象析构时候计算当前时间与对象构造时候的时间差就是对象存活的时间
-        auto time = std::chrono::duration_cast<std::chrono::milliseconds>(
-                            std::chrono::high_resolution_clock::now() - m_begin_)
+        auto time = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() -
+                                                                          m_begin_)
                             .count();
-        std::cout << "time cost:{ " << m_tag_ << " } " << static_cast<double>(time) << " ms"
-                  << std::endl;
+        std::cout << "time cost:{ " << m_tag_ << " } " << static_cast<double>(time) << " ms" << std::endl;
     }
     static std::chrono::time_point<std::chrono::high_resolution_clock> Now() {
         return std::chrono::high_resolution_clock::now();
@@ -479,14 +477,12 @@ public:
 
     static long long DiffUs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
                             std::chrono::time_point<std::chrono::high_resolution_clock> after) {
-        return static_cast<long long>(
-                std::chrono::duration_cast<std::chrono::microseconds>(after - before).count());
+        return static_cast<long long>(std::chrono::duration_cast<std::chrono::microseconds>(after - before).count());
     }
 
     static long long DiffMs(std::chrono::time_point<std::chrono::high_resolution_clock> before,
                             std::chrono::time_point<std::chrono::high_resolution_clock> after) {
-        return static_cast<long long>(
-                std::chrono::duration_cast<std::chrono::milliseconds>(after - before).count());
+        return static_cast<long long>(std::chrono::duration_cast<std::chrono::milliseconds>(after - before).count());
     }
 
     static long long GetCurrentMs() {
@@ -504,7 +500,7 @@ public:
 
     static void ShowCurTime() {
         time_t now = time(0);
-        char *dt = ctime(&now);
+        char * dt = ctime(&now);
         std::cout << "cur time is " << dt << endl;
         std::cout << "cur ms is " << GetCurrentMs() << endl;
     }
@@ -517,15 +513,14 @@ public:
 
 private:
     std::chrono::time_point<std::chrono::high_resolution_clock> m_begin_;
-    std::string m_tag_;
+    std::string                                                 m_tag_;
 };
 
 #define CAL_TIME(x) TimerLog t(x)
 #define CAL_TIME_BEGIN(x) auto begin_##x = TimerLog::Now();
 
-#define CAL_TIME_END(x)                                                                        \
-    std::cout << "time cost:{ " << #x << " } " << TimerLog::DiffMs(begin_##x, TimerLog::Now()) \
-              << "ms" << endl;
+#define CAL_TIME_END(x) \
+    std::cout << "time cost:{ " << #x << " } " << TimerLog::DiffMs(begin_##x, TimerLog::Now()) << "ms" << endl;
 
 std::vector<std::string> Split(const std::string &s, const std::string &delimiters);
 
@@ -590,7 +585,6 @@ inline bool ConsumeSuffix(std::string_view *s, std::string_view suffix) {
 
 // Replaces `from` with `to` in `s`, once if `all == false`, or as many times as
 // there are matches if `all == true`.
-[[nodiscard]] std::string StringReplace(std::string_view s, std::string_view from,
-                                        std::string_view to, bool all);
+[[nodiscard]] std::string StringReplace(std::string_view s, std::string_view from, std::string_view to, bool all);
 } // namespace base
 #endif // _BASE_H_
