@@ -28,6 +28,7 @@ add_executable(17.readwrite_files key_exercises/17.readwrite_files.cpp)
 add_executable(18.stack_of_class_templates key_exercises/18.Stack_of_class_templates.cpp)
 add_executable(21.MultiDimensionalArray key_exercises/21.MultiDimensionalArray.cpp)
 add_executable(31.memset_struct_class key_exercises/31.memset_struct_class.cpp)
+add_executable(32.convert_picture_to_hex key_exercises/32.convert_picture_to_hex.cpp)
 
 if(CMAKE_HOST_APPLE)
     find_package(OpenCV)
