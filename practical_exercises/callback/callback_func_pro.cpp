@@ -35,11 +35,13 @@ class CBFunc {
 	// 已经注册的flag
 	vector<cbFlags> mVecFlag;
 	user_data mUserData[sizeof(cbFlags)][32];
-	std::map<cbFlags, vector<cbFuncPtr> > mCallBackList;
 	bool executeCallBack(cbFlags flag, void *out)
 	{
-		if (flag < ENUM_CB_NONE || flag > ENUM_CB_MAX) {
-			cout << "ERROR, flag out range!!" << endl;
+		if (std::find(mVecFlag.begin(), mVecFlag.end(), flag) !=
+		    mVecFlag.end()) {
+			cout << "flag found\n";
+		} else {
+			cout << "flag not found\n";
 			return false;
 		}
 
@@ -71,7 +73,7 @@ class CBFunc {
 	{
 		cout << "call ~CBFunc" << endl;
 	}
-	bool setCallBack(int (*func)(int, user_data *), cbFlags flag, void *in)
+	bool setCallBack(cbFuncPtr func, cbFlags flag, void *in)
 	{
 		if (!func || !in) {
 			cout << "callback func is null!" << endl;
@@ -96,9 +98,6 @@ class CBFunc {
 
 		memcpy(&mUserData[flag][mVecFunc[flag].size()], data,
 		       sizeof(user_data));
-		// 更新注册列表
-		mCallBackList.insert(std::pair<cbFlags, vector<cbFuncPtr> >(
-			flag, mVecFunc[flag]));
 		// cout << "mVecFunc size:" << mVecFunc[flag].size() << endl;
 		if (data)
 			free(data);
@@ -186,9 +185,9 @@ int main()
 	memset(&out1, 0, sizeof(out_data));
 	memset(&out2, 0, sizeof(out_data));
 	memset(&out3, 0, sizeof(out_data));
-	cb->setCallBack(callBackFunc, ENUM_CB_ONE, &data1);
+	cb->setCallBack(&callBackFunc, ENUM_CB_ONE, &data1);
 
-	cb->setCallBack(callBackFunc, ENUM_CB_ONE,
+	cb->setCallBack(&callBackFunc, ENUM_CB_ONE,
 			&data2); // error， 已经注册过
 
 	cb->setCallBack(callBackFuncPro, ENUM_CB_ONE, &data3);

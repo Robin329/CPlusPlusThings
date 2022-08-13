@@ -26,12 +26,15 @@ class CBFunc {
 	std::map<cbFlags, vector<cbFuncPtr> > mCallBackList;
 	bool executeCallBack(cbFlags flag)
 	{
-		if (flag < ENUM_CB_NONE || flag > ENUM_CB_MAX) {
-			cout << "ERROR, flag out range!!" << endl;
+		if (std::find(mVecFlag.begin(), mVecFlag.end(), flag) !=
+		    mVecFlag.end()) {
+			cout << "flag found\n";
+		} else {
+			cout << "flag not found\n";
 			return false;
 		}
 
-		vector<cbFuncPtr> vecFuc(mVecFunc[flag]);
+		vector<cbFuncPtr> vecFuc(mCallBackList[flag]);
 
 		for (auto const func : vecFuc) {
 			if (func)
@@ -43,7 +46,7 @@ class CBFunc {
     public:
 	CBFunc()
 	{
-		mVecFunc.resize(sizeof(cbFlags));
+		mVecFunc.resize(ENUM_CB_MAX);
 		cout << "call CBFunc" << endl;
 	}
 
@@ -51,7 +54,7 @@ class CBFunc {
 	{
 		cout << "call ~CBFunc" << endl;
 	}
-	bool setCallBack(int (*func)(int, string), cbFlags flag)
+	bool setCallBack(cbFuncPtr func, cbFlags flag)
 	{
 		if (!func) {
 			cout << "callback func is null!" << endl;
@@ -131,15 +134,19 @@ int main()
 {
 	CBFunc *cb = new CBFunc();
 	// 注册
-	cb->setCallBack(callBackFunc1, ENUM_CB_ONE);
-	cb->setCallBack(callBackFunc1, ENUM_CB_ONE); // error， 已经注册过
-	cb->setCallBack(callBackFunc1_1, ENUM_CB_ONE);
-	cb->setCallBack(callBackFunc2, ENUM_CB_TWO);
+	cb->setCallBack(&callBackFunc1, ENUM_CB_ONE);
+	cb->setCallBack(&callBackFunc1, ENUM_CB_ONE); // error， 已经注册过
+	cb->setCallBack(&callBackFunc1_1, ENUM_CB_ONE);
+	cb->setCallBack(&callBackFunc2, ENUM_CB_TWO);
 
 	// 开始处理
 	cb->cbOneProgram();
 	cb->cbTwoProgram();
 	cb->cbThreeProgram();
+	cout << (uint16_t)0x03u << endl;
+	cout << 0x03u << endl;
+	uint8_t ss = 128;
+	cout << "ss:" << ss << endl;
 	if (cb)
 		delete cb;
 	return 0;

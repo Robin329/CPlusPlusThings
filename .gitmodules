@@ -19,3 +19,6 @@
 [submodule "lib/ltp"]
 	path = lib/ltp
 	url = https://github.com/linux-test-project/ltp.git
+[submodule "googletest"]
+	path = googletest
+	url = https://github.com/google/googletest.git
