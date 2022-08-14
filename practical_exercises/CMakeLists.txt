@@ -88,4 +88,6 @@ endif()
 # share memory
 add_subdirectory(share_memory)
 # callback func
-add_subdirectory(callback)
+add_subdirectory(callback) 
+# crc test
+add_subdirectory(crc)
