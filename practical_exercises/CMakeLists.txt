@@ -90,7 +90,10 @@ add_subdirectory(share_memory)
 
 # callback func
 add_subdirectory(callback)
+
 # crc test
-add_subdirectory(crc) 
+add_subdirectory(crc)
 # VESA DMT/CTA-861-G
-add_subdirectory(edidvic)
+add_subdirectory(edidvic) 
+# yuv2rgb
+add_subdirectory(yuv2rgb)
