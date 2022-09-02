@@ -74,5 +74,6 @@ int main(int argc, char **argv)
 		outRgb24File.close();
 		outArgbFile.close();
 	}
-	return 0;
+
+    return 0;
 }
