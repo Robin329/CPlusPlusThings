@@ -70,7 +70,7 @@ void print_display_mode(const struct drm_display_mode *dm) {
                dm->clock * 2 % 1000);
         printf("   Frame Rate: %f Hz (*2 = %f Hz)\n", framerate, framerate * 2.0);
     }
-    printf("Htotal x Vtotal: %d - %#x\n", dm->htotal * dm->vtotal, dm->htotal * dm->vtotal);
+    printf("Htotal x Vtotal: %lld - %#llx\n", dm->htotal * dm->vtotal, dm->htotal * dm->vtotal);
     printf("     H Active: %d - %#x\n", dm->hdisplay, dm->hdisplay);
     printf("H Front Porch: %d - %#x\n", dm->hsync_start - dm->hdisplay, dm->hsync_start - dm->hdisplay);
     printf("       H Sync: %d - %#x\n", dm->hsync_end - dm->hsync_start, dm->hsync_end - dm->hsync_start);
@@ -86,11 +86,11 @@ void print_display_mode(const struct drm_display_mode *dm) {
            dm->flags & DRM_MODE_FLAG_INTERLACE ? " +interlace" : "",
            dm->flags & DRM_MODE_FLAG_DBLSCAN ? " +dblscan" : "", dm->flags & DRM_MODE_FLAG_DBLCLK ? " +dblclk" : "",
            dm->flags & DRM_MODE_FLAG_CSYNC ? (dm->flags & DRM_MODE_FLAG_PCSYNC ? " +pcsync" : " -pcsync") : "");
-    printf("Active Pixels: %d\n", dm->hdisplay * dm->vdisplay);
-    printf(" Total Pixels: %d\n", dm->htotal * dm->vtotal);
-    printf(" 12bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 12 * 8 / 1000);
-    printf(" 18bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 18 * 8 / 1000);
-    printf(" 24bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 24 * 8 / 1000);
+    printf("Active Pixels: %lld\n", dm->hdisplay * dm->vdisplay);
+    printf(" Total Pixels: %lld\n", dm->htotal * dm->vtotal);
+    printf(" 12bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 12 * 8 / 1000);
+    printf(" 18bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 18 * 8 / 1000);
+    printf(" 24bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 24 * 8 / 1000);
     printf("   8b10b Rate: %d.%d MHz (/25 = %d.%d MHz)\n", (dm->clock * 10) / 1000, (dm->clock * 10) % 1000,
            (dm->clock * 10 / 25) / 1000, (dm->clock * 10 / 25) % 1000);
 }
