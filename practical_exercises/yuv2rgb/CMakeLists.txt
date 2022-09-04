@@ -5,5 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(../lib/magic_enum/include)
 include_directories(../lib)
 
+if(${CMAKE_HOST_SYSTEM_NAME} MATCHES "Linux" OR "ubuntu")
 # add_subdirectory(xxYUV)
 add_subdirectory(yuv2rgb_c99)
+endif()

@@ -244,7 +244,7 @@ void rgb32_yuv420_std(uint32_t width, uint32_t height, const uint8_t *RGBA, uint
 void yuv420_rgb24_std(uint32_t width, uint32_t height, const uint8_t *Y, const uint8_t *U, const uint8_t *V,
                       uint32_t Y_stride, uint32_t UV_stride, uint8_t *RGB, uint32_t RGB_stride, YCbCrType yuv_type) {
     const YUV2RGBParam *const param = &(YUV2RGB[yuv_type]);
-    uint32_t x, y;
+    uint32_t                  x, y;
     for (y = 0; y < (height - 1); y += 2) {
         const uint8_t *y_ptr1 = Y + y * Y_stride, *y_ptr2 = Y + (y + 1) * Y_stride, *u_ptr = U + (y / 2) * UV_stride,
                       *v_ptr = V + (y / 2) * UV_stride;
@@ -296,7 +296,7 @@ void yuv420_rgb24_std(uint32_t width, uint32_t height, const uint8_t *Y, const u
 void nv12_rgb24_std(uint32_t width, uint32_t height, const uint8_t *Y, const uint8_t *UV, uint32_t Y_stride,
                     uint32_t UV_stride, uint8_t *RGB, uint32_t RGB_stride, YCbCrType yuv_type) {
     const YUV2RGBParam *const param = &(YUV2RGB[yuv_type]);
-    uint32_t x, y;
+    uint32_t                  x, y;
     for (y = 0; y < (height - 1); y += 2) {
         const uint8_t *y_ptr1 = Y + y * Y_stride, *y_ptr2 = Y + (y + 1) * Y_stride, *uv_ptr = UV + (y / 2) * UV_stride;
 
@@ -346,7 +346,7 @@ void nv12_rgb24_std(uint32_t width, uint32_t height, const uint8_t *Y, const uin
 void nv21_rgb24_std(uint32_t width, uint32_t height, const uint8_t *Y, const uint8_t *UV, uint32_t Y_stride,
                     uint32_t UV_stride, uint8_t *RGB, uint32_t RGB_stride, YCbCrType yuv_type) {
     const YUV2RGBParam *const param = &(YUV2RGB[yuv_type]);
-    uint32_t x, y;
+    uint32_t                  x, y;
     for (y = 0; y < (height - 1); y += 2) {
         const uint8_t *y_ptr1 = Y + y * Y_stride, *y_ptr2 = Y + (y + 1) * Y_stride, *uv_ptr = UV + (y / 2) * UV_stride;
 

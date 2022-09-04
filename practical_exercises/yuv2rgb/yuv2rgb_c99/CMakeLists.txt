@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 project(yuv_rgb)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror -Wall -Wextra -pedantic -std=c99")
-
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror -Wall -Wextra -pedantic -std=c99 ")
+add_definitions("-D__SSE__ -D__SSE2__")
 # set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -pedantic -std=c99")
 set(USE_FFMPEG FALSE CACHE BOOL "Enable ffmpeg")
 
