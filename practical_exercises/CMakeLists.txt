@@ -29,6 +29,7 @@ add_executable(18.stack_of_class_templates key_exercises/18.Stack_of_class_templ
 add_executable(21.MultiDimensionalArray key_exercises/21.MultiDimensionalArray.cpp)
 add_executable(31.memset_struct_class key_exercises/31.memset_struct_class.cpp)
 add_executable(32.convert_picture_to_hex key_exercises/32.convert_picture_to_hex.cpp)
+add_executable(33.num_convert_negative key_exercises/33.num_convert_negative.cpp)
 
 if(CMAKE_HOST_APPLE)
     find_package(OpenCV)
@@ -93,7 +94,9 @@ add_subdirectory(callback)
 
 # crc test
 add_subdirectory(crc)
+
 # VESA DMT/CTA-861-G
-add_subdirectory(edidvic) 
+add_subdirectory(edidvic)
+
 # yuv2rgb
 add_subdirectory(yuv2rgb)
