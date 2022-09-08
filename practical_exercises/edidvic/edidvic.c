@@ -20,12 +20,16 @@ void help(const char *section, const char *opt) {
         if (opt != NULL && (strcmp(opt, "list") == 0)) {
             for (count = 0; count < sizeof(edid_cea_modes); count++) {
                 if (count > 0 && count <= 127) {
-                    fprintf(stderr, "vic:%d - %s\n", count, edid_cea_modes[count].name);
+                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, edid_cea_modes[count].name,
+                            (edid_cea_modes[count].clock * 1000.0) /
+                                    (edid_cea_modes[count].htotal * edid_cea_modes[count].vtotal));
                 }
             }
-            for (count = 0; count < sizeof(edid_cea_modes_193); count++) {
+            for (count = 193; count < sizeof(edid_cea_modes_193) + 193; count++) {
                 if (count >= 193 && count <= 219)
-                    fprintf(stderr, "vic:%d - %s\n", count, edid_cea_modes_193[count - 193].name);
+                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, edid_cea_modes_193[count - 193].name,
+                            (edid_cea_modes_193[count - 193].clock * 1000.0) /
+                                    (edid_cea_modes_193[count - 193].htotal * edid_cea_modes_193[count - 193].vtotal));
             }
         }
     } else if (strcmp(section, "dmt") == 0) {
@@ -34,7 +38,9 @@ void help(const char *section, const char *opt) {
         if (opt != NULL && (strcmp(opt, "list") == 0)) {
             for (count = 0; count < sizeof(drm_dmt_modes); count++) {
                 if (count > 0 && count <= 88) {
-                    fprintf(stderr, "vic:%d - %s\n", count, drm_dmt_modes[count].name);
+                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, drm_dmt_modes[count].name,
+                            (drm_dmt_modes[count].clock * 1000.0) /
+                                    (drm_dmt_modes[count].htotal * drm_dmt_modes[count].vtotal));
                 }
             }
         }
@@ -86,11 +92,11 @@ void print_display_mode(const struct drm_display_mode *dm) {
            dm->flags & DRM_MODE_FLAG_INTERLACE ? " +interlace" : "",
            dm->flags & DRM_MODE_FLAG_DBLSCAN ? " +dblscan" : "", dm->flags & DRM_MODE_FLAG_DBLCLK ? " +dblclk" : "",
            dm->flags & DRM_MODE_FLAG_CSYNC ? (dm->flags & DRM_MODE_FLAG_PCSYNC ? " +pcsync" : " -pcsync") : "");
-    printf("Active Pixels: %lld\n", dm->hdisplay * dm->vdisplay);
-    printf(" Total Pixels: %lld\n", dm->htotal * dm->vtotal);
-    printf(" 12bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 12 * 8 / 1000);
-    printf(" 18bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 18 * 8 / 1000);
-    printf(" 24bpp Bitclk: %lld MHz\n", dm->htotal * dm->vtotal * 24 * 8 / 1000);
+    printf("Active Pixels: %d\n", dm->hdisplay * dm->vdisplay);
+    printf(" Total Pixels: %d\n", dm->htotal * dm->vtotal);
+    printf(" 12bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 12 * 8 / 1000);
+    printf(" 18bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 18 * 8 / 1000);
+    printf(" 24bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 24 * 8 / 1000);
     printf("   8b10b Rate: %d.%d MHz (/25 = %d.%d MHz)\n", (dm->clock * 10) / 1000, (dm->clock * 10) % 1000,
            (dm->clock * 10 / 25) / 1000, (dm->clock * 10 / 25) % 1000);
 }
