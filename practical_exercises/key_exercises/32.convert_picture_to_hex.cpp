@@ -22,10 +22,9 @@ int main(int argc, char **argv)
 	ifstream readFileRgb24(
 		FileSystem::getPath(RGB24_IMAGE_1920_1080_INPUT_PATH).c_str(),
 		std::ifstream::binary);
-	ofstream outArgbFile(
-		FileSystem::getPath(ARGB_IMAGE_1920_1080_OUTPUT_PATH).c_str());
+    ofstream(FileSystem::getPath(ARGB_IMAGE_1920_1080_OUTPUT_PATH).c_str());
 
-	ofstream outRgb24File(
+    ofstream outRgb24File(
 		FileSystem::getPath(RGB24_IMAGE_1920_1080_OUTPUT_PATH).c_str());
 
 	string s1, s2;

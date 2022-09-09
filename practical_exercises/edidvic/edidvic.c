@@ -76,7 +76,7 @@ void print_display_mode(const struct drm_display_mode *dm) {
                dm->clock * 2 % 1000);
         printf("   Frame Rate: %f Hz (*2 = %f Hz)\n", framerate, framerate * 2.0);
     }
-    printf("Htotal x Vtotal: %lld - %#llx\n", dm->htotal * dm->vtotal, dm->htotal * dm->vtotal);
+    printf("Htotal x Vtotal: %d - %#x\n", dm->htotal * dm->vtotal, dm->htotal * dm->vtotal);
     printf("     H Active: %d - %#x\n", dm->hdisplay, dm->hdisplay);
     printf("H Front Porch: %d - %#x\n", dm->hsync_start - dm->hdisplay, dm->hsync_start - dm->hdisplay);
     printf("       H Sync: %d - %#x\n", dm->hsync_end - dm->hsync_start, dm->hsync_end - dm->hsync_start);
