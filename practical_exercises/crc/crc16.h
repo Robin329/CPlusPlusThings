@@ -7,7 +7,7 @@ extern "C" {
 #endif /* __cplusplus  */
 
 uint16_t crc16(const char *buf, int len);
-
+int CalculateCRC16_main(void);
 #ifdef __cplusplus
 }
 #endif /* __cplusplus  */
