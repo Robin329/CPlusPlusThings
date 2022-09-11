@@ -8,6 +8,25 @@ enum MODE { MODE_UNKNOWN = 0, MODE_VIC = 1, MODE_DMT = 2 };
 
 const char *program_name;
 
+const char *aspect_ratio_convert(enum hdmi_picture_aspect aspect) {
+    if (aspect <= HDMI_PICTURE_ASPECT_NONE || aspect >= HDMI_PICTURE_ASPECT_RESERVED) {
+        return NULL;
+    }
+
+    switch (aspect) {
+        case HDMI_PICTURE_ASPECT_4_3:
+            return "4:3";
+        case HDMI_PICTURE_ASPECT_16_9:
+            return "16:9";
+        case HDMI_PICTURE_ASPECT_64_27:
+            return "64:27";
+        case HDMI_PICTURE_ASPECT_256_135:
+            return "256:135";
+        default:
+            return "Unkown";
+    }
+}
+
 void help(const char *section, const char *opt) {
     int count = 0;
     if (section == NULL) {
@@ -20,16 +39,18 @@ void help(const char *section, const char *opt) {
         if (opt != NULL && (strcmp(opt, "list") == 0)) {
             for (count = 0; count < sizeof(edid_cea_modes); count++) {
                 if (count > 0 && count <= 127) {
-                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, edid_cea_modes[count].name,
+                    fprintf(stderr, "vic:%d - %s (%.2fHz) %s\n", count, edid_cea_modes[count].name,
                             (edid_cea_modes[count].clock * 1000.0) /
-                                    (edid_cea_modes[count].htotal * edid_cea_modes[count].vtotal));
+                                    (edid_cea_modes[count].htotal * edid_cea_modes[count].vtotal),
+                            aspect_ratio_convert(edid_cea_modes[count].picture_aspect_ratio));
                 }
             }
             for (count = 193; count < sizeof(edid_cea_modes_193) + 193; count++) {
                 if (count >= 193 && count <= 219)
-                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, edid_cea_modes_193[count - 193].name,
+                    fprintf(stderr, "vic:%d - %s (%.2fHz) %s\n", count, edid_cea_modes_193[count - 193].name,
                             (edid_cea_modes_193[count - 193].clock * 1000.0) /
-                                    (edid_cea_modes_193[count - 193].htotal * edid_cea_modes_193[count - 193].vtotal));
+                                    (edid_cea_modes_193[count - 193].htotal * edid_cea_modes_193[count - 193].vtotal),
+                            aspect_ratio_convert(edid_cea_modes_193[count - 193].picture_aspect_ratio));
             }
         }
     } else if (strcmp(section, "dmt") == 0) {
@@ -38,9 +59,10 @@ void help(const char *section, const char *opt) {
         if (opt != NULL && (strcmp(opt, "list") == 0)) {
             for (count = 0; count < sizeof(drm_dmt_modes); count++) {
                 if (count > 0 && count <= 88) {
-                    fprintf(stderr, "vic:%d - %s (%.2fHz)\n", count, drm_dmt_modes[count].name,
+                    fprintf(stderr, "vic:%d - %s (%.2fHz) - %s\n", count, drm_dmt_modes[count].name,
                             (drm_dmt_modes[count].clock * 1000.0) /
-                                    (drm_dmt_modes[count].htotal * drm_dmt_modes[count].vtotal));
+                                    (drm_dmt_modes[count].htotal * drm_dmt_modes[count].vtotal),
+                            aspect_ratio_convert(drm_dmt_modes[count].picture_aspect_ratio));
                 }
             }
         }
@@ -94,9 +116,10 @@ void print_display_mode(const struct drm_display_mode *dm) {
            dm->flags & DRM_MODE_FLAG_CSYNC ? (dm->flags & DRM_MODE_FLAG_PCSYNC ? " +pcsync" : " -pcsync") : "");
     printf("Active Pixels: %d\n", dm->hdisplay * dm->vdisplay);
     printf(" Total Pixels: %d\n", dm->htotal * dm->vtotal);
-    printf(" 12bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 12 * 8 / 1000);
-    printf(" 18bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 18 * 8 / 1000);
-    printf(" 24bpp Bitclk: %d MHz\n", dm->htotal * dm->vtotal * 24 * 8 / 1000);
+    printf(" Aspect Ratio: %s\n", aspect_ratio_convert(dm->picture_aspect_ratio));
+    printf(" 12bpp Bitclk: %lld MHz\n", (long long)dm->htotal * dm->vtotal * 12 * 8 / 1000);
+    printf(" 18bpp Bitclk: %lld MHz\n", (long long)dm->htotal * dm->vtotal * 18 * 8 / 1000);
+    printf(" 24bpp Bitclk: %lld MHz\n", (long long)dm->htotal * dm->vtotal * 24 * 8 / 1000);
     printf("   8b10b Rate: %d.%d MHz (/25 = %d.%d MHz)\n", (dm->clock * 10) / 1000, (dm->clock * 10) % 1000,
            (dm->clock * 10 / 25) / 1000, (dm->clock * 10 / 25) % 1000);
 }
@@ -153,7 +176,7 @@ int main(int argc, char **argv) {
     enum MODE mode = MODE_UNKNOWN;
     program_name = argv[0];
 
-    if (argc <= 1) {
+    if (argc <= 2) {
         help(NULL, NULL);
         return 1;
     }
