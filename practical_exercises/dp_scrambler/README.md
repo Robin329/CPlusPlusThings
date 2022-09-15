@@ -10,3 +10,6 @@ names have since been modified in later versions of this Standard:
 • Multi-stream format” represents “MST mode”
 • “DP receiver” represents “DPRX”
 • “DP transmitter” represents “DPTX”
+
+
+----

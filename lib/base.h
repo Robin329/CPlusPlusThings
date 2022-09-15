@@ -70,9 +70,9 @@ typedef U64 u64;
 #define rb_bcyan    "\033[36;1m"
 #define rb_bwhite   "\033[37;1m"
 
-#define TRUE 1;
-#define FALSE 0;
-#define BOOL bool;
+#define TRUE  1
+#define FALSE 0
+#define BOOL  bool
 using namespace std;
 namespace base {
 class ListNode {
