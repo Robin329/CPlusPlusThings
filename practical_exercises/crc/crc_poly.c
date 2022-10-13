@@ -5,6 +5,7 @@
 **Description: The source file to calc crc poly.
 */
 #include <stdlib.h>
+
 #include "crc_poly.h"
 
 // LSB-first

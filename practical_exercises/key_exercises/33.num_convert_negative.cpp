@@ -25,5 +25,6 @@ int main() {
     cc[2] = 2;
     printf("%d %d\n", cc[1], cc[2]);
     delete[] cc;
+    cout << sizeof(unsigned int) << endl;
     return 0;
 }
