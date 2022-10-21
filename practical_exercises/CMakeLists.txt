@@ -99,6 +99,8 @@ add_subdirectory(crc)
 add_subdirectory(edidvic)
 
 # yuv2rgb
-add_subdirectory(yuv2rgb) 
+add_subdirectory(yuv2rgb)
 # add DP scramble
-add_subdirectory(dp_scrambler)
+add_subdirectory(dp_scrambler) 
+# add lvds jeida and vesa rgb assignment
+add_subdirectory(lvds)
