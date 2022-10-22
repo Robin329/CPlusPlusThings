@@ -50,13 +50,21 @@ struct lvds_formats {
 struct lvds_formats  lvds_fmt;
 static unsigned char lvds_arrary[sizeof(lvds_lanes)][LVDS_LANE_BIT];
 
+std::string get_rgb_string(const unsigned char rgb);
+
 // Channel 1
 #define CH1_A0_SEL_CFG(lvds_arrary)                                                                   \
     (lvds_arrary[0][6] | lvds_arrary[1][6] << 6 | lvds_arrary[2][6] << 12 | lvds_arrary[3][6] << 18 | \
      lvds_arrary[4][6] << 24)
-#define PRINT(lvds_arrary, col)                                                                                    \
-    printf("%d %d %d %d %d\n", lvds_arrary[0][col], lvds_arrary[1][col], lvds_arrary[2][col], lvds_arrary[3][col], \
-           lvds_arrary[4][col]);
+#define PRINT(lvds_arrary, col)                                                                         \
+    printf("%-3d %-3d %-3d %-3d %-3d\n", lvds_arrary[0][col], lvds_arrary[1][col], lvds_arrary[2][col], \
+           lvds_arrary[3][col], lvds_arrary[4][col]);
+
+#define PRINT_ASSIGNMENT(lvds_arrary, col)                                                           \
+    printf("%-8s %-8s %-8s %-8s %-8s\n", get_rgb_string(lvds_arrary[0][col]).c_str(),                \
+           get_rgb_string(lvds_arrary[1][col]).c_str(), get_rgb_string(lvds_arrary[2][col]).c_str(), \
+           get_rgb_string(lvds_arrary[3][col]).c_str(), get_rgb_string(lvds_arrary[4][col]).c_str());
+
 #define CH1_A1_SEL_CFG(lvds_arrary)                                                                   \
     (lvds_arrary[0][5] | lvds_arrary[1][5] << 6 | lvds_arrary[2][5] << 12 | lvds_arrary[3][5] << 18 | \
      lvds_arrary[4][5] << 24)
@@ -422,6 +430,89 @@ int combine_rgb(pixel_bpps bpps, const char format) {
     return 0;
 }
 
+std::string get_rgb_string(const unsigned char rgb) {
+    switch (rgb) {
+        case 0x00:
+            return "r[0]";
+        case 0x01:
+            return "r[1]";
+        case 0x02:
+            return "r[2]";
+        case 0x03:
+            return "r[3]";
+        case 0x04:
+            return "r[4]";
+        case 0x05:
+            return "r[5]";
+        case 0x06:
+            return "r[6]";
+        case 0x07:
+            return "r[7]";
+        case 0x08:
+            return "r[8]";
+        case 0x09:
+            return "r[9]";
+
+        case 0x0a:
+            return "g[0]";
+        case 0x0b:
+            return "g[1]";
+        case 0x0c:
+            return "g[2]";
+        case 0x0d:
+            return "g[3]";
+        case 0x0e:
+            return "g[4]";
+        case 0x0f:
+            return "g[5]";
+        case 0x10:
+            return "g[6]";
+        case 0x11:
+            return "g[7]";
+        case 0x12:
+            return "g[8]";
+        case 0x13:
+            return "g[9]";
+
+        case 0x14:
+            return "b[0]";
+        case 0x15:
+            return "b[1]";
+        case 0x16:
+            return "b[2]";
+        case 0x17:
+            return "b[3]";
+        case 0x18:
+            return "b[4]";
+        case 0x19:
+            return "b[5]";
+        case 0x1a:
+            return "b[6]";
+        case 0x1b:
+            return "b[7]";
+        case 0x1c:
+            return "b[8]";
+        case 0x1d:
+            return "b[9]";
+
+        case 0x1e:
+            return "vsync";
+        case 0x1f:
+            return "hsync";
+        case 0x20:
+            return "data_en";
+        case 0x21:
+            return "res0";
+        case 0x22:
+            return "res1";
+        case 0x23:
+            return "defaults";
+        default:
+            break;
+    }
+    return "Invalid";
+}
+
 static inline int lvds_formats_init(void) {
     // R
     lvds_fmt.r[0] = 0x00;
@@ -523,6 +614,15 @@ int main(int argc, char **argv) {
     PRINT(lvds_arrary, 2);
     PRINT(lvds_arrary, 1);
     PRINT(lvds_arrary, 0);
+    std::cout << "--------------------------------\n";
+    PRINT_ASSIGNMENT(lvds_arrary, 6);
+    PRINT_ASSIGNMENT(lvds_arrary, 5);
+    PRINT_ASSIGNMENT(lvds_arrary, 4);
+    PRINT_ASSIGNMENT(lvds_arrary, 3);
+    PRINT_ASSIGNMENT(lvds_arrary, 2);
+    PRINT_ASSIGNMENT(lvds_arrary, 1);
+    PRINT_ASSIGNMENT(lvds_arrary, 0);
+    std::cout << "--------------------------------\n";
     std::cout << std::hex << "CH1_A0_SEL_CFG: 0x" << CH1_A0_SEL_CFG(lvds_arrary) << std::endl;
     std::cout << std::hex << "CH1_A1_SEL_CFG: 0x" << CH1_A1_SEL_CFG(lvds_arrary) << std::endl;
     std::cout << std::hex << "CH1_A2_SEL_CFG: 0x" << CH1_A2_SEL_CFG(lvds_arrary) << std::endl;
