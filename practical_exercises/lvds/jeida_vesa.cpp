@@ -5,6 +5,8 @@
 enum pixel_format {
     VESA_FORMAT,
     JEIDA_FORMAT,
+    NEW_JEIDA_FORMAT,
+    LINEAR_STEP,
 };
 enum pixel_bpps {
     RGB12_FORMAT,
@@ -48,7 +50,7 @@ struct lvds_formats {
 };
 
 struct lvds_formats  lvds_fmt;
-static unsigned char lvds_arrary[sizeof(lvds_lanes)][LVDS_LANE_BIT];
+static unsigned char lvds_arrary[RGB30_LANES][LVDS_LANE_BIT];
 
 std::string get_rgb_string(const unsigned char rgb);
 
@@ -381,7 +383,7 @@ int combine_rgb(pixel_bpps bpps, const char format) {
                 lvds_arrary[4][5] = lvds_fmt.r[1];
                 lvds_arrary[4][6] = lvds_fmt.r[0];
 
-            } else {
+            } else if (format == VESA_FORMAT) {
                 lvds_arrary[0][0] = lvds_fmt.g[0];
                 lvds_arrary[0][1] = lvds_fmt.r[5];
                 lvds_arrary[0][2] = lvds_fmt.r[4];
@@ -421,6 +423,46 @@ int combine_rgb(pixel_bpps bpps, const char format) {
                 lvds_arrary[4][4] = lvds_fmt.g[8];
                 lvds_arrary[4][5] = lvds_fmt.r[9];
                 lvds_arrary[4][6] = lvds_fmt.r[8];
+            } else {
+                lvds_arrary[0][0] = lvds_fmt.g[2];
+                lvds_arrary[0][1] = lvds_fmt.r[7];
+                lvds_arrary[0][2] = lvds_fmt.r[6];
+                lvds_arrary[0][3] = lvds_fmt.r[5];
+                lvds_arrary[0][4] = lvds_fmt.r[4];
+                lvds_arrary[0][5] = lvds_fmt.r[3];
+                lvds_arrary[0][6] = lvds_fmt.r[2];
+
+                lvds_arrary[1][0] = lvds_fmt.b[3];
+                lvds_arrary[1][1] = lvds_fmt.b[2];
+                lvds_arrary[1][2] = lvds_fmt.g[7];
+                lvds_arrary[1][3] = lvds_fmt.g[6];
+                lvds_arrary[1][4] = lvds_fmt.g[5];
+                lvds_arrary[1][5] = lvds_fmt.g[4];
+                lvds_arrary[1][6] = lvds_fmt.g[3];
+
+                lvds_arrary[2][0] = lvds_fmt.data_en;
+                lvds_arrary[2][1] = lvds_fmt.vsync;
+                lvds_arrary[2][2] = lvds_fmt.hsync;
+                lvds_arrary[2][3] = lvds_fmt.b[7];
+                lvds_arrary[2][4] = lvds_fmt.b[6];
+                lvds_arrary[2][5] = lvds_fmt.b[5];
+                lvds_arrary[2][6] = lvds_fmt.b[4];
+
+                lvds_arrary[3][0] = lvds_fmt.res0;
+                lvds_arrary[3][1] = lvds_fmt.b[9];
+                lvds_arrary[3][2] = lvds_fmt.b[8];
+                lvds_arrary[3][3] = lvds_fmt.g[9];
+                lvds_arrary[3][4] = lvds_fmt.g[8];
+                lvds_arrary[3][5] = lvds_fmt.r[9];
+                lvds_arrary[3][6] = lvds_fmt.r[8];
+
+                lvds_arrary[4][0] = lvds_fmt.res0;
+                lvds_arrary[4][1] = lvds_fmt.b[1];
+                lvds_arrary[4][2] = lvds_fmt.b[0];
+                lvds_arrary[4][3] = lvds_fmt.g[1];
+                lvds_arrary[4][4] = lvds_fmt.g[0];
+                lvds_arrary[4][5] = lvds_fmt.r[1];
+                lvds_arrary[4][6] = lvds_fmt.r[0];
             }
             break;
         default:
@@ -560,7 +602,7 @@ static inline int lvds_formats_init(void) {
 int main(int argc, char **argv) {
     lvds_formats_init();
     int format, bpps;
-
+    std::cout << "sizeof:" << sizeof(lvds_lanes) << std::endl;
     std::cout << "\nPlease input select rgb format:\n";
     std::cout << "       [0] : RGB - 12bit\n";
     std::cout << "       [1] : RGB - 18bit\n";
@@ -580,6 +622,9 @@ int main(int argc, char **argv) {
         std::cout << "\nPlease select format:\n";
         std::cout << "       [0] - VESA\n";
         std::cout << "       [1] - JEIDA\n";
+        if (bpps == RGB30_FORMAT) {
+            std::cout << "       [2] - New JEIDA\n";
+        }
         std::cout << ">";
         while (std::cin >> format) {
             if (format >= VESA_FORMAT && format <= sizeof(pixel_format))
@@ -589,6 +634,9 @@ int main(int argc, char **argv) {
                 std::cout << ">";
             }
         }
+    }
+    if (bpps == RGB24_FORMAT_3) {
+        format = LINEAR_STEP;
     }
     if (bpps == RGB12_FORMAT) {
         std::cout << "\nPlease input select rgb12 format:\n";
@@ -604,6 +652,7 @@ int main(int argc, char **argv) {
             }
         }
     }
+
     std::cout << "bpps:" << bpps << ", format:" << format << std::endl;
     combine_rgb((pixel_bpps)bpps, format);
     std::cout << "--------------------------------\n";
@@ -639,5 +688,7 @@ int main(int argc, char **argv) {
     std::cout << std::hex << "CH2_A5_SEL_CFG: 0x" << CH2_A5_SEL_CFG(lvds_arrary) << std::endl;
     std::cout << std::hex << "CH2_A6_SEL_CFG: 0x" << CH2_A6_SEL_CFG(lvds_arrary) << std::endl;
     std::cout << "--------------------------------\n\n";
+    // system("pause");
+    getchar();
     return 0;
 }
