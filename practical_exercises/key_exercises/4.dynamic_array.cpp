@@ -1,3 +1,4 @@
+#include <bits/stdint-uintn.h>
 #include <gtest/gtest.h>
 #include <unistd.h>
 
@@ -73,7 +74,8 @@ int main() {
     int b2r = 0;
     int ret1 = max_robin(b1t, b1r, b2t, b2r);
     cout << "return:" << ret1;
-
+    uint32_t arrary[] = {0x00000012, 0x00000023, 0x00000034, 0x00000033};
+    printf("sizeof (arrary) =%d \n", sizeof(arrary));
 #if 0
     char *sPtr;
     const char *s = "hello";

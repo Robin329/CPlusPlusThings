@@ -51,6 +51,7 @@ public:
 private:
     const std::string &m_from;
 };
+
 int main(int argc, char **argv) {
     struct timespec start_ts, end_ts;
     bool check_time = true;
