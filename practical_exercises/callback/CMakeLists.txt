@@ -9,3 +9,4 @@ include_directories(../../gtest/googletest/include/gtest)
 
 add_executable(callback_func callback_func.cpp)
 add_executable(callback_func_pro callback_func_pro.cpp)
+add_executable(callback_lambda callback_lambda.cpp)
