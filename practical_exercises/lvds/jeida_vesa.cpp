@@ -351,128 +351,128 @@ int combine_rgb(pixel_bpps bpps, const char format) {
         break;
     case RGB30_FORMAT:
         if (format == JEIDA_FORMAT) {
-            lvds_arrary[0][0] = lvds_fmt.g[4+highBit];
-            lvds_arrary[0][1] = lvds_fmt.r[9+highBit];
-            lvds_arrary[0][2] = lvds_fmt.r[8+highBit];
-            lvds_arrary[0][3] = lvds_fmt.r[7+highBit];
-            lvds_arrary[0][4] = lvds_fmt.r[6+highBit];
-            lvds_arrary[0][5] = lvds_fmt.r[5+highBit];
-            lvds_arrary[0][6] = lvds_fmt.r[4+highBit];
+            lvds_arrary[0][0] = lvds_fmt.g[4];
+            lvds_arrary[0][1] = lvds_fmt.r[9];
+            lvds_arrary[0][2] = lvds_fmt.r[8];
+            lvds_arrary[0][3] = lvds_fmt.r[7];
+            lvds_arrary[0][4] = lvds_fmt.r[6];
+            lvds_arrary[0][5] = lvds_fmt.r[5];
+            lvds_arrary[0][6] = lvds_fmt.r[4];
 
-            lvds_arrary[1][0] = lvds_fmt.b[5+highBit];
-            lvds_arrary[1][1] = lvds_fmt.b[4+highBit];
-            lvds_arrary[1][2] = lvds_fmt.g[9+highBit];
-            lvds_arrary[1][3] = lvds_fmt.g[8+highBit];
-            lvds_arrary[1][4] = lvds_fmt.g[7+highBit];
-            lvds_arrary[1][5] = lvds_fmt.g[6+highBit];
-            lvds_arrary[1][6] = lvds_fmt.g[5+highBit];
+            lvds_arrary[1][0] = lvds_fmt.b[5];
+            lvds_arrary[1][1] = lvds_fmt.b[4];
+            lvds_arrary[1][2] = lvds_fmt.g[9];
+            lvds_arrary[1][3] = lvds_fmt.g[8];
+            lvds_arrary[1][4] = lvds_fmt.g[7];
+            lvds_arrary[1][5] = lvds_fmt.g[6];
+            lvds_arrary[1][6] = lvds_fmt.g[5];
 
             lvds_arrary[2][0] = lvds_fmt.data_en;
             lvds_arrary[2][1] = lvds_fmt.vsync;
             lvds_arrary[2][2] = lvds_fmt.hsync;
-            lvds_arrary[2][3] = lvds_fmt.b[9+highBit];
-            lvds_arrary[2][4] = lvds_fmt.b[8+highBit];
-            lvds_arrary[2][5] = lvds_fmt.b[7+highBit];
-            lvds_arrary[2][6] = lvds_fmt.b[6+highBit];
+            lvds_arrary[2][3] = lvds_fmt.b[9];
+            lvds_arrary[2][4] = lvds_fmt.b[8];
+            lvds_arrary[2][5] = lvds_fmt.b[7];
+            lvds_arrary[2][6] = lvds_fmt.b[6];
 
             lvds_arrary[3][0] = lvds_fmt.res0;
-            lvds_arrary[3][1] = lvds_fmt.b[3+highBit];
-            lvds_arrary[3][2] = lvds_fmt.b[2+highBit];
-            lvds_arrary[3][3] = lvds_fmt.g[3+highBit];
-            lvds_arrary[3][4] = lvds_fmt.g[2+highBit];
-            lvds_arrary[3][5] = lvds_fmt.r[3+highBit];
-            lvds_arrary[3][6] = lvds_fmt.r[2+highBit];
+            lvds_arrary[3][1] = lvds_fmt.b[3];
+            lvds_arrary[3][2] = lvds_fmt.b[2];
+            lvds_arrary[3][3] = lvds_fmt.g[3];
+            lvds_arrary[3][4] = lvds_fmt.g[2];
+            lvds_arrary[3][5] = lvds_fmt.r[3];
+            lvds_arrary[3][6] = lvds_fmt.r[2];
 
             lvds_arrary[4][0] = lvds_fmt.res0;
-            lvds_arrary[4][1] = lvds_fmt.b[1+highBit];
-            lvds_arrary[4][2] = lvds_fmt.b[0+highBit];
-            lvds_arrary[4][3] = lvds_fmt.g[1+highBit];
-            lvds_arrary[4][4] = lvds_fmt.g[0+highBit];
-            lvds_arrary[4][5] = lvds_fmt.r[1+highBit];
-            lvds_arrary[4][6] = lvds_fmt.r[0+highBit];
+            lvds_arrary[4][1] = lvds_fmt.b[1];
+            lvds_arrary[4][2] = lvds_fmt.b[0];
+            lvds_arrary[4][3] = lvds_fmt.g[1];
+            lvds_arrary[4][4] = lvds_fmt.g[0];
+            lvds_arrary[4][5] = lvds_fmt.r[1];
+            lvds_arrary[4][6] = lvds_fmt.r[0];
 
         }
         else if (format == VESA_FORMAT) {
-            lvds_arrary[0][0] = lvds_fmt.g[0+highBit];
-            lvds_arrary[0][1] = lvds_fmt.r[5+highBit];
-            lvds_arrary[0][2] = lvds_fmt.r[4+highBit];
-            lvds_arrary[0][3] = lvds_fmt.r[3+highBit];
-            lvds_arrary[0][4] = lvds_fmt.r[2+highBit];
-            lvds_arrary[0][5] = lvds_fmt.r[1+highBit];
-            lvds_arrary[0][6] = lvds_fmt.r[0+highBit];
+            lvds_arrary[0][0] = lvds_fmt.g[0];
+            lvds_arrary[0][1] = lvds_fmt.r[5];
+            lvds_arrary[0][2] = lvds_fmt.r[4];
+            lvds_arrary[0][3] = lvds_fmt.r[3];
+            lvds_arrary[0][4] = lvds_fmt.r[2];
+            lvds_arrary[0][5] = lvds_fmt.r[1];
+            lvds_arrary[0][6] = lvds_fmt.r[0];
 
-            lvds_arrary[1][0] = lvds_fmt.b[1+highBit];
-            lvds_arrary[1][1] = lvds_fmt.b[0+highBit];
-            lvds_arrary[1][2] = lvds_fmt.g[5+highBit];
-            lvds_arrary[1][3] = lvds_fmt.g[4+highBit];
-            lvds_arrary[1][4] = lvds_fmt.g[3+highBit];
-            lvds_arrary[1][5] = lvds_fmt.g[2+highBit];
-            lvds_arrary[1][6] = lvds_fmt.g[1+highBit];
+            lvds_arrary[1][0] = lvds_fmt.b[1];
+            lvds_arrary[1][1] = lvds_fmt.b[0];
+            lvds_arrary[1][2] = lvds_fmt.g[5];
+            lvds_arrary[1][3] = lvds_fmt.g[4];
+            lvds_arrary[1][4] = lvds_fmt.g[3];
+            lvds_arrary[1][5] = lvds_fmt.g[2];
+            lvds_arrary[1][6] = lvds_fmt.g[1];
 
             lvds_arrary[2][0] = lvds_fmt.data_en;
             lvds_arrary[2][1] = lvds_fmt.vsync;
             lvds_arrary[2][2] = lvds_fmt.hsync;
-            lvds_arrary[2][3] = lvds_fmt.b[5+highBit];
-            lvds_arrary[2][4] = lvds_fmt.b[4+highBit];
-            lvds_arrary[2][5] = lvds_fmt.b[3+highBit];
-            lvds_arrary[2][6] = lvds_fmt.b[2+highBit];
+            lvds_arrary[2][3] = lvds_fmt.b[5];
+            lvds_arrary[2][4] = lvds_fmt.b[4];
+            lvds_arrary[2][5] = lvds_fmt.b[3];
+            lvds_arrary[2][6] = lvds_fmt.b[2];
 
             lvds_arrary[3][0] = lvds_fmt.res0;
-            lvds_arrary[3][1] = lvds_fmt.b[7+highBit];
-            lvds_arrary[3][2] = lvds_fmt.b[6+highBit];
-            lvds_arrary[3][3] = lvds_fmt.g[7+highBit];
-            lvds_arrary[3][4] = lvds_fmt.g[6+highBit];
-            lvds_arrary[3][5] = lvds_fmt.r[7+highBit];
-            lvds_arrary[3][6] = lvds_fmt.r[6+highBit];
+            lvds_arrary[3][1] = lvds_fmt.b[7];
+            lvds_arrary[3][2] = lvds_fmt.b[6];
+            lvds_arrary[3][3] = lvds_fmt.g[7];
+            lvds_arrary[3][4] = lvds_fmt.g[6];
+            lvds_arrary[3][5] = lvds_fmt.r[7];
+            lvds_arrary[3][6] = lvds_fmt.r[6];
 
             lvds_arrary[4][0] = lvds_fmt.res0;
-            lvds_arrary[4][1] = lvds_fmt.b[9+highBit];
-            lvds_arrary[4][2] = lvds_fmt.b[8+highBit];
-            lvds_arrary[4][3] = lvds_fmt.g[9+highBit];
-            lvds_arrary[4][4] = lvds_fmt.g[8+highBit];
-            lvds_arrary[4][5] = lvds_fmt.r[9+highBit];
-            lvds_arrary[4][6] = lvds_fmt.r[8+highBit];
+            lvds_arrary[4][1] = lvds_fmt.b[9];
+            lvds_arrary[4][2] = lvds_fmt.b[8];
+            lvds_arrary[4][3] = lvds_fmt.g[9];
+            lvds_arrary[4][4] = lvds_fmt.g[8];
+            lvds_arrary[4][5] = lvds_fmt.r[9];
+            lvds_arrary[4][6] = lvds_fmt.r[8];
         }
         else {
-            lvds_arrary[0][0] = lvds_fmt.g[2+highBit];
-            lvds_arrary[0][1] = lvds_fmt.r[7+highBit];
-            lvds_arrary[0][2] = lvds_fmt.r[6+highBit];
-            lvds_arrary[0][3] = lvds_fmt.r[5+highBit];
-            lvds_arrary[0][4] = lvds_fmt.r[4+highBit];
-            lvds_arrary[0][5] = lvds_fmt.r[3+highBit];
-            lvds_arrary[0][6] = lvds_fmt.r[2+highBit];
+            lvds_arrary[0][0] = lvds_fmt.g[2];
+            lvds_arrary[0][1] = lvds_fmt.r[7];
+            lvds_arrary[0][2] = lvds_fmt.r[6];
+            lvds_arrary[0][3] = lvds_fmt.r[5];
+            lvds_arrary[0][4] = lvds_fmt.r[4];
+            lvds_arrary[0][5] = lvds_fmt.r[3];
+            lvds_arrary[0][6] = lvds_fmt.r[2];
 
-            lvds_arrary[1][0] = lvds_fmt.b[3+highBit];
-            lvds_arrary[1][1] = lvds_fmt.b[2+highBit];
-            lvds_arrary[1][2] = lvds_fmt.g[7+highBit];
-            lvds_arrary[1][3] = lvds_fmt.g[6+highBit];
-            lvds_arrary[1][4] = lvds_fmt.g[5+highBit];
-            lvds_arrary[1][5] = lvds_fmt.g[4+highBit];
-            lvds_arrary[1][6] = lvds_fmt.g[3+highBit];
+            lvds_arrary[1][0] = lvds_fmt.b[3];
+            lvds_arrary[1][1] = lvds_fmt.b[2];
+            lvds_arrary[1][2] = lvds_fmt.g[7];
+            lvds_arrary[1][3] = lvds_fmt.g[6];
+            lvds_arrary[1][4] = lvds_fmt.g[5];
+            lvds_arrary[1][5] = lvds_fmt.g[4];
+            lvds_arrary[1][6] = lvds_fmt.g[3];
 
             lvds_arrary[2][0] = lvds_fmt.data_en;
             lvds_arrary[2][1] = lvds_fmt.vsync;
             lvds_arrary[2][2] = lvds_fmt.hsync;
-            lvds_arrary[2][3] = lvds_fmt.b[7+highBit];
-            lvds_arrary[2][4] = lvds_fmt.b[6+highBit];
-            lvds_arrary[2][5] = lvds_fmt.b[5+highBit];
-            lvds_arrary[2][6] = lvds_fmt.b[4+highBit];
+            lvds_arrary[2][3] = lvds_fmt.b[7];
+            lvds_arrary[2][4] = lvds_fmt.b[6];
+            lvds_arrary[2][5] = lvds_fmt.b[5];
+            lvds_arrary[2][6] = lvds_fmt.b[4];
 
             lvds_arrary[3][0] = lvds_fmt.res0;
-            lvds_arrary[3][1] = lvds_fmt.b[9+highBit];
-            lvds_arrary[3][2] = lvds_fmt.b[8+highBit];
-            lvds_arrary[3][3] = lvds_fmt.g[9+highBit];
-            lvds_arrary[3][4] = lvds_fmt.g[8+highBit];
-            lvds_arrary[3][5] = lvds_fmt.r[9+highBit];
-            lvds_arrary[3][6] = lvds_fmt.r[8+highBit];
+            lvds_arrary[3][1] = lvds_fmt.b[9];
+            lvds_arrary[3][2] = lvds_fmt.b[8];
+            lvds_arrary[3][3] = lvds_fmt.g[9];
+            lvds_arrary[3][4] = lvds_fmt.g[8];
+            lvds_arrary[3][5] = lvds_fmt.r[9];
+            lvds_arrary[3][6] = lvds_fmt.r[8];
 
             lvds_arrary[4][0] = lvds_fmt.res0;
-            lvds_arrary[4][1] = lvds_fmt.b[1+highBit];
-            lvds_arrary[4][2] = lvds_fmt.b[0+highBit];
-            lvds_arrary[4][3] = lvds_fmt.g[1+highBit];
-            lvds_arrary[4][4] = lvds_fmt.g[0+highBit];
-            lvds_arrary[4][5] = lvds_fmt.r[1+highBit];
-            lvds_arrary[4][6] = lvds_fmt.r[0+highBit];
+            lvds_arrary[4][1] = lvds_fmt.b[1];
+            lvds_arrary[4][2] = lvds_fmt.b[0];
+            lvds_arrary[4][3] = lvds_fmt.g[1];
+            lvds_arrary[4][4] = lvds_fmt.g[0];
+            lvds_arrary[4][5] = lvds_fmt.r[1];
+            lvds_arrary[4][6] = lvds_fmt.r[0];
         }
         break;
     default:
