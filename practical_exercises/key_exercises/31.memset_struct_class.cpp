@@ -26,6 +26,16 @@ struct QuoteField {
 	int offersize;
 };
 
+void swap(int& a, int& b) {
+    int t = 0;
+    t = a;
+    a = b;
+    b = t;
+}
+
+int x = 100;
+int y = 200;
+
 int main()
 {
 	// test 1
@@ -40,9 +50,12 @@ int main()
 	QuoteField quoteField;
 	memset(&quoteField, 0, sizeof(QuoteField));
 	printf("this is error example!\n");
-	cout << quoteField.SCQuoteTime << endl;
-	quoteField.SCQuoteTime = "2020-02-30 16:16:16";
-	// quoteField.offersize = 100;
-	// quoteField.offerPx_s = 3.1415;
-	return 0;
+    // cout << quoteField.SCQuoteTime << endl;
+    // quoteField.SCQuoteTime = "2020-02-30 16:16:16";
+    // quoteField.offersize = 100;
+    // quoteField.offerPx_s = 3.1415;
+    printf("---------------\n");
+    swap(x, y);
+    printf("x:%d, y:%d\n", x, y);
+    return 0;
 }
