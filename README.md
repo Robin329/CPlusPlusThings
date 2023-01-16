@@ -59,6 +59,7 @@
       - [10.5 enum转换](#105-enum转换)
     - [11. 拓展部分](#11-拓展部分)
       - [11.1 一些问题](#111-一些问题)
+      - [11.2 clangd配置](#112-clangd配置)
 
 # C++
 
@@ -459,5 +460,6 @@ map<int, int> mp{
 
 
 
-
+#### 11.2 clangd配置
+`cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON .`
 
