@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(../lib/magic_enum/include)
 include_directories(../lib)
 include_directories(.)
-include_directories(../../gtest/googletest/include/gtest)
+include_directories(../../googletest/googletest/include/gtest/)
 #
 # example
 #

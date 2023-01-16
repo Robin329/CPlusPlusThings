@@ -23,15 +23,15 @@ void end()
 void run1()
 {
 	x = 1;
-	__asm__ __volatile__("mfence" ::: "memory");
-	r1 = y;
+    // __asm__ __volatile__("mfence" ::: "memory");
+    r1 = y;
 }
 
 void run2()
 {
 	y = 1;
-	__asm__ __volatile__("mfence" ::: "memory");
-	r2 = x;
+    // __asm__ __volatile__("mfence" ::: "memory");
+    r2 = x;
 }
 
 // -------------------

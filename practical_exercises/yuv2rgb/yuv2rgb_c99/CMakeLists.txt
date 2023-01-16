@@ -21,7 +21,7 @@ if(USE_IPP)
 endif(USE_IPP)
 
 include_directories("${PROJECT_SOURCE_DIR}")
-add_executable(test_yuv_rgb test_yuv_rgb.c yuv_rgb.c)
+# add_executable(test_yuv_rgb test_yuv_rgb.c yuv_rgb.c)
 
 if(USE_FFMPEG)
 	target_link_libraries(test_yuv_rgb swscale)

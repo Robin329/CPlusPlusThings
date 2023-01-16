@@ -27,9 +27,11 @@ int main(int argc, char **argv)
     ofstream outRgb24File(
 		FileSystem::getPath(RGB24_IMAGE_1920_1080_OUTPUT_PATH).c_str());
 
-	string s1, s2;
+    ofstream outArgbFile(FileSystem::getPath(RGB24_IMAGE_1920_1080_OUTPUT_PATH).c_str());
 
-	int len = 0, count = 0;
+    string s1, s2;
+
+    int len = 0, count = 0;
 	unsigned int valArgb;
 	// get length of file
 	readFileArgb.seekg(0, readFileArgb.end);
