@@ -105,3 +105,5 @@ add_subdirectory(yuv2rgb)
 add_subdirectory(dp_scrambler)
 # add lvds jeida and vesa rgb assignment
 add_subdirectory(lvds)
+# add linux kernel data structure algorithm
+add_subdirectory(kernel_data_structure_algorithm)
