@@ -44,6 +44,40 @@ void BinaryBitset(T n) {
     std::cout << bitset<sizeof(T) * 8>(n) << "b" << std::endl;
 }
 
+void printf_test(void) {
+    int          i = 123;
+    long         l = 456789L;
+    unsigned int ui = 12345U;
+    short        s = 123;
+    signed short        s1 = 123456;//0xffffe240
+    char         c = 'a';
+    signed char   c1 = 253; // 0xfffffffd
+    unsigned char uc = 130;
+    float        f = 3.14159f;
+    double       d = 3.1415926535;
+    void *       p = &i;
+
+    printf("int: %d\n", i);
+    printf("long: %ld\n", l);
+    printf("unsigned int: %u\n", ui);
+    printf("short: %hd\n", s);
+    // The main difference between the two is the length modifier used in the format specifier.
+    // "%hx" is used for printing variables of type short int or unsigned short int as a hexadecimal
+    // number, whereas "%hhx" is used for printing variables of type signed char or unsigned char as
+    // a hexadecimal number.
+
+    // The "h" length modifier specifies that the argument is a short int or unsigned short int for "%hx",
+    // whereas it specifies that the argument is a signed char or unsigned char for "%hhx".
+
+    printf("signed short: %hx\n", s1);
+    printf("char: %c\n", c);
+    printf("signed char: 0x%hhx\n", c1);
+    printf("unsigned char: 0x%hhx\n", uc);
+    printf("float: %f\n", f);
+    printf("double: %lf\n", d);
+    printf("pointer: %p\n", p);
+}
+
 int main() {
     printf("\nchar(S8)       : %d —— %d(%d)\n", SCHAR_MIN, sizeof(unsigned char), SCHAR_MAX);
     printf("unsigned char(U8): %u —— %u\n\n", 0, UCHAR_MAX);
@@ -86,5 +120,8 @@ int main() {
     printf("integer b = %d\n\n", b);
     std::cout << (b - c) << std::endl;
     std::cout << (s64)(b - c) << std::endl;
+    std::cout << "----------------------------" << std::endl;
+    printf_test();
+
     return 0;
 }

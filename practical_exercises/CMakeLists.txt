@@ -31,6 +31,9 @@ add_executable(31.memset_struct_class key_exercises/31.memset_struct_class.cpp)
 add_executable(32.convert_picture_to_hex key_exercises/32.convert_picture_to_hex.cpp)
 add_executable(33.num_convert_negative key_exercises/33.num_convert_negative.cpp)
 
+include_directories(key_exercises)
+add_executable(34.func_pointer key_exercises/34.func_pointer.c key_exercises/34.func_pointer.h key_exercises/34.list.h)
+
 if(CMAKE_HOST_APPLE)
     find_package(OpenCV)
     include_directories(${OpenCV_INCLUDE_DIRS})

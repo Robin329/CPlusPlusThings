@@ -34,9 +34,9 @@ static int make_socket_non_blocking(int sfd) {
 }
 
 static int create_and_bind(char *port) {
-    struct addrinfo hints;
+    struct addrinfo  hints;
     struct addrinfo *result, *rp;
-    int s, sfd;
+    int              s, sfd;
 
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_UNSPEC;
@@ -73,9 +73,9 @@ static int create_and_bind(char *port) {
 }
 
 int main(int argc, char *argv[]) {
-    int sfd, s;
-    int efd;
-    struct epoll_event event;
+    int                 sfd, s;
+    int                 efd;
+    struct epoll_event  event;
     struct epoll_event *events;
 
     if (argc != 2) {
@@ -120,17 +120,16 @@ int main(int argc, char *argv[]) {
         n = epoll_wait(efd, events, MAXEVENTS, -1);
         fprintf(stdout, "Received epoll event\n");
         for (i = 0; i < n; i++) {
-            if ((events[i].events & EPOLLERR) || (events[i].events & EPOLLHUP) ||
-                (!(events[i].events & EPOLLIN))) {
+            if ((events[i].events & EPOLLERR) || (events[i].events & EPOLLHUP) || (!(events[i].events & EPOLLIN))) {
                 fprintf(stderr, "epoll error\n");
                 close(events[i].data.fd);
                 continue;
             } else if (sfd == events[i].data.fd) {
                 while (1) {
                     struct sockaddr in_addr;
-                    socklen_t in_len;
-                    int infd;
-                    char hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
+                    socklen_t       in_len;
+                    int             infd;
+                    char            hbuf[NI_MAXHOST], sbuf[NI_MAXSERV];
 
                     in_len = sizeof(in_addr);
                     infd = accept(sfd, &in_addr, &in_len);
@@ -167,7 +166,7 @@ int main(int argc, char *argv[]) {
 
                 while (1) {
                     ssize_t count;
-                    char buf[512];
+                    char    buf[512];
 
                     count = read(events[i].data.fd, buf, sizeof(buf));
                     if (count == -1) {

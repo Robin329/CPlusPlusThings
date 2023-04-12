@@ -14,16 +14,16 @@
 #include <unistd.h>
 
 #define DEFAULT_PORT 8080
-#define MAX_CONN 16
-#define MAX_EVENTS 32
-#define BUF_SIZE 16
-#define MAX_LINE 256
+#define MAX_CONN     16
+#define MAX_EVENTS   32
+#define BUF_SIZE     16
+#define MAX_LINE     256
 
 void server_run();
 void client_run();
 
 int main(int argc, char *argv[]) {
-    int opt;
+    int  opt;
     char role = 's';
     while ((opt = getopt(argc, argv, "cs")) != -1) {
         switch (opt) {
@@ -76,14 +76,14 @@ static int setnonblocking(int sockfd) {
  * epoll echo server
  */
 void server_run() {
-    int i;
-    int n;
-    int epfd;
-    int nfds;
-    int listen_sock;
-    int conn_sock;
-    int socklen;
-    char buf[BUF_SIZE];
+    int                i;
+    int                n;
+    int                epfd;
+    int                nfds;
+    int                listen_sock;
+    int                conn_sock;
+    int                socklen;
+    char               buf[BUF_SIZE];
     struct sockaddr_in srv_addr;
     struct sockaddr_in cli_addr;
     struct epoll_event events[MAX_EVENTS];
@@ -142,10 +142,10 @@ void server_run() {
  * test clinet
  */
 void client_run() {
-    int n;
-    int c;
-    int sockfd;
-    char buf[MAX_LINE];
+    int                n;
+    int                c;
+    int                sockfd;
+    char               buf[MAX_LINE];
     struct sockaddr_in srv_addr;
 
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
