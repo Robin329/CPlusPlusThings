@@ -44,18 +44,29 @@ void BinaryBitset(T n) {
     std::cout << bitset<sizeof(T) * 8>(n) << "b" << std::endl;
 }
 
+void macro_def(void) {
+#define TEST_A 1
+    return;
+}
+
+
+void macro_test(void) {
+    printf("TEST_A:%d\n", TEST_A);
+}
+
+
 void printf_test(void) {
-    int          i = 123;
-    long         l = 456789L;
-    unsigned int ui = 12345U;
-    short        s = 123;
-    signed short        s1 = 123456;//0xffffe240
-    char         c = 'a';
+    int           i = 123;
+    long          l = 456789L;
+    unsigned int  ui = 12345U;
+    short         s = 123;
+    signed short  s1 = 123456; // 0xffffe240
+    char          c = 'a';
     signed char   c1 = 253; // 0xfffffffd
     unsigned char uc = 130;
-    float        f = 3.14159f;
-    double       d = 3.1415926535;
-    void *       p = &i;
+    float         f = 3.14159f;
+    double        d = 3.1415926535;
+    void*         p = &i;
 
     printf("int: %d\n", i);
     printf("long: %ld\n", l);
@@ -122,6 +133,9 @@ int main() {
     std::cout << (s64)(b - c) << std::endl;
     std::cout << "----------------------------" << std::endl;
     printf_test();
+
+    macro_test();
+    macro_def();
 
     return 0;
 }
