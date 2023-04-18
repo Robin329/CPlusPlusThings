@@ -24,7 +24,8 @@ jobs:
       run: sudo apt install -y git cmake
 
     - name: git pull thirty lib
-      run: git submodule init
+      run: 
+        git submodule init
         git submodule update --checkout
       
     - name: Configure CMake
