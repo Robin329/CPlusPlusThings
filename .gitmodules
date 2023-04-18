@@ -1,15 +1,15 @@
 [submodule "ref/cpp-learning"]
 	path = ref/cpp-learning
-	url = https://github.com:chengxumiaodaren/cpp-learning.git
+	url = https://github.com/chengxumiaodaren/cpp-learning.git
 [submodule "lib/magic_enum"]
     path = lib/magic_enum
-    url = https://github.com:Neargye/magic_enum.git
+    url = https://github.com/Neargye/magic_enum.git
 [submodule "lib/dbg-macro"]
 	path = lib/dbg-macro
 	url = https://github.com/sharkdp/dbg-macro
 [submodule "learn_algorithms/c"]
        path = learn_algorithms/c
-       url = https://github.com:TheAlgorithms/C.git
+       url = https://github.com/TheAlgorithms/C.git
 [submodule "lib/tinyxml"]
 	path = lib/tinyxml
 	url = https://github.com/leethomason/tinyxml2.git
