@@ -7,7 +7,7 @@
  \____/\_|   \_____/\___/\____/\_|   \_____/\___/\____/
 ```
 
-[![Build Status](https://github.com/Robin329/CPlusPlusThings/actions/workflows/c-cpp.yml/badge.svg)](https://github.com/Robin329/CPlusPlusThings/actions/workflows/c-cpp.yml)
+[![Build Status](https://github.com/Robin329/CPlusPlusThings/actions/workflows/cmake.yml/badge.svg)](https://github.com/Robin329/CPlusPlusThings/actions/workflows/cmake.yml)
 
 - [C++](#c)
     - [项目运行](#项目运行)
