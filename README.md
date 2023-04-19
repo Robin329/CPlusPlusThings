@@ -8,6 +8,11 @@
 ```
 
 [![Build Status](https://github.com/Robin329/CPlusPlusThings/actions/workflows/cmake.yml/badge.svg)](https://github.com/Robin329/CPlusPlusThings/actions/workflows/cmake.yml)
+[![Version](https://img.shields.io/github/v/release/Robin329/CPlusPlusThings)](https://github.com/Robin329/CPlusPlusThings/releases/latest)
+[![Contributors](https://img.shields.io/github/contributors/Robin329/CPlusPlusThings)](https://github.com/Robin329/CPlusPlusThings/graphs/contributors)
+[![Issues](https://img.shields.io/github/issues/Robin329/CPlusPlusThings)](https://github.com/Robin329/CPlusPlusThings/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/Robin329/CPlusPlusThings/pulls)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/Robin329/CPlusPlusThings)
 
 - [C++](#c)
     - [项目运行](#项目运行)
