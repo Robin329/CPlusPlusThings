@@ -81,5 +81,10 @@ int main() {
     pf2[0][0]((char *)"fun1");
     pf2[0][1]((char *)"fun2");
     pf2[0][2]((char *)("fun3"));
-    return 0;
+#if defined(__ANDROID__)
+    printf("define __ANDROID__");
+
+#endif
+printf("%#x\n", 0x2a | ((639 >> 8 ) << 24));
+	    return 0;
 }
