@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <cstdint>
+
 typedef struct {
     uint32_t magic;
     uint32_t type;
@@ -21,26 +23,37 @@ struct data g_data = {.a = 1, .b = 2};
 typedef void (*callback_one)(status_1 status, void *ext);
 typedef void (*callback_two)(status_2 status, void *ext);
 
+static callback_two cb[10];
+
 void my_callback(status_2 st, void *ext) {
-    struct data *d = (struct data *)ext;
-    printf("a:%d b:%d\n", d->a, d->b);
+    uint32_t d = *(uint32_t *)ext;
+    printf("d:%d\n", d);
     printf("os_magic:%d arg2:%d arg3:%d\n", st.os_magic, st.arg2, st.arg3);
 }
 
-static callback_two cb[10];
+void func(void *ext) {
+    uint32_t b = *(uint32_t *)ext;
+    printf("--->>%d, b:%d\n", *(uint32_t *)ext, b);
+}
 
-int main() {
-    cb[0] = my_callback;
-    cb[1] = my_callback;
-    cb[2] = my_callback;
-    cb[3] = my_callback;
-    status_2 status1 = {
+void funcx(uint32_t tmp) {
+        status_2 status1 = {
             .os_magic = 1523,
             .arg2 = 14,
             .arg3 = 22,
     };
-    cb[0](status1, &g_data);
+    cb[0](status1, &tmp);
+}
 
+
+int main() {
+    uint32_t a = 5;
+    cb[0] = my_callback;
+    cb[1] = my_callback;
+    cb[2] = my_callback;
+    cb[3] = my_callback;
+
+    funcx(a);
     status_2 status2 = {
             .os_magic = 1423,
             .arg2 = 31,
@@ -61,5 +74,6 @@ int main() {
             .arg3 = 12,
     };
     cb[3](status4, &g_data);
+    func(&a);
     return 0;
 }

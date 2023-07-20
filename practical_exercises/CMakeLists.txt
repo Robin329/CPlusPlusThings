@@ -110,3 +110,6 @@ add_subdirectory(dp_scrambler)
 add_subdirectory(lvds)
 # add linux kernel data structure algorithm
 add_subdirectory(kernel_data_structure_algorithm)
+
+# add edid generate according to vic timing
+add_subdirectory(edid-gen)
