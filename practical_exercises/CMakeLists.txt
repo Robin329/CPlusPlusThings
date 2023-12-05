@@ -113,3 +113,7 @@ add_subdirectory(kernel_data_structure_algorithm)
 
 # add edid generate according to vic timing
 add_subdirectory(edid-gen)
+
+# add dptx parse
+add_subdirectory(dptx_parse)
+
